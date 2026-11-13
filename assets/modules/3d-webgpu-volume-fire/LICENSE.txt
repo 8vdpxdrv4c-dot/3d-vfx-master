@@ -1,0 +1,38 @@
+# 许可与来源边界：GPU 体积火焰
+
+## 来源
+
+- 上游示例：three.js 官方示例 `webgpu_volume_fire`
+  - 页面：https://threejs.org/examples/#webgpu_volume_fire
+  - 源码：https://github.com/mrdoob/three.js/blob/dev/examples/webgpu_volume_fire.html
+  - 抓取快照 SHA-256：`854ad2186b746de95709b0e539eac3ade6315928870a3bce84a41e1277f3d1fb`
+- 上游依赖构建：`three.core.js` / `three.tsl.js` / `three.webgpu.js` 与 8 个 addon 模块，均取自 `mrdoob/three.js` dev 分支同一快照，`REVISION = '188dev'`。逐个文件指纹见 `DEPENDENCIES.json`。
+
+## 许可
+
+- three.js 本体及其 examples/jsm 附加模块均为 **MIT**，许可全文见 `demos/vendor/THREE-MIT.txt`。
+- 本模块的封装层（`volume-fire-module.js`、`meta.js`、`demos/index.html`）与移植层（`volume-fire.js` 中的参数映射、生命周期、资源释放、demo 布景）同样以 **MIT** 提供，与上游许可保持一致。
+- 体积火焰示例本身即为 three.js 官方示例，官方仓库整体采用 MIT，因此不存在「示例代码不可再分发」的许可障碍。
+
+## 移植边界（做了什么 / 没做什么）
+
+保留（逐字或等价保留）：
+
+- 三维流体求解的 compute kernel 序列：半拉格朗日平流、curlNoise 湍流、浮力、Jacobi 压力投影、散度消除；
+- 体积光线步进着色器与相位函数、powder 项、多重散射近似；
+- `VolumeNodeMaterial` + `RenderPipeline` 的节点图结构，bloom 后期链；
+- 示例的相机、地面、可拖拽物体布景与光照布置。
+
+改动（只做封装，不改效果算法）：
+
+- 全局变量收进单实例工厂闭包，`dispose()` 可完整释放 GPU 资源；
+- 示例里的调试面板参数映射到 `meta.js` 的 28 个 schema 参数，只写已有 uniform / node 属性；
+- `renderer.init()` 的异步初始化改为返回 Promise 的 `init()`，并提供 `isReady()`；
+- importmap 从 CDN 改为模块内 `vendor/` 离线依赖；
+- demo 页新增预设下拉、「复制提示词」与 `window.__volumeFireDemo` 验收接口。
+
+未做：
+
+- 没有改写流体求解或体积渲染的数学；
+- 没有省略任何渲染通道或后期环节；
+- 没有引入 WebGL 兜底（WebGL 2 场景请用 `3d-realistic-fire`）。

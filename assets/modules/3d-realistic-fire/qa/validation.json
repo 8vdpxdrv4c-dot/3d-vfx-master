@@ -1,0 +1,20 @@
+{
+  "errors": [],
+  "result": {
+    "baseline": {
+      "children": 3,
+      "geometries": 2,
+      "textures": 0
+    },
+    "count": 9,
+    "particles": 6,
+    "fading": true,
+    "remaining": 1,
+    "after": {
+      "children": 3,
+      "geometries": 2,
+      "textures": 0
+    },
+    "renderCalls": 2
+  }
+}

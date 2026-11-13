@@ -1,0 +1,184 @@
+[
+  {
+    "query": "玻璃材质",
+    "results": [
+      "3d-glass"
+    ],
+    "passed": true
+  },
+  {
+    "query": "金属材质",
+    "results": [
+      "3d-metal-material"
+    ],
+    "passed": true
+  },
+  {
+    "query": "纸张材质",
+    "results": [
+      "3d-paper-material"
+    ],
+    "passed": true
+  },
+  {
+    "query": "木纹",
+    "results": [
+      "3d-wood-material"
+    ],
+    "passed": true
+  },
+  {
+    "query": "织物材质",
+    "results": [
+      "3d-cloth-material"
+    ],
+    "passed": true
+  },
+  {
+    "query": "虹彩气泡",
+    "results": [
+      "3d-iridescent-bubbles"
+    ],
+    "passed": true
+  },
+  {
+    "query": "排水管喷水",
+    "results": [
+      "3d-drain-spout"
+    ],
+    "passed": true
+  },
+  {
+    "query": "流动水面",
+    "results": [
+      "3d-ocean"
+    ],
+    "passed": true
+  },
+  {
+    "query": "景深",
+    "results": [
+      "3d-depth-of-field"
+    ],
+    "passed": true
+  },
+  {
+    "query": "雨雪天气",
+    "results": [
+      "3d-rain",
+      "3d-snow"
+    ],
+    "passed": true
+  },
+  {
+    "query": "烟雾和火花",
+    "results": [
+      "3d-smoke",
+      "3d-sparks"
+    ],
+    "passed": true
+  },
+  {
+    "query": "滚动场景",
+    "results": [
+      "3d-scroll-scenes"
+    ],
+    "passed": true
+  },
+  {
+    "query": "PBR metal material",
+    "results": [
+      "3d-metal-material"
+    ],
+    "passed": true
+  },
+  {
+    "query": "thin film",
+    "results": [
+      "3d-iridescent-bubbles"
+    ],
+    "passed": true
+  },
+  {
+    "query": "data trails",
+    "results": [
+      "3d-data-trails"
+    ],
+    "passed": true
+  },
+  {
+    "query": "DOF",
+    "results": [
+      "3d-depth-of-field"
+    ],
+    "passed": true
+  },
+  {
+    "query": "glass material",
+    "results": [
+      "3d-glass"
+    ],
+    "passed": true
+  },
+  {
+    "query": "材质",
+    "results": [
+      "3d-glass",
+      "3d-iridescent-bubbles",
+      "3d-cloth-material",
+      "3d-metal-material",
+      "3d-paper-material",
+      "3d-wood-material"
+    ],
+    "passed": true
+  },
+  {
+    "query": "不存在的效果",
+    "results": [],
+    "passed": true
+  },
+  {
+    "query": "",
+    "results": [
+      "3d-smoke",
+      "3d-sparks",
+      "3d-hologram",
+      "3d-aurora",
+      "3d-plasma",
+      "3d-rain",
+      "3d-snow",
+      "3d-grass",
+      "3d-bloom",
+      "3d-depth-of-field",
+      "3d-glass",
+      "3d-iridescent-bubbles",
+      "3d-pipe-flow",
+      "3d-data-trails",
+      "3d-slice-reveal",
+      "3d-ocean",
+      "3d-light-shafts",
+      "3d-galaxy",
+      "3d-architecture-growth",
+      "3d-falling-leaves",
+      "3d-cloth-material",
+      "3d-metal-material",
+      "3d-paper-material",
+      "3d-wood-material",
+      "3d-virtual-tour",
+      "3d-lightning-energy",
+      "3d-frost-growth",
+      "3d-wireframe-scan",
+      "3d-scroll-scenes",
+      "3d-cinema-stack",
+      "3d-drain-spout"
+    ],
+    "passed": true
+  },
+  {
+    "query": "3d-drain-spout",
+    "results": [
+      "3d-drain-spout"
+    ],
+    "passed": true
+  }
+]

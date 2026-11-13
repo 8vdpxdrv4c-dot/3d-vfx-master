@@ -1,0 +1,41 @@
+{
+  "round": 10,
+  "title": "最终安装状态全量回归与交付锁定",
+  "completed_at_utc": "2026-10-23T16:33:01.499000+00:00",
+  "client_date": "2026-10-24",
+  "observations": [
+    "最终安装状态重新导出全部模块与组合；所有渲染和手机UI验收均使用这批新输出。"
+  ],
+  "changes": [
+    "加入可复跑浏览器检查与十轮证据；构建脚本改从当前维护源生成干净副本，避免旧独立包覆盖已优化内容。",
+    "交付前锁定已测试运行文件指纹，打包时同时要求本地源、安装副本与ZIP逐字节一致。"
+  ],
+  "checks": {
+    "webgl_modules": 34,
+    "presets": 103,
+    "parameter_change_checks": 68,
+    "numeric_boundary_checks": 322,
+    "create_dispose_cycles": 102,
+    "mobile_layouts": 36,
+    "relative_imports": 332,
+    "syntax_checks": 105,
+    "search_queries": 22,
+    "invalid_parameter_cases": 7,
+    "output_failure_paths": 5,
+    "actual_gallery_filters": true,
+    "custom_preset_ui": true,
+    "tested_export_bytes_equal_current_modules": true
+  },
+  "evidence": [
+    "round-10-webgl.json",
+    "round-10-mobile.json",
+    "round-10-cli.json",
+    "round-10-gallery.json",
+    "round-10-custom-ui.json",
+    "round-10-master.png",
+    "round-10-composition.png"
+  ],
+  "passed": true,
+  "installed_state_sha256": "0e6ae8c95393e08eadbe07a33956c6201ac37b31ecfd3c8100c7c8d0001355fe",
+  "installed_files": 903
+}

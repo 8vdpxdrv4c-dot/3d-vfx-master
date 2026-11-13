@@ -1,0 +1,3 @@
+用户提供海晏堂项目衍生封装，输入未附项目整体许可证；保留原作者与用户代码权属，不改标整个模块为 MIT。
+Simplex noise：源文件标记 Ashima Arts / Stefan Gustavson，MIT；保留该声明。
+Three.js r160：MIT，完整条款见 demos/vendor/THREE-MIT.txt。

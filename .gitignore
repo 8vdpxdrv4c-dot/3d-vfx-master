@@ -1,0 +1,9 @@
+# Local commercial distribution service and private signing material
+distribution/
+
+# Local assistant/workbench state
+.workbuddy-ai/
+.codex/
+.agents/
+__pycache__/
+*.py[cod]

@@ -1,0 +1,44 @@
+{
+  "healthy": {
+    "pass": true,
+    "files_checked": 902,
+    "errors": [],
+    "scope": "distribution files; manifest itself is excluded",
+    "trust": "Detects accidental changes against the local manifest; not a cryptographic publisher signature."
+  },
+  "provenance": {
+    "effect_files": 34,
+    "vendor_files": 169,
+    "optimized_files": 67,
+    "added_helpers": 33,
+    "original_source_packages_unchanged": true
+  },
+  "fault_cases": [
+    {
+      "case": "vendor byte changed",
+      "rejected": true
+    },
+    {
+      "case": "altered vendor blocks export before writing",
+      "rejected": true
+    },
+    {
+      "case": "missing helper",
+      "rejected": true
+    },
+    {
+      "case": "manifest path traversal",
+      "rejected": true
+    },
+    {
+      "case": "duplicate manifest path",
+      "rejected": true
+    },
+    {
+      "case": "restored clean distribution",
+      "passed": true
+    }
+  ],
+  "portable_unicode_export": true,
+  "original_packages_unchanged": true
+}

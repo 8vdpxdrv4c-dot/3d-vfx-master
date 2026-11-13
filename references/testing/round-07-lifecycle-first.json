@@ -1,0 +1,77 @@
+{
+  "rows": [
+    {
+      "name": "baseline",
+      "initialPausedTicks": 65,
+      "observedUnnecessaryCallbacks": true,
+      "pass": true
+    },
+    {
+      "name": "smoke",
+      "initialPausedTicks": 0,
+      "initialParked": true,
+      "played": true,
+      "pauseParked": true,
+      "resetRedraw": true,
+      "resetSettled": true,
+      "hiddenParked": true,
+      "resumed": true,
+      "syntheticReducedMotionPaused": false,
+      "pass": false
+    },
+    {
+      "name": "bloom",
+      "initialPausedTicks": 0,
+      "initialParked": true,
+      "played": true,
+      "pauseParked": true,
+      "resetRedraw": true,
+      "resetSettled": true,
+      "hiddenParked": true,
+      "resumed": true,
+      "syntheticReducedMotionPaused": false,
+      "pass": false
+    },
+    {
+      "name": "rain",
+      "initialPausedTicks": 0,
+      "initialParked": true,
+      "played": true,
+      "pauseParked": true,
+      "resetRedraw": true,
+      "resetSettled": true,
+      "hiddenParked": true,
+      "resumed": true,
+      "syntheticReducedMotionPaused": false,
+      "pass": false
+    },
+    {
+      "name": "aurora-rain",
+      "initialPausedTicks": 0,
+      "initialParked": true,
+      "played": true,
+      "pauseParked": true,
+      "resetRedraw": true,
+      "resetSettled": true,
+      "hiddenParked": true,
+      "resumed": true,
+      "syntheticReducedMotionPaused": false,
+      "pass": false
+    },
+    {
+      "name": "glass-bloom",
+      "initialPausedTicks": 0,
+      "initialParked": true,
+      "played": true,
+      "pauseParked": true,
+      "resetRedraw": true,
+      "resetSettled": true,
+      "hiddenParked": true,
+      "resumed": true,
+      "syntheticReducedMotionPaused": false,
+      "pass": false
+    }
+  ],
+  "pass": false,
+  "media_scope": "Synthetic MediaQueryList change listener test; no native OS preference change."
+}

@@ -1,0 +1,31 @@
+import * as THREE from 'three';
+import * as fx from './effects/fluid-drain-spout.js';
+import {meta} from './meta.js';
+const $=s=>document.querySelector(s),canvas=$('canvas'),frame=$('iframe'),wait=ms=>new Promise(r=>setTimeout(r,ms));
+const report={slug:meta.slug,viewport:[360,280],looks:[],controls:[],extremes:[],cycles:[],errors:[]};
+function pixels(r){const gl=r.getContext(),data=new Uint8Array(canvas.width*canvas.height*4);gl.readPixels(0,0,canvas.width,canvas.height,gl.RGBA,gl.UNSIGNED_BYTE,data);let hash=2166136261,bright=0,min=255,max=0;for(let i=0;i<data.length;i+=4){for(let k=0;k<3;k++){hash=Math.imul(hash^data[i+k],16777619);min=Math.min(min,data[i+k]);max=Math.max(max,data[i+k]);}if(data[i]+data[i+1]+data[i+2]>100)bright++;}return{hash:hash>>>0,brightPixels:bright,range:max-min};}
+$('#run').onclick=async()=>{
+ $('#run').disabled=true;$('#status').dataset.state='running';let renderer;const priorError=console.error;
+ console.error=(...args)=>{report.errors.push(args.map(String).join(' '));priorError(...args);};
+ try{
+  renderer=new THREE.WebGLRenderer({canvas,antialias:false,preserveDrawingBuffer:true});renderer.setPixelRatio(1);renderer.setSize(360,280,false);
+  const host=new THREE.Scene(),camera=new THREE.PerspectiveCamera(40,360/280,.1,100),sentinel=new THREE.Mesh(new THREE.BoxGeometry(),new THREE.MeshBasicMaterial({color:'#eeeeee'}));host.add(sentinel);camera.position.set(0,1,5);const pose=camera.position.clone();const ctx={renderer,scene:host,camera,lowEnd:false};
+  const defaults=()=>Object.fromEntries(fx.guiSchema.map(s=>[s.key,s.default]));
+  const draw=()=>{fx.render(ctx);return pixels(renderer);};
+  for(const low of [false,true]){ctx.lowEnd=low;for(const look of meta.looks){$('#status').textContent=(low?'low / ':'standard / ')+look.id;const p={...defaults(),...look.params};fx.create(ctx,p);fx.seek(.7);const sample=draw();report.looks.push({look:look.id,low,...sample,stats:fx.stats(),pass:sample.brightPixels>3000&&sample.range>60});fx.dispose();await wait(10);}}
+  ctx.lowEnd=false;let p=defaults();fx.create(ctx,p);fx.seek(.7);
+  for(const knob of fx.guiSchema.filter(s=>s.key!=='speed')){const old=p[knob.key];p[knob.key]=knob.min+(knob.max-knob.min)*.23;fx.update(0,p);const a=draw();p[knob.key]=knob.min+(knob.max-knob.min)*.77;fx.update(0,p);const b=draw();report.controls.push({key:knob.key,visibleChange:a.hash!==b.hash,a:a.hash,b:b.hash});p[knob.key]=old;fx.update(0,p);}
+  const motion=[];for(const speed of [.4,1.2]){p={...defaults(),speed};fx.create(ctx,p);for(let i=0;i<24;i++)fx.update(.05,p);motion.push({speed,time:fx.stats().time,...draw()});}report.motion={samples:motion,pass:motion[0].time<motion[1].time&&motion[0].hash!==motion[1].hash};
+  p=defaults();fx.create(ctx,p);for(const knob of fx.guiSchema){const old=p[knob.key];for(const value of [knob.min,knob.max]){p[knob.key]=value;fx.update(.02,p);const s=fx.stats(),sample=draw();report.extremes.push({key:knob.key,value,finite:Number.isFinite(s.time)&&Number.isFinite(s.impactX),...sample});}p[knob.key]=old;fx.update(0,p);}
+  fx.setView(.46,.62,1.15);const viewA=draw();fx.update(0,p);const viewB=draw();report.retainedView={a:viewA.hash,b:viewB.hash,pass:viewA.hash===viewB.hash&&fx.stats().view[0]===.46};
+  const target=new THREE.WebGLRenderTarget(180,140);renderer.setRenderTarget(target);renderer.setViewport(13,9,140,100);renderer.autoClear=false;renderer.xr.enabled=true;const before={target:renderer.getRenderTarget(),tone:renderer.toneMapping,output:renderer.outputColorSpace,viewport:renderer.getViewport(new THREE.Vector4()).toArray()};fx.render(ctx);const afterViewport=renderer.getViewport(new THREE.Vector4()).toArray();report.hostState={pass:renderer.getRenderTarget()===before.target&&renderer.toneMapping===before.tone&&renderer.outputColorSpace===before.output&&renderer.autoClear===false&&renderer.xr.enabled===true&&JSON.stringify(afterViewport)===JSON.stringify(before.viewport)&&fx.stats().renderSize[0]===140,renderSize:fx.stats().renderSize,viewport:afterViewport};renderer.xr.enabled=false;renderer.autoClear=true;renderer.setRenderTarget(null);renderer.setViewport(0,0,360,280);target.dispose();fx.dispose();
+  for(let i=0;i<3;i++){p=defaults();fx.create(ctx,p);draw();fx.dispose();fx.dispose();renderer.render(host,camera);report.cycles.push({...renderer.info.memory,hostChildren:host.children.length,hostPreserved:host.children[0]===sentinel,cameraPreserved:camera.position.distanceTo(pose)<1e-8});}
+  report.lifecycle={pass:report.cycles.every(c=>c.hostChildren===1&&c.hostPreserved&&c.cameraPreserved)&&report.cycles.slice(1).every((c,i)=>c.geometries<=report.cycles[i].geometries&&c.textures<=report.cycles[i].textures)};
+  $('#status').textContent='Checking 390×844 mobile iframe';frame.src='./?low&still';await new Promise((resolve,reject)=>{frame.onload=resolve;setTimeout(()=>reject(Error('mobile load timeout')),15000);});
+  for(let i=0;i<80;i++){const s=frame.contentDocument.querySelector('#status');if(s?.dataset.state==='ready'||s?.dataset.state==='error')break;await wait(100);}
+  const doc=frame.contentDocument,c=doc.querySelector('canvas');report.mobile={viewport:[390,844],ready:doc.querySelector('#status')?.dataset.state==='ready',noHorizontalOverflow:doc.documentElement.scrollWidth<=390,looks:doc.querySelectorAll('[data-look]').length,lowBudget:doc.querySelector('#budget')?.textContent.includes('LOW POWER'),canvas:[c.width,c.height]};report.mobile.pass=report.mobile.ready&&report.mobile.noHorizontalOverflow&&report.mobile.looks===3&&report.mobile.lowBudget&&c.width>0&&c.height>0;
+  sentinel.geometry.dispose();sentinel.material.dispose();
+ }catch(e){report.errors.push(String(e.stack||e));}finally{console.error=priorError;fx.dispose();renderer?.dispose();renderer?.forceContextLoss();}
+ report.pass=!report.errors.length&&report.looks.length===6&&report.looks.every(r=>r.pass)&&report.controls.length===5&&report.controls.every(r=>r.visibleChange)&&report.motion?.pass&&report.extremes.length===12&&report.extremes.every(r=>r.finite&&r.range>30)&&report.retainedView?.pass&&report.hostState?.pass&&report.lifecycle?.pass&&report.mobile?.pass;
+ $('#report').textContent=JSON.stringify(report,null,2);$('#status').textContent=report.pass?'All drain-spout checks passed':'Checks failed';$('#status').dataset.state='done';$('#run').disabled=false;
+};

@@ -1,0 +1,31 @@
+{
+  "round": 9,
+  "title": "许可事实、损坏检测与可迁移交付",
+  "completed_at_utc": "2026-10-23T16:26:08.169344+00:00",
+  "client_date": "2026-10-24",
+  "observations": [
+    "优化后的helper已改变，旧版“helper全部逐字节不变”的说明不再准确；修订为当前真实范围并保留初始记录。"
+  ],
+  "changes": [
+    "新增 verify 完整性自检和导出前模块哈希检查，阻止已损坏的供应商文件进入导出。",
+    "当前与历史来源审计分开记录，校验原始源包、34个效果文件和全部第三方依赖仍未改变；不把用户提供的Spout改标为原创。",
+    "停止在安装目录生成Python字节码缓存。"
+  ],
+  "checks": {
+    "clean_files_checked": 902,
+    "fault_cases": 5,
+    "restored_distribution_verified": true,
+    "unicode_output_exported": true,
+    "effect_files": 34,
+    "vendor_files": 169,
+    "optimized_files": 67,
+    "added_helpers": 33,
+    "original_source_packages_unchanged": true
+  },
+  "evidence": [
+    "round-09-integrity.json"
+  ],
+  "passed": true,
+  "installed_state_sha256": "0e6ae8c95393e08eadbe07a33956c6201ac37b31ecfd3c8100c7c8d0001355fe",
+  "installed_files": 903
+}

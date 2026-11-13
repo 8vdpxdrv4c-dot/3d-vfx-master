@@ -1,0 +1,19 @@
+{
+  "pass": true,
+  "date": "2026-10-24",
+  "integration": "clear-waterflow",
+  "registered_skills": 1,
+  "modules": 35,
+  "presets": 106,
+  "compositions": 2,
+  "tested_runtime_sha256": "87b3c1080550494cc15b5de489b14eb6a2a0093d82d01173b97416835e131da3",
+  "scope": "New module rendered from installed-skill exports; all catalog entries and dependencies structurally validated; previous runtime files verified against baseline, not rerun as ten new rounds.",
+  "historical_ten_rounds": "../evidence/ten-round-release-summary.json",
+  "current_checks": "waterflow-integration/validation.json",
+  "published": false,
+  "limits": [
+    "390 × 844 browser iframe is not a physical phone benchmark.",
+    "Water is an artistic analytic visualization, not CFD or conservation-of-volume simulation.",
+    "Spout attribution and undeclared input shader license remain unchanged."
+  ]
+}

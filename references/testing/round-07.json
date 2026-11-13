@@ -1,0 +1,31 @@
+{
+  "round": 7,
+  "title": "暂停、离屏和相机阻尼的动画生命周期",
+  "completed_at_utc": "2026-10-23T16:25:03.934908+00:00",
+  "client_date": "2026-10-24",
+  "observations": [
+    "暂停基线在450毫秒内仍触发52次动画回调；更新后5个代表模块/组合的暂停计数均为0。",
+    "首个减少动态测试对新建 MediaQueryList 发事件未触发原监听；修正为同一对象，并用缓存隔离后的夹具复测通过。"
+  ],
+  "changes": [
+    "为33个场景预览及2个组合引入按需调度；暂停和不可见时停机，恢复时重置时钟；暂停状态下相机阻尼仍能完成并停机。",
+    "移除随销毁应释放的媒体和可见性监听。"
+  ],
+  "checks": {
+    "baseline_fixture": 1,
+    "optimized_cases": 5,
+    "paused_callbacks_per_observation": 0,
+    "pause_hidden_resume_reset": true,
+    "synthetic_reduced_motion_listener": true,
+    "native_os_media_preference_changed": false,
+    "real_pointer_orbit_settled": true
+  },
+  "evidence": [
+    "round-07-lifecycle-first.json",
+    "round-07-lifecycle.json",
+    "round-07-orbit.json"
+  ],
+  "passed": true,
+  "installed_state_sha256": "860a1498c1c73d061cbef4048df205a755ef81bcb0b36c28da63376cd53f137e",
+  "installed_files": 900
+}

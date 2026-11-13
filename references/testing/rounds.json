@@ -1,0 +1,291 @@
+[
+  {
+    "round": 1,
+    "title": "本机安装与跨目录调用基线",
+    "completed_at_utc": "2026-10-23T16:01:55.945067+00:00",
+    "client_date": "2026-10-24",
+    "observations": [
+      "安装副本857个文件与源包一致；仅一个技能入口。",
+      "从独立工作目录调用安装副本的检索和模块详情成功。"
+    ],
+    "changes": [],
+    "checks": {
+      "format": true,
+      "cross_cwd": true,
+      "modules": 34,
+      "single_entry": true
+    },
+    "evidence": [
+      "installation.json",
+      "search-baseline.json"
+    ],
+    "passed": true,
+    "installed_state_sha256": "01ccc2cb1780d06fd39ac20981a18dfbeb87f8a00295a93ac07b257c41b382a3",
+    "installed_files": 857
+  },
+  {
+    "round": 2,
+    "title": "具体需求检索与网页/命令行一致性",
+    "completed_at_utc": "2026-10-23T16:04:44.493019+00:00",
+    "client_date": "2026-10-24",
+    "observations": [
+      "基线中“玻璃材质”误列出四种其他材质，“金属材质”误列出三种其他材质。"
+    ],
+    "changes": [
+      "具体效果词优先于“材质/效果”等泛词；英文查询回退使用完整词组约束。",
+      "网页与命令行采用对等规则，统一材质分类筛选。"
+    ],
+    "checks": {
+      "queries": 22,
+      "python_js_result_parity": true,
+      "specific_material_false_matches_removed": true
+    },
+    "evidence": [
+      "search-baseline.json",
+      "round-02-search-cases.json"
+    ],
+    "passed": true,
+    "installed_state_sha256": "588a01d37c0678ef58ca74d94abe3ba50b675a806e4142c3782008df31a79f41",
+    "installed_files": 860
+  },
+  {
+    "round": 3,
+    "title": "指定预设与实际参数导出",
+    "completed_at_utc": "2026-10-23T16:06:42.874773+00:00",
+    "client_date": "2026-10-24",
+    "observations": [
+      "原命令不支持选择初始预设或指定参数，只能导出默认展示。"
+    ],
+    "changes": [
+      "增加 --look、可重复 --set 和支持 BOM 的 --params-file。",
+      "数值、布尔、颜色和枚举依据参数契约验证，保留其他预设与来源记录。"
+    ],
+    "checks": {
+      "valid_exports": 6,
+      "invalid_inputs_rejected": 7,
+      "installed_templates_unchanged": true
+    },
+    "evidence": [
+      "round-03-preset-exports.json"
+    ],
+    "passed": true,
+    "installed_state_sha256": "2a446095690a2d027e92e4fbcaa25e132e256572f9d7f2d15281eaaba1bfa77b",
+    "installed_files": 862
+  },
+  {
+    "round": 4,
+    "title": "失败路径与导出目录完整性",
+    "completed_at_utc": "2026-10-23T16:08:20.055417+00:00",
+    "client_date": "2026-10-24",
+    "observations": [
+      "定制导出之前在复制后解析 metadata，损坏 metadata 可能留下不完整目标目录。",
+      "未知分类返回空列表，拼错模块名没有候选提示。"
+    ],
+    "changes": [
+      "将元数据和源路径校验前置，使用受限临时目录构建后发布，复制中断清理自建临时目录。",
+      "拒绝目录越界与符号链接，补充分类选项和拼写候选。"
+    ],
+    "checks": {
+      "failure_cases_and_unicode_export": 8,
+      "interrupted_export_cleanup": true,
+      "existing_contents_preserved": true
+    },
+    "evidence": [
+      "round-04-failures.json"
+    ],
+    "passed": true,
+    "installed_state_sha256": "a16963d08f3c4dd7e67a1b58c8fadcedaefced6907c41458ae39e8487aa2a085",
+    "installed_files": 862
+  },
+  {
+    "round": 5,
+    "title": "安装副本的全部预设真实 WebGL 验收",
+    "completed_at_utc": "2026-10-23T16:10:57.649803+00:00",
+    "client_date": "2026-10-24",
+    "observations": [
+      "通过安装副本导出全部34个模块；新自定义预设页面真实显示所选初始预设和参数。"
+    ],
+    "changes": [
+      "新增可复跑的34模块全量实际渲染验收证据，替代只看目录完整性的判断。"
+    ],
+    "checks": {
+      "modules": 34,
+      "presets": 103,
+      "parameter_change_checks": 68,
+      "numeric_extremes": 322,
+      "create_dispose_cycles": 102,
+      "low_power_modules": 34,
+      "custom_export_ui": true
+    },
+    "evidence": [
+      "round-05-webgl.json",
+      "round-05-custom-ui.json"
+    ],
+    "passed": true,
+    "installed_state_sha256": "a16963d08f3c4dd7e67a1b58c8fadcedaefced6907c41458ae39e8487aa2a085",
+    "installed_files": 862
+  },
+  {
+    "round": 6,
+    "title": "组合场景的真实输出与可复用起点",
+    "completed_at_utc": "2026-10-23T16:18:03.478558+00:00",
+    "client_date": "2026-10-24",
+    "observations": [
+      "组合指南缺少可直接运行的组合工程；两个组合均实际渲染并完成参数变化验证。"
+    ],
+    "changes": [
+      "新增 scaffold 命令、雨幕＋极光和玻璃＋辉光两个自包含范例，明确最终输出与资源所有权。"
+    ],
+    "checks": {
+      "recipes": 2,
+      "modules_per_recipe": 2,
+      "parameter_redraw_checks": 2,
+      "license_files_per_recipe": 2
+    },
+    "evidence": [
+      "round-06-export.json",
+      "round-06-ui.json",
+      "round-06-aurora-rain.png",
+      "round-06-glass-bloom.png"
+    ],
+    "passed": true,
+    "installed_state_sha256": "210a915d0b834ee895e591024b60b883c5b3a7db47e7d5694c079a63fdfcbc22",
+    "installed_files": 869
+  },
+  {
+    "round": 7,
+    "title": "暂停、离屏和相机阻尼的动画生命周期",
+    "completed_at_utc": "2026-10-23T16:25:03.934908+00:00",
+    "client_date": "2026-10-24",
+    "observations": [
+      "暂停基线在450毫秒内仍触发52次动画回调；更新后5个代表模块/组合的暂停计数均为0。",
+      "首个减少动态测试对新建 MediaQueryList 发事件未触发原监听；修正为同一对象，并用缓存隔离后的夹具复测通过。"
+    ],
+    "changes": [
+      "为33个场景预览及2个组合引入按需调度；暂停和不可见时停机，恢复时重置时钟；暂停状态下相机阻尼仍能完成并停机。",
+      "移除随销毁应释放的媒体和可见性监听。"
+    ],
+    "checks": {
+      "baseline_fixture": 1,
+      "optimized_cases": 5,
+      "paused_callbacks_per_observation": 0,
+      "pause_hidden_resume_reset": true,
+      "synthetic_reduced_motion_listener": true,
+      "native_os_media_preference_changed": false,
+      "real_pointer_orbit_settled": true
+    },
+    "evidence": [
+      "round-07-lifecycle-first.json",
+      "round-07-lifecycle.json",
+      "round-07-orbit.json"
+    ],
+    "passed": true,
+    "installed_state_sha256": "860a1498c1c73d061cbef4048df205a755ef81bcb0b36c28da63376cd53f137e",
+    "installed_files": 900
+  },
+  {
+    "round": 8,
+    "title": "手机尺寸、预设操作和无障碍控件",
+    "completed_at_utc": "2026-10-23T16:25:04.172031+00:00",
+    "client_date": "2026-10-24",
+    "observations": [
+      "34个效果与2个组合在390×844 iframe中均无横向溢出且真实就绪；颜色取色器与HEX输入原先共享一个名称。"
+    ],
+    "changes": [
+      "34个模块的颜色控件提供不同名称，移除覆盖该名称的aria-labelledby；数字控件补充范围、当前值与移动端十进制键盘提示。",
+      "实际键盘ArrowUp调参同步画面和ARIA当前值。"
+    ],
+    "checks": {
+      "module_layouts": 34,
+      "composition_layouts": 2,
+      "viewport": [
+        390,
+        844
+      ],
+      "preset_button_switches": 103,
+      "all_controls_named_uniquely": true,
+      "numeric_semantics": true,
+      "physical_phone_benchmark": false
+    },
+    "evidence": [
+      "round-08-mobile-first.json",
+      "round-08-mobile.json",
+      "round-08-keyboard.json"
+    ],
+    "passed": true,
+    "installed_state_sha256": "860a1498c1c73d061cbef4048df205a755ef81bcb0b36c28da63376cd53f137e",
+    "installed_files": 900
+  },
+  {
+    "round": 9,
+    "title": "许可事实、损坏检测与可迁移交付",
+    "completed_at_utc": "2026-10-23T16:26:08.169344+00:00",
+    "client_date": "2026-10-24",
+    "observations": [
+      "优化后的helper已改变，旧版“helper全部逐字节不变”的说明不再准确；修订为当前真实范围并保留初始记录。"
+    ],
+    "changes": [
+      "新增 verify 完整性自检和导出前模块哈希检查，阻止已损坏的供应商文件进入导出。",
+      "当前与历史来源审计分开记录，校验原始源包、34个效果文件和全部第三方依赖仍未改变；不把用户提供的Spout改标为原创。",
+      "停止在安装目录生成Python字节码缓存。"
+    ],
+    "checks": {
+      "clean_files_checked": 902,
+      "fault_cases": 5,
+      "restored_distribution_verified": true,
+      "unicode_output_exported": true,
+      "effect_files": 34,
+      "vendor_files": 169,
+      "optimized_files": 67,
+      "added_helpers": 33,
+      "original_source_packages_unchanged": true
+    },
+    "evidence": [
+      "round-09-integrity.json"
+    ],
+    "passed": true,
+    "installed_state_sha256": "0e6ae8c95393e08eadbe07a33956c6201ac37b31ecfd3c8100c7c8d0001355fe",
+    "installed_files": 903
+  },
+  {
+    "round": 10,
+    "title": "最终安装状态全量回归与交付锁定",
+    "completed_at_utc": "2026-10-23T16:33:01.499000+00:00",
+    "client_date": "2026-10-24",
+    "observations": [
+      "最终安装状态重新导出全部模块与组合；所有渲染和手机UI验收均使用这批新输出。"
+    ],
+    "changes": [
+      "加入可复跑浏览器检查与十轮证据；构建脚本改从当前维护源生成干净副本，避免旧独立包覆盖已优化内容。",
+      "交付前锁定已测试运行文件指纹，打包时同时要求本地源、安装副本与ZIP逐字节一致。"
+    ],
+    "checks": {
+      "webgl_modules": 34,
+      "presets": 103,
+      "parameter_change_checks": 68,
+      "numeric_boundary_checks": 322,
+      "create_dispose_cycles": 102,
+      "mobile_layouts": 36,
+      "relative_imports": 332,
+      "syntax_checks": 105,
+      "search_queries": 22,
+      "invalid_parameter_cases": 7,
+      "output_failure_paths": 5,
+      "actual_gallery_filters": true,
+      "custom_preset_ui": true,
+      "tested_export_bytes_equal_current_modules": true
+    },
+    "evidence": [
+      "round-10-webgl.json",
+      "round-10-mobile.json",
+      "round-10-cli.json",
+      "round-10-gallery.json",
+      "round-10-custom-ui.json",
+      "round-10-master.png",
+      "round-10-composition.png"
+    ],
+    "passed": true,
+    "installed_state_sha256": "0e6ae8c95393e08eadbe07a33956c6201ac37b31ecfd3c8100c7c8d0001355fe",
+    "installed_files": 903
+  }
+]

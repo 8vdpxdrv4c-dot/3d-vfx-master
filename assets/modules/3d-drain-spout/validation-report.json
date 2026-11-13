@@ -1,0 +1,364 @@
+{
+  "slug": "3d-drain-spout",
+  "viewport": [
+    360,
+    280
+  ],
+  "looks": [
+    {
+      "look": "channel",
+      "low": false,
+      "hash": 1708318954,
+      "brightPixels": 99046,
+      "range": 255,
+      "stats": {
+        "time": 0.7,
+        "quality": "standard",
+        "raySteps": 32,
+        "view": [
+          0.2,
+          0.8,
+          1
+        ],
+        "impactX": 2,
+        "renderSize": [
+          360,
+          280
+        ],
+        "representation": "fullscreen analytic distance field"
+      },
+      "pass": true
+    },
+    {
+      "look": "gentle",
+      "low": false,
+      "hash": 2671261254,
+      "brightPixels": 98219,
+      "range": 240,
+      "stats": {
+        "time": 0.7,
+        "quality": "standard",
+        "raySteps": 32,
+        "view": [
+          0.2,
+          0.8,
+          1
+        ],
+        "impactX": 1.453272169966796,
+        "renderSize": [
+          360,
+          280
+        ],
+        "representation": "fullscreen analytic distance field"
+      },
+      "pass": true
+    },
+    {
+      "look": "surge",
+      "low": false,
+      "hash": 607048390,
+      "brightPixels": 99645,
+      "range": 255,
+      "stats": {
+        "time": 0.7,
+        "quality": "standard",
+        "raySteps": 32,
+        "view": [
+          0.2,
+          0.8,
+          1
+        ],
+        "impactX": 2.8954274295861744,
+        "renderSize": [
+          360,
+          280
+        ],
+        "representation": "fullscreen analytic distance field"
+      },
+      "pass": true
+    },
+    {
+      "look": "channel",
+      "low": true,
+      "hash": 241897162,
+      "brightPixels": 99350,
+      "range": 238,
+      "stats": {
+        "time": 0.7,
+        "quality": "low",
+        "raySteps": 16,
+        "view": [
+          0.2,
+          0.8,
+          1
+        ],
+        "impactX": 2,
+        "renderSize": [
+          360,
+          280
+        ],
+        "representation": "fullscreen analytic distance field"
+      },
+      "pass": true
+    },
+    {
+      "look": "gentle",
+      "low": true,
+      "hash": 1710727056,
+      "brightPixels": 98945,
+      "range": 240,
+      "stats": {
+        "time": 0.7,
+        "quality": "low",
+        "raySteps": 16,
+        "view": [
+          0.2,
+          0.8,
+          1
+        ],
+        "impactX": 1.453272169966796,
+        "renderSize": [
+          360,
+          280
+        ],
+        "representation": "fullscreen analytic distance field"
+      },
+      "pass": true
+    },
+    {
+      "look": "surge",
+      "low": true,
+      "hash": 3011704903,
+      "brightPixels": 99626,
+      "range": 235,
+      "stats": {
+        "time": 0.7,
+        "quality": "low",
+        "raySteps": 16,
+        "view": [
+          0.2,
+          0.8,
+          1
+        ],
+        "impactX": 2.8954274295861744,
+        "renderSize": [
+          360,
+          280
+        ],
+        "representation": "fullscreen analytic distance field"
+      },
+      "pass": true
+    }
+  ],
+  "controls": [
+    {
+      "key": "flow",
+      "visibleChange": true,
+      "a": 2553310424,
+      "b": 430270654
+    },
+    {
+      "key": "radius",
+      "visibleChange": true,
+      "a": 3547666212,
+      "b": 3684487366
+    },
+    {
+      "key": "height",
+      "visibleChange": true,
+      "a": 2275679785,
+      "b": 2366881166
+    },
+    {
+      "key": "ripple",
+      "visibleChange": true,
+      "a": 1394517053,
+      "b": 2543902705
+    },
+    {
+      "key": "exposure",
+      "visibleChange": true,
+      "a": 3621690251,
+      "b": 3711678640
+    }
+  ],
+  "extremes": [
+    {
+      "key": "flow",
+      "value": 0.65,
+      "finite": true,
+      "hash": 3023812762,
+      "brightPixels": 99117,
+      "range": 239
+    },
+    {
+      "key": "flow",
+      "value": 1.7,
+      "finite": true,
+      "hash": 364824091,
+      "brightPixels": 99053,
+      "range": 255
+    },
+    {
+      "key": "radius",
+      "value": 0.18,
+      "finite": true,
+      "hash": 3788347369,
+      "brightPixels": 99619,
+      "range": 238
+    },
+    {
+      "key": "radius",
+      "value": 0.45,
+      "finite": true,
+      "hash": 88894267,
+      "brightPixels": 98864,
+      "range": 255
+    },
+    {
+      "key": "height",
+      "value": 1.3,
+      "finite": true,
+      "hash": 3231530773,
+      "brightPixels": 98381,
+      "range": 255
+    },
+    {
+      "key": "height",
+      "value": 2.6,
+      "finite": true,
+      "hash": 494620639,
+      "brightPixels": 99297,
+      "range": 255
+    },
+    {
+      "key": "ripple",
+      "value": 0.005,
+      "finite": true,
+      "hash": 1270840545,
+      "brightPixels": 98993,
+      "range": 255
+    },
+    {
+      "key": "ripple",
+      "value": 0.05,
+      "finite": true,
+      "hash": 2768688990,
+      "brightPixels": 99011,
+      "range": 255
+    },
+    {
+      "key": "exposure",
+      "value": 0.7,
+      "finite": true,
+      "hash": 3832722815,
+      "brightPixels": 83779,
+      "range": 255
+    },
+    {
+      "key": "exposure",
+      "value": 2.3,
+      "finite": true,
+      "hash": 3934989541,
+      "brightPixels": 100701,
+      "range": 255
+    },
+    {
+      "key": "speed",
+      "value": 0,
+      "finite": true,
+      "hash": 1345941765,
+      "brightPixels": 99035,
+      "range": 255
+    },
+    {
+      "key": "speed",
+      "value": 1.8,
+      "finite": true,
+      "hash": 4173153277,
+      "brightPixels": 99034,
+      "range": 255
+    }
+  ],
+  "cycles": [
+    {
+      "geometries": 1,
+      "textures": 0,
+      "hostChildren": 1,
+      "hostPreserved": true,
+      "cameraPreserved": true
+    },
+    {
+      "geometries": 1,
+      "textures": 0,
+      "hostChildren": 1,
+      "hostPreserved": true,
+      "cameraPreserved": true
+    },
+    {
+      "geometries": 1,
+      "textures": 0,
+      "hostChildren": 1,
+      "hostPreserved": true,
+      "cameraPreserved": true
+    }
+  ],
+  "errors": [],
+  "motion": {
+    "samples": [
+      {
+        "speed": 0.4,
+        "time": 0.4800000000000003,
+        "hash": 2006487558,
+        "brightPixels": 99040,
+        "range": 255
+      },
+      {
+        "speed": 1.2,
+        "time": 1.4400000000000008,
+        "hash": 1814785997,
+        "brightPixels": 99040,
+        "range": 255
+      }
+    ],
+    "pass": true
+  },
+  "retainedView": {
+    "a": 493487476,
+    "b": 493487476,
+    "pass": true
+  },
+  "hostState": {
+    "pass": true,
+    "renderSize": [
+      140,
+      100
+    ],
+    "viewport": [
+      13,
+      9,
+      140,
+      100
+    ]
+  },
+  "lifecycle": {
+    "pass": true
+  },
+  "mobile": {
+    "viewport": [
+      390,
+      844
+    ],
+    "ready": true,
+    "noHorizontalOverflow": true,
+    "looks": 3,
+    "lowBudget": true,
+    "canvas": [
+      206,
+      269
+    ],
+    "pass": true
+  },
+  "pass": true,
+  "master_packaging_note": "Historical evidence from the original standalone module package. Current layout and bytes are recorded in the master source-audit.json."
+}

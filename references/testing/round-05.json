@@ -1,0 +1,28 @@
+{
+  "round": 5,
+  "title": "安装副本的全部预设真实 WebGL 验收",
+  "completed_at_utc": "2026-10-23T16:10:57.649803+00:00",
+  "client_date": "2026-10-24",
+  "observations": [
+    "通过安装副本导出全部34个模块；新自定义预设页面真实显示所选初始预设和参数。"
+  ],
+  "changes": [
+    "新增可复跑的34模块全量实际渲染验收证据，替代只看目录完整性的判断。"
+  ],
+  "checks": {
+    "modules": 34,
+    "presets": 103,
+    "parameter_change_checks": 68,
+    "numeric_extremes": 322,
+    "create_dispose_cycles": 102,
+    "low_power_modules": 34,
+    "custom_export_ui": true
+  },
+  "evidence": [
+    "round-05-webgl.json",
+    "round-05-custom-ui.json"
+  ],
+  "passed": true,
+  "installed_state_sha256": "a16963d08f3c4dd7e67a1b58c8fadcedaefced6907c41458ae39e8487aa2a085",
+  "installed_files": 862
+}

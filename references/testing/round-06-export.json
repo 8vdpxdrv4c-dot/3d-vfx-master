@@ -1,0 +1,24 @@
+[
+  {
+    "recipe": "aurora-rain",
+    "title": "雨幕与极光",
+    "modules": [
+      "3d-rain",
+      "3d-aurora"
+    ],
+    "output_owner": "shared scene renderer",
+    "output": "E:\\动画制作\\课件3D知识小站\\folio\\qa\\master-optimization-10\\round-06-recipes\\aurora-rain",
+    "entry": "E:\\动画制作\\课件3D知识小站\\folio\\qa\\master-optimization-10\\round-06-recipes\\aurora-rain\\index.html"
+  },
+  {
+    "recipe": "glass-bloom",
+    "title": "玻璃产品与辉光",
+    "modules": [
+      "3d-glass",
+      "3d-bloom"
+    ],
+    "output_owner": "single bloom lens pass",
+    "output": "E:\\动画制作\\课件3D知识小站\\folio\\qa\\master-optimization-10\\round-06-recipes\\glass-bloom",
+    "entry": "E:\\动画制作\\课件3D知识小站\\folio\\qa\\master-optimization-10\\round-06-recipes\\glass-bloom\\index.html"
+  }
+]

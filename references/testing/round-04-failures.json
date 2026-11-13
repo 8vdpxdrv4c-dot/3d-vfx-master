@@ -1,0 +1,45 @@
+[
+  {
+    "case": "self-output",
+    "rejected": true,
+    "message": "Choose an output directory outside the installed skill."
+  },
+  {
+    "case": "catalog-escape",
+    "rejected": true,
+    "message": "Module resource path must be a directory inside the installed skill."
+  },
+  {
+    "case": "existing-directory",
+    "rejected": true,
+    "message": "Output directory already exists; choose a new directory: E:\\动画制作\\课件3D知识小站\\folio\\qa\\master-optimization-10\\round-04-fixtures"
+  },
+  {
+    "case": "copy interruption",
+    "clean_target": true,
+    "temporary_directory_cleaned": true
+  },
+  {
+    "case": "corrupted metadata",
+    "rejected_before_target_creation": true
+  },
+  {
+    "case": "unicode and spaces",
+    "exported": true
+  },
+  {
+    "case": [
+      "show",
+      "3d-smok"
+    ],
+    "actionable_error": true
+  },
+  {
+    "case": [
+      "list",
+      "--category",
+      "unknown"
+    ],
+    "actionable_error": true
+  }
+]

@@ -1,0 +1,45 @@
+{
+  "pass": true,
+  "search_queries": 22,
+  "python_js_parity": true,
+  "category_and_source_filters": true,
+  "custom_exports": [
+    {
+      "module": "3d-smoke",
+      "customized": true,
+      "installed_metadata_unchanged": true
+    },
+    {
+      "module": "3d-rain",
+      "customized": true,
+      "installed_metadata_unchanged": true
+    },
+    {
+      "module": "3d-slice-reveal",
+      "customized": true,
+      "installed_metadata_unchanged": true
+    },
+    {
+      "module": "3d-bloom",
+      "customized": true,
+      "installed_metadata_unchanged": true
+    },
+    {
+      "module": "3d-glass",
+      "customized": true,
+      "installed_metadata_unchanged": true
+    }
+  ],
+  "bom_parameters": true,
+  "invalid_parameters_rejected": 7,
+  "failure_paths": [
+    "self-output",
+    "catalog-escape",
+    "existing-directory",
+    "interrupted copy cleanup",
+    "unsupported metadata preflight"
+  ],
+  "actionable_errors": 2,
+  "recipe_output_guards": 2,
+  "installed_integrity": true
+}

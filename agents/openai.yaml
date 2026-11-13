@@ -1,0 +1,6 @@
+interface:
+  display_name: "3Dfans特效大师"
+  short_description: "统一制作与组合三维可视化特效，内置39个模块、122套预设；夕阳户外环境应用 3d-skybox-sunset，下雨天气应用 3d-rain-streaks，GPU体积火焰应用 3d-webgpu-volume-fire（需WebGPU+安全上下文），逼真海水先选效果"
+  default_prompt: "使用 $3d-vfx-master 根据我的需求选择、组合和调优三维可视化特效，并交付可运行的交互页面。"
+policy:
+  allow_implicit_invocation: true

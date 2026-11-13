@@ -1,0 +1,31 @@
+{
+  "date": "2026-10-31",
+  "environment": "Chromium headless / SwiftShader",
+  "viewport": [
+    1280,
+    800
+  ],
+  "mobile": [
+    390,
+    844
+  ],
+  "pass": true,
+  "offline": true,
+  "presets": 3,
+  "exportOverrides": {
+    "look": "ashes",
+    "progress": 0.8
+  },
+  "adapterLifecycleCycles": 3,
+  "checked": [
+    "offline dependencies",
+    "exported look and parameter override",
+    "three live presets",
+    "play and reset",
+    "instance isolation",
+    "adapter shader compilation",
+    "repeated create/dispose and host material restoration",
+    "mobile overflow"
+  ],
+  "errors": []
+}

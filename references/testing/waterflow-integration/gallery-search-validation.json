@@ -1,0 +1,28 @@
+{
+  "queries": [
+    {
+      "count": 1,
+      "query": "清透水流",
+      "visible": [
+        "3d-cube-waterflow"
+      ]
+    },
+    {
+      "count": 2,
+      "query": "clear water",
+      "visible": [
+        "3d-ocean",
+        "3d-cube-waterflow"
+      ]
+    }
+  ],
+  "independentCount": 34,
+  "waterCategory": {
+    "count": 2,
+    "slugs": [
+      "3d-ocean",
+      "3d-cube-waterflow"
+    ]
+  },
+  "pass": true
+}

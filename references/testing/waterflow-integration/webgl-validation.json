@@ -1,0 +1,142 @@
+{
+  "looks": [
+    {
+      "name": "steady",
+      "hash": 3259579739,
+      "bright": 297334
+    },
+    {
+      "name": "full",
+      "hash": 983226229,
+      "bright": 297267
+    },
+    {
+      "name": "gentle",
+      "hash": 3192308490,
+      "bright": 297369
+    }
+  ],
+  "controls": [
+    {
+      "key": "flow",
+      "changed": true,
+      "a": 221739261,
+      "b": 1432572570
+    },
+    {
+      "key": "pressure",
+      "changed": true,
+      "a": 3277594481,
+      "b": 4054679239
+    },
+    {
+      "key": "level",
+      "changed": true,
+      "a": 181263462,
+      "b": 1322698115
+    },
+    {
+      "key": "waves",
+      "changed": true,
+      "a": 921546993,
+      "b": 1088789104
+    }
+  ],
+  "limits": [
+    {
+      "key": "flow",
+      "value": 0,
+      "finite": true
+    },
+    {
+      "key": "flow",
+      "value": 1.5,
+      "finite": true
+    },
+    {
+      "key": "pressure",
+      "value": 0.55,
+      "finite": true
+    },
+    {
+      "key": "pressure",
+      "value": 1.65,
+      "finite": true
+    },
+    {
+      "key": "level",
+      "value": 0.55,
+      "finite": true
+    },
+    {
+      "key": "level",
+      "value": 0.9,
+      "finite": true
+    },
+    {
+      "key": "waves",
+      "value": 0.1,
+      "finite": true
+    },
+    {
+      "key": "waves",
+      "value": 1.5,
+      "finite": true
+    }
+  ],
+  "cycles": [
+    {
+      "geometries": 0,
+      "textures": 2,
+      "host": true,
+      "camera": true
+    },
+    {
+      "geometries": 0,
+      "textures": 2,
+      "host": true,
+      "camera": true
+    },
+    {
+      "geometries": 0,
+      "textures": 2,
+      "host": true,
+      "camera": true
+    },
+    {
+      "geometries": 0,
+      "textures": 2,
+      "host": true,
+      "camera": true
+    }
+  ],
+  "optics": {
+    "transmission": 0.985,
+    "ior": 1.333,
+    "metalness": 0,
+    "emissive": 0
+  },
+  "poolBedVisible": true,
+  "motion": {
+    "changed": true,
+    "dropsEmitted": 69,
+    "ripplesEmitted": 16,
+    "activeDrops": 7,
+    "capacity": 200,
+    "rippleSlots": 14
+  },
+  "zeroFlow": true,
+  "rippleDecay": {
+    "remainingAtStop": 14,
+    "remainingAfterThreeSeconds": 0,
+    "noNewEmissions": true
+  },
+  "restoredFlow": true,
+  "noGrowth": true,
+  "lowPower": {
+    "visible": true,
+    "particles": 100
+  },
+  "errors": [],
+  "pass": true
+}

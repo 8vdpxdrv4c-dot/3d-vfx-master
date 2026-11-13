@@ -1,0 +1,43 @@
+{
+  "skill": "3d-vfx-master",
+  "display_name": "3D可视化特效大师",
+  "pass": true,
+  "registered_skill_entries": 1,
+  "modules": 35,
+  "looks": 106,
+  "interface_valid": true,
+  "relative_imports_checked": 339,
+  "preserved_effect_vendor_files": 203,
+  "module_files_verified": 886,
+  "original_packages_unchanged": true,
+  "source_counts": {
+    "independent": 34,
+    "user-supplied": 1
+  },
+  "search_and_filters_passed": true,
+  "exports": [
+    {
+      "slug": "3d-rain",
+      "exported_to": "E:\\动画制作\\课件3D知识小站\\folio\\qa\\master-export-oif5x5eu\\3d-rain",
+      "file_count": 26,
+      "bytes_match": true,
+      "overwrite_rejected": true
+    },
+    {
+      "slug": "3d-drain-spout",
+      "exported_to": "E:\\动画制作\\课件3D知识小站\\folio\\qa\\master-export-oif5x5eu\\3d-drain-spout",
+      "file_count": 32,
+      "bytes_match": true,
+      "overwrite_rejected": true
+    },
+    {
+      "slug": "3d-cube-waterflow",
+      "exported_to": "E:\\动画制作\\课件3D知识小站\\folio\\qa\\master-export-oif5x5eu\\3d-cube-waterflow",
+      "file_count": 22,
+      "bytes_match": true,
+      "overwrite_rejected": true
+    }
+  ],
+  "preview_scripts_syntax_passed": 107,
+  "markdown_links_checked": true
+}

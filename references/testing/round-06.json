@@ -1,0 +1,27 @@
+{
+  "round": 6,
+  "title": "组合场景的真实输出与可复用起点",
+  "completed_at_utc": "2026-10-23T16:18:03.478558+00:00",
+  "client_date": "2026-10-24",
+  "observations": [
+    "组合指南缺少可直接运行的组合工程；两个组合均实际渲染并完成参数变化验证。"
+  ],
+  "changes": [
+    "新增 scaffold 命令、雨幕＋极光和玻璃＋辉光两个自包含范例，明确最终输出与资源所有权。"
+  ],
+  "checks": {
+    "recipes": 2,
+    "modules_per_recipe": 2,
+    "parameter_redraw_checks": 2,
+    "license_files_per_recipe": 2
+  },
+  "evidence": [
+    "round-06-export.json",
+    "round-06-ui.json",
+    "round-06-aurora-rain.png",
+    "round-06-glass-bloom.png"
+  ],
+  "passed": true,
+  "installed_state_sha256": "210a915d0b834ee895e591024b60b883c5b3a7db47e7d5694c079a63fdfcbc22",
+  "installed_files": 869
+}

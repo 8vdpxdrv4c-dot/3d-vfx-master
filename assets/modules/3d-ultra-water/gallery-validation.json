@@ -1,0 +1,47 @@
+{
+  "errors": [],
+  "shots": [
+    {
+      "title": "深海涌浪",
+      "selected": "open-ocean",
+      "view": "Open ocean",
+      "hash": "#open-ocean"
+    },
+    {
+      "title": "岸边碎浪",
+      "selected": "breakers",
+      "view": "Breakers",
+      "hash": "#breakers"
+    },
+    {
+      "title": "清澈浅海",
+      "selected": "lagoon",
+      "view": "Lagoon",
+      "hash": "#lagoon"
+    },
+    {
+      "title": "夕阳海面",
+      "selected": "golden-hour",
+      "view": "Golden hour",
+      "hash": "#golden-hour"
+    },
+    {
+      "title": "水下视角",
+      "selected": "underwater",
+      "view": "Underwater",
+      "hash": "#underwater"
+    }
+  ],
+  "pauseStable": true,
+  "speed": 1.5,
+  "chosen": "我选择“清澈浅海”水效果（lagoon）。",
+  "link": "http://127.0.0.1:4397/assets/modules/3d-ultra-water/preview.html#lagoon",
+  "reset": true,
+  "layout": {
+    "noOverflow": true,
+    "cards": 5,
+    "imagesLoaded": true
+  },
+  "deepLink": "Lagoon",
+  "browser": "156.0.8078.73"
+}

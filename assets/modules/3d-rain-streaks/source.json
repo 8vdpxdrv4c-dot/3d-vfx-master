@@ -1,0 +1,32 @@
+{
+  "project": "用户提供：几猫 · 雨效独立演示（可调雨点大小）单文件 HTML",
+  "input_form": "2026-11-12 对话内联长文本（@long-text），未附独立文件与整体许可证",
+  "extracted_at": "2026-11-12",
+  "copied_identifiers": [
+    "makeRainGeometry",
+    "makeSplashGeometry",
+    "RAIN_VERT",
+    "RAIN_FRAG",
+    "SPLASH_VERT",
+    "SPLASH_FRAG",
+    "wPhase",
+    "sHash",
+    "RAIN_COUNT",
+    "SPLASH_COUNT",
+    "RAIN_BOX",
+    "rainUniforms",
+    "splashUniforms",
+    "updatePix",
+    "updateWind",
+    "createRainStage"
+  ],
+  "shader_sha256": {
+    "RAIN_VERT": "f1479dea1b400126ea89f6cf609373675e1474d96e6dc728add229af91647dd2",
+    "RAIN_FRAG": "15d57e264e67598b582b92cd508d36e81ccb32280516fa3100686e21e13c42c4",
+    "SPLASH_VERT": "f34e09a653e253873820b34aba77ca249a93decbb3a39d76b84b6344cf09ba9c",
+    "SPLASH_FRAG": "410001a95a1d635c9838b70d3751e44622f9bfd96fa718d3d556ac7d37d0959f"
+  },
+  "shader_combined_sha256": "3b654be5875250e1fc3e9d39de2eea34c4a086a8b2184c8de12d68d105e922d2",
+  "omitted_depth_passes": [],
+  "note": "四段着色器与两组几何逐字提取；没有任何渲染通道被省略。参数只映射到已有 uniform / instanceCount / 时间推进。"
+}

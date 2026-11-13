@@ -6,6 +6,8 @@
 
 ### Codex
 
+将仓库克隆到 Codex 的技能目录：
+
 ```powershell
 git clone https://github.com/8vdpxdrv4c-dot/3d-vfx-master.git "$HOME/.codex/skills/3d-vfx-master"
 ```
@@ -13,6 +15,8 @@ git clone https://github.com/8vdpxdrv4c-dot/3d-vfx-master.git "$HOME/.codex/skil
 重启 Codex 后即可使用 `$3d-vfx-master`。
 
 ### 其它支持 Agent Skills 的工具
+
+将仓库克隆到工具的 skills 目录，例如：
 
 ```sh
 git clone https://github.com/8vdpxdrv4c-dot/3d-vfx-master.git ~/.agents/skills/3d-vfx-master
@@ -25,6 +29,11 @@ git clone https://github.com/8vdpxdrv4c-dot/3d-vfx-master.git ~/.agents/skills/3
 ```sh
 python scripts/toolkit.py search "烟雾和火花"
 python scripts/toolkit.py export 3d-skybox-sunset --look sunset-outdoor --out ./sunset-demo
+```
+
+完整自检：
+
+```sh
 python scripts/toolkit.py verify
 ```
 

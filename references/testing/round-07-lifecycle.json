@@ -1,0 +1,82 @@
+{
+  "rows": [
+    {
+      "name": "baseline",
+      "initialPausedTicks": 52,
+      "observedUnnecessaryCallbacks": true,
+      "pass": true
+    },
+    {
+      "name": "smoke",
+      "initialPausedTicks": 0,
+      "initialParked": true,
+      "played": true,
+      "pauseParked": true,
+      "resetRedraw": true,
+      "resetSettled": true,
+      "hiddenParked": true,
+      "resumed": true,
+      "mediaHook": "ready",
+      "syntheticReducedMotionPaused": true,
+      "pass": true
+    },
+    {
+      "name": "bloom",
+      "initialPausedTicks": 0,
+      "initialParked": true,
+      "played": true,
+      "pauseParked": true,
+      "resetRedraw": true,
+      "resetSettled": true,
+      "hiddenParked": true,
+      "resumed": true,
+      "mediaHook": "ready",
+      "syntheticReducedMotionPaused": true,
+      "pass": true
+    },
+    {
+      "name": "rain",
+      "initialPausedTicks": 0,
+      "initialParked": true,
+      "played": true,
+      "pauseParked": true,
+      "resetRedraw": true,
+      "resetSettled": true,
+      "hiddenParked": true,
+      "resumed": true,
+      "mediaHook": "ready",
+      "syntheticReducedMotionPaused": true,
+      "pass": true
+    },
+    {
+      "name": "aurora-rain",
+      "initialPausedTicks": 0,
+      "initialParked": true,
+      "played": true,
+      "pauseParked": true,
+      "resetRedraw": true,
+      "resetSettled": true,
+      "hiddenParked": true,
+      "resumed": true,
+      "mediaHook": "ready",
+      "syntheticReducedMotionPaused": true,
+      "pass": true
+    },
+    {
+      "name": "glass-bloom",
+      "initialPausedTicks": 0,
+      "initialParked": true,
+      "played": true,
+      "pauseParked": true,
+      "resetRedraw": true,
+      "resetSettled": true,
+      "hiddenParked": true,
+      "resumed": true,
+      "mediaHook": "ready",
+      "syntheticReducedMotionPaused": true,
+      "pass": true
+    }
+  ],
+  "pass": true,
+  "media_scope": "Synthetic MediaQueryList change listener test; no native OS preference change."
+}

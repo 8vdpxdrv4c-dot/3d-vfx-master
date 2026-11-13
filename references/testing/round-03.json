@@ -1,0 +1,24 @@
+{
+  "round": 3,
+  "title": "指定预设与实际参数导出",
+  "completed_at_utc": "2026-10-23T16:06:42.874773+00:00",
+  "client_date": "2026-10-24",
+  "observations": [
+    "原命令不支持选择初始预设或指定参数，只能导出默认展示。"
+  ],
+  "changes": [
+    "增加 --look、可重复 --set 和支持 BOM 的 --params-file。",
+    "数值、布尔、颜色和枚举依据参数契约验证，保留其他预设与来源记录。"
+  ],
+  "checks": {
+    "valid_exports": 6,
+    "invalid_inputs_rejected": 7,
+    "installed_templates_unchanged": true
+  },
+  "evidence": [
+    "round-03-preset-exports.json"
+  ],
+  "passed": true,
+  "installed_state_sha256": "2a446095690a2d027e92e4fbcaa25e132e256572f9d7f2d15281eaaba1bfa77b",
+  "installed_files": 862
+}

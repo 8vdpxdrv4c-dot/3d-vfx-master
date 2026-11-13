@@ -1,0 +1,145 @@
+{
+  "date": "2026-10-24",
+  "module": "3d-cube-waterflow",
+  "local_source_project": "E:\\动画制作\\课件3D知识小站\\folio\\3d-cube-waterflow",
+  "source_kind": "independent",
+  "no_external_models_images_or_spout_shader": true,
+  "files": [
+    {
+      "source": "3d-cube-waterflow/effects/cube-water-stream.js",
+      "source_sha256": "f4e3b4ed6a5e2b60f0c24bd0762ce9bbc15f096633770968f3b9e28a6bd17b91",
+      "target": "assets/modules/3d-cube-waterflow/demos/effects/cube-water-stream.js",
+      "target_sha256": "06d63c2a9f5e6ec26be44c0899b51b6b083629ff6651938d9adef3fa8c0a6b66",
+      "byte_identical": false,
+      "adaptation": "relative dependency paths or metadata-driven preset initialization"
+    },
+    {
+      "source": "3d-cube-waterflow/effects/water-dynamics.js",
+      "source_sha256": "7e4bdecb4d00f9d4af1e99d8983f625c6c91d5e691f515546b2c55fb82b9dccf",
+      "target": "assets/modules/3d-cube-waterflow/demos/effects/water-dynamics.js",
+      "target_sha256": "7e4bdecb4d00f9d4af1e99d8983f625c6c91d5e691f515546b2c55fb82b9dccf",
+      "byte_identical": true,
+      "adaptation": null
+    },
+    {
+      "source": "3d-cube-waterflow/modules/pipe-flow/demos/lib/setup.js",
+      "source_sha256": "5f14a1246c52a38c49496fd308c6a6a5096ef606fdd455b2b2af1b7b233023b3",
+      "target": "assets/modules/3d-cube-waterflow/demos/lib/setup.js",
+      "target_sha256": "5f14a1246c52a38c49496fd308c6a6a5096ef606fdd455b2b2af1b7b233023b3",
+      "byte_identical": true,
+      "adaptation": null
+    },
+    {
+      "source": "3d-cube-waterflow/modules/pipe-flow/demos/lib/frame-driver.js",
+      "source_sha256": "9960c88f222520de0b269dedfa3ab2931d4a0439a7a6373afe48a3732ea08a84",
+      "target": "assets/modules/3d-cube-waterflow/demos/lib/frame-driver.js",
+      "target_sha256": "9960c88f222520de0b269dedfa3ab2931d4a0439a7a6373afe48a3732ea08a84",
+      "byte_identical": true,
+      "adaptation": null
+    },
+    {
+      "source": "3d-cube-waterflow/modules/pipe-flow/demos/lib/dispose.js",
+      "source_sha256": "3d51e4bd3be90a30fae564161ee2cfd35bdf5b24bb25f85d6e01d9db85737cd1",
+      "target": "assets/modules/3d-cube-waterflow/demos/lib/dispose.js",
+      "target_sha256": "3d51e4bd3be90a30fae564161ee2cfd35bdf5b24bb25f85d6e01d9db85737cd1",
+      "byte_identical": true,
+      "adaptation": null
+    },
+    {
+      "source": "3d-cube-waterflow/modules/pipe-flow/demos/lib/core.js",
+      "source_sha256": "985bd2f48cf60c5f48ccd830b65f6ee068bc727424f2a4a389097a6eafe6a337",
+      "target": "assets/modules/3d-cube-waterflow/demos/lib/core.js",
+      "target_sha256": "985bd2f48cf60c5f48ccd830b65f6ee068bc727424f2a4a389097a6eafe6a337",
+      "byte_identical": true,
+      "adaptation": null
+    },
+    {
+      "source": "3d-cube-waterflow/modules/pipe-flow/demos/vendor/three.module.js",
+      "source_sha256": "76dea8151bc9352aef3528b4262e249b2604f62543828328db978d060d61a495",
+      "target": "assets/modules/3d-cube-waterflow/demos/vendor/three.module.js",
+      "target_sha256": "76dea8151bc9352aef3528b4262e249b2604f62543828328db978d060d61a495",
+      "byte_identical": true,
+      "adaptation": null
+    },
+    {
+      "source": "3d-cube-waterflow/modules/pipe-flow/demos/vendor/addons/controls/OrbitControls.js",
+      "source_sha256": "5a44a9e86a2a0fb11933eed69bc2cd33c76a496854c1aed6ed776efa87d7b064",
+      "target": "assets/modules/3d-cube-waterflow/demos/vendor/addons/controls/OrbitControls.js",
+      "target_sha256": "5a44a9e86a2a0fb11933eed69bc2cd33c76a496854c1aed6ed776efa87d7b064",
+      "byte_identical": true,
+      "adaptation": null
+    },
+    {
+      "source": "3d-cube-waterflow/modules/pipe-flow/demos/vendor/THREE-MIT.txt",
+      "source_sha256": "852e0e8699169bf9f6fdc6bda3e682d078dcbc738b5d33e74df594721bff271d",
+      "target": "assets/modules/3d-cube-waterflow/demos/vendor/THREE-MIT.txt",
+      "target_sha256": "852e0e8699169bf9f6fdc6bda3e682d078dcbc738b5d33e74df594721bff271d",
+      "byte_identical": true,
+      "adaptation": null
+    },
+    {
+      "source": "3d-cube-waterflow/LICENSE.txt",
+      "source_sha256": "d4ce51b0fe95290aea376a8d378a79fb9b6cb083a523baddb012fac61fadb9f1",
+      "target": "assets/modules/3d-cube-waterflow/LICENSE.txt",
+      "target_sha256": "d4ce51b0fe95290aea376a8d378a79fb9b6cb083a523baddb012fac61fadb9f1",
+      "byte_identical": true,
+      "adaptation": null
+    },
+    {
+      "source": "3d-cube-waterflow/styles.css",
+      "source_sha256": "94bd0fad5d7947cc4e44b55c923f5d15647bf084d7358636688626056315ba22",
+      "target": "assets/modules/3d-cube-waterflow/demos/styles.css",
+      "target_sha256": "94bd0fad5d7947cc4e44b55c923f5d15647bf084d7358636688626056315ba22",
+      "byte_identical": true,
+      "adaptation": null
+    },
+    {
+      "source": "3d-cube-waterflow/preview.png",
+      "source_sha256": "c665b03a764885f669fe09d0811872498e92c2cc9b1a5c9d992f0cff55ee1e04",
+      "target": "assets/modules/3d-cube-waterflow/preview.png",
+      "target_sha256": "c665b03a764885f669fe09d0811872498e92c2cc9b1a5c9d992f0cff55ee1e04",
+      "byte_identical": true,
+      "adaptation": null
+    },
+    {
+      "source": "3d-cube-waterflow/main.js",
+      "source_sha256": "f3edbc525657c47c4cd57f61282b891c77ceee0cb8f7ae6e80de2b1ec42384f8",
+      "target": "assets/modules/3d-cube-waterflow/demos/main.js",
+      "target_sha256": "5ca0b48f3ad4935e83d92aacd651dfefaad015ed29920a2cd94f25571408ca2a",
+      "byte_identical": false,
+      "adaptation": "relative dependency paths or metadata-driven preset initialization"
+    },
+    {
+      "source": "3d-cube-waterflow/index.html",
+      "source_sha256": "4352bfee95febe0c2acc1f3861300c0020e5b2e645588e5d84a6802ed087095f",
+      "target": "assets/modules/3d-cube-waterflow/demos/index.html",
+      "target_sha256": "c33aa2ab404b48e4fd01a662793bfd4ff80442386f32085b43c1efbf7aa4e34e",
+      "byte_identical": false,
+      "adaptation": "relative dependency paths or metadata-driven preset initialization"
+    },
+    {
+      "source": "3d-cube-waterflow/qa/check.js",
+      "source_sha256": "7e023012a034075354bc71c093fd9fbcca44b1c3148bf1ddcf64b93bee2d4b06",
+      "target": "assets/modules/3d-cube-waterflow/qa/check.js",
+      "target_sha256": "fd7f6480bf2297ae90d446029ef0e8297c45f2d87e28a3c973e446d50411f0d7",
+      "byte_identical": false,
+      "adaptation": "relative dependency paths or metadata-driven preset initialization"
+    },
+    {
+      "source": "3d-cube-waterflow/qa/check.html",
+      "source_sha256": "2bd879df2d1cac8089013e839a82a89ac4175b67811b9156fe2ea5c38d8aa958",
+      "target": "assets/modules/3d-cube-waterflow/qa/check.html",
+      "target_sha256": "7e22ec71c77e3b1812d64ed7a9be3f4fb8c9f58163e2249bc77151a91e56cce2",
+      "byte_identical": false,
+      "adaptation": "relative dependency paths or metadata-driven preset initialization"
+    },
+    {
+      "source": "3d-cube-waterflow/qa/mobile.html",
+      "source_sha256": "bf3a16ea87829bfe8e5582ff26c565398a69ac0134e94a373a67c8f4dbb17774",
+      "target": "assets/modules/3d-cube-waterflow/qa/mobile.html",
+      "target_sha256": "f4f638b0289af82457d31daff1bbecbb73954292c167d008042d17a22f93d881",
+      "byte_identical": false,
+      "adaptation": "relative dependency paths or metadata-driven preset initialization"
+    }
+  ]
+}

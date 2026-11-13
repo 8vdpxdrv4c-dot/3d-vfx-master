@@ -1,0 +1,50 @@
+{
+  "repository": "https://github.com/8vdpxdrv4c-dot/Ultra-Water",
+  "upstream": "https://github.com/Humpalumps/Ultra-Water",
+  "retrieved": "2026-10-30",
+  "license": "MIT",
+  "copyright": "2026 Humpalumps",
+  "adaptations": [
+    "local dependency imports",
+    "Chinese look selector with five complete parameter presets",
+    "pause/reset/reduced-motion/hidden-tab scheduling",
+    "isolated viewport lifecycle adapter",
+    "five-look reference gallery with real-render thumbnails, deep links and clipboard selection"
+  ],
+  "source_sha256": {
+    ".gitignore": "c8015948b6eaefde5eaa3862f2fe5ce0245fcde4d6e66f7441dcdcbbed46e652",
+    "index.html": "864c1ba00accda4c938e7b487fe2bfb282e116b6b29d54a84f0c9898c931c95f",
+    "LICENSE": "a7ae787156c7424b41ab82cb77d72448560c69de725c1da8458305fa1a195450",
+    "package-lock.json": "3df9c207a2ff94949e92ddc664553f48fe29195a20170736291a804e2f8a1144",
+    "package.json": "09287b969143ae1a39b0ca62e6b12d79a77bf74cef3ca3f871b43b8c225c9089",
+    "README.md": "dfe53d09f0eac7d2dba7163d6213c275257aa6930d62343983ecc77b69392587",
+    "THIRD_PARTY_NOTICES.md": "9b2ed38fa6072a1a595497f003471a33e975b4ff6d1939446af1a7585839dcc5",
+    "src/main.js": "37f5c9668e9a3eef9450f24a96297e50c2ffdf8c349445a6c22d696d3d76d6ea",
+    "src/engine/fullscreen.js": "aa898f984abc03abff5a957c34b262aca41431ef7ba380e3fe2e463e3f213aed",
+    "src/engine/gpuTimer.js": "ba253369b491f7201affab69352859a4c9f2c5ad8793e8fd7db89eb2af1a79ce",
+    "src/engine/PlanarReflection.js": "86aea8c450106eaadde1463468a5f2bab550e17ecf40c2f7edd1e0d25320d52b",
+    "src/engine/PostFX.js": "2786abbe429acfe4309b22dd03c30878053137b5b1faa39671b7847aa2b4991b",
+    "src/scene/atmosphere.js": "fac768dd1139fd1ff68d442ed4472fd455a03ae2c6c809d0967a3d64a059f60f",
+    "src/scene/floaterMeshes.js": "0f6637b65139e9a9e1ee2da756c692df43617c2ae51ebf7601954fbe9ac59fc4",
+    "src/scene/floaters.js": "b39c529168b6274ae26142f5f9f550898aa682dfe19fafc3ae6aa0c96e2b15ea",
+    "src/scene/floaterShadow.js": "4e97a7eaba8126fbdc573b5647ab6a26abe55d6338c3967a33b19b8d5267cb70",
+    "src/scene/islandHeight.js": "844b0a96f8e866249eb4ea809fd7d23848ba8ca97c7d733504528a204b8c9afa",
+    "src/scene/noise.js": "b87d2ba602fe6740583ca719d194ff67939ba4ba0fdd9c2919cce89ea4238591",
+    "src/scene/sky.js": "1527d027c0c28f3f5665a42cc391f1e16f4e79a86017e0ebbf72449b19973412",
+    "src/scene/terrain.js": "57227bd885da2ba6794d0c36174185eab3af321687e8c261b06e3f27f010f869",
+    "src/scene/terrainGeometry.js": "e8b7f27574ffaad013fa048d7a4aa8b43c00c9777ddfe614a26d56d6e24bdaef",
+    "src/water/bakeTextures.js": "73c80456536adea30eab2ea57719aea5d779c8dd0953a33da2ca86aa60240b7a",
+    "src/water/Caustics.js": "0dc854195e4c5a0c97cccd036396e4bd0efd77e9bf37149c09b710dbecb4bdcf",
+    "src/water/MarineSnow.js": "a4cb6173bff6ecc877545f0517ab259e3bcba95e905d93655daab847db4a4c09",
+    "src/water/OceanSim.js": "46ff48715fa986dcf34dc92e05d33d1a2b171cd4ef853e3fbe4a1349696ab5b8",
+    "src/water/OceanSurface.js": "086d14f0d0bdb395e1addfcb7da8499a4d8a70e1990d04a0fbbaf25c8216058e",
+    "src/water/shoreMap.js": "af43fb2a694f5fe219630d7bb0db05b99a72ae04963d8865fb5e4d2d667b1d53",
+    "src/water/Spray.js": "8aa4fa11764da5b25e257e016410abbd17959f68e6e7de757384033fd4e544ed",
+    "src/water/UnderwaterPass.js": "1e5ceb61e4d954dd995a3f24267ef6e6da656f4335013e13f7feba6744e12b5c",
+    "src/water/WaterQuery.js": "5bd01ad29883b972e9e0bb2df17795b7cc31ca80c43d6b26250b187fee350e0c"
+  },
+  "dependencies": {
+    "three": "0.186.1",
+    "lil-gui": "0.21.0"
+  }
+}

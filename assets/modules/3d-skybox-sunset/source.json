@@ -1,0 +1,19 @@
+{
+  "project": "用户提供：extracted-sky-glow-standalone.html（源自「几猫3A大作」）",
+  "extracted_at": "2026-11-11",
+  "files": [
+    {
+      "path": "C:/Users/yaoja/Desktop/extracted-sky-glow-standalone.html",
+      "bytes": 65727,
+      "sha256": "c4992ebc1ad0af4fca76fc06c3312b5dbf5e96e61ea36dffb968f8094163eff1"
+    }
+  ],
+  "copied_identifiers": [
+    "Ug", "Ng", "H6", "V6", "G6", "Js", "Og",
+    "J6", "K6", "Q6", "eA", "tA", "nA", "iA",
+    "Mn (SUN)", "en (SKY_PALETTE)", "g (POST_TUNE)",
+    "Oy", "W6", "Hy", "Vy", "createHdrTarget"
+  ],
+  "omitted_depth_passes": ["q6", "X6", "Y6", "$6", "$y", "Z6", "j6"],
+  "note": "着色器文本逐字提取；H6 仅加入四个倍率 uniform。输入未附独立许可证。"
+}

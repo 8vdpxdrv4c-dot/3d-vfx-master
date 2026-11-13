@@ -1,0 +1,25 @@
+{
+  "project": "E:\\动画制作\\haiyantang",
+  "files": [
+    {
+      "path": "js/materials.js",
+      "sha256": "5e65314813e37bd4f9b63b7c27829309403ec637301a76fa8e1cb16cedae53bd"
+    },
+    {
+      "path": "js/fx.js",
+      "sha256": "632714ee89f0a725f70784b33ced2fcbb509422d3729c1cc51569c481912febe"
+    },
+    {
+      "path": "js/noise.js",
+      "sha256": "27c73dec74748ab5dae67f39805f919a020303245d9137eca72d99d5929c7e99"
+    },
+    {
+      "path": "js/burn-dissolve.js",
+      "sha256": "097e059421f66f4056ccd5f8650357fd4908f0db73c913d2da45b088f5ea8ffd"
+    },
+    {
+      "path": "burn-demo.html",
+      "sha256": "be39773f8602a272151373a8c886bd7e0ee94f65ee5bec4b6b054c14676fe2f4"
+    }
+  ]
+}

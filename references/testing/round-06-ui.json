@@ -1,0 +1,18 @@
+{
+  "recipes": [
+    {
+      "name": "aurora-rain",
+      "before": 2,
+      "after": 3,
+      "parameterRedraw": true,
+      "ready": true
+    },
+    {
+      "name": "glass-bloom",
+      "before": "2",
+      "after": "3",
+      "parameterRedraw": true,
+      "ready": true
+    }
+  ]
+}

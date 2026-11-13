@@ -1,0 +1,16 @@
+{
+  "pass": true,
+  "syntax_files": [
+    "demos/checks.js",
+    "demos/main.js",
+    "demos/meta.js",
+    "demos/effects/fluid-drain-spout.js",
+    "demos/lib/dispose.js",
+    "demos/lib/gui.js",
+    "demos/lib/spout-shaders.js"
+  ],
+  "relative_imports": true,
+  "vendor_bytes": true,
+  "preserved_existing_33_authored_files": 634,
+  "master_packaging_note": "Historical evidence from the original standalone module package. Current layout and bytes are recorded in the master source-audit.json."
+}

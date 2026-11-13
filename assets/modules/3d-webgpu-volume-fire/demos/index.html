@@ -1,0 +1,492 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>GPU 体积火焰 · 3Dfans特效大师</title>
+<style>
+:root{color-scheme:dark;--bg:#07090d;--panel:#0e131b;--line:#ffffff1f;--text:#dfe6ea;--dim:#8b9aa5;--accent:#ff8a3d;--ok:#7fcf9f;--warn:#e2b07a}
+*{box-sizing:border-box}
+html,body{margin:0;height:100%;background:var(--bg);color:var(--text);font:13px/1.6 "Microsoft YaHei",system-ui,sans-serif;overflow:hidden}
+#view{position:fixed;inset:0}
+#hud{position:fixed;left:20px;top:18px;pointer-events:none;text-shadow:0 1px 8px #000c}
+#hud h1{margin:0;font-size:19px;font-weight:400;letter-spacing:.01em}
+#hud small{color:var(--dim);font-size:10px;letter-spacing:.14em;text-transform:uppercase}
+#hud p{margin:8px 0 0;font-size:11px;color:#b7c3cb;max-width:430px}
+#panel{position:fixed;right:0;top:0;bottom:0;width:326px;background:linear-gradient(180deg,#0d131bee,#080b10f5);border-left:1px solid var(--line);overflow-y:auto;padding:16px 16px 90px;backdrop-filter:blur(8px)}
+#panel.hidden{transform:translateX(100%)}
+#panel h2{font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--dim);margin:18px 0 8px;font-weight:400}
+#panel h2:first-child{margin-top:0}
+.row{display:flex;align-items:center;justify-content:space-between;gap:10px;margin:7px 0}
+.row label{font-size:11.5px;color:#c3cdd4;flex:1;min-width:0}
+.row output{font-size:11px;color:var(--accent);font-variant-numeric:tabular-nums;min-width:52px;text-align:right}
+input[type=range]{width:100%;accent-color:var(--accent);height:16px}
+input[type=color]{width:38px;height:22px;border:1px solid var(--line);background:none;border-radius:3px;padding:0}
+select,button{font:inherit;font-size:11.5px;background:#131c26;color:var(--text);border:1px solid var(--line);border-radius:4px;padding:6px 8px}
+select{width:100%}
+button{cursor:pointer}
+button:hover{border-color:#ffffff45}
+button.primary{background:var(--accent);color:#1a0d05;border-color:transparent;font-weight:600}
+button.primary:hover{filter:brightness(1.08)}
+.btns{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:10px}
+.foot{position:fixed;bottom:0;right:0;width:326px;padding:12px 16px;background:#080b10f2;border-top:1px solid var(--line);display:grid;grid-template-columns:1fr 1fr;gap:8px}
+#toggle{position:fixed;right:14px;top:14px;z-index:5;display:none}
+#status{position:fixed;left:20px;bottom:16px;font-size:11px;color:var(--dim)}
+.badge{display:inline-block;font-size:9.5px;letter-spacing:.08em;border:1px solid #ffffff2b;border-radius:3px;padding:1px 6px;color:#a8b6c0;margin-right:6px}
+code{font-family:ui-monospace,Consolas,monospace}
+/* 提示词浮层 */
+#overlay{position:fixed;inset:0;background:#05070ac9;display:none;align-items:center;justify-content:center;padding:28px;z-index:20}
+#overlay.on{display:flex}
+#card{width:min(920px,100%);max-height:100%;background:#0b1017;border:1px solid var(--line);border-radius:10px;display:flex;flex-direction:column;overflow:hidden;box-shadow:0 24px 80px #000a}
+#card header{display:flex;align-items:center;gap:10px;padding:13px 16px;border-bottom:1px solid var(--line)}
+#card header strong{font-weight:400;font-size:13px}
+#card header span{color:var(--dim);font-size:11px;margin-left:auto}
+#copyArea{flex:1;overflow:auto;margin:0;padding:16px;font-family:ui-monospace,Consolas,monospace;font-size:11.5px;line-height:1.65;color:#cdd9e1;white-space:pre-wrap;word-break:break-word;user-select:text}
+#card footer{display:flex;gap:8px;justify-content:flex-end;padding:11px 16px;border-top:1px solid var(--line)}
+#toast{position:fixed;left:50%;bottom:34px;transform:translate(-50%,20px);background:#16241c;border:1px solid #3c7a56;color:#b8f0cd;padding:9px 16px;border-radius:6px;font-size:12px;opacity:0;transition:.2s;pointer-events:none;z-index:30}
+#toast.on{opacity:1;transform:translate(-50%,0)}
+#fail{position:fixed;inset:0;display:none;place-items:center;padding:40px;background:#07090d;z-index:10}
+#fail.on{display:grid}
+#fail div{max-width:560px;border:1px solid #6b3a2a;background:#180f0b;border-radius:8px;padding:22px 24px}
+#fail h2{margin:0 0 10px;font-size:15px;font-weight:400;color:#ffb894}
+#fail p{margin:6px 0;font-size:12px;color:#c8b4a8}
+#fail code{background:#00000055;padding:1px 5px;border-radius:3px;color:#e8c9b8}
+/* 统一头部接管复制提示词，页面内的旧按钮隐藏 */
+.foot{display:none!important}
+</style>
+</head>
+<body>
+<div id="view"></div>
+
+<div id="hud">
+  <small>3Dfans特效大师 · WebGPU</small>
+  <h1>GPU 体积火焰</h1>
+  <p><span class="badge">流体求解</span><span class="badge">体积光线步进</span><br>拖动茶壶会向流体注入湍流。调参后点右上角「复制提示词」即可交给 agent。</p>
+</div>
+
+<button id="toggle">调参</button>
+
+<aside id="panel">
+  <h2>预设</h2>
+  <select id="look" aria-label="预设"></select>
+
+  <h2>火焰外观</h2>
+  <div class="row"><label>曝光</label><output data-out="exposure"></output></div>
+  <input type="range" data-key="exposure" min="0.1" max="2" step="0.05">
+  <div class="row"><label>火光扩散</label><output data-out="glowSpread"></output></div>
+  <input type="range" data-key="glowSpread" min="1" max="5" step="0.1">
+  <div class="row"><label>饱和度</label><output data-out="saturation"></output></div>
+  <input type="range" data-key="saturation" min="0" max="2" step="0.05">
+  <div class="row"><label>色相旋转</label><output data-out="fireHue"></output></div>
+  <input type="range" data-key="fireHue" min="0" max="360" step="1">
+  <div class="row"><label>中心色</label><input type="color" data-key="fireStartColor" aria-label="火焰中心色"></div>
+  <div class="row"><label>中段色</label><input type="color" data-key="fireMidColor" aria-label="火焰中段色"></div>
+  <div class="row"><label>边缘色</label><input type="color" data-key="fireEndColor" aria-label="火焰边缘色"></div>
+
+  <h2>模拟物理</h2>
+  <div class="row"><label>模拟速度</label><output data-out="simSpeed"></output></div>
+  <input type="range" data-key="simSpeed" min="0" max="2" step="0.01">
+  <div class="row"><label>湍流强度</label><output data-out="turbulence"></output></div>
+  <input type="range" data-key="turbulence" min="0" max="5" step="0.05">
+  <div class="row"><label>火焰寿命</label><output data-out="fireLifespan"></output></div>
+  <input type="range" data-key="fireLifespan" min="0.5" max="10" step="0.1">
+  <div class="row"><label>烟雾寿命</label><output data-out="smokeLifespan"></output></div>
+  <input type="range" data-key="smokeLifespan" min="1" max="100" step="0.5">
+  <div class="row"><label>浮力</label><output data-out="buoyancy"></output></div>
+  <input type="range" data-key="buoyancy" min="0" max="10" step="0.1">
+  <div class="row"><label>速度阻尼</label><output data-out="velocityDamping"></output></div>
+  <input type="range" data-key="velocityDamping" min="0" max="2" step="0.01">
+
+  <h2>注入</h2>
+  <div class="row"><label>温度注入</label><output data-out="emitTemperature"></output></div>
+  <input type="range" data-key="emitTemperature" min="0" max="8" step="0.1">
+  <div class="row"><label>密度注入</label><output data-out="emitDensity"></output></div>
+  <input type="range" data-key="emitDensity" min="0" max="20" step="0.1">
+  <div class="row"><label>发射体自转</label><input type="checkbox" data-key="animateEmitter" aria-label="发射体自转"></div>
+
+  <h2>画质</h2>
+  <div class="row"><label>体积步进</label><output data-out="raymarchSteps"></output></div>
+  <input type="range" data-key="raymarchSteps" min="4" max="42" step="1">
+  <div class="row"><label>体积分辨率</label><output data-out="resolution"></output></div>
+  <input type="range" data-key="resolution" min="0.1" max="1" step="0.05">
+  <div class="row"><label>降噪</label><input type="checkbox" data-key="denoise" aria-label="降噪"></div>
+  <div class="row"><label>辉光</label><input type="checkbox" data-key="bloom" aria-label="辉光"></div>
+  <div class="row"><label>辉光强度</label><output data-out="bloomStrength"></output></div>
+  <input type="range" data-key="bloomStrength" min="0" max="3" step="0.01">
+
+  <div class="btns">
+    <button id="reset">恢复本预设</button>
+    <button id="pause">暂停</button>
+  </div>
+</aside>
+
+<div class="foot">
+  <button class="primary" id="copyPrompt">复制提示词</button>
+  <button id="copyParams">只复制参数</button>
+</div>
+
+<div id="status">正在初始化 WebGPU…</div>
+
+<div id="overlay" role="dialog" aria-modal="true" aria-label="提示词">
+  <div id="card">
+    <header><strong>可直接粘贴给 agent 的提示词</strong><span id="promptMeta"></span></header>
+    <pre id="copyArea" tabindex="0"></pre>
+    <footer>
+      <button id="dl">下载 .md</button>
+      <button id="closeOv">关闭</button>
+      <button class="primary" id="doCopy">复制到剪贴板</button>
+    </footer>
+  </div>
+</div>
+
+<div id="toast"></div>
+
+<div id="fail"><div>
+  <h2>这个环境无法运行 GPU 体积火焰</h2>
+  <p id="failReason"></p>
+  <p>本效应依赖 WebGPU，需要 <code>https://</code> 或 <code>localhost</code> 安全上下文，且浏览器/显卡在允许列表内。用 <code>file://</code> 直接双击打开也会失败。</p>
+  <p>降级方案：改用 <code>3d-realistic-fire</code>（WebGL 粒子火焰），它不依赖 WebGPU。</p>
+</div></div>
+
+<script type="importmap">
+{
+  "imports": {
+    "three": "./vendor/three.webgpu.js",
+    "three/webgpu": "./vendor/three.webgpu.js",
+    "three/tsl": "./vendor/three.tsl.js",
+    "three/addons/": "./vendor/addons/"
+  }
+}
+</script>
+
+<script type="module">
+import * as metaModule from './meta.js';
+const meta = metaModule.meta || metaModule.default;
+import { createVolumeFireEffect } from './effects/volume-fire-module.js';
+import { probeWebGPU } from './effects/volume-fire.js';
+
+const $ = (s) => document.querySelector(s);
+const RANGE_KEYS = new Set([
+  'exposure', 'glowSpread', 'saturation', 'fireHue', 'simSpeed', 'turbulence',
+  'fireLifespan', 'smokeLifespan', 'buoyancy', 'velocityDamping',
+  'emitTemperature', 'emitDensity', 'raymarchSteps', 'resolution', 'bloomStrength'
+]);
+const COLOR_KEYS = new Set(['fireStartColor', 'fireMidColor', 'fireEndColor']);
+const BOOL_KEYS = new Set(['denoise', 'bloom', 'animateEmitter']);
+
+// 唯一状态源：每帧用 params 调 update()，外部改 params 即可生效。
+const params = { ...meta.looks[0].params };
+let effect = null;
+let currentLook = meta.looks[0].id;
+let paused = false;
+let ready = false;
+let frames = 0;
+let lastUiPaint = 0;
+let dragging = false;
+
+function formatValue(key, value) {
+  if (typeof value === 'boolean') return value ? '开' : '关';
+  if (RANGE_KEYS.has(key)) {
+    const step = key === 'raymarchSteps' ? 1 : 0.01;
+    return Math.abs(value) >= 1000 ? String(Math.round(value)) : String(Number(value.toFixed(2)));
+  }
+  return String(value);
+}
+
+function syncUi() {
+  for (const el of document.querySelectorAll('[data-key]')) {
+    const key = el.dataset.key;
+    if (!(key in params)) continue;
+    if (el.type === 'checkbox') el.checked = !!params[key];
+    else el.value = params[key];
+  }
+  for (const out of document.querySelectorAll('[data-out]')) {
+    const key = out.dataset.out;
+    out.textContent = formatValue(key, params[key]);
+  }
+}
+
+function bindUi() {
+  const lookSelect = $('#look');
+  lookSelect.innerHTML = meta.looks.map((l) => `<option value="${l.id}">${l.title}</option>`).join('');
+  lookSelect.addEventListener('change', () => applyLook(lookSelect.value));
+
+  for (const el of document.querySelectorAll('[data-key]')) {
+    const key = el.dataset.key;
+    if (!(key in params) && !RANGE_KEYS.has(key) && !COLOR_KEYS.has(key) && !BOOL_KEYS.has(key)) continue;
+    const handler = () => {
+      if (el.type === 'checkbox') params[key] = el.checked;
+      else if (el.type === 'color') params[key] = el.value;
+      else params[key] = Number(el.value);
+      syncUi();
+      paintPromptIfOpen();
+    };
+    el.addEventListener('input', handler);
+    el.addEventListener('change', handler);
+  }
+
+  $('#reset').addEventListener('click', () => applyLook(currentLook));
+  $('#pause').addEventListener('click', () => {
+    paused = !paused;
+    $('#pause').textContent = paused ? '继续' : '暂停';
+  });
+  $('#copyPrompt').addEventListener('click', () => openOverlay(buildPrompt()));
+  $('#copyParams').addEventListener('click', () => {
+    const text = JSON.stringify(pickParams(), null, 2);
+    openOverlay(text, '参数 JSON');
+  });
+  $('#closeOv').addEventListener('click', closeOverlay);
+  $('#overlay').addEventListener('click', (e) => { if (e.target.id === 'overlay') closeOverlay(); });
+  document.addEventListener('keydown', (e) => { if (e.key === 'Escape') closeOverlay(); });
+  $('#doCopy').addEventListener('click', async () => {
+    const text = $('#copyArea').textContent;
+    try {
+      await navigator.clipboard.writeText(text);
+      toast('已复制到剪贴板');
+    } catch {
+      const ta = document.createElement('textarea');
+      ta.value = text; document.body.appendChild(ta); ta.select();
+      document.execCommand('copy'); ta.remove();
+      toast('已复制（兼容模式）');
+    }
+  });
+  $('#dl').addEventListener('click', () => {
+    const blob = new Blob([$('#copyArea').textContent], { type: 'text/markdown;charset=utf-8' });
+    const a = document.createElement('a');
+    a.href = URL.createObjectURL(blob);
+    a.download = `volume-fire-${currentLook}.md`;
+    a.click();
+    setTimeout(() => URL.revokeObjectURL(a.href), 4000);
+  });
+  $('#toggle').addEventListener('click', () => {
+    $('#panel').classList.toggle('hidden');
+  });
+}
+
+function pickParams() {
+  const schemaKeys = meta.schema.map((s) => s.key);
+  const out = {};
+  for (const key of schemaKeys) if (params[key] !== undefined) out[key] = params[key];
+  return out;
+}
+
+function applyLook(id) {
+  const look = meta.looks.find((l) => l.id === id) || meta.looks[0];
+  currentLook = look.id;
+  // 预设是完整快照：先回到 schema 默认值，再套用预设，避免上一个预设的残留参数。
+  for (const s of meta.schema) params[s.key] = s.default;
+  Object.assign(params, look.params);
+  $('#look').value = look.id;
+  syncUi();
+  paintPromptIfOpen();
+}
+
+/** 生成可直接粘给 agent 的提示词。 */
+function buildPrompt() {
+  const look = meta.looks.find((l) => l.id === currentLook);
+  const p = pickParams();
+  const lines = [];
+  lines.push('请按下面的配置，用 3d-vfx-master 技能生成一个三维场景（不要重新发明火焰算法）。');
+  lines.push('');
+  lines.push('## 1. 效果与模块');
+  lines.push('');
+  lines.push(`- 效果：GPU 体积火焰（${meta.name}）`);
+  lines.push(`- 模块 slug：\`3d-webgpu-volume-fire\``);
+  lines.push(`- 实现 id：\`webgpu-volume-fire\``);
+  lines.push(`- 预设：\`${currentLook}\`${look ? '（' + look.title + '）' : ''}`);
+  lines.push('- 依赖：需要 WebGPU + 安全上下文（https 或 localhost）。无适配器时不要静默降级，先提示用户，再建议 `3d-realistic-fire`。');
+  lines.push('');
+  lines.push('## 2. 调好的参数');
+  lines.push('');
+  lines.push('```json');
+  lines.push(JSON.stringify(p, null, 2));
+  lines.push('```');
+  lines.push('');
+  lines.push('## 3. 代码使用方式');
+  lines.push('');
+  lines.push('导出模块（离线、含 vendor 依赖）：');
+  lines.push('');
+  lines.push('```bash');
+  lines.push(`python scripts/toolkit.py export 3d-webgpu-volume-fire --look ${currentLook} --out ./my-fire-demo`);
+  lines.push('```');
+  lines.push('');
+  lines.push('导出的 `demos/index.html` 已带 importmap，通过 HTTP 打开即可（`file://` 不行）。');
+  lines.push('');
+  lines.push('在自己的页面里接入：');
+  lines.push('');
+  lines.push('```html');
+  lines.push('<div id="stage" style="width:100%;height:520px"></div>');
+  lines.push('<script type="importmap">');
+  lines.push('{');
+  lines.push('  "imports": {');
+  lines.push('    "three": "/vendor/three.webgpu.js",');
+  lines.push('    "three/webgpu": "/vendor/three.webgpu.js",');
+  lines.push('    "three/tsl": "/vendor/three.tsl.js",');
+  lines.push('    "three/addons/": "/vendor/addons/"');
+  lines.push('  }');
+  lines.push('}');
+  lines.push('<\/script>');
+  lines.push('<script type="module">');
+  lines.push('import { createVolumeFireEffect } from "./effects/volume-fire.js";');
+  lines.push('import { OrbitControls } from "three/addons/controls/OrbitControls.js";');
+  lines.push('');
+  lines.push('const stage = document.getElementById("stage");');
+  lines.push('const PARAMS = ' + JSON.stringify(p) + ';');
+  lines.push('');
+  lines.push('// 异步创建：WebGPU 设备初始化必须在 await 之后才能接入渲染循环');
+  lines.push('const fire = await createVolumeFireEffect({ container: stage, size: [stage.clientWidth, stage.clientHeight] }, PARAMS);');
+  lines.push('const camera = fire.getCamera();');
+  lines.push('const renderer = fire.getRenderer();');
+  lines.push('const controls = new OrbitControls(camera, renderer.domElement);');
+  lines.push('controls.target.set(0, 3.6, 0);');
+  lines.push('controls.update();');
+  lines.push('');
+  lines.push('let last = performance.now();');
+  lines.push('renderer.setAnimationLoop(() => {');
+  lines.push('  const now = performance.now();');
+  lines.push('  const dt = Math.min((now - last) / 1000, 1 / 30);');
+  lines.push('  last = now;');
+  lines.push('  controls.update();');
+  lines.push('  fire.update(dt);        // 推进流体 + 渲染，自带 RenderPipeline');
+  lines.push('});');
+  lines.push('');
+  lines.push('// 调参：只需改这几个键，内部会映射到已有 uniform');
+  lines.push('fire.setParams({ ' + Object.keys(p).slice(0, 3).map((k) => k + ': ' + JSON.stringify(p[k])).join(', ') + ', /* ...其余键 */ });');
+  lines.push('');
+  lines.push('// 卸载');
+  lines.push('// fire.dispose();');
+  lines.push('<\/script>');
+  lines.push('```');
+  lines.push('');
+  lines.push('## 4. 必须注意的约束');
+  lines.push('');
+  lines.push('- 这个模块**自己拥有渲染器与 RenderPipeline**，属于 isolated-viewport 类型。不要把它塞进宿主已有的 `WebGLRenderer` 场景，也不要再调一次 `renderer.render()`。');
+  lines.push(`- 默认网格 ${'100×100×200'}（约 200 万体素）、Jacobi 迭代 2 次。低端设备把 \`raymarchSteps\` 降到 8~12、\`resolution\` 降到 0.6。`);
+  lines.push('- 火焰颜色是黑体三段色带（中心/中段/边缘）+ 色相旋转，不是真实光谱计算。');
+  lines.push('- 参数只映射到示例已有的 uniform；没有新增渲染通道，也没有改写流体求解。');
+  lines.push('');
+  lines.push('## 5. 验收');
+  lines.push('');
+  lines.push('- `navigator.gpu` 存在且 `requestAdapter()` 返回非 null；否则直接报错。');
+  lines.push('- 首帧后有可见的火焰与地面受光；拖动茶壶能带出湍流。');
+  lines.push('- 改 `simSpeed=0` 应冻结模拟但画面不黑屏；改 `emitTemperature=0` 火焰应熄灭。');
+  return lines.join('\n');
+}
+
+function paintPromptIfOpen() {
+  if (!$('#overlay').classList.contains('on')) return;
+  if ($('#promptMeta').textContent === '参数 JSON') return;
+  $('#copyArea').textContent = buildPrompt();
+}
+
+function openOverlay(text, title) {
+  $('#promptMeta').textContent = title || `预设 ${currentLook}`;
+  $('#copyArea').textContent = text;
+  $('#overlay').classList.add('on');
+  $('#copyArea').focus();
+}
+
+function closeOverlay() {
+  $('#overlay').classList.remove('on');
+}
+
+let toastTimer = 0;
+function toast(msg) {
+  const el = $('#toast');
+  el.textContent = msg;
+  el.classList.add('on');
+  clearTimeout(toastTimer);
+  toastTimer = setTimeout(() => el.classList.remove('on'), 1600);
+}
+
+function showFail(reason) {
+  $('#failReason').textContent = reason || '未知原因。';
+  $('#fail').classList.add('on');
+  $('#status').textContent = 'WebGPU 不可用';
+}
+
+async function boot() {
+  bindUi();
+  applyLook(meta.looks[0].id);
+
+  const probe = await probeWebGPU();
+  if (!probe.available) {
+    showFail(probe.reason);
+    window.__volumeFireDemo = { ok: false, reason: probe.reason, meta, params };
+    return;
+  }
+
+  const stage = $('#view');
+  try {
+    effect = await createVolumeFireEffect(
+      { container: stage, size: [innerWidth, innerHeight] },
+      params
+    );
+  } catch (e) {
+    showFail(e && e.message ? e.message : String(e));
+    window.__volumeFireDemo = { ok: false, reason: String(e), meta, params };
+    return;
+  }
+
+  const camera = effect.getCamera();
+  const renderer = effect.getRenderer();
+  const controls = effect.createControls(renderer.domElement);
+  effect.createDragControls(renderer.domElement, (on) => {
+    dragging = on;
+    $('#status').textContent = on ? '拖动中：正在向流体注入湍流' : '';
+  });
+
+  ready = true;
+  $('#status').textContent = `WebGPU 就绪 · ${effect.debugState().grid.join('×')} 网格`;
+
+  let last = performance.now();
+  renderer.setAnimationLoop(() => {
+    const now = performance.now();
+    const dt = Math.min(Math.max((now - last) / 1000, 0), 1 / 30);
+    last = now;
+    controls.update();
+    if (!paused) effect.update(dt);
+    else effect.render();
+    frames++;
+    if (now - lastUiPaint > 250) {
+      lastUiPaint = now;
+      const s = effect.debugState();
+      $('#status').textContent = `WebGPU · ${s.grid.join('×')} · 步进 ${s.steps} · 像素比 ${renderer.getPixelRatio().toFixed(2)}`;
+    }
+  });
+
+  addEventListener('resize', () => {
+    effect.setSize(innerWidth, innerHeight);
+    camera.aspect = innerWidth / innerHeight;
+    camera.updateProjectionMatrix();
+  });
+
+  window.__volumeFireDemo = {
+    ok: true,
+    effect,
+    params,
+    meta,
+    get frames() { return frames; },
+    get look() { return currentLook; },
+    get paused() { return paused; },
+    get dragging() { return dragging; },
+    preset: applyLook,
+    /* 统一头部接管复制：页面内旧按钮已隐藏，这里直接转发到共享生成器 */
+    buildPrompt: () => (window.__vfxDemoChrome ? window.__vfxDemoChrome.buildPrompt() : buildPrompt()),
+    pickParams,
+    setParam(key, value) { params[key] = value; syncUi(); },
+    pause: (v = true) => { paused = v; $('#pause').textContent = v ? '继续' : '暂停'; },
+    state: () => effect.debugState()
+  };
+}
+
+boot().catch((e) => {
+  showFail(String(e));
+  window.__volumeFireDemo = { ok: false, reason: String(e), meta, params };
+});
+</script>
+
+<link rel="stylesheet" href="../../../shared/demo-chrome.css">
+<script type="module" src="../../../shared/demo-chrome.js"></script>
+</body>
+</html>

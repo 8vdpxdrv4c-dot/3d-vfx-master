@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<link rel="icon" href="data:,"><title>3Dfans特效大师SKILL之海洋效果</title>
+<link rel="stylesheet" href="./assets/gallery.css">
+</head>
+<body>
+<header class="masthead"><a class="brand" href="#open-ocean"><span class="brand-mark">≈</span> 3Dfans特效大师SKILL <span class="edition">海洋效果</span></a><span class="header-note">效果预览与参数调节</span></header>
+<main>
+ <section class="intro"><div><p class="eyebrow">效果预览</p><h1>3Dfans特效大师SKILL之海洋效果</h1><p class="lead">选择海洋效果，实时调节参数，复制完整配置交给技能制作。</p></div><span class="collection-count"><b>05</b> 种实时效果</span></section>
+ <div class="workspace">
+  <section class="viewer-panel" aria-label="水效实时预览">
+   <div class="viewer" id="viewer">
+    <iframe id="ocean" title="可拖动视角的实时海水预览" src="./demos/index.html?gallery" allow="fullscreen"></iframe>
+    <div id="loading" class="loading" role="status"><span class="spinner"></span><strong>正在加载海洋效果</strong><span>首次加载需要等待，可先查看效果参考图。</span></div>
+    <div class="view-badge"><span class="live-dot"></span><span id="live-label">实时预览</span></div>
+    <span class="orbit-hint">拖动转动视角 · 滚轮拉近远离</span>
+    <div class="viewer-actions"><button id="pause" disabled>暂停</button><button id="reset" disabled>重置视角</button><button id="fullscreen">全屏 ↗</button></div>
+   </div>
+   <div class="details"><div><p class="eyebrow" id="scene-number">01 / OPEN OCEAN</p><h2 id="scene-title">深海涌浪</h2><p id="scene-description"></p><div class="tags" id="tags"></div></div><div class="selection"><button id="choose" class="primary">选择效果和参数 <span>↗</span></button><p id="choice-status" aria-live="polite"></p></div></div>
+   <div class="adjustments"><label for="speed">播放速度 <output id="speed-value">1.0×</output></label><input id="speed" type="range" min="0" max="3" step="0.05" value="1"><button id="copy-link">复制含参数的预览链接</button><span id="link-status" role="status"></span></div>
+   <section class="parameter-panel" aria-label="水效参数调节"><div class="panel-heading"><div><h2>参数调节</h2><p>参数即时生效，各效果分别保存；选择时包含完整参数和当前视角。</p></div><button id="reset-params">恢复当前效果默认参数</button></div><div id="parameter-groups"></div></section>
+   <details class="handoff-panel"><summary>交给 3Dfans特效大师的完整内容</summary><p id="send-support" role="status"></p><textarea id="handoff-text" readonly aria-label="完整效果和参数指令" rows="10"></textarea><div class="handoff-actions"><button id="copy-prompt">复制完整指令</button><button id="download-params">下载参数文件</button></div></details>
+  </section>
+  <aside aria-label="五种水效"><div class="list-heading"><h2>选择海洋效果</h2><span>点击切换 ↓</span></div><div id="looks" class="looks"></div><p class="reference-note">缩略图取自实际渲染。水流、泡沫与光线会随时间变化。</p></aside>
+ </div>
+ <footer><span>基于 Ultra Water · Humpalumps / MIT</span><span>实时三维预览，初次加载较慢时可先参考效果图。</span><a href="./module-guide.md">模块说明 ↗</a></footer>
+</main>
+<script type="module" src="./assets/gallery.js"></script>
+</body></html>

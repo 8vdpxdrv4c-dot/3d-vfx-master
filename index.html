@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<link rel="icon" href="data:,"><title>3Dfans特效大师 · 统一技能</title>
+<style>
+:root{color-scheme:dark;background:#080e16;color:#d9e4e7;font-family:Arial,"Microsoft YaHei",sans-serif}*{box-sizing:border-box}body{margin:0;padding:42px 5vw 65px}a{color:inherit;text-decoration:none}small{color:#a5b99b;font-size:10px;letter-spacing:.16em}h1{font-size:clamp(32px,4.6vw,65px);font-weight:400;letter-spacing:-.04em;margin:24px 0 15px;line-height:1.2}p{color:#8ea3ad;font-size:13px;line-height:1.9}.hero{border-bottom:1px solid #ffffff17;padding-bottom:24px}.actions,.filters{display:flex;gap:10px;flex-wrap:wrap}.actions{margin:23px 0 8px}.actions a{font-size:12px;padding:12px 17px;border:1px solid #ffffff21;border-radius:5px}.actions a:first-child{background:#afc09e;color:#11201b;border-color:transparent}.filters{margin:26px 0 15px}input,select{background:#101c28;color:#cfdddf;border:1px solid #ffffff24;border-radius:5px;padding:11px 13px;font-size:12px}input{min-width:260px;flex:1;max-width:430px}a:focus-visible,input:focus-visible,select:focus-visible{outline:2px solid #b0c39e;outline-offset:4px}.count{font-size:11px;margin-bottom:22px}.grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:22px}.card{background:#0e1721;border:1px solid #ffffff12;border-radius:9px;overflow:hidden}.card[hidden]{display:none}.card img{display:block;width:100%;aspect-ratio:4/3;object-fit:cover;background:#101d28}.info{padding:18px}.card small{font-size:9px;letter-spacing:.08em}.card h2{font-size:18px;font-weight:400;margin:10px 0 6px}.en{font-size:12px;color:#8ca4af}.desc{font-size:11px;min-height:40px;margin:13px 0}.links{display:flex;gap:16px;font-size:11px;color:#b2c69f}.card footer{margin-top:20px;color:#6e8994;font-size:9px;letter-spacing:.07em}.empty{padding:30px;border:1px dashed #71857466;border-radius:5px}.note{font-size:10px;max-width:900px;margin-top:32px}code{color:#b3c7ae;font-size:12px}#status{color:#dc9f83}@media(min-width:1600px){.grid{grid-template-columns:repeat(4,minmax(0,1fr))}}@media(max-width:1000px){.grid{grid-template-columns:repeat(2,minmax(0,1fr))}}@media(max-width:580px){body{padding:27px 17px 50px}.grid{grid-template-columns:1fr}input{width:100%;max-width:none}.filters select{flex:1}.actions a{font-size:11px;padding:10px 12px}}
+</style>
+</head>
+<body>
+<header class="hero"><small>ONE SKILL · 3Dfans特效大师 · LOCAL TOOLKIT</small><h1>3Dfans特效大师</h1><p>一个统一技能，按需求选择、制作与组合 3D 场景特效。<br><strong>39 个效果模块 · 122 套预设</strong> · 可调参数 · 离线 Demo · 本地保存 / 未发布</p><nav class="actions" aria-label="统一技能文档"><a href="./SKILL.md">统一技能入口 SKILL.md →</a><a href="./references/effect-catalog.md">模块目录</a><a href="./references/composition.md">组合与接入</a><a href="./references/sources-and-licenses.md">来源与许可</a><a href="./assets/recipes/aurora-rain/">雨幕＋极光 Demo</a><a href="./assets/recipes/glass-bloom/">玻璃＋辉光 Demo</a></nav><p>调用：<code>$3d-vfx-master</code>　·　39 个模块随技能一起提供，无需逐个安装。</p></header>
+<div class="filters"><input aria-label="搜索效果模块" type="search" placeholder="搜索：烟雾、玻璃、排水、rain、火焰…"><select aria-label="效果分类"><option value="all">全部效果分类</option></select><select aria-label="模块来源"><option value="all">全部来源</option><option value="independent">独立实现（33）</option><option value="user-supplied">用户指定代码（6）</option></select></div>
+<p class="count" aria-live="polite"><span id="count">0</span> / 39 个模块 · 每张卡片打开其独立 Demo</p>
+<main class="grid" id="grid"></main><p class="empty" id="empty" hidden>没有匹配的效果模块，请调整搜索词或筛选条件。</p><p id="status" role="status"></p>
+<p class="note">33 个独立实现模块保留原有许可。夕阳天空盒基于用户提供的提取页，保留原始着色器归属，输入未附独立许可证声明。排水喷水基于用户提供的 Spout / @P_Malin 着色器整理，保留署名；输入未附该着色器许可证声明。雨丝与水花基于用户提供的雨效演示页，逐字保留四段着色器，输入未附独立许可证声明。GPU 体积火焰移植自 three.js 官方 MIT 示例 `webgpu_volume_fire`，离线 vendor 来自同一 dev 快照。各模块与基础依赖的来源记录随包保留。</p>
+<script type="module">
+import {rankItems} from "./scripts/search.mjs";
+const $=s=>document.querySelector(s),search=$('input'),family=$('[aria-label="效果分类"]'),source=$('[aria-label="模块来源"]'),grid=$('#grid');
+const labels={particles:'粒子与天气',materials:'材质与表面',lighting:'光照与气氛',motion:'场景与运动',vegetation:'自然植被',shaders:'着色与扫描','fluid-gas':'水体与流动',vfx:'能量特效',postprocessing:'镜头后期',environment:'天空与环境'};
+try{
+ const items=await(await fetch('./references/effect-catalog.json')).json();
+ for(const key of [...new Set(items.map(m=>m.family))]){const opt=document.createElement('option');opt.value=key;opt.textContent=labels[key]||key;family.append(opt);}
+ for(const item of items){
+  const article=document.createElement('article');article.className='card';article.dataset.slug=item.slug;article.dataset.family=item.family;article.dataset.source=item.source_kind;article.dataset.search=[item.slug,item.zh,item.name,...item.keywords].join(' ').toLowerCase();
+  const cover=document.createElement('a');cover.href='./'+item.demo;cover.setAttribute('aria-label',item.zh+' Demo');const img=document.createElement('img');img.src='./'+item.preview;img.alt=item.zh+'真实渲染预览';img.loading='lazy';cover.append(img);
+  const info=document.createElement('section');info.className='info';
+  const tag=document.createElement('small');tag.textContent=(labels[item.family]||item.family)+' / '+(item.source_kind==='independent'?'独立实现':(item.attribution||'用户提供代码'));
+  const h=document.createElement('h2');h.textContent=item.zh;const en=document.createElement('div');en.className='en';en.textContent=item.name;
+  const desc=document.createElement('p');desc.className='desc';desc.textContent=item.tagline;const links=document.createElement('nav');links.className='links';
+  for(const [text,href]of [['打开 Demo →',item.demo],['模块说明',item.guide]]){const a=document.createElement('a');a.textContent=text;a.href='./'+href;links.append(a);}
+  const footer=document.createElement('footer');footer.textContent=item.looks.length+' PRESETS · '+item.schema.length+' CONTROLS · '+item.render_role.toUpperCase();
+  info.append(tag,h,en,desc,links,footer);article.append(cover,info);grid.append(article);
+ }
+ function filter(){const q=search.value.toLowerCase().trim();const found=new Set(rankItems(items,q).map(m=>m.slug));let n=0;for(const el of grid.children){const item=items.find(m=>m.slug===el.dataset.slug);const matches=found.has(item.slug);el.hidden=!matches||(family.value!=='all'&&family.value!==el.dataset.family)||(source.value!=='all'&&source.value!==el.dataset.source);if(!el.hidden)n++;}$('#count').textContent=n;$('#empty').hidden=n!==0;}
+ for(const control of [search,family,source])control.addEventListener(control===search?'input':'change',filter);filter();$('#status').dataset.state='ready';
+}catch(error){$('#status').textContent='目录加载失败：'+error.message;$('#status').dataset.state='error';}
+</script>
+<script>
+(function(){
+ if(window.self===window.top)return;
+ var ov=document.createElement('div');
+ ov.id='embedded-preview';
+ ov.style.cssText='position:fixed;inset:0;z-index:9999;background:#080e16;display:none;flex-direction:column';
+ var bar=document.createElement('div');
+ bar.style.cssText='flex:none;display:flex;align-items:center;gap:16px;padding:10px 16px;border-bottom:1px solid #ffffff1c;font:12px Arial,"Microsoft YaHei",sans-serif;color:#8ea3ad';
+ var back=document.createElement('button');
+ back.textContent='← 返回技能目录';
+ back.style.cssText='background:#afc09e;color:#11201b;border:0;border-radius:5px;padding:8px 14px;font:12px Arial,sans-serif;cursor:pointer';
+ var label=document.createElement('span');
+ label.style.cssText='flex:1;overflow:hidden;text-overflow:ellipsis;white-space:nowrap';
+ var ext=document.createElement('a');
+ ext.textContent='在新窗口打开 ↗';ext.target='_blank';ext.rel='noopener';
+ ext.style.cssText='color:#9fe1cb;flex:none';
+ var frame=document.createElement('iframe');
+ frame.style.cssText='flex:1;width:100%;border:0;background:#0b1118';
+ frame.setAttribute('title','技能内容预览');frame.src='about:blank';
+ bar.append(back,label,ext);ov.append(bar,frame);document.body.append(ov);
+ function close(){frame.src='about:blank';ov.style.display='none';document.body.style.overflow='';}
+ back.addEventListener('click',close);
+ document.addEventListener('keydown',function(e){if(e.key==='Escape'&&ov.style.display!=='none')close();});
+ document.addEventListener('click',function(e){
+  if(e.defaultPrevented||e.button!==0||e.metaKey||e.ctrlKey||e.shiftKey||e.altKey)return;
+  var a=e.target.closest?e.target.closest('a[href]'):null;
+  if(!a||a===ext||a.target==='_blank')return;
+  var href=a.getAttribute('href');
+  if(!href||/^(https?:|mailto:|#|javascript:|data:)/i.test(href))return;
+  e.preventDefault();
+  var url=new URL(href,location.href).href;
+  label.textContent=href;ext.href=url;frame.src=url;
+  ov.style.display='flex';document.body.style.overflow='hidden';
+ });
+})();
+</script>
+</body></html>

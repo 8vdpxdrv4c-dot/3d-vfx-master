@@ -1,0 +1,31 @@
+{
+  "pass": true,
+  "date": "2026-10-24",
+  "webgl": {
+    "modules": 34,
+    "presets": 103,
+    "evidence": "testing/round-10-webgl.json"
+  },
+  "mobile": {
+    "pass": true,
+    "pages": 36,
+    "viewport": [
+      390,
+      844
+    ],
+    "evidence": "testing/round-10-mobile.json"
+  },
+  "gallery": {
+    "glass": [
+      "3d-glass"
+    ],
+    "spout": [
+      "3d-drain-spout"
+    ],
+    "materials": "6",
+    "independent": "33",
+    "all": "34"
+  },
+  "composition_count": 2,
+  "synthetic_motion_listener": "testing/round-07-lifecycle.json"
+}

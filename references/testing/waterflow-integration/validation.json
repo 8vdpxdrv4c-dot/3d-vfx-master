@@ -1,0 +1,72 @@
+{
+  "date": "2026-10-24",
+  "pass": true,
+  "integration": "clear-waterflow",
+  "registered_skills": 1,
+  "modules": 35,
+  "presets": 106,
+  "new_module": "3d-cube-waterflow",
+  "new_presets": [
+    "steady",
+    "full",
+    "gentle"
+  ],
+  "old_runtime_files_byte_identical": 875,
+  "water_source_project_unchanged": true,
+  "installed_cli_search": [
+    {
+      "query": "清透水流",
+      "first": "3d-cube-waterflow"
+    },
+    {
+      "query": "透明水流",
+      "first": "3d-cube-waterflow"
+    },
+    {
+      "query": "管道出水",
+      "first": "3d-cube-waterflow"
+    },
+    {
+      "query": "clear water",
+      "first": "3d-cube-waterflow"
+    }
+  ],
+  "invalid_parameters_and_overwrite_rejected": true,
+  "installed_exports": [
+    {
+      "module": "3d-cube-waterflow",
+      "exported_to": "E:\\动画制作\\课件3D知识小站\\folio\\qa\\master-waterflow-integration-20261024\\default",
+      "demo": "E:\\动画制作\\课件3D知识小站\\folio\\qa\\master-waterflow-integration-20261024\\default\\demos\\index.html",
+      "guide": "E:\\动画制作\\课件3D知识小站\\folio\\qa\\master-waterflow-integration-20261024\\default\\module-guide.md",
+      "source": "independent",
+      "attribution": null,
+      "initial_look": "steady",
+      "parameter_overrides": {},
+      "additional_skill_installed": false
+    },
+    {
+      "module": "3d-cube-waterflow",
+      "exported_to": "E:\\动画制作\\课件3D知识小站\\folio\\qa\\master-waterflow-integration-20261024\\custom",
+      "demo": "E:\\动画制作\\课件3D知识小站\\folio\\qa\\master-waterflow-integration-20261024\\custom\\demos\\index.html",
+      "guide": "E:\\动画制作\\课件3D知识小站\\folio\\qa\\master-waterflow-integration-20261024\\custom\\module-guide.md",
+      "source": "independent",
+      "attribution": null,
+      "initial_look": "gentle",
+      "parameter_overrides": {
+        "pressure": 1.2,
+        "color": "#006aff"
+      },
+      "additional_skill_installed": false
+    }
+  ],
+  "checks": {
+    "webgl-validation": true,
+    "host-validation": true,
+    "mobile-validation": true,
+    "gallery-mobile-validation": true,
+    "gallery-search-validation": true,
+    "fresh-export-console": true
+  },
+  "scope": "New module rendered from installed-skill exports; all catalog entries and dependencies structurally validated; previous runtime files verified against baseline, not rerun as ten new rounds.",
+  "published": false
+}

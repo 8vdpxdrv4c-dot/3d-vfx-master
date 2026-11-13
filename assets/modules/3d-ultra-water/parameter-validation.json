@@ -1,0 +1,26 @@
+{
+  "date": "2026-10-30",
+  "schema_fields": 28,
+  "adjustable_fields_excluding_view": 27,
+  "browser": "Codex in-app browser",
+  "observed": {
+    "numeric_inputs_update_matching_sliders": true,
+    "underwater_custom_windSpeed": 13,
+    "underwater_custom_waveScale": 1.7,
+    "underwater_custom_clarity": 2.4,
+    "switch_away_and_back_retains_values": true,
+    "clipboard_includes_skill_module_look_all_params_and_camera": true,
+    "downloaded_selection": "water-underwater.json",
+    "browser_error_logs": [],
+    "current_local_host_supports_direct_send": false,
+    "fallback_button_explicitly_says_copy": true
+  },
+  "local_checks": {
+    "all_five_config_link_round_trips": true,
+    "all_five_prompt_json_round_trips": true,
+    "invalid_numeric_type_range_and_unknown_fields_rejected": true,
+    "downloaded_selection_import_preserves_all_28_fields": true,
+    "downloaded_camera_preserved_in_initialCamera": true
+  },
+  "limits": "Direct sending requires a supported host sendFollowUpMessage bridge. No live send was performed during QA. Current local browser uses complete-prompt clipboard handoff. Performance is not a cross-device guarantee."
+}

@@ -1,0 +1,349 @@
+{
+  "kind": "user-supplied shader adaptation",
+  "attribution": "Spout — @P_Malin; user-supplied shader adapted for Three.js.",
+  "license_declaration_in_attachment": false,
+  "supplied_attachment_sha256": "ef40939ff89fb718c3be2fb63d3434fecd237fc81c6fbb1b3e77f11f0849b423",
+  "supplied_shader_authorship_claimed": false,
+  "local_additions": [
+    {
+      "path": "scripts/drain-spout/build.mjs",
+      "sha256": "3f0abc0989ef3d1590276aca62af15a05a690341978e355f0259eb88430502d8",
+      "bytes": 18873
+    },
+    {
+      "path": "scripts/drain-spout/checks.js",
+      "sha256": "9a4608e64e93a32e43b1b96dcaf15ed815883758bdf7234748c9554314dcfb40",
+      "bytes": 6332
+    },
+    {
+      "path": "scripts/drain-spout/dispose.js",
+      "sha256": "4b2fbb7316dfa0613598f8de99424b6c209eb76656443a992545417e4042c817",
+      "bytes": 167
+    },
+    {
+      "path": "scripts/drain-spout/effect.js",
+      "sha256": "1ee1c5f21073f4044e23ad05faa10a72786c31ae22ae5fe31d4e4ff3a077c72b",
+      "bytes": 4522
+    },
+    {
+      "path": "scripts/drain-spout/main.js",
+      "sha256": "03d234e2c1419f81ab22d731b5680775dfa3bf477e6c263f3dc2726bc2dec30f",
+      "bytes": 5772
+    },
+    {
+      "path": "scripts/drain-spout/meta.mjs",
+      "sha256": "1431360f75929c0ba0cfda2073f15efd579059ad8b8026c4b6d5ade8770fd63d",
+      "bytes": 1792
+    }
+  ],
+  "shader_replacements": [
+    [
+      "const float kPipeRadius = 0.4;",
+      "#define kPipeRadius uRadius"
+    ],
+    [
+      "const float kPipeHeight = 2.0;",
+      "#define kPipeHeight uHeight"
+    ],
+    [
+      "const float kWaterNoiseScale = 0.025;",
+      "#define kWaterNoiseScale uRipple"
+    ],
+    [
+      "const float kWaterVelocity = 1.0;",
+      "#define kWaterVelocity uFlow"
+    ],
+    [
+      "float kRipplePos = sqrt(abs(2.0 * kPipeHeight / kWaterAccel)) * kWaterVelocity;",
+      "#define kRipplePos (sqrt(abs(2.0 * kPipeHeight / kWaterAccel)) * kWaterVelocity)"
+    ],
+    [
+      "const float fExposure = 1.5;",
+      "float fExposure = uExposure;"
+    ],
+    [
+      "OrbitPoint(fHeading, fElevation) * fCameraDist;",
+      "OrbitPoint(fHeading, fElevation) * fCameraDist * uZoom;"
+    ],
+    [
+      "mainImage(color, gl_FragCoord.xy);",
+      "mainImage(color, gl_FragCoord.xy - uViewportOrigin);"
+    ]
+  ],
+  "external_media_assets": [],
+  "runtime_network_required": false,
+  "dependencies": [
+    {
+      "package": "three",
+      "version": "0.160.0",
+      "license_declared": "MIT",
+      "registry_metadata_url": "https://registry.npmjs.org/three/0.160.0",
+      "tarball_url": "https://registry.npmjs.org/three/-/three-0.160.0.tgz",
+      "integrity": "sha512-DLU8lc0zNIPkM7rH5/e1Ks1Z8tWCGRq6g8mPowdDJpw1CFBJMU7UoJjC6PefXW7z//SSl0b2+GCw14LB+uDhng==",
+      "verified": true,
+      "files": [
+        {
+          "source": "build/three.module.js",
+          "path": "three.module.js",
+          "bytes": 1272972,
+          "sha256": "76dea8151bc9352aef3528b4262e249b2604f62543828328db978d060d61a495"
+        },
+        {
+          "source": "LICENSE",
+          "path": "THREE-MIT.txt",
+          "bytes": 1081,
+          "sha256": "852e0e8699169bf9f6fdc6bda3e682d078dcbc738b5d33e74df594721bff271d"
+        }
+      ]
+    },
+    {
+      "package": "lil-gui",
+      "version": "0.19.2",
+      "license_declared": "MIT",
+      "registry_metadata_url": "https://registry.npmjs.org/lil-gui/0.19.2",
+      "tarball_url": "https://registry.npmjs.org/lil-gui/-/lil-gui-0.19.2.tgz",
+      "integrity": "sha512-nU8j4ND702ouGfQZoaTN4dfXxacvGOAVK0DtmZBVcUYUAeYQXLQAjAN50igMHiba3T5jZyKEjXZU+Ntm1Qs6ZQ==",
+      "verified": true,
+      "files": [
+        {
+          "source": "dist/lil-gui.esm.js",
+          "path": "lil-gui.esm.js",
+          "bytes": 59438,
+          "sha256": "ff934a599715bfb72534dda8aea206bf23630b56a49e1aa0d9ad0ab5dfeab985"
+        },
+        {
+          "source": "LICENSE.md",
+          "path": "LIL-GUI-MIT.txt",
+          "bytes": 1077,
+          "sha256": "8cf4a9691239b14c715613ed8e41580d18ee433c862e263058393b35be6c8e53"
+        }
+      ]
+    }
+  ],
+  "date": "2026-10-23",
+  "preserved_existing_33_authored_files": 634,
+  "preserved_all_33_archive_sha256": "abe65cb033a7c0e87b8cef8c816014d74e0f06391fa7439bc89221225cc00bed",
+  "delivered_files": [
+    {
+      "path": "assets/channel-preview.webp",
+      "sha256": "3231c4c48dc81240c413876573b2898c62bbd321d64ebc66f9dfeea939c57aee",
+      "bytes": 82214,
+      "source": "local adapter, documentation, checks or real capture"
+    },
+    {
+      "path": "assets/demo-preview.png",
+      "sha256": "941fe0b1ee88f05608328114c9e07bbc54c024c1b9bb6b59593abbacf6c79172",
+      "bytes": 667536,
+      "source": "local adapter, documentation, checks or real capture"
+    },
+    {
+      "path": "assets/gentle-preview.webp",
+      "sha256": "6c6b26663678dbb534d44d793f70fe02f6618fb8994921b851747f12a67e4343",
+      "bytes": 74096,
+      "source": "local adapter, documentation, checks or real capture"
+    },
+    {
+      "path": "assets/looks-preview.jpg",
+      "sha256": "708131d00a096d435e91318ab159554f853e942fa0cad3b2e174db5765612dea",
+      "bytes": 197625,
+      "source": "local adapter, documentation, checks or real capture"
+    },
+    {
+      "path": "assets/preview.webp",
+      "sha256": "3231c4c48dc81240c413876573b2898c62bbd321d64ebc66f9dfeea939c57aee",
+      "bytes": 82214,
+      "source": "local adapter, documentation, checks or real capture"
+    },
+    {
+      "path": "assets/README.md",
+      "sha256": "3e51aaf33fb8287275f3c3d693f853ae2eaa0ecfd8b7af907b83b44208fad63b",
+      "bytes": 139,
+      "source": "local adapter, documentation, checks or real capture"
+    },
+    {
+      "path": "assets/surge-preview.webp",
+      "sha256": "34a257deb5fd2ab5b5ea3620aff80a294d7abc6c160411308e9b4820b844d9db",
+      "bytes": 89772,
+      "source": "local adapter, documentation, checks or real capture"
+    },
+    {
+      "path": "demos/checks.html",
+      "sha256": "685f22a7681ac637087433f1b66b8426ff8f84c68c282ba309efcf0b3ca23b3f",
+      "bytes": 737,
+      "source": "local adapter, documentation, checks or real capture"
+    },
+    {
+      "path": "demos/checks.js",
+      "sha256": "9a4608e64e93a32e43b1b96dcaf15ed815883758bdf7234748c9554314dcfb40",
+      "bytes": 6332,
+      "source": "local adapter, documentation, checks or real capture"
+    },
+    {
+      "path": "demos/effects/fluid-drain-spout.js",
+      "sha256": "1ee1c5f21073f4044e23ad05faa10a72786c31ae22ae5fe31d4e4ff3a077c72b",
+      "bytes": 4522,
+      "source": "local adapter, documentation, checks or real capture"
+    },
+    {
+      "path": "demos/index.html",
+      "sha256": "b3b59a6ccb1fa83fbf9a4c66e4680df13b423849865166f7d9d0bdf492a921f1",
+      "bytes": 2075,
+      "source": "local adapter, documentation, checks or real capture"
+    },
+    {
+      "path": "demos/lib/dispose.js",
+      "sha256": "4b2fbb7316dfa0613598f8de99424b6c209eb76656443a992545417e4042c817",
+      "bytes": 167,
+      "source": "local adapter, documentation, checks or real capture"
+    },
+    {
+      "path": "demos/lib/gui.js",
+      "sha256": "5ef055834f4ecc7b90caaf5830bb17541178414c9d311cfc2161add19203b41b",
+      "bytes": 516,
+      "source": "local adapter, documentation, checks or real capture"
+    },
+    {
+      "path": "demos/lib/spout-shaders.js",
+      "sha256": "e9eede4175b7eff1b2c2208490b4d223f9fac40f85c2a40c12d1ebb27b99b755",
+      "bytes": 22518,
+      "source": "user-supplied shader adaptation"
+    },
+    {
+      "path": "demos/main.js",
+      "sha256": "03d234e2c1419f81ab22d731b5680775dfa3bf477e6c263f3dc2726bc2dec30f",
+      "bytes": 5772,
+      "source": "local adapter, documentation, checks or real capture"
+    },
+    {
+      "path": "demos/meta.js",
+      "sha256": "d96854f7dfd74b4b9466e76b5f9589ffd263755844ce7bb134a1ee8cd84bd728",
+      "bytes": 2630,
+      "source": "local adapter, documentation, checks or real capture"
+    },
+    {
+      "path": "demos/styles.css",
+      "sha256": "a7aa13964976dd319f7655def155614acd6f132540d5f217e09c07d152c10f1c",
+      "bytes": 5451,
+      "source": "local adapter, documentation, checks or real capture"
+    },
+    {
+      "path": "demos/vendor/LIL-GUI-MIT.txt",
+      "sha256": "8cf4a9691239b14c715613ed8e41580d18ee433c862e263058393b35be6c8e53",
+      "bytes": 1077,
+      "source": "verified MIT runtime"
+    },
+    {
+      "path": "demos/vendor/lil-gui.esm.js",
+      "sha256": "ff934a599715bfb72534dda8aea206bf23630b56a49e1aa0d9ad0ab5dfeab985",
+      "bytes": 59438,
+      "source": "verified MIT runtime"
+    },
+    {
+      "path": "demos/vendor/THREE-MIT.txt",
+      "sha256": "852e0e8699169bf9f6fdc6bda3e682d078dcbc738b5d33e74df594721bff271d",
+      "bytes": 1081,
+      "source": "verified MIT runtime"
+    },
+    {
+      "path": "demos/vendor/three.module.js",
+      "sha256": "76dea8151bc9352aef3528b4262e249b2604f62543828328db978d060d61a495",
+      "bytes": 1272972,
+      "source": "verified MIT runtime"
+    },
+    {
+      "path": "DEPENDENCIES.json",
+      "sha256": "623d8ed9e0984f155ebb04ba927fa2688b73588bb4caabb8f95244dc83d2db0e",
+      "bytes": 1585,
+      "source": "local adapter, documentation, checks or real capture"
+    },
+    {
+      "path": "LICENSE.txt",
+      "sha256": "5bde9d00f15ad472b3ed1b0f0dd8aef070489626b294ed422fc6267735101f82",
+      "bytes": 1751,
+      "source": "local adapter, documentation, checks or real capture"
+    },
+    {
+      "path": "references/install-prompt.md",
+      "sha256": "20befebf3334400cc069a6f3cd7dc6154c486780e25989ce1597a4877022455b",
+      "bytes": 797,
+      "source": "local adapter, documentation, checks or real capture"
+    },
+    {
+      "path": "references/params.md",
+      "sha256": "7f03c17466622823f9913548d5cc9c13fea23d736930c52d2113b664904f1b64",
+      "bytes": 2262,
+      "source": "local adapter, documentation, checks or real capture"
+    },
+    {
+      "path": "references/source-notes.md",
+      "sha256": "a2ac04a6b65066afe30c11bdfa3ef73243e3d6fa2bc3274b3e23b46ca0f2338b",
+      "bytes": 1917,
+      "source": "local adapter, documentation, checks or real capture"
+    },
+    {
+      "path": "SKILL.md",
+      "sha256": "c4428f38703d082497c2a14ea1a6eb35213b4bc19667e15adba100aa769330b0",
+      "bytes": 4399,
+      "source": "local adapter, documentation, checks or real capture"
+    },
+    {
+      "path": "structural-validation.json",
+      "sha256": "698536d8f9457217b94bdcf6d447d806e9b7e5d98f0993e50dfc6703f6271163",
+      "bytes": 348,
+      "source": "local adapter, documentation, checks or real capture"
+    },
+    {
+      "path": "ui-validation.json",
+      "sha256": "49d19e9902fbbbd9c087120db9de202f73478f667f8812e805a81cb6437bf730",
+      "bytes": 579,
+      "source": "local adapter, documentation, checks or real capture"
+    },
+    {
+      "path": "validation-report.json",
+      "sha256": "f53eda9844ffd6f5f9b6e9d01e7011c07b897cfd9fbf643f59ac7a3972b14828",
+      "bytes": 6714,
+      "source": "local adapter, documentation, checks or real capture"
+    },
+    {
+      "path": "validation-report.md",
+      "sha256": "670fceee56254dbfd943cfef280a40d419ed7d045b66ad367e37cdcd77d93f40",
+      "bytes": 1438,
+      "source": "local adapter, documentation, checks or real capture"
+    }
+  ],
+  "build_source_files": [
+    {
+      "path": "scripts/drain-spout/build.mjs",
+      "sha256": "3f0abc0989ef3d1590276aca62af15a05a690341978e355f0259eb88430502d8"
+    },
+    {
+      "path": "scripts/drain-spout/checks.html",
+      "sha256": "685f22a7681ac637087433f1b66b8426ff8f84c68c282ba309efcf0b3ca23b3f"
+    },
+    {
+      "path": "scripts/drain-spout/checks.js",
+      "sha256": "9a4608e64e93a32e43b1b96dcaf15ed815883758bdf7234748c9554314dcfb40"
+    },
+    {
+      "path": "scripts/drain-spout/dispose.js",
+      "sha256": "4b2fbb7316dfa0613598f8de99424b6c209eb76656443a992545417e4042c817"
+    },
+    {
+      "path": "scripts/drain-spout/effect.js",
+      "sha256": "1ee1c5f21073f4044e23ad05faa10a72786c31ae22ae5fe31d4e4ff3a077c72b"
+    },
+    {
+      "path": "scripts/drain-spout/main.js",
+      "sha256": "03d234e2c1419f81ab22d731b5680775dfa3bf477e6c263f3dc2726bc2dec30f"
+    },
+    {
+      "path": "scripts/drain-spout/meta.mjs",
+      "sha256": "1431360f75929c0ba0cfda2073f15efd579059ad8b8026c4b6d5ade8770fd63d"
+    },
+    {
+      "path": "scripts/drain-spout/package.py",
+      "sha256": "b1d1e1fa6e9eaaec20c707d5d7f1ad10bcc655c160951ae11de3cbda9000d2ae"
+    }
+  ],
+  "master_packaging_note": "Historical evidence from the original standalone module package. Current layout and bytes are recorded in the master source-audit.json."
+}

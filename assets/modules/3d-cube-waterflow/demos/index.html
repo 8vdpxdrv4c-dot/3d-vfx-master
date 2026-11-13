@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="theme-color" content="#0b1115"><link rel="icon" href="data:,">
+  <title>方体与流水 · 3Dfans特效大师</title>
+  <link rel="stylesheet" href="./styles.css">
+  <script type="importmap">{"imports":{"three":"./vendor/three.module.js","three/addons/":"./vendor/addons/"}}</script>
+</head>
+<body>
+  <div class="app">
+    <header class="masthead">
+      <a class="brand" href="./" aria-label="方体与流水首页"><svg viewBox="0 0 32 36" aria-hidden="true"><path d="m16 2 14 8v16l-14 8L2 26V10Z M2 10l14 8 14-8 M16 18v16"/></svg><span>3Dfans特效大师<small>可视化特效实验室</small></span></a>
+      <span class="edition">SCENE STUDY <b>001</b></span>
+    </header>
+    <section class="intro"><div><p class="eyebrow">GEOMETRY / WATER IN MOTION</p><h1>方体与流水<span>Cube &amp; Flow</span></h1><p class="subtitle">透明的几何，流动的瞬间。</p></div><div class="live"><i></i>实时三维场景<span>拖动环视 · 滚轮缩放</span></div></section>
+    <main>
+      <section class="viewer" aria-label="交互式三维场景">
+        <div id="stage"><canvas aria-label="透明立方体、金属出水管与流水的三维场景" tabindex="0"></canvas>
+          <div class="stage-top"><span class="scene-index">01 <i>/</i> CUBE + WATER</span><div class="view-tools"><button id="view" aria-label="切换近景视角">近景 <span>↗</span></button><button id="reset-view" aria-label="恢复整体视角">复位 <span>⟲</span></button></div></div>
+          <div class="pins" aria-hidden="true"><span class="pin" data-pin="cube"><b>01</b>立方储水体</span><span class="pin" data-pin="pipe"><b>02</b>金属出水管</span><span class="pin" data-pin="stream"><b>03</b>连续水流</span></div>
+          <div id="loading" role="status"><span></span><p>正在构建三维场景</p></div>
+          <div id="error" hidden role="alert"></div>
+        </div>
+        <div class="viewer-footer"><span><i class="key water"></i>水体 <i class="key solid"></i>实体几何</span><span class="hint">DRAG TO EXPLORE</span><button id="labels" aria-pressed="true">隐藏标注</button></div>
+      </section>
+      <aside class="panel" aria-label="场景参数">
+        <div class="panel-heading"><span>场景控制</span><small>SCENE CONTROLS</small></div>
+        <div class="looks" role="group" aria-label="流水预设"><button data-look="steady" aria-pressed="true">平稳</button><button data-look="full" aria-pressed="false">充沛</button><button data-look="gentle" aria-pressed="false">涓细</button></div>
+        <div id="controls"></div>
+        <div class="color-control"><label for="water-color">水体颜色</label><div><button data-color="#68ccdc" class="swatch cyan" aria-label="清水蓝" aria-pressed="true"></button><button data-color="#76d6b5" class="swatch mint" aria-label="浅翡翠" aria-pressed="false"></button><button data-color="#9dbfed" class="swatch blue" aria-label="冰川蓝" aria-pressed="false"></button><input type="color" id="water-color" aria-label="自定义水体颜色" value="#68ccdc"></div></div>
+        <div class="playback"><button id="pause" aria-pressed="false"><span id="play-icon">Ⅱ</span><span id="play-label">暂停动画</span><small>SPACE</small></button><button id="reset" aria-label="恢复默认参数">↺</button></div>
+        <div class="readout"><span>场景时间<strong><b id="time">0.0</b> <small>s</small></strong></span><span>水束状态<strong id="flow-state">连续出水</strong></span></div>
+        <p id="status" role="status" data-state="loading">正在初始化…</p>
+        <p class="panel-note">水束、飞溅与涟漪随参数联动。<br>艺术化可视化 · 参数为相对值。</p>
+      </aside>
+    </main>
+    <footer class="page-footer"><span>3Dfans特效大师 <i> / </i> 本地交互作品</span><a href="../module-guide.md">源码与使用说明 <span>↗</span></a><span id="quality">离线资源 · WebGL</span></footer>
+  </div>
+  <script type="module" src="./main.js"></script>
+
+<link rel="stylesheet" href="../../../shared/demo-chrome.css">
+<script type="module" src="../../../shared/demo-chrome.js"></script>
+</body></html>

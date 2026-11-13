@@ -1,0 +1,1 @@
+用户提供项目资源：Fire.js、Fire2.js、photons.module.js 与三张 PNG 来自 threeEditor 本地项目。本次输入未提供这些文件的独立许可证声明；保留来源记录，不将它们重新标为 MIT 或宣称拥有额外再授权权利。第三方依赖许可见 demos/vendor/。适配代码不改变上游资源权属。

@@ -1,0 +1,97 @@
+{
+  "module": "3d-webgpu-volume-fire",
+  "runtime": "WebGPU",
+  "requirement": "浏览器需支持 WebGPU（chrome >= 113 / edge >= 113，且处于安全上下文：https 或 localhost）",
+  "three_revision": "188dev",
+  "three_revision_note": "官方示例取自 mrdoob/three.js dev 分支；构建文件内声明 REVISION = '188dev'。WebGPU 构建仅支持与同一提交的 core / tsl 组合，请勿与其他版本的 three.module.js 混用。",
+  "entry_importmap": {
+    "three": "./vendor/three.webgpu.js",
+    "three/webgpu": "./vendor/three.webgpu.js",
+    "three/tsl": "./vendor/three.tsl.js",
+    "three/addons/": "./vendor/addons/"
+  },
+  "vendor_files": [
+    {
+      "path": "demos/vendor/three.core.js",
+      "bytes": 1476687,
+      "sha256_prefix": "619f78b100291b82",
+      "source": "https://raw.githubusercontent.com/mrdoob/three.js/dev/build/three.core.js",
+      "license": "MIT"
+    },
+    {
+      "path": "demos/vendor/three.tsl.js",
+      "bytes": 1068050,
+      "sha256_prefix": "c444e67504c925c1",
+      "source": "https://raw.githubusercontent.com/mrdoob/three.js/dev/build/three.tsl.js",
+      "license": "MIT"
+    },
+    {
+      "path": "demos/vendor/three.webgpu.js",
+      "bytes": 1345303,
+      "sha256_prefix": "e21c0cfd606fbd8e",
+      "source": "https://raw.githubusercontent.com/mrdoob/three.js/dev/build/three.webgpu.js",
+      "license": "MIT"
+    },
+    {
+      "path": "demos/vendor/addons/tsl/math/curlNoise.js",
+      "bytes": 3944,
+      "sha256_prefix": "d09cf996ecafc662",
+      "source": "https://raw.githubusercontent.com/mrdoob/three.js/dev/examples/jsm/tsl/math/curlNoise.js",
+      "license": "MIT"
+    },
+    {
+      "path": "demos/vendor/addons/math/ImprovedNoise.js",
+      "bytes": 3034,
+      "sha256_prefix": "d3821241e25bf0c8",
+      "source": "https://raw.githubusercontent.com/mrdoob/three.js/dev/examples/jsm/math/ImprovedNoise.js",
+      "license": "MIT"
+    },
+    {
+      "path": "demos/vendor/addons/tsl/display/GaussianBlurNode.js",
+      "bytes": 11001,
+      "sha256_prefix": "7da1d6c70f4af9f6",
+      "source": "https://raw.githubusercontent.com/mrdoob/three.js/dev/examples/jsm/tsl/display/GaussianBlurNode.js",
+      "license": "MIT"
+    },
+    {
+      "path": "demos/vendor/addons/tsl/display/BloomNode.js",
+      "bytes": 17230,
+      "sha256_prefix": "e7a39bf41581b5ad",
+      "source": "https://raw.githubusercontent.com/mrdoob/three.js/dev/examples/jsm/tsl/display/BloomNode.js",
+      "license": "MIT"
+    },
+    {
+      "path": "demos/vendor/addons/controls/DragControls.js",
+      "bytes": 9510,
+      "sha256_prefix": "aa0af1effa5c4e62",
+      "source": "https://raw.githubusercontent.com/mrdoob/three.js/dev/examples/jsm/controls/DragControls.js",
+      "license": "MIT"
+    },
+    {
+      "path": "demos/vendor/addons/controls/OrbitControls.js",
+      "bytes": 41009,
+      "sha256_prefix": "0d3050ac41628207",
+      "source": "https://raw.githubusercontent.com/mrdoob/three.js/dev/examples/jsm/controls/OrbitControls.js",
+      "license": "MIT"
+    },
+    {
+      "path": "demos/vendor/addons/geometries/TeapotGeometry.js",
+      "bytes": 18843,
+      "sha256_prefix": "05dfda4e24db0b48",
+      "source": "https://raw.githubusercontent.com/mrdoob/three.js/dev/examples/jsm/geometries/TeapotGeometry.js",
+      "license": "MIT"
+    },
+    {
+      "path": "demos/vendor/addons/capabilities/WebGPU.js",
+      "bytes": 1485,
+      "sha256_prefix": "cdf50407d9fa4ce1",
+      "source": "https://raw.githubusercontent.com/mrdoob/three.js/dev/examples/jsm/capabilities/WebGPU.js",
+      "license": "MIT"
+    }
+  ],
+  "total_vendor_bytes": 3904096,
+  "offline": true,
+  "network_required": false,
+  "serving_note": "WebGPU 只在安全上下文可用：必须用 http://localhost / http://127.0.0.1 或 https 打开 demo，不能用 file:// 双击打开。",
+  "fallback": "无 WebGPU 时 demo 只显示能力提示面板，不创建任何 WebGPU 资源；模块 create() 会抛出明确错误，宿主可据此降级到 3d-realistic-fire（WebGL 2 粒子火焰）。"
+}

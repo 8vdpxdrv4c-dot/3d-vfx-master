@@ -1,0 +1,4 @@
+用户提供「几猫3A大作」提取页（extracted-sky-glow-standalone.html）衍生封装；输入未附整体许可证，保留原作者与用户代码权属，不改标整个模块为 MIT 或原创。
+天空与后期着色器实现归属原「几猫3A大作」HTML；本包只做提取、参数化、生命周期封装与离线演示编排。
+Three.js r160 与 OrbitControls：MIT，完整条款见 demos/vendor/THREE-MIT.txt。
+预览图为本模块在本机无头 Chromium 的实际渲染截图，非生成图片。

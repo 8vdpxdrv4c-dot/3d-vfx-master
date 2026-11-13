@@ -1,0 +1,40 @@
+{
+  "viewport": [
+    390,
+    844
+  ],
+  "contentWidth": 375,
+  "scrollWidth": 375,
+  "ready": true,
+  "quality": "低功耗模式 · 本地资源",
+  "looks": [
+    {
+      "id": "steady",
+      "selected": true,
+      "value": 1,
+      "display": "1.00 ×",
+      "synchronized": true
+    },
+    {
+      "id": "full",
+      "selected": true,
+      "value": 1.45,
+      "display": "1.45 ×",
+      "synchronized": true
+    },
+    {
+      "id": "gentle",
+      "selected": true,
+      "value": 0.35,
+      "display": "0.35 ×",
+      "synchronized": true
+    }
+  ],
+  "noOverflow": true,
+  "zeroFlow": true,
+  "paused": true,
+  "canvasWidth": 343,
+  "drops": 4,
+  "pass": true,
+  "scope": "Browser iframe layout and low-power branch; not a physical phone benchmark."
+}

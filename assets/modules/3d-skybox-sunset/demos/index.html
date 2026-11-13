@@ -1,0 +1,234 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>夕阳天空盒与太阳光晕 · 独立效果演示</title>
+<link rel="icon" href="data:,">
+<style>
+  :root { color-scheme: dark; }
+  html, body { margin: 0; height: 100%; overflow: hidden; background: #0b0d0f; color: #e8e4da;
+               font: 14px/1.5 "PingFang SC", "Microsoft YaHei", system-ui, sans-serif; }
+  canvas { display: block; width: 100%; height: 100vh; }
+  aside { position: absolute; left: 16px; top: 16px; width: min(320px, calc(100vw - 32px));
+          max-height: calc(100vh - 32px); overflow: auto; box-sizing: border-box; padding: 16px 18px;
+          background: rgba(12,16,22,.86); border: 1px solid rgba(232,228,218,.22); border-radius: 12px;
+          backdrop-filter: blur(8px); }
+  h1 { margin: 0 0 6px; font-size: 18px; letter-spacing: .04em; }
+  .sub { margin: 0 0 12px; font-size: 12px; color: #b9c2cc; }
+  .tag { color: #ffb347; font-weight: 600; }
+  label { display: block; margin: 9px 0 2px; font-size: 12px; color: #cfd6dd; }
+  input[type=range] { width: 100%; vertical-align: middle; accent-color: #ffb347; }
+  input[type=color] { width: 46px; height: 22px; padding: 0; border: 1px solid #ffffff40; background: none; vertical-align: middle; }
+  select { width: 100%; padding: 6px 8px; background: #1b222c; color: #e8e4da; border: 1px solid #ffffff30; border-radius: 6px; }
+  .row { display: flex; gap: 8px; margin-top: 12px; flex-wrap: wrap; }
+  button { flex: 1 1 auto; padding: 7px 10px; cursor: pointer; font: 600 12px/1 "PingFang SC", sans-serif;
+           letter-spacing: .06em; background: rgba(11,13,15,.86); color: #e8e4da;
+           border: 1px solid rgba(232,228,218,.4); border-radius: 6px; }
+  button.on { background: #ffb347; color: #0b0d0f; border-color: #ffb347; }
+  .val { float: right; color: #ffb347; font: 11px ui-monospace, monospace; }
+  #hint { position: fixed; left: 16px; bottom: 16px; padding: 7px 11px; font-size: 12px;
+          background: rgba(11,13,15,.72); pointer-events: none; }
+  #diag { position: fixed; right: 16px; bottom: 16px; max-width: 40vw; max-height: 30vh; overflow: auto;
+          padding: 8px 10px; background: rgba(11,13,15,.82); font: 11px/1.5 ui-monospace, monospace;
+          color: #ff9a80; white-space: pre-wrap; pointer-events: none; }
+  @media (max-width: 620px) { aside { width: calc(100vw - 32px); max-height: 48vh; } #diag { display: none; } }
+</style>
+<script type="importmap">
+{"imports":{"three":"./vendor/three.module.js","three/addons/":"./vendor/addons/"}}
+</script>
+</head>
+<body>
+<aside>
+  <h1>夕阳天空盒与太阳光晕</h1>
+  <p class="sub"><span class="tag">3d-skybox-sunset</span> · 提取自「几猫3A大作」的 SALTLINE_SKY 与镜头光晕。默认预设即夕阳户外环境。</p>
+  <label>预设 <select id="look"></select></label>
+  <div id="controls"></div>
+  <div class="row">
+    <button id="play" type="button">暂停</button>
+    <button id="reset" type="button">重置</button>
+    <button id="occluder" type="button" aria-pressed="false">遮挡示例</button>
+  </div>
+</aside>
+<div id="hint">拖拽旋转 · 滚轮缩放 · 调整参数可实时观察日晕、云层与镜头光晕 · 「遮挡示例」显示前景布景</div>
+<div id="diag" aria-live="polite"></div>
+<script type="module">
+import * as THREE from 'three';
+import { OrbitControls } from 'three/addons/controls/OrbitControls.js';
+import { meta } from './meta.js';
+import { createSkyGlowEffect } from './effects/sky-glow.js';
+
+const diag = document.getElementById('diag');
+const errors = [];
+window.__skyErrors = errors;
+window.__skyReady = false;
+const report = (message) => { errors.push(String(message)); diag.textContent = errors.slice(-6).join('\n'); console.error('[sky-glow]', message); };
+
+const renderer = new THREE.WebGLRenderer({ antialias: false, powerPreference: 'high-performance', alpha: false, depth: true, stencil: false });
+renderer.setPixelRatio(Math.min(window.devicePixelRatio || 1, 1.5));
+renderer.setSize(window.innerWidth, window.innerHeight, false);
+// r160 的 useLegacyLights=false 等价于 r180 的物理光照，使原页 intensity=9 表现一致。
+if ('useLegacyLights' in renderer) renderer.useLegacyLights = false;
+renderer.debug.checkShaderErrors = true;
+renderer.debug.onShaderError = (gl, program, vs, fs) => {
+  report('shader compile: ' + (gl.getProgramInfoLog(program) || '') + ' ' + (gl.getShaderInfoLog(vs) || '') + ' ' + (gl.getShaderInfoLog(fs) || ''));
+};
+document.body.appendChild(renderer.domElement);
+
+const scene = new THREE.Scene();
+const camera = new THREE.PerspectiveCamera(74, window.innerWidth / window.innerHeight, 0.08, 900);
+const sunDir = new THREE.Vector3(0.916, 0.225, 0.331).normalize();
+camera.position.set(-9.16, 1.68, -3.31);
+const controls = new OrbitControls(camera, renderer.domElement);
+controls.target.copy(sunDir).multiplyScalar(40);
+controls.enableDamping = true;
+controls.dampingFactor = 0.08;
+controls.minDistance = 1;
+controls.maxDistance = 120;
+controls.update();
+
+// 演示布景默认隐藏，保持与提取源一致的纯天空构图；点「遮挡示例」时一并显示，
+// 用于验证平行光、PMREM 环境与太阳遮挡对 flare 的衰减。
+const ground = new THREE.Mesh(
+  new THREE.PlaneGeometry(400, 400),
+  new THREE.MeshStandardMaterial({ color: 0x2b3038, roughness: 0.92, metalness: 0.02 })
+);
+ground.rotation.x = -Math.PI / 2;
+ground.position.y = -0.02;
+ground.visible = false;
+scene.add(ground);
+
+const props = new THREE.Group();
+const silhouette = new THREE.MeshStandardMaterial({ color: 0x1a1f27, roughness: 0.85, metalness: 0.1 });
+for (const spec of [[-3, 2.4, 6, 2, 9, 2], [4, 1.5, 11, 3, 6, 3], [9, 3.2, 20, 2.5, 13, 2.5], [-8, 2, 26, 4, 8, 4]]) {
+  const box = new THREE.Mesh(new THREE.BoxGeometry(spec[3], spec[4], spec[5]), silhouette);
+  box.position.set(spec[0], spec[4] / 2, spec[2]);
+  props.add(box);
+}
+props.visible = false;
+scene.add(props);
+
+// 遮挡示例：打开后显示前景布景并挡住太阳，eA 的 12 抽样深度测试会衰减 flare。
+const occluder = new THREE.Mesh(new THREE.BoxGeometry(5, 12, 3), silhouette);
+occluder.position.copy(sunDir).multiplyScalar(18);
+occluder.position.y = 6;
+occluder.visible = false;
+scene.add(occluder);
+
+const params = Object.fromEntries(meta.schema.map((s) => [s.key, s.default]));
+const effect = createSkyGlowEffect({ renderer, scene, params });
+
+/* -------------------------- 参数面板 -------------------------- */
+const lookSelect = document.getElementById('look');
+for (const look of meta.looks) {
+  const option = document.createElement('option');
+  option.value = look.id; option.textContent = look.title;
+  lookSelect.append(option);
+}
+const fields = new Map();
+for (const s of meta.schema) {
+  const label = document.createElement('label');
+  label.textContent = s.label + ' ';
+  const output = document.createElement('span');
+  output.className = 'val';
+  const input = document.createElement('input');
+  input.type = s.type === 'color' ? 'color' : 'range';
+  if (s.min !== undefined) { input.min = s.min; input.max = s.max; input.step = s.step; }
+  const show = () => { output.textContent = s.type === 'color' ? s.default : Number(params[s.key]).toFixed(s.step < 0.01 ? 4 : 2); };
+  input.addEventListener('input', () => {
+    params[s.key] = s.type === 'color' ? input.value : Number(input.value);
+    show();
+    effect.update(0, params);
+  });
+  label.append(output, input);
+  document.getElementById('controls').append(label);
+  fields.set(s.key, { input, show });
+}
+function selectLook() {
+  Object.assign(params, meta.looks.find((l) => l.id === lookSelect.value).params);
+  for (const [key, field] of fields) { field.input.value = params[key]; field.show(); }
+  effect.update(0, params);
+}
+lookSelect.addEventListener('change', selectLook);
+selectLook();
+
+let playing = true;
+const playButton = document.getElementById('play');
+playButton.addEventListener('click', () => {
+  playing = !playing;
+  playButton.textContent = playing ? '暂停' : '播放';
+});
+document.getElementById('reset').addEventListener('click', () => {
+  lookSelect.value = meta.looks[0].id;
+  selectLook();
+  playing = true; playButton.textContent = '暂停';
+  controls.target.copy(sunDir).multiplyScalar(40);
+  camera.position.set(-9.16, 1.68, -3.31);
+  controls.update();
+});
+const occluderButton = document.getElementById('occluder');
+occluderButton.addEventListener('click', () => {
+  const shown = !occluder.visible;
+  occluder.visible = shown;
+  ground.visible = shown;
+  props.visible = shown;
+  occluderButton.classList.toggle('on', shown);
+  occluderButton.setAttribute('aria-pressed', String(shown));
+});
+
+function resize() {
+  const w = window.innerWidth, h = window.innerHeight;
+  renderer.setSize(w, h, false);
+  camera.aspect = w / h;
+  camera.updateProjectionMatrix();
+  const buffer = renderer.getDrawingBufferSize(new THREE.Vector2());
+  effect.setSize(buffer.x, buffer.y);
+}
+window.addEventListener('resize', resize);
+resize();
+
+let last = 0, frames = 0;
+renderer.setAnimationLoop((ms) => {
+  try {
+    const dt = Math.min(0.05, last ? (ms - last) / 1000 : 0);
+    last = ms;
+    controls.update();
+    // 遮挡示例跟随当前太阳方位，保证切换预设后仍可验证遮挡。
+    if (occluder.visible) {
+      const el = params.sunElevation * Math.PI / 180, az = params.sunAzimuth * Math.PI / 180;
+      occluder.position.set(Math.sin(az) * Math.cos(el), Math.sin(el), Math.cos(az) * Math.cos(el)).multiplyScalar(18);
+      occluder.position.y = 6;
+    }
+    effect.update(playing ? dt : 0, params);
+    effect.render(scene, camera);
+    frames++;
+    if (frames === 2) { window.__skyReady = true; window.__skyFrames = frames; }
+  } catch (err) {
+    report(err && (err.stack || err));
+    renderer.setAnimationLoop(null);
+  }
+});
+
+document.addEventListener('visibilitychange', () => {
+  if (document.hidden && playing) { playing = false; playButton.textContent = '播放'; }
+});
+window.addEventListener('pagehide', () => {
+  renderer.setAnimationLoop(null);
+  effect.dispose();
+  ground.geometry.dispose(); ground.material.dispose();
+  silhouette.dispose();
+  props.traverse((o) => { if (o.geometry) o.geometry.dispose(); });
+  occluder.geometry.dispose();
+  controls.dispose();
+  renderer.dispose();
+}, { once: true });
+
+window.__skyDemo = { effect, renderer, scene, camera, controls, params, meta, occluder, selectLook,
+  get frames() { return frames; },
+  preset: (id) => { lookSelect.value = id; selectLook(); } };
+</script>
+
+<link rel="stylesheet" href="../../../shared/demo-chrome.css">
+<script type="module" src="../../../shared/demo-chrome.js"></script>
+</body>
+</html>

@@ -1,0 +1,25 @@
+{
+  "parkA": "3",
+  "parkB": "3",
+  "pausedLoopParked": true,
+  "lookSwitchObserved": true,
+  "guiRedrawObserved": true,
+  "dragView": "[0.14711538461538468,0.8192901234567899,1]",
+  "releaseView": "[0.14711538461538468,0.8192901234567899,1]",
+  "retainedAfterRelease": true,
+  "qualityView": "[0.14711538461538468,0.8192901234567899,1]",
+  "lowQualitySelected": true,
+  "qualityPreservesView": true,
+  "playA": 0.25,
+  "playB": 160.875,
+  "playAdvancesTime": true,
+  "filterCounts": [
+    34,
+    20,
+    13,
+    1
+  ],
+  "batchFiltersVerified": true,
+  "searchVerified": true,
+  "master_packaging_note": "Historical evidence from the original standalone module package. Current layout and bytes are recorded in the master source-audit.json."
+}

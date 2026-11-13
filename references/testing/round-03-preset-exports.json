@@ -1,0 +1,67 @@
+{
+  "baseline_custom_export_supported": false,
+  "valid": [
+    {
+      "slug": "3d-smoke",
+      "config": {
+        "module": "3d-smoke",
+        "initial_look": "ambient",
+        "parameter_overrides": {
+          "opacity": 0.4
+        },
+        "source": "3d-vfx-master installed module; only exported metadata was customized"
+      },
+      "source_unchanged": true
+    },
+    {
+      "slug": "3d-rain",
+      "config": {
+        "module": "3d-rain",
+        "initial_look": "driving",
+        "parameter_overrides": {
+          "wind": 0.7
+        },
+        "source": "3d-vfx-master installed module; only exported metadata was customized"
+      },
+      "source_unchanged": true
+    },
+    {
+      "slug": "3d-slice-reveal",
+      "config": {
+        "module": "3d-slice-reveal",
+        "initial_look": "static",
+        "parameter_overrides": {
+          "animate": false
+        },
+        "source": "3d-vfx-master installed module; only exported metadata was customized"
+      },
+      "source_unchanged": true
+    },
+    {
+      "slug": "3d-bloom",
+      "config": {
+        "module": "3d-bloom",
+        "initial_look": "cyan",
+        "parameter_overrides": {
+          "quality": "low"
+        },
+        "source": "3d-vfx-master installed module; only exported metadata was customized"
+      },
+      "source_unchanged": true
+    },
+    {
+      "slug": "3d-glass",
+      "config": {
+        "module": "3d-glass",
+        "initial_look": "clear",
+        "parameter_overrides": {
+          "color": "#11aacc"
+        },
+        "source": "3d-vfx-master installed module; only exported metadata was customized"
+      },
+      "source_unchanged": true
+    }
+  ],
+  "bom_file_passed": true,
+  "invalid_rejected_before_write": 7
+}

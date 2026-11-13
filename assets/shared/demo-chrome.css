@@ -1,0 +1,256 @@
+/* 3d-vfx-master 统一 Demo 头部 / 复制提示词按钮 */
+
+:root {
+  --vfx-header-h: 72px;
+  --vfx-ink: #d8e1e6;
+  --vfx-muted: #8c9ba6;
+  --vfx-accent: #afc09e;
+  --vfx-accent-ink: #11201b;
+  --vfx-bar: #0b111a;
+  --vfx-line: rgba(255, 255, 255, 0.1);
+}
+
+/* ---- 头部 ---- */
+header.vfx-unified {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  height: var(--vfx-header-h);
+  margin: 0;
+  padding: 0 28px;
+  box-sizing: border-box;
+  background: var(--vfx-bar);
+  border-bottom: 1px solid var(--vfx-line);
+  font-family: Arial, "Microsoft YaHei", "PingFang SC", sans-serif;
+  font-size: 12px;
+  color: var(--vfx-muted);
+  z-index: 900;
+}
+header.vfx-unified--fixed {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+}
+
+header.vfx-unified .vfx-back {
+  flex: 0 0 auto;
+  font-size: 12px;
+  letter-spacing: 0.02em;
+  color: var(--vfx-muted);
+  text-decoration: none;
+  transition: color 0.15s ease;
+}
+header.vfx-unified .vfx-back:hover,
+header.vfx-unified .vfx-back:focus-visible {
+  color: #fff;
+}
+
+header.vfx-unified .vfx-title {
+  flex: 1 1 auto;
+  min-width: 0;
+  display: flex;
+  align-items: baseline;
+  gap: 10px;
+  justify-content: center;
+  font-style: normal;
+}
+header.vfx-unified .vfx-title b {
+  font-size: 12px;
+  font-weight: 400;
+  letter-spacing: 0.15em;
+  color: #fff;
+  white-space: nowrap;
+}
+header.vfx-unified .vfx-title i {
+  font-style: normal;
+  font-size: 11px;
+  letter-spacing: 0.04em;
+  color: var(--vfx-muted);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+header.vfx-unified .vfx-title i::before {
+  content: "/ ";
+  color: rgba(255, 255, 255, 0.22);
+}
+header.vfx-unified .vfx-title i:empty {
+  display: none;
+}
+
+header.vfx-unified .vfx-copy {
+  flex: 0 0 auto;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  height: 32px;
+  padding: 0 16px;
+  margin: 0;
+  border: 0;
+  border-radius: 6px;
+  background: var(--vfx-accent);
+  color: var(--vfx-accent-ink);
+  font-family: inherit;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  line-height: 1;
+  cursor: pointer;
+  transition: filter 0.15s ease, transform 0.08s ease;
+}
+header.vfx-unified .vfx-copy:hover {
+  filter: brightness(1.06);
+}
+header.vfx-unified .vfx-copy:active {
+  transform: scale(0.98);
+}
+header.vfx-unified .vfx-copy:focus-visible {
+  outline: 2px solid #fff;
+  outline-offset: 2px;
+}
+header.vfx-unified .vfx-copy[data-state="done"] {
+  background: #7fcf9f;
+  color: #06231a;
+}
+header.vfx-unified .vfx-copy[data-state="error"] {
+  background: #c9705a;
+  color: #1d0b06;
+}
+
+/* ---- 复制反馈 ---- */
+.vfx-toast {
+  position: fixed;
+  left: 50%;
+  bottom: 30px;
+  transform: translate(-50%, 12px);
+  z-index: 1200;
+  padding: 9px 16px;
+  border-radius: 6px;
+  border: 1px solid rgba(0, 0, 0, 0.35);
+  background: #16241c;
+  color: #b8f0cd;
+  font: 12px/1.5 Arial, "Microsoft YaHei", "PingFang SC", sans-serif;
+  letter-spacing: 0.02em;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.18s ease, transform 0.18s ease;
+}
+.vfx-toast[data-on="true"] {
+  opacity: 1;
+  transform: translate(-50%, 0);
+}
+.vfx-toast[data-tone="error"] {
+  background: #2a1613;
+  border-color: rgba(255, 255, 255, 0.16);
+  color: #ffc3b0;
+}
+
+/* ---- 无自带头部的全屏页面：固定头部，浮层整体下移 ---- */
+body.vfx-chrome-fixed aside,
+body.vfx-chrome-fixed #hud,
+body.vfx-chrome-fixed #controls,
+body.vfx-chrome-fixed #perf,
+body.vfx-chrome-fixed #toggle {
+  top: calc(var(--vfx-header-h) + 16px) !important;
+}
+body.vfx-chrome-fixed #panel {
+  top: var(--vfx-header-h) !important;
+}
+body.vfx-chrome-fixed .lil-gui.autoPlace {
+  top: var(--vfx-header-h) !important;
+  max-height: calc(100vh - var(--vfx-header-h));
+}
+
+/* ---- 手动复制兜底 ---- */
+.vfx-fallback {
+  position: fixed;
+  inset: 0;
+  z-index: 1300;
+  display: none;
+  place-items: center;
+  padding: 24px;
+  background: rgba(4, 7, 10, 0.72);
+  backdrop-filter: blur(4px);
+}
+.vfx-fallback[data-on="true"] {
+  display: grid;
+}
+.vfx-fallback-card {
+  display: flex;
+  flex-direction: column;
+  width: min(760px, 100%);
+  max-height: 100%;
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  border-radius: 10px;
+  background: #0b1119;
+  overflow: hidden;
+  box-shadow: 0 24px 70px rgba(0, 0, 0, 0.55);
+}
+.vfx-fallback-card > header {
+  display: flex;
+  align-items: baseline;
+  gap: 12px;
+  padding: 14px 18px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  font: 12px/1.5 Arial, "Microsoft YaHei", "PingFang SC", sans-serif;
+}
+.vfx-fallback-card > header b {
+  font-size: 13px;
+  font-weight: 400;
+  color: #fff;
+  letter-spacing: 0.06em;
+}
+.vfx-fallback-card > header span {
+  color: var(--vfx-muted);
+}
+.vfx-fallback-card textarea {
+  flex: 1;
+  min-height: 220px;
+  margin: 0;
+  padding: 16px 18px;
+  border: 0;
+  background: #070c13;
+  color: #cdd9e1;
+  font: 11.5px/1.7 ui-monospace, Consolas, monospace;
+  resize: none;
+  outline: none;
+}
+.vfx-fallback-card > footer {
+  display: flex;
+  justify-content: flex-end;
+  padding: 10px 18px;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+.vfx-fallback-card > footer button {
+  padding: 7px 15px;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  border-radius: 5px;
+  background: transparent;
+  color: #d8e1e6;
+  font: 12px/1 Arial, "Microsoft YaHei", sans-serif;
+  cursor: pointer;
+}
+.vfx-fallback-card > footer button:hover {
+  background: rgba(255, 255, 255, 0.07);
+}
+
+/* ---- 小屏 ---- */
+@media (max-width: 720px) {
+  header.vfx-unified {
+    gap: 10px;
+    padding: 0 14px;
+  }
+  header.vfx-unified .vfx-title {
+    justify-content: flex-start;
+  }
+  header.vfx-unified .vfx-title b {
+    display: none;
+  }
+  header.vfx-unified .vfx-title i::before {
+    content: "";
+  }
+  header.vfx-unified .vfx-copy {
+    padding: 0 12px;
+  }
+}

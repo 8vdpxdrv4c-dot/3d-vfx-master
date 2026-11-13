@@ -1,0 +1,63 @@
+{
+  "exports": [
+    {
+      "name": "default",
+      "ready": true,
+      "initial": {
+        "flow": 1,
+        "pressure": 1,
+        "color": "#68ccdc"
+      },
+      "selected": true,
+      "order": [
+        "steady",
+        "full",
+        "gentle"
+      ],
+      "initialMatches": true,
+      "paused": true,
+      "otherLook": true,
+      "zeroFlow": true,
+      "reset": {
+        "flow": 1,
+        "pressure": 1,
+        "color": "#68ccdc"
+      },
+      "resetMatches": true,
+      "nearView": true,
+      "played": true,
+      "restoredFlow": true,
+      "pass": true
+    },
+    {
+      "name": "custom",
+      "ready": true,
+      "initial": {
+        "flow": 0.35,
+        "pressure": 1.2,
+        "color": "#006aff"
+      },
+      "selected": true,
+      "order": [
+        "gentle",
+        "steady",
+        "full"
+      ],
+      "initialMatches": true,
+      "paused": true,
+      "otherLook": true,
+      "zeroFlow": true,
+      "reset": {
+        "flow": 0.35,
+        "pressure": 1.2,
+        "color": "#006aff"
+      },
+      "resetMatches": true,
+      "nearView": true,
+      "played": true,
+      "restoredFlow": true,
+      "pass": true
+    }
+  ],
+  "pass": true
+}

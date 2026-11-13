@@ -1,0 +1,5487 @@
+[
+  {
+    "slug": "3d-architecture-growth",
+    "effect": "motion-architecture-growth",
+    "name": "Assembly House",
+    "zh": "建筑逐件生长",
+    "category": "motion",
+    "sourceId": "batch02-01",
+    "tagline": "A building assembled in measured layers.",
+    "camera": [
+      8,
+      6,
+      9
+    ],
+    "target": [
+      0,
+      1.2,
+      0
+    ],
+    "schema": [
+      {
+        "key": "progress",
+        "label": "建造进度 Progress",
+        "min": 0,
+        "max": 1,
+        "step": 0.01,
+        "default": 0.76
+      },
+      {
+        "key": "lift",
+        "label": "入场高度 Lift",
+        "min": 0,
+        "max": 5,
+        "step": 0.05,
+        "default": 1.8
+      },
+      {
+        "key": "stagger",
+        "label": "层次错峰 Stagger",
+        "min": 0.05,
+        "max": 0.8,
+        "step": 0.01,
+        "default": 0.28
+      },
+      {
+        "key": "speed",
+        "label": "循环速度 Speed",
+        "min": 0,
+        "max": 1,
+        "step": 0.01,
+        "default": 0.13
+      },
+      {
+        "key": "accent",
+        "label": "构件颜色 Accent",
+        "type": "color",
+        "default": "#c8a475"
+      }
+    ],
+    "looks": [
+      {
+        "id": "courtyard",
+        "title": "Courtyard / 庭院",
+        "hint": "An open colonnade, roof ribs and sun fins.",
+        "params": {
+          "variant": 0,
+          "progress": 0.88,
+          "accent": "#c7a67b"
+        }
+      },
+      {
+        "id": "terraces",
+        "title": "Terraces / 叠台",
+        "hint": "Stepped floors with copper rails.",
+        "params": {
+          "variant": 1,
+          "progress": 0.82,
+          "accent": "#a9c0bb"
+        }
+      },
+      {
+        "id": "atrium",
+        "title": "Atrium / 中庭",
+        "hint": "An airy frame with a raised canopy.",
+        "params": {
+          "variant": 2,
+          "progress": 0.9,
+          "accent": "#c98664"
+        }
+      }
+    ],
+    "limit": "An authored architectural assembly illustration, not structural analysis or a historically reconstructed building.",
+    "fit": "Architecture reveals, procedural building intros and editable assembly timelines.",
+    "batch": "original13",
+    "family": "motion",
+    "render_role": "scene-layer",
+    "source_kind": "independent",
+    "keywords": [
+      "建筑",
+      "装配",
+      "生长",
+      "architecture"
+    ],
+    "resource_dir": "assets/modules/3d-architecture-growth",
+    "guide": "assets/modules/3d-architecture-growth/module-guide.md",
+    "demo": "assets/modules/3d-architecture-growth/demos/index.html",
+    "preview": "assets/modules/3d-architecture-growth/assets/preview.webp",
+    "effect_path": "assets/modules/3d-architecture-growth/demos/effects/motion-architecture-growth.js"
+  },
+  {
+    "slug": "3d-aurora",
+    "effect": "lighting-polar-ribbons",
+    "impl": "polar-ribbons.js",
+    "name": "3D Aurora",
+    "zh": "极光幕帘",
+    "category": "lighting",
+    "tagline": "Layered curtains carry fine bands of atmospheric light.",
+    "camera": [
+      8,
+      4.2,
+      10
+    ],
+    "target": [
+      0,
+      1.9,
+      0
+    ],
+    "schema": [
+      {
+        "key": "height",
+        "label": "幕帘高度 Height",
+        "min": 1,
+        "max": 4.5,
+        "step": 0.05,
+        "default": 2.7
+      },
+      {
+        "key": "wave",
+        "label": "折叠幅度 Wave",
+        "min": 0.1,
+        "max": 2,
+        "step": 0.02,
+        "default": 0.8
+      },
+      {
+        "key": "opacity",
+        "label": "光幕强度 Opacity",
+        "min": 0.1,
+        "max": 1,
+        "step": 0.01,
+        "default": 0.65
+      },
+      {
+        "key": "color",
+        "label": "主光色 Color",
+        "type": "color",
+        "default": "#58c693"
+      },
+      {
+        "key": "highlight",
+        "label": "边缘色 Highlight",
+        "type": "color",
+        "default": "#a68bc9"
+      },
+      {
+        "key": "speed",
+        "label": "演化速度 Speed",
+        "min": 0,
+        "max": 1,
+        "step": 0.01,
+        "default": 0.22
+      }
+    ],
+    "looks": [
+      {
+        "id": "emerald",
+        "title": "Emerald veil / 翡翠幕帘",
+        "hint": "Green curtains with violet edges.",
+        "params": {
+          "variant": 0
+        }
+      },
+      {
+        "id": "rose",
+        "title": "Solar rose / 玫瑰光幕",
+        "hint": "Warm magenta bands.",
+        "params": {
+          "variant": 1,
+          "color": "#dc83a9",
+          "highlight": "#e8bd87"
+        }
+      },
+      {
+        "id": "arctic",
+        "title": "Arctic blue / 北极蓝",
+        "hint": "Cool folded blue ribbons.",
+        "params": {
+          "variant": 2,
+          "color": "#699ee0",
+          "highlight": "#7ee1cc"
+        }
+      }
+    ],
+    "fitZh": "极光外观、天空气氛和柔和发光幕帘。",
+    "limitZh": "有边界的发光网格，不是磁层、电离层或大气辐射模拟。",
+    "limit": "Bounded emissive geometry, not a magnetosphere or atmospheric transport model.",
+    "batch": "rewritten20",
+    "family": "lighting",
+    "render_role": "scene-layer",
+    "source_kind": "independent",
+    "keywords": [
+      "极光",
+      "天空",
+      "aurora"
+    ],
+    "resource_dir": "assets/modules/3d-aurora",
+    "guide": "assets/modules/3d-aurora/module-guide.md",
+    "demo": "assets/modules/3d-aurora/demos/index.html",
+    "preview": "assets/modules/3d-aurora/assets/preview.webp",
+    "effect_path": "assets/modules/3d-aurora/demos/effects/lighting-polar-ribbons.js"
+  },
+  {
+    "slug": "3d-bloom",
+    "effect": "post-soft-glow",
+    "impl": "soft-glow.js",
+    "name": "3D Bloom",
+    "zh": "电影辉光",
+    "category": "postprocessing",
+    "tagline": "A localized halo with one clear output owner.",
+    "camera": [
+      6.5,
+      3.8,
+      8
+    ],
+    "target": [
+      0,
+      1.4,
+      0
+    ],
+    "schema": [
+      {
+        "key": "quality",
+        "label": "质量 Quality",
+        "options": [
+          "low",
+          "mid",
+          "high",
+          "cinematic"
+        ],
+        "default": "high"
+      },
+      {
+        "key": "strength",
+        "label": "辉光强度 Strength",
+        "min": 0,
+        "max": 2,
+        "step": 0.02,
+        "default": 0.8
+      },
+      {
+        "key": "radius",
+        "label": "扩散半径 Radius",
+        "min": 0.2,
+        "max": 2.5,
+        "step": 0.02,
+        "default": 1
+      },
+      {
+        "key": "threshold",
+        "label": "亮部阈值 Threshold",
+        "min": 0.2,
+        "max": 2,
+        "step": 0.02,
+        "default": 0.9
+      },
+      {
+        "key": "exposure",
+        "label": "曝光 Exposure",
+        "min": 0.5,
+        "max": 1.6,
+        "step": 0.02,
+        "default": 1
+      },
+      {
+        "key": "color",
+        "label": "发光色 Color",
+        "type": "color",
+        "default": "#7ac9d1"
+      }
+    ],
+    "looks": [
+      {
+        "id": "cyan",
+        "title": "Cyan studio / 青色摄影棚",
+        "hint": "A controlled cool halo.",
+        "params": {}
+      },
+      {
+        "id": "amber",
+        "title": "Amber accent / 琥珀点缀",
+        "hint": "Warm localized emission.",
+        "params": {
+          "color": "#efb271",
+          "strength": 0.5,
+          "radius": 0.7,
+          "threshold": 1.15
+        }
+      },
+      {
+        "id": "violet",
+        "title": "Violet halo / 紫色光晕",
+        "hint": "A wider luminous silhouette.",
+        "params": {
+          "color": "#b29bd9",
+          "strength": 1.3,
+          "radius": 1.8
+        }
+      }
+    ],
+    "fitZh": "发光产品、亮部溢出与可控柔光。",
+    "limitZh": "艺术化亮部提取和模糊，不是经标定的镜头散射；不要叠加宿主输出变换。",
+    "limit": "Artistic thresholded glow, not calibrated optical scatter. Avoid nested output transforms.",
+    "batch": "rewritten20",
+    "family": "postprocessing",
+    "render_role": "postprocess",
+    "source_kind": "independent",
+    "keywords": [
+      "辉光",
+      "发光",
+      "光晕",
+      "后期",
+      "bloom"
+    ],
+    "resource_dir": "assets/modules/3d-bloom",
+    "guide": "assets/modules/3d-bloom/module-guide.md",
+    "demo": "assets/modules/3d-bloom/demos/index.html",
+    "preview": "assets/modules/3d-bloom/assets/preview.webp",
+    "effect_path": "assets/modules/3d-bloom/demos/effects/post-soft-glow.js"
+  },
+  {
+    "slug": "3d-burn-dissolve",
+    "effect": "burn-dissolve",
+    "impl": "burn-dissolve-module.js",
+    "name": "Burn Dissolve",
+    "zh": "烧焦溶解与灰烬",
+    "category": "vfx",
+    "family": "vfx",
+    "tagline": "物体燃烧后的焦黑、余烬边缘、噪声溶解与飘起灰烬。",
+    "camera": [
+      32,
+      23,
+      52
+    ],
+    "target": [
+      0,
+      10,
+      0
+    ],
+    "cameraOwner": false,
+    "schema": [
+      {
+        "key": "progress",
+        "label": "焚毁进度",
+        "min": 0,
+        "max": 1.1,
+        "step": 0.001,
+        "default": 0.5
+      },
+      {
+        "key": "ashIntensity",
+        "label": "灰烬亮度",
+        "min": 0,
+        "max": 2,
+        "step": 0.05,
+        "default": 1
+      },
+      {
+        "key": "edgeWidth",
+        "label": "余烬边宽",
+        "min": 0.002,
+        "max": 0.12,
+        "step": 0.002,
+        "default": 0.022
+      },
+      {
+        "key": "charWidth",
+        "label": "焦黑范围",
+        "min": 0.02,
+        "max": 0.5,
+        "step": 0.01,
+        "default": 0.22
+      },
+      {
+        "key": "charStrength",
+        "label": "焦黑强度",
+        "min": 0,
+        "max": 1,
+        "step": 0.01,
+        "default": 0.85
+      },
+      {
+        "key": "color",
+        "label": "余烬颜色",
+        "type": "color",
+        "default": "#ff6b22"
+      }
+    ],
+    "looks": [
+      {
+        "id": "ignition",
+        "title": "初燃焦痕",
+        "hint": "局部焦黑与细窄余烬边缘。",
+        "params": {
+          "progress": 0.28,
+          "ashIntensity": 0.6,
+          "edgeWidth": 0.014,
+          "charWidth": 0.18,
+          "charStrength": 0.85,
+          "color": "#ff6b22"
+        }
+      },
+      {
+        "id": "burning",
+        "title": "焚毁溶解",
+        "hint": "噪声孔洞、焦黑过渡和橙红余烬。",
+        "params": {
+          "progress": 0.5,
+          "ashIntensity": 1,
+          "edgeWidth": 0.022,
+          "charWidth": 0.22,
+          "charStrength": 0.85,
+          "color": "#ff6b22"
+        }
+      },
+      {
+        "id": "ashes",
+        "title": "燃后灰烬",
+        "hint": "大部分主体消散，残留焦黑碎片与飘灰。",
+        "params": {
+          "progress": 0.78,
+          "ashIntensity": 0.8,
+          "edgeWidth": 0.008,
+          "charWidth": 0.35,
+          "charStrength": 1,
+          "color": "#c44819"
+        }
+      }
+    ],
+    "fitZh": "物体燃烧后、烧焦、灰烬、余烬、焚毁消散与建筑火灾叙事。",
+    "limitZh": "艺术化表面着色与粒子，不模拟热传导、火焰体积、真实熔化或化学燃烧；阴影仍采用完整模型。",
+    "source_kind": "user-supplied",
+    "attribution": "用户海晏堂项目；Simplex noise: Ashima Arts / Stefan Gustavson (MIT)",
+    "render_role": "scene-layer",
+    "topology": [],
+    "batch": "haiyantang-burn-20261031",
+    "keywords": [
+      "物体燃烧后",
+      "燃烧后的物体",
+      "燃烧后的时候",
+      "燃烧后",
+      "烧焦",
+      "焦黑",
+      "灰烬",
+      "烧焦灰烬",
+      "余烬",
+      "焚毁",
+      "焚毁溶解",
+      "烧毁",
+      "燃烧溶解",
+      "大火烧焦溶解",
+      "burn",
+      "burnt",
+      "charred",
+      "ash",
+      "ashes",
+      "embers",
+      "burn dissolve"
+    ],
+    "resource_dir": "assets/modules/3d-burn-dissolve",
+    "guide": "assets/modules/3d-burn-dissolve/module-guide.md",
+    "demo": "assets/modules/3d-burn-dissolve/demos/index.html",
+    "preview": "assets/modules/3d-burn-dissolve/preview.png",
+    "effect_path": "assets/modules/3d-burn-dissolve/demos/effects/burn-dissolve-module.js"
+  },
+  {
+    "slug": "3d-cinema-stack",
+    "effect": "post-cinema-stack",
+    "name": "Cinema Stack",
+    "zh": "电影后期效果组合",
+    "category": "postprocessing",
+    "sourceId": "batch02-13",
+    "tagline": "A restrained glow, lens offset and film finish from one output owner.",
+    "camera": [
+      6.5,
+      3.8,
+      8
+    ],
+    "target": [
+      0,
+      1.4,
+      0
+    ],
+    "schema": [
+      {
+        "key": "quality",
+        "label": "质量 Quality",
+        "options": [
+          "low",
+          "mid",
+          "high",
+          "cinematic"
+        ],
+        "default": "high"
+      },
+      {
+        "key": "glow",
+        "label": "辉光 Glow",
+        "min": 0,
+        "max": 2,
+        "step": 0.02,
+        "default": 0.65
+      },
+      {
+        "key": "exposure",
+        "label": "曝光 Exposure",
+        "min": 0.4,
+        "max": 1.8,
+        "step": 0.02,
+        "default": 1
+      },
+      {
+        "key": "chromatic",
+        "label": "色差 Chromatic",
+        "min": 0,
+        "max": 0.014,
+        "step": 0.0005,
+        "default": 0.0025
+      },
+      {
+        "key": "vignette",
+        "label": "暗角 Vignette",
+        "min": 0,
+        "max": 1,
+        "step": 0.01,
+        "default": 0.35
+      },
+      {
+        "key": "grain",
+        "label": "颗粒 Grain",
+        "min": 0,
+        "max": 0.09,
+        "step": 0.002,
+        "default": 0.018
+      }
+    ],
+    "looks": [
+      {
+        "id": "warm",
+        "title": "Warm Editorial / 暖调",
+        "hint": "Controlled warm highlights and a gentle lens finish.",
+        "params": {
+          "color": "#d99b68",
+          "glow": 0.55,
+          "exposure": 1.12,
+          "chromatic": 0.0015,
+          "vignette": 0.3
+        }
+      },
+      {
+        "id": "precision",
+        "title": "Cold Precision / 冷调",
+        "hint": "A crisp blue-green material study.",
+        "params": {
+          "color": "#77b9c5",
+          "glow": 0.3,
+          "exposure": 0.95,
+          "grain": 0.008,
+          "chromatic": 0
+        }
+      },
+      {
+        "id": "night",
+        "title": "Night Cinema / 夜景",
+        "hint": "Tighter exposure and broader, low-key glow.",
+        "params": {
+          "color": "#b3a0d9",
+          "glow": 1.05,
+          "exposure": 0.82,
+          "vignette": 0.55,
+          "chromatic": 0.004
+        }
+      }
+    ],
+    "fit": "A single-owner WebGL post chain for glow, exposure, chromatic offset, vignette and grain.",
+    "limit": "A lightweight artistic lens stack; no depth of field, film emulation calibration or spectral lens simulation. Integrate into an existing composer rather than nesting output transforms.",
+    "batch": "original13",
+    "family": "postprocessing",
+    "render_role": "postprocess",
+    "source_kind": "independent",
+    "keywords": [
+      "电影",
+      "后期",
+      "镜头",
+      "cinema",
+      "postprocessing"
+    ],
+    "resource_dir": "assets/modules/3d-cinema-stack",
+    "guide": "assets/modules/3d-cinema-stack/module-guide.md",
+    "demo": "assets/modules/3d-cinema-stack/demos/index.html",
+    "preview": "assets/modules/3d-cinema-stack/assets/preview.webp",
+    "effect_path": "assets/modules/3d-cinema-stack/demos/effects/post-cinema-stack.js"
+  },
+  {
+    "slug": "3d-cloth-material",
+    "effect": "shader-cloth-material",
+    "name": "Woven Form",
+    "zh": "真实织物材质",
+    "category": "shaders",
+    "sourceId": "batch02-04",
+    "tagline": "Light catches the weave before it catches the fold.",
+    "camera": [
+      6,
+      3.8,
+      8
+    ],
+    "target": [
+      0,
+      1.65,
+      0
+    ],
+    "schema": [
+      {
+        "key": "fold",
+        "label": "褶皱深度 Fold",
+        "min": 0,
+        "max": 1.2,
+        "step": 0.01,
+        "default": 0.48
+      },
+      {
+        "key": "weave",
+        "label": "织纹尺度 Weave",
+        "min": 0.4,
+        "max": 2.4,
+        "step": 0.05,
+        "default": 1
+      },
+      {
+        "key": "sheen",
+        "label": "柔光 Sheen",
+        "min": 0,
+        "max": 1,
+        "step": 0.01,
+        "default": 0.7
+      },
+      {
+        "key": "roughness",
+        "label": "粗糙度 Roughness",
+        "min": 0.15,
+        "max": 1,
+        "step": 0.01,
+        "default": 0.75
+      },
+      {
+        "key": "color",
+        "label": "染色 Color",
+        "type": "color",
+        "default": "#b6a797"
+      },
+      {
+        "key": "speed",
+        "label": "摆动速度 Speed",
+        "min": 0,
+        "max": 1.5,
+        "step": 0.01,
+        "default": 0.4
+      }
+    ],
+    "looks": [
+      {
+        "id": "linen",
+        "title": "Linen Screen / 亚麻",
+        "hint": "A suspended panel with soft, irregular folds.",
+        "params": {
+          "variant": 0,
+          "color": "#b8aa96",
+          "sheen": 0.35,
+          "roughness": 0.85,
+          "fold": 0.42
+        }
+      },
+      {
+        "id": "satin",
+        "title": "Satin Ribbon / 缎带",
+        "hint": "A narrow, twisting ribbon in cool light.",
+        "params": {
+          "variant": 1,
+          "color": "#60868d",
+          "sheen": 1,
+          "roughness": 0.27,
+          "fold": 0.75
+        }
+      },
+      {
+        "id": "canvas",
+        "title": "Canvas Drape / 帆布",
+        "hint": "A heavy folded sheet over a low support.",
+        "params": {
+          "variant": 2,
+          "color": "#b67a50",
+          "sheen": 0.3,
+          "roughness": 0.93,
+          "fold": 0.6
+        }
+      }
+    ],
+    "fit": "Product material studies, banners and decorative drapes.",
+    "limit": "Parametric folds with procedural weave. No cloth collision, stress or textile measurement claim.",
+    "batch": "original13",
+    "family": "materials",
+    "render_role": "scene-layer",
+    "source_kind": "independent",
+    "keywords": [
+      "布料",
+      "织物",
+      "材质",
+      "cloth",
+      "fabric"
+    ],
+    "resource_dir": "assets/modules/3d-cloth-material",
+    "guide": "assets/modules/3d-cloth-material/module-guide.md",
+    "demo": "assets/modules/3d-cloth-material/demos/index.html",
+    "preview": "assets/modules/3d-cloth-material/assets/preview.webp",
+    "effect_path": "assets/modules/3d-cloth-material/demos/effects/shader-cloth-material.js"
+  },
+  {
+    "slug": "3d-cube-waterflow",
+    "effect": "cube-water-stream",
+    "impl": "cube-water-stream.js",
+    "name": "Clear Cube Waterflow",
+    "zh": "立方体清透流水",
+    "category": "fluid-gas",
+    "tagline": "透明立方储水体、金属管口、清透水束与自然落水涟漪。",
+    "camera": [
+      6.5,
+      4.5,
+      7.5
+    ],
+    "target": [
+      0.1,
+      1.05,
+      0
+    ],
+    "cameraOwner": false,
+    "schema": [
+      {
+        "key": "flow",
+        "label": "出水量",
+        "min": 0,
+        "max": 1.5,
+        "step": 0.05,
+        "default": 1,
+        "hint": "改变水束粗细与飞溅数量",
+        "unit": "×"
+      },
+      {
+        "key": "pressure",
+        "label": "喷射力度",
+        "min": 0.55,
+        "max": 1.65,
+        "step": 0.05,
+        "default": 1,
+        "hint": "改变水束向外延伸的距离",
+        "unit": "×"
+      },
+      {
+        "key": "level",
+        "label": "立方体水位",
+        "min": 0.55,
+        "max": 0.9,
+        "step": 0.01,
+        "default": 0.74,
+        "hint": "独立调整储水体中的展示水位",
+        "unit": "%"
+      },
+      {
+        "key": "waves",
+        "label": "水面扰动",
+        "min": 0.1,
+        "max": 1.5,
+        "step": 0.05,
+        "default": 0.65,
+        "hint": "改变水面波纹和落水涟漪",
+        "unit": "×"
+      },
+      {
+        "key": "color",
+        "label": "水体颜色",
+        "type": "color",
+        "default": "#68ccdc"
+      }
+    ],
+    "looks": [
+      {
+        "id": "steady",
+        "title": "Steady flow / 平稳出水",
+        "shortTitle": "平稳",
+        "hint": "清透连续水束与克制飞溅。",
+        "params": {
+          "flow": 1,
+          "pressure": 1,
+          "level": 0.74,
+          "waves": 0.65,
+          "color": "#68ccdc"
+        }
+      },
+      {
+        "id": "full",
+        "title": "Full flow / 充沛出水",
+        "shortTitle": "充沛",
+        "hint": "更粗水束、更远射程和更强扰动。",
+        "params": {
+          "flow": 1.45,
+          "pressure": 1.3,
+          "level": 0.88,
+          "waves": 1.15,
+          "color": "#68ccdc"
+        }
+      },
+      {
+        "id": "gentle",
+        "title": "Gentle flow / 涓细水流",
+        "shortTitle": "涓细",
+        "hint": "低流量、轻飞溅与柔和涟漪。",
+        "params": {
+          "flow": 0.35,
+          "pressure": 0.65,
+          "level": 0.62,
+          "waves": 0.25,
+          "color": "#9dbfed"
+        }
+      }
+    ],
+    "fitZh": "立方储水箱、管道出水、透明水流、飞溅与池面涟漪的交互展示。",
+    "limitZh": "解析水束、重力水滴和局部波包构成的艺术化可视化；不是 CFD。水位独立调节，不模拟储水体排空和质量守恒。",
+    "batch": "local-waterflow-20261024",
+    "family": "fluid-gas",
+    "render_role": "scene-layer",
+    "source_kind": "independent",
+    "keywords": [
+      "清透水流",
+      "透明水流",
+      "清水",
+      "管道出水",
+      "出水管道",
+      "立方体",
+      "储水箱",
+      "水滴",
+      "飞溅",
+      "涟漪",
+      "clear water",
+      "transparent water",
+      "waterflow",
+      "water flow",
+      "cube water",
+      "splash",
+      "ripple"
+    ],
+    "resource_dir": "assets/modules/3d-cube-waterflow",
+    "guide": "assets/modules/3d-cube-waterflow/module-guide.md",
+    "demo": "assets/modules/3d-cube-waterflow/demos/index.html",
+    "preview": "assets/modules/3d-cube-waterflow/preview.png",
+    "effect_path": "assets/modules/3d-cube-waterflow/demos/effects/cube-water-stream.js"
+  },
+  {
+    "slug": "3d-data-trails",
+    "effect": "motion-orbit-links",
+    "impl": "orbit-links.js",
+    "name": "3D Data Trails",
+    "zh": "数据飞线",
+    "category": "motion",
+    "tagline": "Small packets connect a measured set of spatial anchors.",
+    "camera": [
+      7,
+      4.6,
+      9
+    ],
+    "target": [
+      0,
+      1.1,
+      0
+    ],
+    "topology": [
+      "density"
+    ],
+    "schema": [
+      {
+        "key": "density",
+        "label": "连接数量 Density",
+        "min": 0.3,
+        "max": 1.5,
+        "step": 0.05,
+        "default": 1
+      },
+      {
+        "key": "height",
+        "label": "弧线高度 Height",
+        "min": 0.3,
+        "max": 3,
+        "step": 0.05,
+        "default": 1.4
+      },
+      {
+        "key": "opacity",
+        "label": "飞线强度 Opacity",
+        "min": 0.1,
+        "max": 0.9,
+        "step": 0.01,
+        "default": 0.45
+      },
+      {
+        "key": "size",
+        "label": "流点尺寸 Size",
+        "min": 0.02,
+        "max": 0.13,
+        "step": 0.005,
+        "default": 0.055
+      },
+      {
+        "key": "color",
+        "label": "数据色 Color",
+        "type": "color",
+        "default": "#9ccbd6"
+      },
+      {
+        "key": "speed",
+        "label": "传输速度 Speed",
+        "min": 0,
+        "max": 1.5,
+        "step": 0.02,
+        "default": 0.45
+      }
+    ],
+    "looks": [
+      {
+        "id": "blue",
+        "title": "Blue network / 蓝色网络",
+        "hint": "Arcs connect an abstract ring of nodes.",
+        "params": {}
+      },
+      {
+        "id": "fast",
+        "title": "Low latency / 低延迟",
+        "hint": "Lower, faster violet routes.",
+        "params": {
+          "color": "#b2a1dc",
+          "height": 0.7,
+          "speed": 1.1
+        }
+      },
+      {
+        "id": "high",
+        "title": "High arcs / 高弧线",
+        "hint": "Elevated slower amber connections.",
+        "params": {
+          "color": "#dbb584",
+          "height": 2.5,
+          "speed": 0.2,
+          "density": 0.6
+        }
+      }
+    ],
+    "fitZh": "数据连接、网络示意和通路展示。",
+    "limitZh": "示例锚点和预设路径，不接入真实网络指标，也不代表实际地理距离。",
+    "limit": "Illustrative anchors and routes; no live network data or geographic-distance claims.",
+    "batch": "rewritten20",
+    "family": "motion",
+    "render_role": "scene-layer",
+    "source_kind": "independent",
+    "keywords": [
+      "飞线",
+      "数据",
+      "网络",
+      "连接",
+      "data",
+      "trails"
+    ],
+    "resource_dir": "assets/modules/3d-data-trails",
+    "guide": "assets/modules/3d-data-trails/module-guide.md",
+    "demo": "assets/modules/3d-data-trails/demos/index.html",
+    "preview": "assets/modules/3d-data-trails/assets/preview.webp",
+    "effect_path": "assets/modules/3d-data-trails/demos/effects/motion-orbit-links.js"
+  },
+  {
+    "slug": "3d-depth-of-field",
+    "effect": "post-focus-lens",
+    "impl": "focus-lens.js",
+    "name": "3D Depth of Field",
+    "zh": "镜头景深",
+    "category": "postprocessing",
+    "tagline": "Depth defines which forms carry the focus.",
+    "camera": [
+      6.5,
+      4,
+      9
+    ],
+    "target": [
+      0,
+      1.1,
+      0
+    ],
+    "schema": [
+      {
+        "key": "quality",
+        "label": "质量 Quality",
+        "options": [
+          "low",
+          "mid",
+          "high",
+          "cinematic"
+        ],
+        "default": "high"
+      },
+      {
+        "key": "focus",
+        "label": "对焦距离 Focus",
+        "min": 5,
+        "max": 19,
+        "step": 0.1,
+        "default": 10
+      },
+      {
+        "key": "aperture",
+        "label": "光圈系数 Aperture",
+        "min": 3e-05,
+        "max": 0.0018,
+        "step": 3e-05,
+        "default": 0.00045
+      },
+      {
+        "key": "blur",
+        "label": "模糊上限 Blur",
+        "min": 0.003,
+        "max": 0.07,
+        "step": 0.001,
+        "default": 0.035
+      },
+      {
+        "key": "color",
+        "label": "主体色 Color",
+        "type": "color",
+        "default": "#7aafb9"
+      }
+    ],
+    "looks": [
+      {
+        "id": "middle",
+        "title": "Middle focus / 中景对焦",
+        "hint": "A central group stays legible.",
+        "params": {}
+      },
+      {
+        "id": "near",
+        "title": "Near focus / 近景对焦",
+        "hint": "Front objects receive the sharpness.",
+        "params": {
+          "focus": 7.5,
+          "aperture": 0.0009,
+          "color": "#d8ad77"
+        }
+      },
+      {
+        "id": "deep",
+        "title": "Deep focus / 深景观察",
+        "hint": "A subtler lens finish through depth.",
+        "params": {
+          "focus": 12,
+          "aperture": 8e-05,
+          "blur": 0.009
+        }
+      }
+    ],
+    "fitZh": "产品对焦、深度层次和镜头示意。",
+    "limitZh": "深度纹理驱动的轻量散景近似，不是光学镜头追迹；透明物体深度存在常见限制。",
+    "limit": "A depth-texture lens approximation, not optical ray tracing; transparent-depth limitations apply.",
+    "batch": "rewritten20",
+    "family": "postprocessing",
+    "render_role": "postprocess",
+    "source_kind": "independent",
+    "keywords": [
+      "景深",
+      "散景",
+      "对焦",
+      "后期",
+      "dof",
+      "focus",
+      "depth"
+    ],
+    "resource_dir": "assets/modules/3d-depth-of-field",
+    "guide": "assets/modules/3d-depth-of-field/module-guide.md",
+    "demo": "assets/modules/3d-depth-of-field/demos/index.html",
+    "preview": "assets/modules/3d-depth-of-field/assets/preview.webp",
+    "effect_path": "assets/modules/3d-depth-of-field/demos/effects/post-focus-lens.js"
+  },
+  {
+    "slug": "3d-drain-spout",
+    "effect": "fluid-drain-spout",
+    "name": "Drain Spout",
+    "zh": "排水管喷水",
+    "category": "fluid-gas",
+    "batch": "provided1",
+    "tagline": "A curved water jet leaves a metal pipe and meets a rippling drainage channel.",
+    "camera": [
+      6,
+      3.4,
+      8
+    ],
+    "target": [
+      1,
+      0.9,
+      0
+    ],
+    "cameraOwner": false,
+    "schema": [
+      {
+        "key": "flow",
+        "label": "出水速度 Flow",
+        "min": 0.65,
+        "max": 1.7,
+        "step": 0.025,
+        "default": 1
+      },
+      {
+        "key": "radius",
+        "label": "出水半径 Radius",
+        "min": 0.18,
+        "max": 0.45,
+        "step": 0.01,
+        "default": 0.4
+      },
+      {
+        "key": "height",
+        "label": "管口高度 Height",
+        "min": 1.3,
+        "max": 2.6,
+        "step": 0.05,
+        "default": 2
+      },
+      {
+        "key": "ripple",
+        "label": "波纹幅度 Ripple",
+        "min": 0.005,
+        "max": 0.05,
+        "step": 0.001,
+        "default": 0.025
+      },
+      {
+        "key": "exposure",
+        "label": "画面曝光 Exposure",
+        "min": 0.7,
+        "max": 2.3,
+        "step": 0.05,
+        "default": 1.5
+      },
+      {
+        "key": "speed",
+        "label": "动画速度 Speed",
+        "min": 0,
+        "max": 1.8,
+        "step": 0.05,
+        "default": 1
+      }
+    ],
+    "looks": [
+      {
+        "id": "channel",
+        "title": "Classic channel / 经典排水",
+        "hint": "A broad translucent jet over a masonry channel.",
+        "params": {}
+      },
+      {
+        "id": "gentle",
+        "title": "Gentle outflow / 柔和出水",
+        "hint": "A narrower, slower stream with restrained ripples.",
+        "params": {
+          "flow": 0.8,
+          "radius": 0.23,
+          "height": 1.65,
+          "ripple": 0.012,
+          "exposure": 1.3,
+          "speed": 0.65
+        }
+      },
+      {
+        "id": "surge",
+        "title": "Strong discharge / 强劲排水",
+        "hint": "A longer falling arc and a more active impact surface.",
+        "params": {
+          "flow": 1.35,
+          "radius": 0.38,
+          "height": 2.3,
+          "ripple": 0.042,
+          "exposure": 1.65,
+          "speed": 1.25
+        }
+      }
+    ],
+    "fitZh": "排水管出水、抛物线水束、渠道涟漪和折射水体的艺术化展示。",
+    "limitZh": "全屏距离场光线步进，水束与涟漪为解析近似；没有 CFD、体积守恒、真实流量或碰撞求解。不可与宿主三维场景做逐物体深度遮挡。",
+    "attribution": "Spout — @P_Malin; user-supplied shader adapted for Three.js.",
+    "licenseStatus": "The supplied shader has no license declaration in the attachment; original rights are retained.",
+    "family": "fluid-gas",
+    "render_role": "fullscreen",
+    "source_kind": "user-supplied",
+    "keywords": [
+      "排水",
+      "喷水",
+      "水束",
+      "渠道",
+      "涟漪",
+      "spout",
+      "drain"
+    ],
+    "resource_dir": "assets/modules/3d-drain-spout",
+    "guide": "assets/modules/3d-drain-spout/module-guide.md",
+    "demo": "assets/modules/3d-drain-spout/demos/index.html",
+    "preview": "assets/modules/3d-drain-spout/assets/preview.webp",
+    "effect_path": "assets/modules/3d-drain-spout/demos/effects/fluid-drain-spout.js"
+  },
+  {
+    "slug": "3d-falling-leaves",
+    "effect": "particles-falling-leaves",
+    "name": "Turning Leaves",
+    "zh": "空间落叶",
+    "category": "particles",
+    "sourceId": "batch02-02",
+    "tagline": "Every leaf has a front, an edge and a turning back.",
+    "camera": [
+      7,
+      4.6,
+      8
+    ],
+    "target": [
+      0,
+      2.2,
+      0
+    ],
+    "topology": [
+      "density"
+    ],
+    "schema": [
+      {
+        "key": "density",
+        "label": "叶片数量 Density",
+        "min": 0.2,
+        "max": 1.5,
+        "step": 0.05,
+        "default": 1
+      },
+      {
+        "key": "wind",
+        "label": "横向风 Wind",
+        "min": 0,
+        "max": 2.5,
+        "step": 0.05,
+        "default": 0.7
+      },
+      {
+        "key": "fall",
+        "label": "下落速率 Fall",
+        "min": 0.1,
+        "max": 2,
+        "step": 0.05,
+        "default": 0.65
+      },
+      {
+        "key": "tumble",
+        "label": "翻转幅度 Tumble",
+        "min": 0,
+        "max": 2,
+        "step": 0.05,
+        "default": 0.8
+      },
+      {
+        "key": "color",
+        "label": "叶片底色 Color",
+        "type": "color",
+        "default": "#d68f36"
+      },
+      {
+        "key": "speed",
+        "label": "时间速度 Speed",
+        "min": 0,
+        "max": 1.5,
+        "step": 0.05,
+        "default": 0.55
+      }
+    ],
+    "looks": [
+      {
+        "id": "amber",
+        "title": "Amber Drift / 琥珀",
+        "hint": "Copper leaves tumble across a quiet stage.",
+        "params": {
+          "color": "#d69238",
+          "wind": 0.65,
+          "tumble": 0.8
+        }
+      },
+      {
+        "id": "olive",
+        "title": "Olive Breeze / 橄榄",
+        "hint": "Longer green leaves in a crosswind.",
+        "params": {
+          "color": "#899a55",
+          "wind": 1.3,
+          "variant": 1
+        }
+      },
+      {
+        "id": "crimson",
+        "title": "Crimson Spiral / 绯红",
+        "hint": "Broad leaves trace a loose spiral.",
+        "params": {
+          "color": "#b54e42",
+          "wind": 0.9,
+          "tumble": 1.4,
+          "variant": 2
+        }
+      }
+    ],
+    "fit": "Seasonal inserts, nature loops and spatial particle backgrounds.",
+    "limit": "Analytic looping trajectories; no aerodynamic or leaf collision solver.",
+    "batch": "original13",
+    "family": "particles",
+    "render_role": "scene-layer",
+    "source_kind": "independent",
+    "keywords": [
+      "落叶",
+      "秋叶",
+      "树叶",
+      "leaves"
+    ],
+    "resource_dir": "assets/modules/3d-falling-leaves",
+    "guide": "assets/modules/3d-falling-leaves/module-guide.md",
+    "demo": "assets/modules/3d-falling-leaves/demos/index.html",
+    "preview": "assets/modules/3d-falling-leaves/assets/preview.webp",
+    "effect_path": "assets/modules/3d-falling-leaves/demos/effects/particles-falling-leaves.js"
+  },
+  {
+    "slug": "3d-frost-growth",
+    "effect": "vfx-frost-growth",
+    "name": "Crystal Field",
+    "zh": "冰霜生长与破碎",
+    "category": "vfx",
+    "sourceId": "batch02-10",
+    "tagline": "Dendritic lines spread; faceted crystals rise, separate and settle.",
+    "camera": [
+      6,
+      5.5,
+      8
+    ],
+    "target": [
+      0,
+      0.8,
+      0
+    ],
+    "topology": [
+      "density"
+    ],
+    "schema": [
+      {
+        "key": "growth",
+        "label": "结霜进度 Growth",
+        "min": 0,
+        "max": 1,
+        "step": 0.01,
+        "default": 0.82
+      },
+      {
+        "key": "density",
+        "label": "晶体密度 Density",
+        "min": 0.25,
+        "max": 1.4,
+        "step": 0.05,
+        "default": 1
+      },
+      {
+        "key": "height",
+        "label": "冰晶高度 Height",
+        "min": 0.2,
+        "max": 2,
+        "step": 0.02,
+        "default": 1
+      },
+      {
+        "key": "fracture",
+        "label": "破碎程度 Fracture",
+        "min": 0,
+        "max": 1,
+        "step": 0.01,
+        "default": 0
+      },
+      {
+        "key": "color",
+        "label": "晶体色 Color",
+        "type": "color",
+        "default": "#a9d9e2"
+      },
+      {
+        "key": "speed",
+        "label": "呼吸速度 Speed",
+        "min": 0,
+        "max": 1,
+        "step": 0.01,
+        "default": 0.2
+      }
+    ],
+    "looks": [
+      {
+        "id": "dendrite",
+        "title": "Dendrite / 枝晶",
+        "hint": "A planar frost field with a small crystal center.",
+        "params": {
+          "variant": 0,
+          "height": 0.7,
+          "growth": 0.88
+        }
+      },
+      {
+        "id": "crown",
+        "title": "Ice Crown / 冰冠",
+        "hint": "A raised ring of faceted crystals.",
+        "params": {
+          "variant": 1,
+          "height": 1.4,
+          "growth": 0.95
+        }
+      },
+      {
+        "id": "fracture",
+        "title": "Fracture Study / 碎裂",
+        "hint": "Crystals part into authored faceted pieces.",
+        "params": {
+          "variant": 2,
+          "height": 1.1,
+          "fracture": 0.72,
+          "growth": 1
+        }
+      }
+    ],
+    "fit": "Frost spreads, crystal studies and controllable frozen-surface transitions.",
+    "limit": "Authored branching and rigid fragment motion. No dendrite diffusion, fracture mechanics, thermal or refraction solver.",
+    "batch": "original13",
+    "family": "vfx",
+    "render_role": "scene-layer",
+    "source_kind": "independent",
+    "keywords": [
+      "冰霜",
+      "冰晶",
+      "破碎",
+      "frost"
+    ],
+    "resource_dir": "assets/modules/3d-frost-growth",
+    "guide": "assets/modules/3d-frost-growth/module-guide.md",
+    "demo": "assets/modules/3d-frost-growth/demos/index.html",
+    "preview": "assets/modules/3d-frost-growth/assets/preview.webp",
+    "effect_path": "assets/modules/3d-frost-growth/demos/effects/vfx-frost-growth.js"
+  },
+  {
+    "slug": "3d-galaxy",
+    "effect": "particles-spiral-cluster",
+    "impl": "spiral-cluster.js",
+    "name": "3D Galaxy",
+    "zh": "螺旋星系",
+    "category": "particles",
+    "tagline": "A luminous core sits inside an authored field of spiral arms.",
+    "camera": [
+      6,
+      5,
+      9
+    ],
+    "target": [
+      0,
+      1.1,
+      0
+    ],
+    "topology": [
+      "density",
+      "arms"
+    ],
+    "schema": [
+      {
+        "key": "density",
+        "label": "星点数量 Density",
+        "min": 0.25,
+        "max": 1.6,
+        "step": 0.05,
+        "default": 1
+      },
+      {
+        "key": "arms",
+        "label": "旋臂数量 Arms",
+        "min": 2,
+        "max": 8,
+        "step": 1,
+        "default": 4
+      },
+      {
+        "key": "twist",
+        "label": "旋臂卷曲 Twist",
+        "min": 0.2,
+        "max": 1.8,
+        "step": 0.02,
+        "default": 0.9
+      },
+      {
+        "key": "thickness",
+        "label": "盘面厚度 Thickness",
+        "min": 0.03,
+        "max": 0.6,
+        "step": 0.01,
+        "default": 0.18
+      },
+      {
+        "key": "color",
+        "label": "外缘色 Color",
+        "type": "color",
+        "default": "#8daaca"
+      },
+      {
+        "key": "spin",
+        "label": "自转速度 Spin",
+        "min": 0,
+        "max": 0.4,
+        "step": 0.01,
+        "default": 0.04
+      }
+    ],
+    "looks": [
+      {
+        "id": "spiral",
+        "title": "Spiral blue / 蓝色旋臂",
+        "hint": "A warm core with cool outer stars.",
+        "params": {}
+      },
+      {
+        "id": "violet",
+        "title": "Violet whirl / 紫色旋涡",
+        "hint": "Six tighter arms.",
+        "params": {
+          "color": "#b7a1d0",
+          "arms": 6,
+          "twist": 1.4
+        }
+      },
+      {
+        "id": "barred",
+        "title": "Quiet barred / 舒展旋臂",
+        "hint": "An open two-arm composition.",
+        "params": {
+          "color": "#dab792",
+          "arms": 2,
+          "twist": 0.4,
+          "density": 0.6
+        }
+      }
+    ],
+    "fitZh": "螺旋星系外观、星点背景和天文风格视觉。",
+    "limitZh": "程序化点云，不是实测星表、N 体动力学或银河结构重建。",
+    "limit": "An authored point field, not a measured catalog, N-body simulation or reconstruction of a real galaxy.",
+    "batch": "rewritten20",
+    "family": "particles",
+    "render_role": "scene-layer",
+    "source_kind": "independent",
+    "keywords": [
+      "星系",
+      "星空",
+      "旋臂",
+      "galaxy"
+    ],
+    "resource_dir": "assets/modules/3d-galaxy",
+    "guide": "assets/modules/3d-galaxy/module-guide.md",
+    "demo": "assets/modules/3d-galaxy/demos/index.html",
+    "preview": "assets/modules/3d-galaxy/assets/preview.webp",
+    "effect_path": "assets/modules/3d-galaxy/demos/effects/particles-spiral-cluster.js"
+  },
+  {
+    "slug": "3d-glass",
+    "effect": "materials-clear-volume",
+    "impl": "clear-volume.js",
+    "name": "3D Glass",
+    "zh": "透射玻璃",
+    "category": "materials",
+    "tagline": "A clear sculptural form with a visible optical thickness.",
+    "camera": [
+      6,
+      3.8,
+      8
+    ],
+    "target": [
+      0,
+      1.6,
+      0
+    ],
+    "schema": [
+      {
+        "key": "roughness",
+        "label": "粗糙度 Roughness",
+        "min": 0.02,
+        "max": 0.65,
+        "step": 0.01,
+        "default": 0.08
+      },
+      {
+        "key": "thickness",
+        "label": "光学厚度 Thickness",
+        "min": 0.1,
+        "max": 3,
+        "step": 0.05,
+        "default": 1.3
+      },
+      {
+        "key": "ior",
+        "label": "折射率 IOR",
+        "min": 1.05,
+        "max": 2,
+        "step": 0.01,
+        "default": 1.5
+      },
+      {
+        "key": "transmission",
+        "label": "透射比例 Transmission",
+        "min": 0.2,
+        "max": 1,
+        "step": 0.01,
+        "default": 0.98
+      },
+      {
+        "key": "color",
+        "label": "玻璃色 Color",
+        "type": "color",
+        "default": "#d4edf0"
+      },
+      {
+        "key": "spin",
+        "label": "旋转速度 Spin",
+        "min": 0,
+        "max": 0.5,
+        "step": 0.01,
+        "default": 0.1
+      }
+    ],
+    "looks": [
+      {
+        "id": "clear",
+        "title": "Optical clear / 清澈玻璃",
+        "hint": "A polished cool knot.",
+        "params": {}
+      },
+      {
+        "id": "frosted",
+        "title": "Frosted blue / 磨砂蓝",
+        "hint": "Soft transmitted light.",
+        "params": {
+          "roughness": 0.34,
+          "color": "#95b6ca",
+          "thickness": 1.8
+        }
+      },
+      {
+        "id": "amber",
+        "title": "Amber crystal / 琥珀晶体",
+        "hint": "Warm, thicker glass.",
+        "params": {
+          "color": "#e5c99a",
+          "ior": 1.8,
+          "thickness": 2.2
+        }
+      }
+    ],
+    "fitZh": "玻璃材质、透明产品和厚度对比。",
+    "limitZh": "使用 Three.js 标准物理材质的屏幕空间透射，不是完整体积光线追踪。",
+    "limit": "Three.js physical-material screen-space transmission, not full volumetric ray tracing.",
+    "batch": "rewritten20",
+    "family": "materials",
+    "render_role": "scene-layer",
+    "source_kind": "independent",
+    "keywords": [
+      "玻璃",
+      "透射",
+      "折射",
+      "glass"
+    ],
+    "resource_dir": "assets/modules/3d-glass",
+    "guide": "assets/modules/3d-glass/module-guide.md",
+    "demo": "assets/modules/3d-glass/demos/index.html",
+    "preview": "assets/modules/3d-glass/assets/preview.webp",
+    "effect_path": "assets/modules/3d-glass/demos/effects/materials-clear-volume.js"
+  },
+  {
+    "slug": "3d-grass",
+    "effect": "vegetation-meadow-wind",
+    "impl": "meadow-wind.js",
+    "name": "3D Grass",
+    "zh": "风动草地",
+    "category": "vegetation",
+    "tagline": "Tapered blades share one continuous wind signal.",
+    "camera": [
+      7,
+      4.7,
+      8.5
+    ],
+    "target": [
+      0,
+      0.35,
+      0
+    ],
+    "topology": [
+      "density"
+    ],
+    "schema": [
+      {
+        "key": "density",
+        "label": "草叶数量 Density",
+        "min": 0.25,
+        "max": 1.5,
+        "step": 0.05,
+        "default": 1
+      },
+      {
+        "key": "height",
+        "label": "草叶高度 Height",
+        "min": 0.3,
+        "max": 1.4,
+        "step": 0.02,
+        "default": 0.75
+      },
+      {
+        "key": "wind",
+        "label": "风动幅度 Wind",
+        "min": 0,
+        "max": 1.3,
+        "step": 0.02,
+        "default": 0.4
+      },
+      {
+        "key": "spread",
+        "label": "草场宽度 Spread",
+        "min": 3,
+        "max": 6,
+        "step": 0.1,
+        "default": 5.3
+      },
+      {
+        "key": "color",
+        "label": "草尖色 Color",
+        "type": "color",
+        "default": "#a4c363"
+      },
+      {
+        "key": "speed",
+        "label": "风速 Speed",
+        "min": 0,
+        "max": 1.2,
+        "step": 0.02,
+        "default": 0.55
+      }
+    ],
+    "looks": [
+      {
+        "id": "spring",
+        "title": "Spring field / 春草",
+        "hint": "A green field with restrained motion.",
+        "params": {}
+      },
+      {
+        "id": "gold",
+        "title": "Golden meadow / 金色草甸",
+        "hint": "Warm tips under a stronger breeze.",
+        "params": {
+          "color": "#d8be76",
+          "wind": 0.8,
+          "height": 1.1
+        }
+      },
+      {
+        "id": "moss",
+        "title": "Quiet green / 苔绿色",
+        "hint": "Short, quiet blades.",
+        "params": {
+          "color": "#75a393",
+          "wind": 0.12,
+          "height": 0.48
+        }
+      }
+    ],
+    "fitZh": "草坪、草甸外观和轻量风动背景。",
+    "limitZh": "实例化草叶的解析弯曲，不是植物生长、生态或空气动力学求解。",
+    "limit": "Instanced analytic blade bending, not botanical growth or aerodynamics.",
+    "batch": "rewritten20",
+    "family": "vegetation",
+    "render_role": "scene-layer",
+    "source_kind": "independent",
+    "keywords": [
+      "草地",
+      "草坪",
+      "风动",
+      "grass"
+    ],
+    "resource_dir": "assets/modules/3d-grass",
+    "guide": "assets/modules/3d-grass/module-guide.md",
+    "demo": "assets/modules/3d-grass/demos/index.html",
+    "preview": "assets/modules/3d-grass/assets/preview.webp",
+    "effect_path": "assets/modules/3d-grass/demos/effects/vegetation-meadow-wind.js"
+  },
+  {
+    "slug": "3d-hologram",
+    "effect": "shader-holo-vessel",
+    "impl": "holo-vessel.js",
+    "name": "3D Hologram",
+    "zh": "全息投影",
+    "category": "shaders",
+    "tagline": "A scanned shell with a clean luminous silhouette.",
+    "camera": [
+      6,
+      3.8,
+      8
+    ],
+    "target": [
+      0,
+      1.65,
+      0
+    ],
+    "schema": [
+      {
+        "key": "opacity",
+        "label": "投影透明度 Opacity",
+        "min": 0.1,
+        "max": 0.9,
+        "step": 0.01,
+        "default": 0.45
+      },
+      {
+        "key": "lines",
+        "label": "扫描线密度 Lines",
+        "min": 8,
+        "max": 100,
+        "step": 1,
+        "default": 42
+      },
+      {
+        "key": "glow",
+        "label": "边缘亮度 Glow",
+        "min": 0.3,
+        "max": 3,
+        "step": 0.05,
+        "default": 1.3
+      },
+      {
+        "key": "scale",
+        "label": "模型尺度 Scale",
+        "min": 0.6,
+        "max": 1.4,
+        "step": 0.02,
+        "default": 1
+      },
+      {
+        "key": "color",
+        "label": "投影色 Color",
+        "type": "color",
+        "default": "#6fcbd4"
+      },
+      {
+        "key": "speed",
+        "label": "演化速度 Speed",
+        "min": 0,
+        "max": 1,
+        "step": 0.01,
+        "default": 0.3
+      }
+    ],
+    "looks": [
+      {
+        "id": "cyan",
+        "title": "Cyan shell / 青色投影",
+        "hint": "A knot-shaped scanned shell.",
+        "params": {
+          "variant": 0
+        }
+      },
+      {
+        "id": "amber",
+        "title": "Amber facets / 琥珀切面",
+        "hint": "A faceted warm projection.",
+        "params": {
+          "variant": 1,
+          "color": "#edbb78"
+        }
+      },
+      {
+        "id": "violet",
+        "title": "Violet sphere / 紫色球壳",
+        "hint": "A smooth round silhouette.",
+        "params": {
+          "variant": 2,
+          "color": "#b19bdd",
+          "scale": 1.15
+        }
+      }
+    ],
+    "fitZh": "展品投影、数字孪生风格模型和模型轮廓展示。",
+    "limitZh": "透明发光网格，不是光学全息或体积显示设备模拟。",
+    "limit": "A luminous mesh shell, not physical holography or a volumetric display.",
+    "batch": "rewritten20",
+    "family": "shaders",
+    "render_role": "scene-layer",
+    "source_kind": "independent",
+    "keywords": [
+      "全息",
+      "投影",
+      "扫描线",
+      "hologram"
+    ],
+    "resource_dir": "assets/modules/3d-hologram",
+    "guide": "assets/modules/3d-hologram/module-guide.md",
+    "demo": "assets/modules/3d-hologram/demos/index.html",
+    "preview": "assets/modules/3d-hologram/assets/preview.webp",
+    "effect_path": "assets/modules/3d-hologram/demos/effects/shader-holo-vessel.js"
+  },
+  {
+    "slug": "3d-iridescent-bubbles",
+    "effect": "materials-prism-bubbles",
+    "impl": "prism-bubbles.js",
+    "name": "3D Iridescent Bubbles",
+    "zh": "虹彩气泡",
+    "category": "materials",
+    "tagline": "Thin-film color crosses a drifting cluster of shells.",
+    "camera": [
+      6,
+      4.2,
+      8
+    ],
+    "target": [
+      0,
+      1.8,
+      0
+    ],
+    "topology": [
+      "density"
+    ],
+    "schema": [
+      {
+        "key": "density",
+        "label": "气泡数量 Density",
+        "min": 0.3,
+        "max": 1.5,
+        "step": 0.05,
+        "default": 1
+      },
+      {
+        "key": "film",
+        "label": "膜厚 Film",
+        "min": 180,
+        "max": 850,
+        "step": 5,
+        "default": 420
+      },
+      {
+        "key": "roughness",
+        "label": "粗糙度 Roughness",
+        "min": 0.02,
+        "max": 0.35,
+        "step": 0.01,
+        "default": 0.06
+      },
+      {
+        "key": "drift",
+        "label": "漂浮幅度 Drift",
+        "min": 0,
+        "max": 0.7,
+        "step": 0.01,
+        "default": 0.2
+      },
+      {
+        "key": "color",
+        "label": "气泡底色 Color",
+        "type": "color",
+        "default": "#d9edf0"
+      },
+      {
+        "key": "speed",
+        "label": "时间速度 Speed",
+        "min": 0,
+        "max": 1,
+        "step": 0.02,
+        "default": 0.35
+      }
+    ],
+    "looks": [
+      {
+        "id": "pearl",
+        "title": "Pearl shells / 珍珠壳",
+        "hint": "Fine colored reflections.",
+        "params": {}
+      },
+      {
+        "id": "gold",
+        "title": "Golden film / 金色薄膜",
+        "hint": "A thicker warm interference finish.",
+        "params": {
+          "film": 730,
+          "color": "#ead6bd",
+          "roughness": 0.1
+        }
+      },
+      {
+        "id": "cold",
+        "title": "Cold droplets / 冷色液滴",
+        "hint": "Fewer blue-tinted shells.",
+        "params": {
+          "film": 250,
+          "color": "#c2dfed",
+          "density": 0.5
+        }
+      }
+    ],
+    "fitZh": "泡泡、薄膜外观和虹彩材质展示。",
+    "limitZh": "Three.js 虹彩材质与预设漂移，不提供液膜动力学、破裂或碰撞。",
+    "limit": "Three.js iridescent materials and authored drift; no membrane dynamics, bursting or collisions.",
+    "batch": "rewritten20",
+    "family": "materials",
+    "render_role": "scene-layer",
+    "source_kind": "independent",
+    "keywords": [
+      "虹彩",
+      "气泡",
+      "薄膜",
+      "bubble",
+      "iridescent"
+    ],
+    "resource_dir": "assets/modules/3d-iridescent-bubbles",
+    "guide": "assets/modules/3d-iridescent-bubbles/module-guide.md",
+    "demo": "assets/modules/3d-iridescent-bubbles/demos/index.html",
+    "preview": "assets/modules/3d-iridescent-bubbles/assets/preview.webp",
+    "effect_path": "assets/modules/3d-iridescent-bubbles/demos/effects/materials-prism-bubbles.js"
+  },
+  {
+    "slug": "3d-light-shafts",
+    "effect": "lighting-shaft-cones",
+    "impl": "shaft-cones.js",
+    "name": "3D Light Shafts",
+    "zh": "空间光束",
+    "category": "lighting",
+    "tagline": "Soft cones connect visible emitters to an anchored stage.",
+    "camera": [
+      7,
+      4.6,
+      9
+    ],
+    "target": [
+      0,
+      1.6,
+      0
+    ],
+    "schema": [
+      {
+        "key": "angle",
+        "label": "光锥角度 Angle",
+        "min": 0.12,
+        "max": 0.52,
+        "step": 0.01,
+        "default": 0.25
+      },
+      {
+        "key": "spread",
+        "label": "灯位间距 Spread",
+        "min": 0.8,
+        "max": 3,
+        "step": 0.05,
+        "default": 1.9
+      },
+      {
+        "key": "opacity",
+        "label": "光束强度 Opacity",
+        "min": 0.08,
+        "max": 0.75,
+        "step": 0.01,
+        "default": 0.28
+      },
+      {
+        "key": "intensity",
+        "label": "灯光强度 Intensity",
+        "min": 8,
+        "max": 65,
+        "step": 1,
+        "default": 30
+      },
+      {
+        "key": "color",
+        "label": "光束色 Color",
+        "type": "color",
+        "default": "#b0d4de"
+      },
+      {
+        "key": "speed",
+        "label": "摆动速度 Speed",
+        "min": 0,
+        "max": 0.7,
+        "step": 0.01,
+        "default": 0.08
+      }
+    ],
+    "looks": [
+      {
+        "id": "cold",
+        "title": "Cold stage / 冷光舞台",
+        "hint": "A restrained arrangement of cool beams.",
+        "params": {}
+      },
+      {
+        "id": "theatre",
+        "title": "Amber theatre / 琥珀剧场",
+        "hint": "Warmer, more concentrated light.",
+        "params": {
+          "color": "#dfbc88",
+          "opacity": 0.45,
+          "intensity": 48,
+          "spread": 1.4
+        }
+      },
+      {
+        "id": "soft",
+        "title": "Wide softbox / 宽幅柔光",
+        "hint": "Broader, paler cones.",
+        "params": {
+          "color": "#bdcde5",
+          "angle": 0.43,
+          "spread": 2.5,
+          "opacity": 0.2
+        }
+      }
+    ],
+    "fitZh": "舞台光锥、空间深度和摄影棚气氛。",
+    "limitZh": "透明光锥与真实 SpotLight 对齐，不提供完整体积散射或体积遮挡阴影求解。",
+    "limit": "Transparent beam geometry aligned with SpotLights, not full volumetric scattering or shadow transport.",
+    "batch": "rewritten20",
+    "family": "lighting",
+    "render_role": "scene-layer",
+    "source_kind": "independent",
+    "keywords": [
+      "光束",
+      "光锥",
+      "舞台",
+      "shaft"
+    ],
+    "resource_dir": "assets/modules/3d-light-shafts",
+    "guide": "assets/modules/3d-light-shafts/module-guide.md",
+    "demo": "assets/modules/3d-light-shafts/demos/index.html",
+    "preview": "assets/modules/3d-light-shafts/assets/preview.webp",
+    "effect_path": "assets/modules/3d-light-shafts/demos/effects/lighting-shaft-cones.js"
+  },
+  {
+    "slug": "3d-lightning-energy",
+    "effect": "vfx-lightning-energy",
+    "name": "Arc Chamber",
+    "zh": "闪电能量组合特效",
+    "category": "vfx",
+    "sourceId": "batch02-09",
+    "tagline": "A current bridges engineered electrodes in a quiet arc chamber.",
+    "camera": [
+      7,
+      4.6,
+      9
+    ],
+    "target": [
+      0,
+      1.5,
+      0
+    ],
+    "topology": [
+      "branches"
+    ],
+    "schema": [
+      {
+        "key": "energy",
+        "label": "发光强度 Energy",
+        "min": 0.2,
+        "max": 3,
+        "step": 0.05,
+        "default": 1.35
+      },
+      {
+        "key": "branches",
+        "label": "支路数量 Branches",
+        "min": 2,
+        "max": 16,
+        "step": 1,
+        "default": 8
+      },
+      {
+        "key": "reach",
+        "label": "弧线张幅 Reach",
+        "min": 0.3,
+        "max": 2,
+        "step": 0.02,
+        "default": 1
+      },
+      {
+        "key": "width",
+        "label": "弧线宽度 Width",
+        "min": 0.015,
+        "max": 0.12,
+        "step": 0.002,
+        "default": 0.045
+      },
+      {
+        "key": "color",
+        "label": "电弧色 Color",
+        "type": "color",
+        "default": "#84c5ff"
+      },
+      {
+        "key": "speed",
+        "label": "演化速度 Speed",
+        "min": 0,
+        "max": 1.5,
+        "step": 0.02,
+        "default": 0.65
+      }
+    ],
+    "looks": [
+      {
+        "id": "bridge",
+        "title": "Electrode Bridge / 电极桥",
+        "hint": "White-blue filaments span two dark terminals.",
+        "params": {
+          "variant": 0,
+          "color": "#8ccaff",
+          "reach": 1
+        }
+      },
+      {
+        "id": "coil",
+        "title": "Orbital Coil / 环形线圈",
+        "hint": "An orbital cage around a suspended core.",
+        "params": {
+          "variant": 1,
+          "color": "#90d9ce",
+          "reach": 1.2
+        }
+      },
+      {
+        "id": "array",
+        "title": "Branch Array / 支路阵列",
+        "hint": "A controlled fan of branching channels.",
+        "params": {
+          "variant": 2,
+          "color": "#b4a6ed",
+          "branches": 12,
+          "reach": 1.45
+        }
+      }
+    ],
+    "fit": "Industrial energy diagrams, hero loops and restrained electric effects.",
+    "limit": "Illustrative emissive ribbons, not an electrical field or plasma simulation. Brightness varies continuously; no strobe or impact-frame flashes.",
+    "batch": "original13",
+    "family": "vfx",
+    "render_role": "scene-layer",
+    "source_kind": "independent",
+    "keywords": [
+      "闪电",
+      "电弧",
+      "能量",
+      "lightning"
+    ],
+    "resource_dir": "assets/modules/3d-lightning-energy",
+    "guide": "assets/modules/3d-lightning-energy/module-guide.md",
+    "demo": "assets/modules/3d-lightning-energy/demos/index.html",
+    "preview": "assets/modules/3d-lightning-energy/assets/preview.webp",
+    "effect_path": "assets/modules/3d-lightning-energy/demos/effects/vfx-lightning-energy.js"
+  },
+  {
+    "slug": "3d-liquid-metal",
+    "effect": "fluid-liquid-metal",
+    "impl": "fluid-liquid-metal.js",
+    "name": "3D Liquid Metal",
+    "zh": "液态金属",
+    "category": "materials",
+    "family": "materials",
+    "tagline": "A mercury-like pool morphs, droplets bead and orbit a central shifting mass.",
+    "camera": [
+      6.5,
+      4.8,
+      8.0
+    ],
+    "target": [
+      0,
+      0.8,
+      0
+    ],
+    "topology": [
+      "droplets"
+    ],
+    "schema": [
+      {
+        "key": "viscosity",
+        "label": "粘性流速 Viscosity",
+        "min": 0.05,
+        "max": 1.0,
+        "step": 0.01,
+        "default": 0.38
+      },
+      {
+        "key": "tension",
+        "label": "表面张力 Tension",
+        "min": 0.1,
+        "max": 2.0,
+        "step": 0.05,
+        "default": 0.85
+      },
+      {
+        "key": "roughness",
+        "label": "表面粗糙度 Roughness",
+        "min": 0.0,
+        "max": 0.35,
+        "step": 0.01,
+        "default": 0.04
+      },
+      {
+        "key": "droplets",
+        "label": "液滴数量 Droplets",
+        "min": 0,
+        "max": 60,
+        "step": 1,
+        "default": 18
+      },
+      {
+        "key": "color",
+        "label": "金属色 Color",
+        "type": "color",
+        "default": "#c8ccd0"
+      },
+      {
+        "key": "speed",
+        "label": "流动速度 Speed",
+        "min": 0,
+        "max": 1,
+        "step": 0.01,
+        "default": 0.32
+      }
+    ],
+    "looks": [
+      {
+        "id": "mercury",
+        "title": "Mercury pool / 水银池",
+        "hint": "Classic silver-white mercury with active ripple and orbiting droplets.",
+        "params": {}
+      },
+      {
+        "id": "gold-flow",
+        "title": "Gold flow / 流金",
+        "hint": "Warm gold tone, slower viscous flow, fewer droplets.",
+        "params": {
+          "color": "#d4a435",
+          "viscosity": 0.22,
+          "tension": 0.55,
+          "roughness": 0.08,
+          "droplets": 8,
+          "speed": 0.18
+        }
+      },
+      {
+        "id": "chrome-burst",
+        "title": "Chrome burst / 铬爆裂",
+        "hint": "High-speed chrome splatter with maximum droplets and tight surface tension.",
+        "params": {
+          "color": "#e0e4e8",
+          "viscosity": 0.82,
+          "tension": 1.6,
+          "roughness": 0.02,
+          "droplets": 52,
+          "speed": 0.75
+        }
+      }
+    ],
+    "fitZh": "水银特效、液态金属动效、产品展示金属液体背景。",
+    "limitZh": "程序化变形曲面和实例化液滴，不是真实流体力学或 SPH 模拟。",
+    "limit": "Procedural morphing surface and instanced droplets, not real fluid dynamics or SPH simulation.",
+    "batch": "new2026",
+    "render_role": "scene-layer",
+    "source_kind": "independent",
+    "keywords": [
+      "液态金属",
+      "水银",
+      "mercury",
+      "liquid metal",
+      "金属液体",
+      "流金"
+    ],
+    "resource_dir": "assets/modules/3d-liquid-metal",
+    "guide": "assets/modules/3d-liquid-metal/module-guide.md",
+    "demo": "assets/modules/3d-liquid-metal/demos/index.html",
+    "preview": "assets/modules/3d-liquid-metal/assets/preview.webp",
+    "effect_path": "assets/modules/3d-liquid-metal/demos/effects/fluid-liquid-metal.js"
+  },
+  {
+    "slug": "3d-metal-material",
+    "effect": "shader-metal-material",
+    "name": "Machined Light",
+    "zh": "PBR 金属材质",
+    "category": "shaders",
+    "sourceId": "batch02-05",
+    "tagline": "A machined object shaped by the reflections it holds.",
+    "camera": [
+      6.5,
+      3.6,
+      8
+    ],
+    "target": [
+      0,
+      1.2,
+      0
+    ],
+    "schema": [
+      {
+        "key": "roughness",
+        "label": "表面粗糙度 Roughness",
+        "min": 0.07,
+        "max": 0.9,
+        "step": 0.01,
+        "default": 0.24
+      },
+      {
+        "key": "brush",
+        "label": "拉丝强度 Brush",
+        "min": 0,
+        "max": 1,
+        "step": 0.01,
+        "default": 0.55
+      },
+      {
+        "key": "patina",
+        "label": "氧化覆盖 Patina",
+        "min": 0,
+        "max": 1,
+        "step": 0.01,
+        "default": 0.12
+      },
+      {
+        "key": "color",
+        "label": "金属色 Tint",
+        "type": "color",
+        "default": "#c8ab75"
+      },
+      {
+        "key": "spin",
+        "label": "转台速度 Spin",
+        "min": 0,
+        "max": 1,
+        "step": 0.01,
+        "default": 0.12
+      }
+    ],
+    "looks": [
+      {
+        "id": "brass",
+        "title": "Brass Assembly / 黄铜",
+        "hint": "Warm rings, a dark core and fine radial marks.",
+        "params": {
+          "variant": 0,
+          "color": "#c6a569",
+          "roughness": 0.25,
+          "patina": 0.07
+        }
+      },
+      {
+        "id": "titanium",
+        "title": "Titanium Stack / 钛银",
+        "hint": "A satin stack with narrow polished shoulders.",
+        "params": {
+          "variant": 1,
+          "color": "#aebdc6",
+          "roughness": 0.19,
+          "brush": 0.8,
+          "patina": 0
+        }
+      },
+      {
+        "id": "copper",
+        "title": "Aged Copper / 古铜",
+        "hint": "A broad ring with restrained oxidation.",
+        "params": {
+          "variant": 2,
+          "color": "#bf7954",
+          "roughness": 0.39,
+          "patina": 0.65
+        }
+      }
+    ],
+    "fit": "Machined parts, metals, product turntables and finish comparisons.",
+    "limit": "An authored PBR study with generated maps and studio cards; not measured spectral metal data.",
+    "batch": "original13",
+    "family": "materials",
+    "render_role": "scene-layer",
+    "source_kind": "independent",
+    "keywords": [
+      "金属",
+      "拉丝",
+      "材质",
+      "metal"
+    ],
+    "resource_dir": "assets/modules/3d-metal-material",
+    "guide": "assets/modules/3d-metal-material/module-guide.md",
+    "demo": "assets/modules/3d-metal-material/demos/index.html",
+    "preview": "assets/modules/3d-metal-material/assets/preview.webp",
+    "effect_path": "assets/modules/3d-metal-material/demos/effects/shader-metal-material.js"
+  },
+  {
+    "slug": "3d-ocean",
+    "effect": "fluid-wave-sheet",
+    "impl": "wave-sheet.js",
+    "name": "3D Ocean",
+    "zh": "流动水面",
+    "category": "fluid-gas",
+    "tagline": "A persistent water sheet carries ripples and a reflected form.",
+    "camera": [
+      7,
+      4.8,
+      9
+    ],
+    "target": [
+      0,
+      0.65,
+      0
+    ],
+    "schema": [
+      {
+        "key": "distortion",
+        "label": "波纹幅度 Distortion",
+        "min": 0.15,
+        "max": 3,
+        "step": 0.05,
+        "default": 1.2
+      },
+      {
+        "key": "roughness",
+        "label": "水面粗糙度 Roughness",
+        "min": 0.08,
+        "max": 0.8,
+        "step": 0.01,
+        "default": 0.3
+      },
+      {
+        "key": "frequency",
+        "label": "波纹频率 Frequency",
+        "min": 0.5,
+        "max": 2.8,
+        "step": 0.05,
+        "default": 1.2
+      },
+      {
+        "key": "sun",
+        "label": "光照方位 Sun",
+        "min": -3.1,
+        "max": 3.1,
+        "step": 0.05,
+        "default": 0.8
+      },
+      {
+        "key": "color",
+        "label": "水体色 Color",
+        "type": "color",
+        "default": "#315e6c"
+      },
+      {
+        "key": "speed",
+        "label": "时间速度 Speed",
+        "min": 0,
+        "max": 1,
+        "step": 0.01,
+        "default": 0.35
+      }
+    ],
+    "looks": [
+      {
+        "id": "teal",
+        "title": "Deep teal / 深青水面",
+        "hint": "A cool reflecting pool.",
+        "params": {}
+      },
+      {
+        "id": "still",
+        "title": "Still pool / 静水",
+        "hint": "Quieter dark-blue water.",
+        "params": {
+          "distortion": 0.3,
+          "speed": 0.12,
+          "color": "#1a364e"
+        }
+      },
+      {
+        "id": "copper",
+        "title": "Copper light / 暖光水面",
+        "hint": "A warmer specular direction.",
+        "params": {
+          "sun": 2.3,
+          "color": "#3b696e",
+          "distortion": 2.2
+        }
+      }
+    ],
+    "fitZh": "水面、反射池、轻量海面外观。",
+    "limitZh": "解析波面与平面反射近似，不是 CFD、海洋谱波、焦散或完整折射。",
+    "limit": "Analytic waves and planar reflection, not CFD, spectral-ocean simulation or full refraction/caustics.",
+    "batch": "rewritten20",
+    "family": "fluid-gas",
+    "render_role": "reflection-surface",
+    "source_kind": "independent",
+    "keywords": [
+      "海面",
+      "水面",
+      "水波",
+      "反射池",
+      "ocean",
+      "water"
+    ],
+    "resource_dir": "assets/modules/3d-ocean",
+    "guide": "assets/modules/3d-ocean/module-guide.md",
+    "demo": "assets/modules/3d-ocean/demos/index.html",
+    "preview": "assets/modules/3d-ocean/assets/preview.webp",
+    "effect_path": "assets/modules/3d-ocean/demos/effects/fluid-wave-sheet.js"
+  },
+  {
+    "slug": "3d-paper-material",
+    "effect": "shader-paper-material",
+    "name": "Fiber Sheet",
+    "zh": "纤维纸张材质",
+    "category": "shaders",
+    "sourceId": "batch02-06",
+    "tagline": "A paper edge has thickness, fibers and an uneven story.",
+    "camera": [
+      5,
+      3.1,
+      7.4
+    ],
+    "target": [
+      0,
+      1.5,
+      0
+    ],
+    "schema": [
+      {
+        "key": "fiber",
+        "label": "纤维强度 Fiber",
+        "min": 0,
+        "max": 1,
+        "step": 0.01,
+        "default": 0.55
+      },
+      {
+        "key": "curl",
+        "label": "卷角幅度 Curl",
+        "min": 0,
+        "max": 1.5,
+        "step": 0.01,
+        "default": 0.55
+      },
+      {
+        "key": "thickness",
+        "label": "纸层厚度 Thickness",
+        "min": 0.002,
+        "max": 0.06,
+        "step": 0.002,
+        "default": 0.018
+      },
+      {
+        "key": "roughness",
+        "label": "粗糙度 Roughness",
+        "min": 0.25,
+        "max": 1,
+        "step": 0.01,
+        "default": 0.85
+      },
+      {
+        "key": "color",
+        "label": "纸张色 Color",
+        "type": "color",
+        "default": "#dfd2b3"
+      },
+      {
+        "key": "speed",
+        "label": "呼吸速度 Speed",
+        "min": 0,
+        "max": 1,
+        "step": 0.01,
+        "default": 0.18
+      }
+    ],
+    "looks": [
+      {
+        "id": "ivory",
+        "title": "Ivory Fold / 象牙",
+        "hint": "A floating sheet with a folded upper corner.",
+        "params": {
+          "variant": 0,
+          "color": "#e3d7bb",
+          "curl": 0.45
+        }
+      },
+      {
+        "id": "kraft",
+        "title": "Kraft Roll / 牛皮纸",
+        "hint": "Warm fibers and a stronger edge curl.",
+        "params": {
+          "variant": 1,
+          "color": "#aa7e4e",
+          "curl": 0.85
+        }
+      },
+      {
+        "id": "indigo",
+        "title": "Dyed Paper / 靛纸",
+        "hint": "A pale edge around a dense blue face.",
+        "params": {
+          "variant": 2,
+          "color": "#61889b",
+          "curl": 0.65,
+          "fiber": 0.8
+        }
+      }
+    ],
+    "fit": "Paper, packaging, stationery and close material inspection.",
+    "limit": "A layered procedural paper illustration. No fiber mechanics or physically solved transmission.",
+    "batch": "original13",
+    "family": "materials",
+    "render_role": "scene-layer",
+    "source_kind": "independent",
+    "keywords": [
+      "纸张",
+      "纤维",
+      "材质",
+      "paper"
+    ],
+    "resource_dir": "assets/modules/3d-paper-material",
+    "guide": "assets/modules/3d-paper-material/module-guide.md",
+    "demo": "assets/modules/3d-paper-material/demos/index.html",
+    "preview": "assets/modules/3d-paper-material/assets/preview.webp",
+    "effect_path": "assets/modules/3d-paper-material/demos/effects/shader-paper-material.js"
+  },
+  {
+    "slug": "3d-pipe-flow",
+    "effect": "pipe-luminous-current",
+    "impl": "luminous-current.js",
+    "name": "3D Pipe Flow",
+    "zh": "管道流动",
+    "category": "motion",
+    "tagline": "Packets follow one readable tubular route.",
+    "camera": [
+      7,
+      4.3,
+      9
+    ],
+    "target": [
+      0,
+      1.4,
+      0
+    ],
+    "topology": [
+      "density",
+      "radius"
+    ],
+    "schema": [
+      {
+        "key": "density",
+        "label": "流点数量 Density",
+        "min": 0.2,
+        "max": 1.5,
+        "step": 0.05,
+        "default": 1
+      },
+      {
+        "key": "radius",
+        "label": "管道半径 Radius",
+        "min": 0.08,
+        "max": 0.33,
+        "step": 0.01,
+        "default": 0.17
+      },
+      {
+        "key": "spacing",
+        "label": "流点间距 Spacing",
+        "min": 0.5,
+        "max": 2,
+        "step": 0.05,
+        "default": 1
+      },
+      {
+        "key": "opacity",
+        "label": "管壁透明度 Opacity",
+        "min": 0.1,
+        "max": 0.65,
+        "step": 0.01,
+        "default": 0.26
+      },
+      {
+        "key": "color",
+        "label": "流体色 Color",
+        "type": "color",
+        "default": "#86d5d3"
+      },
+      {
+        "key": "speed",
+        "label": "流速 Speed",
+        "min": 0,
+        "max": 1.2,
+        "step": 0.02,
+        "default": 0.35
+      }
+    ],
+    "looks": [
+      {
+        "id": "cool",
+        "title": "Cooling line / 冷却管线",
+        "hint": "A cool directional route.",
+        "params": {}
+      },
+      {
+        "id": "energy",
+        "title": "Energy feed / 能量输送",
+        "hint": "Warm faster packets.",
+        "params": {
+          "color": "#eab478",
+          "speed": 0.8,
+          "spacing": 1.4
+        }
+      },
+      {
+        "id": "circulate",
+        "title": "Gentle circulation / 缓流",
+        "hint": "A slower sparse route.",
+        "params": {
+          "color": "#9ed4b1",
+          "speed": 0.15,
+          "density": 0.45,
+          "radius": 0.25
+        }
+      }
+    ],
+    "fitZh": "管线路径、方向提示和工业流向示意。",
+    "limitZh": "管内预设路径上的点与方向标识，不求解压力、流量、湍流或管网。",
+    "limit": "Authored packet motion, not pressure, flow rate, turbulence or a pipe-network solver.",
+    "batch": "rewritten20",
+    "family": "motion",
+    "render_role": "scene-layer",
+    "source_kind": "independent",
+    "keywords": [
+      "管流",
+      "管道",
+      "流向",
+      "管线",
+      "pipe"
+    ],
+    "resource_dir": "assets/modules/3d-pipe-flow",
+    "guide": "assets/modules/3d-pipe-flow/module-guide.md",
+    "demo": "assets/modules/3d-pipe-flow/demos/index.html",
+    "preview": "assets/modules/3d-pipe-flow/assets/preview.webp",
+    "effect_path": "assets/modules/3d-pipe-flow/demos/effects/pipe-luminous-current.js"
+  },
+  {
+    "slug": "3d-plasma",
+    "effect": "vfx-plasma-stream",
+    "impl": "plasma-stream.js",
+    "name": "3D Plasma",
+    "zh": "等离子尾流",
+    "category": "vfx",
+    "tagline": "A narrow layered wake carries luminous filaments.",
+    "camera": [
+      7,
+      3.7,
+      9
+    ],
+    "target": [
+      0,
+      1.4,
+      0
+    ],
+    "schema": [
+      {
+        "key": "width",
+        "label": "尾流半径 Width",
+        "min": 0.35,
+        "max": 1.6,
+        "step": 0.02,
+        "default": 0.85
+      },
+      {
+        "key": "glow",
+        "label": "发光强度 Glow",
+        "min": 0.25,
+        "max": 2.8,
+        "step": 0.05,
+        "default": 1.4
+      },
+      {
+        "key": "opacity",
+        "label": "壳层透明度 Opacity",
+        "min": 0.1,
+        "max": 0.9,
+        "step": 0.01,
+        "default": 0.55
+      },
+      {
+        "key": "flow",
+        "label": "流速 Flow",
+        "min": 0.2,
+        "max": 2,
+        "step": 0.02,
+        "default": 1
+      },
+      {
+        "key": "color",
+        "label": "尾流色 Color",
+        "type": "color",
+        "default": "#6da9e2"
+      },
+      {
+        "key": "speed",
+        "label": "时间速度 Speed",
+        "min": 0,
+        "max": 1.4,
+        "step": 0.02,
+        "default": 0.65
+      }
+    ],
+    "looks": [
+      {
+        "id": "hot",
+        "title": "Thermal wake / 热尾流",
+        "hint": "A bright head and fine trailing filaments.",
+        "params": {}
+      },
+      {
+        "id": "quiet",
+        "title": "Quiet wake / 平静尾流",
+        "hint": "A softer low-intensity stream.",
+        "params": {
+          "glow": 0.65,
+          "opacity": 0.35,
+          "flow": 0.55
+        }
+      },
+      {
+        "id": "dense",
+        "title": "Dense energy / 致密能量",
+        "hint": "A concentrated cool luminous wake.",
+        "params": {
+          "glow": 2.2,
+          "opacity": 0.8,
+          "flow": 1.5,
+          "color": "#8eabed"
+        }
+      }
+    ],
+    "fitZh": "能源、推进尾流与抽象等离子外观。",
+    "limitZh": "解析发光壳层，不求解带电粒子、电磁流体或再入气动热。",
+    "limit": "An authored emissive wake, not charged-particle dynamics or magnetohydrodynamics.",
+    "batch": "rewritten20",
+    "family": "vfx",
+    "render_role": "scene-layer",
+    "source_kind": "independent",
+    "keywords": [
+      "等离子",
+      "尾流",
+      "能量",
+      "plasma"
+    ],
+    "resource_dir": "assets/modules/3d-plasma",
+    "guide": "assets/modules/3d-plasma/module-guide.md",
+    "demo": "assets/modules/3d-plasma/demos/index.html",
+    "preview": "assets/modules/3d-plasma/assets/preview.webp",
+    "effect_path": "assets/modules/3d-plasma/demos/effects/vfx-plasma-stream.js"
+  },
+  {
+    "slug": "3d-rain",
+    "effect": "particles-rain-volume",
+    "impl": "rain-volume.js",
+    "name": "3D Rain",
+    "zh": "夜景雨幕",
+    "category": "particles",
+    "tagline": "Fine streaks pass through a three-dimensional stage.",
+    "camera": [
+      7,
+      4.5,
+      9
+    ],
+    "target": [
+      0,
+      1.7,
+      0
+    ],
+    "topology": [
+      "density"
+    ],
+    "schema": [
+      {
+        "key": "density",
+        "label": "雨滴数量 Density",
+        "min": 0.2,
+        "max": 1.6,
+        "step": 0.05,
+        "default": 1
+      },
+      {
+        "key": "wind",
+        "label": "横向风 Wind",
+        "min": -1.2,
+        "max": 1.2,
+        "step": 0.05,
+        "default": 0.1
+      },
+      {
+        "key": "length",
+        "label": "雨线长度 Length",
+        "min": 0.12,
+        "max": 0.75,
+        "step": 0.01,
+        "default": 0.38
+      },
+      {
+        "key": "width",
+        "label": "雨线宽度 Width",
+        "min": 0.006,
+        "max": 0.045,
+        "step": 0.001,
+        "default": 0.014
+      },
+      {
+        "key": "opacity",
+        "label": "可见强度 Opacity",
+        "min": 0.15,
+        "max": 0.9,
+        "step": 0.01,
+        "default": 0.55
+      },
+      {
+        "key": "speed",
+        "label": "下落速度 Speed",
+        "min": 0,
+        "max": 1.4,
+        "step": 0.02,
+        "default": 0.55
+      }
+    ],
+    "looks": [
+      {
+        "id": "night",
+        "title": "Night rainfall / 夜雨",
+        "hint": "Fine, nearly vertical streaks.",
+        "params": {}
+      },
+      {
+        "id": "driving",
+        "title": "Driving rain / 斜雨",
+        "hint": "Heavier wind-driven rainfall.",
+        "params": {
+          "wind": 0.8,
+          "density": 1.35,
+          "length": 0.5,
+          "speed": 0.8
+        }
+      },
+      {
+        "id": "drizzle",
+        "title": "Light drizzle / 细雨",
+        "hint": "Sparse, restrained rain.",
+        "params": {
+          "density": 0.35,
+          "length": 0.2,
+          "opacity": 0.4,
+          "speed": 0.25
+        }
+      }
+    ],
+    "fitZh": "夜雨、场景天气和可调雨线。",
+    "limitZh": "循环雨滴体积，不提供风场、积水、雨滴碰撞或湿面求解。",
+    "limit": "Looping streak particles; no accumulation, droplet collision or wet-surface simulation.",
+    "batch": "rewritten20",
+    "family": "particles",
+    "render_role": "scene-layer",
+    "source_kind": "independent",
+    "keywords": [
+      "下雨",
+      "雨幕",
+      "雨雪",
+      "天气",
+      "rain"
+    ],
+    "resource_dir": "assets/modules/3d-rain",
+    "guide": "assets/modules/3d-rain/module-guide.md",
+    "demo": "assets/modules/3d-rain/demos/index.html",
+    "preview": "assets/modules/3d-rain/assets/preview.webp",
+    "effect_path": "assets/modules/3d-rain/demos/effects/particles-rain-volume.js"
+  },
+  {
+    "slug": "3d-rain-streaks",
+    "effect": "rain-streaks-splashes",
+    "impl": "rain-streaks-module.js",
+    "name": "Rain Streaks & Splashes",
+    "zh": "雨丝与水花",
+    "category": "particles",
+    "family": "particles",
+    "tagline": "可调雨点大小的实例化雨丝、地面水花与低角度阳光前向散射。",
+    "camera": [
+      0,
+      3.5,
+      8
+    ],
+    "target": [
+      0,
+      1.2,
+      0
+    ],
+    "cameraOwner": false,
+    "schema": [
+      {
+        "key": "rain",
+        "label": "雨量",
+        "min": 0,
+        "max": 1,
+        "step": 0.01,
+        "default": 0.6
+      },
+      {
+        "key": "dropSize",
+        "label": "雨点大小倍率",
+        "min": 0.3,
+        "max": 2.5,
+        "step": 0.01,
+        "default": 1
+      },
+      {
+        "key": "windSpeed",
+        "label": "风速",
+        "min": 0,
+        "max": 8,
+        "step": 0.1,
+        "default": 3
+      },
+      {
+        "key": "fallSpeed",
+        "label": "下落速度",
+        "min": 3,
+        "max": 18,
+        "step": 0.1,
+        "default": 9.4
+      },
+      {
+        "key": "sunAzimuth",
+        "label": "太阳方位角 °",
+        "min": 0,
+        "max": 360,
+        "step": 1,
+        "default": 211
+      },
+      {
+        "key": "sunElevation",
+        "label": "太阳高度角 °",
+        "min": 2,
+        "max": 70,
+        "step": 0.5,
+        "default": 18.9
+      },
+      {
+        "key": "sunIntensity",
+        "label": "雨丝受光强度",
+        "min": 0,
+        "max": 5,
+        "step": 0.05,
+        "default": 2.4
+      },
+      {
+        "key": "ambIntensity",
+        "label": "环境补光强度",
+        "min": 0,
+        "max": 3,
+        "step": 0.05,
+        "default": 1
+      },
+      {
+        "key": "rainDrops",
+        "label": "雨丝数量",
+        "min": 1000,
+        "max": 9000,
+        "step": 100,
+        "default": 9000
+      },
+      {
+        "key": "splashDrops",
+        "label": "水花数量",
+        "min": 0,
+        "max": 1200,
+        "step": 50,
+        "default": 1200
+      },
+      {
+        "key": "speed",
+        "label": "时间倍率（0 暂停）",
+        "min": 0,
+        "max": 2,
+        "step": 0.05,
+        "default": 1
+      }
+    ],
+    "looks": [
+      {
+        "id": "night-rain",
+        "title": "夜雨（原页默认）",
+        "hint": "用户提供页面的原始数值：60% 雨量、1.00× 雨点、风速 3.0、9000 雨丝 + 1200 水花。",
+        "params": {
+          "rain": 0.6,
+          "dropSize": 1,
+          "windSpeed": 3,
+          "fallSpeed": 9.4,
+          "sunAzimuth": 211,
+          "sunElevation": 18.9,
+          "sunIntensity": 2.4,
+          "ambIntensity": 1,
+          "rainDrops": 9000,
+          "splashDrops": 1200,
+          "speed": 1
+        }
+      },
+      {
+        "id": "drizzle",
+        "title": "细雨",
+        "hint": "稀疏、细短、几乎垂直的雨丝，水花很少，适合安静的近景。",
+        "params": {
+          "rain": 0.28,
+          "dropSize": 0.62,
+          "windSpeed": 0.9,
+          "fallSpeed": 7.2,
+          "sunAzimuth": 211,
+          "sunElevation": 18.9,
+          "sunIntensity": 2.1,
+          "ambIntensity": 1,
+          "rainDrops": 5000,
+          "splashDrops": 450,
+          "speed": 0.85
+        }
+      },
+      {
+        "id": "downpour",
+        "title": "暴雨斜雨",
+        "hint": "满雨量、粗雨点、强侧风与更快下落，水花密集。",
+        "params": {
+          "rain": 1,
+          "dropSize": 1.55,
+          "windSpeed": 6.5,
+          "fallSpeed": 13.2,
+          "sunAzimuth": 205,
+          "sunElevation": 25,
+          "sunIntensity": 2,
+          "ambIntensity": 1.15,
+          "rainDrops": 9000,
+          "splashDrops": 1200,
+          "speed": 1.25
+        }
+      },
+      {
+        "id": "sunset-rain",
+        "title": "逆光暖雨",
+        "hint": "保持太阳位于视线前方（方位角贴近原页 211°）并压低高度角，让前向散射把雨丝点亮；可与 3d-skybox-sunset 组合成夕阳雨天。",
+        "params": {
+          "rain": 0.72,
+          "dropSize": 1.2,
+          "windSpeed": 2.4,
+          "fallSpeed": 9.4,
+          "sunAzimuth": 205,
+          "sunElevation": 7,
+          "sunIntensity": 3.4,
+          "ambIntensity": 0.85,
+          "rainDrops": 9000,
+          "splashDrops": 1200,
+          "speed": 1
+        }
+      }
+    ],
+    "fitZh": "下雨、雨天、雨丝、雨点大小可调、地面水花、斜风骤雨、细雨与逆光暖雨等场景天气。",
+    "limitZh": "实例化解析雨丝与程序化水花，不模拟真实液滴碰撞、积水深度、湿面反射或流体风场；水花按地面 y=0 生成。实例池容量沿用用户原始常量：雨丝上限 9000、水花上限 1200，超出部分会被截断。",
+    "limit": "Analytic instanced streaks and procedural ground splashes; no droplet collision, puddle depth, wet-surface reflection or fluid wind solver.",
+    "source_kind": "user-supplied",
+    "attribution": "用户在 2026-11-12 对话中提供的「几猫 · 雨效独立演示（可调雨点大小）」单文件代码；原始雨丝/水花着色器归属该输入，输入未附独立许可证声明；离线 Three.js r160 为 MIT。",
+    "render_role": "scene-layer",
+    "topology": [
+      "instanced-streaks",
+      "ground-splash",
+      "directional-scattering"
+    ],
+    "batch": "rain-streaks-20261112",
+    "keywords": [
+      "下雨",
+      "雨天",
+      "降雨",
+      "雨丝",
+      "雨点",
+      "雨点大小",
+      "雨滴",
+      "雨量",
+      "水花",
+      "溅水",
+      "积水",
+      "斜雨",
+      "暴雨",
+      "细雨",
+      "逆光雨",
+      "夕阳雨天",
+      "风速",
+      "天气",
+      "rain",
+      "rain streaks",
+      "raindrop size",
+      "splash",
+      "drizzle",
+      "downpour",
+      "backlit rain"
+    ],
+    "resource_dir": "assets/modules/3d-rain-streaks",
+    "guide": "assets/modules/3d-rain-streaks/module-guide.md",
+    "demo": "assets/modules/3d-rain-streaks/demos/index.html",
+    "preview": "assets/modules/3d-rain-streaks/preview.png",
+    "effect_path": "assets/modules/3d-rain-streaks/demos/effects/rain-streaks-module.js"
+  },
+  {
+    "slug": "3d-realistic-fire",
+    "effect": "realistic-fire",
+    "impl": "realistic-fire.js",
+    "name": "Realistic Fire",
+    "zh": "真实火焰",
+    "category": "particles",
+    "family": "particles",
+    "tagline": "真实感火焰帧图、火星与闪烁灯光，小火 / 大火两套原项目参数。",
+    "camera": [
+      5,
+      3,
+      7
+    ],
+    "target": [
+      0,
+      1.4,
+      0
+    ],
+    "topology": [
+      "variant",
+      "scale"
+    ],
+    "schema": [
+      {
+        "key": "variant",
+        "label": "火焰形态",
+        "options": [
+          "small",
+          "large"
+        ],
+        "default": "small"
+      },
+      {
+        "key": "scale",
+        "label": "大小",
+        "min": 0.1,
+        "max": 10,
+        "step": 0.1,
+        "default": 2
+      },
+      {
+        "key": "speed",
+        "label": "播放速度",
+        "min": 0,
+        "max": 2,
+        "step": 0.05,
+        "default": 1
+      }
+    ],
+    "looks": [
+      {
+        "id": "small",
+        "title": "真实小火焰",
+        "params": {
+          "variant": "small",
+          "scale": 2
+        }
+      },
+      {
+        "id": "large",
+        "title": "真实大火焰",
+        "params": {
+          "variant": "large",
+          "scale": 2
+        }
+      }
+    ],
+    "fitZh": "真实火焰、篝火、火炬和火灾场景。",
+    "limitZh": "动画贴图粒子；仅 WebGL，不是燃烧物理求解。",
+    "render_role": "scene-layer",
+    "source_kind": "user-supplied",
+    "attribution": "用户提供的 threeEditor 火焰 / Photons，资源许可证未附",
+    "keywords": [
+      "真实火焰",
+      "写实火焰",
+      "火焰",
+      "火",
+      "燃烧",
+      "篝火",
+      "火炬",
+      "火灾",
+      "fire",
+      "flame",
+      "realistic fire",
+      "campfire"
+    ],
+    "resource_dir": "assets/modules/3d-realistic-fire",
+    "guide": "assets/modules/3d-realistic-fire/module-guide.md",
+    "demo": "assets/modules/3d-realistic-fire/demos/index.html",
+    "preview": "assets/modules/3d-realistic-fire/assets/preview.png",
+    "effect_path": "assets/modules/3d-realistic-fire/demos/effects/realistic-fire.js"
+  },
+  {
+    "slug": "3d-scroll-scenes",
+    "effect": "motion-scroll-scenes",
+    "name": "Scroll Chapters",
+    "zh": "滚动驱动三维场景",
+    "category": "motion",
+    "sourceId": "batch02-12",
+    "tagline": "Native scroll conducts a small three-dimensional story.",
+    "camera": [
+      7,
+      4.2,
+      9
+    ],
+    "target": [
+      0,
+      1,
+      0
+    ],
+    "cameraOwner": true,
+    "schema": [
+      {
+        "key": "progress",
+        "label": "叙事进度 Progress",
+        "min": 0,
+        "max": 1,
+        "step": 0.001,
+        "default": 0.32
+      },
+      {
+        "key": "follow",
+        "label": "镜头跟随 Follow",
+        "type": "boolean",
+        "default": true
+      },
+      {
+        "key": "spacing",
+        "label": "章节间距 Spacing",
+        "min": 0.8,
+        "max": 2,
+        "step": 0.02,
+        "default": 1.25
+      },
+      {
+        "key": "reveal",
+        "label": "入场幅度 Reveal",
+        "min": 0,
+        "max": 2,
+        "step": 0.02,
+        "default": 0.7
+      },
+      {
+        "key": "color",
+        "label": "章节色 Color",
+        "type": "color",
+        "default": "#a9ba93"
+      }
+    ],
+    "looks": [
+      {
+        "id": "orbit",
+        "title": "Orbital Chapters / 轨道",
+        "hint": "Three objects form a measured orbital sequence.",
+        "params": {
+          "variant": 0,
+          "color": "#a9c4b9",
+          "progress": 0.32
+        }
+      },
+      {
+        "id": "vertical",
+        "title": "Vertical Chapters / 纵向",
+        "hint": "A tiered ascent through sculptural forms.",
+        "params": {
+          "variant": 1,
+          "color": "#cca875",
+          "progress": 0.55
+        }
+      },
+      {
+        "id": "ribbon",
+        "title": "Ribbon Chapters / 丝带",
+        "hint": "A diagonal ribbon carries the story.",
+        "params": {
+          "variant": 2,
+          "color": "#9bb3d8",
+          "progress": 0.65
+        }
+      }
+    ],
+    "fit": "Web product stories, scroll progress adapters and camera-led presentations.",
+    "limit": "Native scroll-to-progress mapping and authored transforms. No GSAP/Lenis dependency; not a complete website or a physics simulation.",
+    "batch": "original13",
+    "family": "motion",
+    "render_role": "scene-layer",
+    "source_kind": "independent",
+    "keywords": [
+      "滚动",
+      "叙事",
+      "章节",
+      "scroll"
+    ],
+    "resource_dir": "assets/modules/3d-scroll-scenes",
+    "guide": "assets/modules/3d-scroll-scenes/module-guide.md",
+    "demo": "assets/modules/3d-scroll-scenes/demos/index.html",
+    "preview": "assets/modules/3d-scroll-scenes/assets/preview.webp",
+    "effect_path": "assets/modules/3d-scroll-scenes/demos/effects/motion-scroll-scenes.js"
+  },
+  {
+    "slug": "3d-skybox-sunset",
+    "effect": "skybox-sunset",
+    "impl": "sky-glow-module.js",
+    "name": "Sunset Skybox & Sun Glow",
+    "zh": "夕阳天空盒与太阳光晕",
+    "category": "environment",
+    "family": "environment",
+    "tagline": "程序化夕阳天空盒、太阳圆盘与日晕、镜头光晕与暖色平行光环境。",
+    "camera": [
+      -9,
+      1.7,
+      -3.3
+    ],
+    "target": [
+      36,
+      9,
+      13
+    ],
+    "cameraOwner": false,
+    "schema": [
+      {
+        "key": "sunElevation",
+        "label": "太阳高度角 °",
+        "min": -2,
+        "max": 45,
+        "step": 0.5,
+        "default": 13
+      },
+      {
+        "key": "sunAzimuth",
+        "label": "太阳方位角 °",
+        "min": 0,
+        "max": 360,
+        "step": 1,
+        "default": 70
+      },
+      {
+        "key": "sunColor",
+        "label": "太阳颜色",
+        "type": "color",
+        "default": "#ffddad"
+      },
+      {
+        "key": "sunIntensity",
+        "label": "平行光强度",
+        "min": 0,
+        "max": 20,
+        "step": 0.1,
+        "default": 9
+      },
+      {
+        "key": "horizonColor",
+        "label": "向太阳地平线色",
+        "type": "color",
+        "default": "#fac391"
+      },
+      {
+        "key": "zenithColor",
+        "label": "天顶冷色",
+        "type": "color",
+        "default": "#425165"
+      },
+      {
+        "key": "awayColor",
+        "label": "背光地平线色",
+        "type": "color",
+        "default": "#708295"
+      },
+      {
+        "key": "cloudCover",
+        "label": "云量倍率",
+        "min": 0,
+        "max": 1.6,
+        "step": 0.01,
+        "default": 1
+      },
+      {
+        "key": "cloudSpeed",
+        "label": "云流动速度",
+        "min": 0,
+        "max": 3,
+        "step": 0.01,
+        "default": 1
+      },
+      {
+        "key": "aureole",
+        "label": "日晕强度",
+        "min": 0,
+        "max": 3,
+        "step": 0.01,
+        "default": 1
+      },
+      {
+        "key": "sunDisk",
+        "label": "太阳圆盘亮度",
+        "min": 0,
+        "max": 2,
+        "step": 0.01,
+        "default": 1
+      },
+      {
+        "key": "flare",
+        "label": "镜头光晕",
+        "min": 0,
+        "max": 0.5,
+        "step": 0.005,
+        "default": 0.16
+      },
+      {
+        "key": "bloom",
+        "label": "辉光混合",
+        "min": 0,
+        "max": 0.3,
+        "step": 0.005,
+        "default": 0.065
+      },
+      {
+        "key": "exposure",
+        "label": "曝光",
+        "min": 0.4,
+        "max": 2,
+        "step": 0.01,
+        "default": 1
+      },
+      {
+        "key": "agxMix",
+        "label": "AgX 混合",
+        "min": 0,
+        "max": 1,
+        "step": 0.01,
+        "default": 0.25
+      },
+      {
+        "key": "fogDensity",
+        "label": "场景雾浓度",
+        "min": 0,
+        "max": 0.02,
+        "step": 0.0005,
+        "default": 0.0035
+      }
+    ],
+    "looks": [
+      {
+        "id": "sunset-outdoor",
+        "title": "夕阳户外（默认）",
+        "hint": "原页方位：低太阳、火烧地平线、云隙透光、镜头光晕与暖色平行光。",
+        "params": {
+          "sunElevation": 13,
+          "sunAzimuth": 70,
+          "sunColor": "#ffddad",
+          "sunIntensity": 9,
+          "horizonColor": "#fac391",
+          "zenithColor": "#425165",
+          "awayColor": "#708295",
+          "cloudCover": 1,
+          "cloudSpeed": 1,
+          "aureole": 1,
+          "sunDisk": 1,
+          "flare": 0.16,
+          "bloom": 0.065,
+          "exposure": 1,
+          "agxMix": 0.25,
+          "fogDensity": 0.0035
+        }
+      },
+      {
+        "id": "golden-hour",
+        "title": "金色时刻",
+        "hint": "太阳略高、云量减少、暖金色天空，适合产品或建筑户外展示。",
+        "params": {
+          "sunElevation": 24,
+          "sunAzimuth": 78,
+          "sunColor": "#ffe6bd",
+          "sunIntensity": 10,
+          "horizonColor": "#ffd09a",
+          "zenithColor": "#4a5c76",
+          "awayColor": "#7d8ca0",
+          "cloudCover": 0.62,
+          "cloudSpeed": 0.7,
+          "aureole": 0.85,
+          "sunDisk": 1,
+          "flare": 0.11,
+          "bloom": 0.05,
+          "exposure": 1.05,
+          "agxMix": 0.3,
+          "fogDensity": 0.0025
+        }
+      },
+      {
+        "id": "coastal-dusk",
+        "title": "落日海岸",
+        "hint": "太阳贴近地平线，日晕与光晕最强，厚云层与暖雾。",
+        "params": {
+          "sunElevation": 4.5,
+          "sunAzimuth": 68,
+          "sunColor": "#ffc98a",
+          "sunIntensity": 7,
+          "horizonColor": "#ff9e57",
+          "zenithColor": "#35415a",
+          "awayColor": "#5f7189",
+          "cloudCover": 1.25,
+          "cloudSpeed": 0.85,
+          "aureole": 1.6,
+          "sunDisk": 1.15,
+          "flare": 0.26,
+          "bloom": 0.09,
+          "exposure": 0.95,
+          "agxMix": 0.2,
+          "fogDensity": 0.006
+        }
+      },
+      {
+        "id": "thin-cloud",
+        "title": "薄云黄昏",
+        "hint": "薄云、冷天顶、克制光晕，适合以主体为主的户外场景。",
+        "params": {
+          "sunElevation": 16,
+          "sunAzimuth": 100,
+          "sunColor": "#ffd9a6",
+          "sunIntensity": 8,
+          "horizonColor": "#e8a878",
+          "zenithColor": "#4a5b78",
+          "awayColor": "#7c8ba0",
+          "cloudCover": 0.35,
+          "cloudSpeed": 1.4,
+          "aureole": 0.7,
+          "sunDisk": 0.9,
+          "flare": 0.09,
+          "bloom": 0.045,
+          "exposure": 1.02,
+          "agxMix": 0.35,
+          "fogDensity": 0.002
+        }
+      }
+    ],
+    "fitZh": "夕阳、日落、黄昏、逆光、金色时刻、户外环境、天空盒、太阳光晕、日晕与镜头光晕。",
+    "limitZh": "程序化天空与艺术化后期，不含依赖场景深度的 AO、体积光轴与运动模糊；不模拟真实大气散射或太阳光谱。",
+    "limit": "Procedural sky and artistic post chain; no depth-dependent AO, volumetric shafts or motion blur, no physically measured atmospheric scattering.",
+    "source_kind": "user-supplied",
+    "attribution": "用户提供「几猫3A大作」提取页 extracted-sky-glow-standalone.html（原始视觉实现归属该 HTML，输入未附独立许可证）；离线 Three.js r160 为 MIT。",
+    "render_role": "postprocess",
+    "topology": [
+      "skybox",
+      "sun-light",
+      "pmrem-environment",
+      "lens-flare"
+    ],
+    "batch": "sky-glow-20261111",
+    "keywords": [
+      "夕阳",
+      "日落",
+      "黄昏",
+      "户外环境",
+      "户外",
+      "天空盒",
+      "天空",
+      "太阳",
+      "太阳光晕",
+      "日晕",
+      "光晕",
+      "镜头光晕",
+      "逆光",
+      "金色时刻",
+      "夕阳海面",
+      "skybox",
+      "sky",
+      "sun",
+      "sun glow",
+      "aureole",
+      "lens flare",
+      "sunset",
+      "dusk",
+      "golden hour",
+      "outdoor environment",
+      "environment map"
+    ],
+    "resource_dir": "assets/modules/3d-skybox-sunset",
+    "guide": "assets/modules/3d-skybox-sunset/module-guide.md",
+    "demo": "assets/modules/3d-skybox-sunset/demos/index.html",
+    "preview": "assets/modules/3d-skybox-sunset/preview.png",
+    "effect_path": "assets/modules/3d-skybox-sunset/demos/effects/sky-glow-module.js"
+  },
+  {
+    "slug": "3d-slice-reveal",
+    "effect": "shader-solid-section",
+    "impl": "solid-section.js",
+    "name": "3D Slice Reveal",
+    "zh": "切面显现",
+    "category": "shaders",
+    "tagline": "One plane reveals the surface in a deliberate progression.",
+    "camera": [
+      6,
+      4.2,
+      8
+    ],
+    "target": [
+      0,
+      1.5,
+      0
+    ],
+    "schema": [
+      {
+        "key": "progress",
+        "label": "剖切进度 Progress",
+        "min": 0,
+        "max": 1,
+        "step": 0.01,
+        "default": 0.6
+      },
+      {
+        "key": "tilt",
+        "label": "剖面倾角 Tilt",
+        "min": -0.7,
+        "max": 0.7,
+        "step": 0.02,
+        "default": 0.08
+      },
+      {
+        "key": "animate",
+        "label": "自动扫描 Animate",
+        "type": "boolean",
+        "default": true
+      },
+      {
+        "key": "speed",
+        "label": "扫描速度 Speed",
+        "min": 0,
+        "max": 0.7,
+        "step": 0.01,
+        "default": 0.18
+      },
+      {
+        "key": "color",
+        "label": "模型色 Color",
+        "type": "color",
+        "default": "#89c5cb"
+      }
+    ],
+    "looks": [
+      {
+        "id": "cyan",
+        "title": "Cyan section / 青色剖切",
+        "hint": "A slowly rising reveal.",
+        "params": {
+          "variant": 0
+        }
+      },
+      {
+        "id": "static",
+        "title": "Static sphere / 静态球截面",
+        "hint": "A fixed section through a sphere.",
+        "params": {
+          "variant": 1,
+          "animate": false,
+          "progress": 0.56
+        }
+      },
+      {
+        "id": "amber",
+        "title": "Amber facets / 琥珀切面",
+        "hint": "A warm faceted surface.",
+        "params": {
+          "variant": 2,
+          "color": "#dcbc8d",
+          "speed": 0.13
+        }
+      }
+    ],
+    "fitZh": "产品剖切、渐进显现和结构外观观察。",
+    "limitZh": "裁剪网格表面，截面不自动封口；不代表真实内部结构或 CT 数据。",
+    "limit": "Surface clipping with open cut edges, not internal volumetric structure or CT data.",
+    "batch": "rewritten20",
+    "family": "shaders",
+    "render_role": "scene-layer",
+    "source_kind": "independent",
+    "keywords": [
+      "剖切",
+      "切面",
+      "显现",
+      "slice"
+    ],
+    "resource_dir": "assets/modules/3d-slice-reveal",
+    "guide": "assets/modules/3d-slice-reveal/module-guide.md",
+    "demo": "assets/modules/3d-slice-reveal/demos/index.html",
+    "preview": "assets/modules/3d-slice-reveal/assets/preview.webp",
+    "effect_path": "assets/modules/3d-slice-reveal/demos/effects/shader-solid-section.js"
+  },
+  {
+    "slug": "3d-smoke",
+    "effect": "particles-plume-field",
+    "impl": "plume-field.js",
+    "name": "3D Smoke",
+    "zh": "工业烟雾",
+    "category": "particles",
+    "tagline": "A quiet rising column, shaped by a widening air field.",
+    "camera": [
+      7,
+      4.2,
+      9
+    ],
+    "target": [
+      0,
+      2.2,
+      0
+    ],
+    "topology": [
+      "density"
+    ],
+    "schema": [
+      {
+        "key": "density",
+        "label": "浓密度 Density",
+        "min": 0.2,
+        "max": 1.7,
+        "step": 0.05,
+        "default": 1
+      },
+      {
+        "key": "spread",
+        "label": "扩散幅度 Spread",
+        "min": 0.25,
+        "max": 2.5,
+        "step": 0.05,
+        "default": 1
+      },
+      {
+        "key": "height",
+        "label": "烟柱高度 Height",
+        "min": 2,
+        "max": 6,
+        "step": 0.05,
+        "default": 4.5
+      },
+      {
+        "key": "opacity",
+        "label": "不透明度 Opacity",
+        "min": 0.08,
+        "max": 0.9,
+        "step": 0.01,
+        "default": 0.5
+      },
+      {
+        "key": "color",
+        "label": "烟色 Color",
+        "type": "color",
+        "default": "#b3bac2"
+      },
+      {
+        "key": "speed",
+        "label": "升腾速度 Speed",
+        "min": 0,
+        "max": 1.8,
+        "step": 0.02,
+        "default": 0.65
+      }
+    ],
+    "looks": [
+      {
+        "id": "stack",
+        "title": "Industrial stack / 工业烟柱",
+        "hint": "A soft grey column with a narrow base.",
+        "params": {}
+      },
+      {
+        "id": "ambient",
+        "title": "Wide atmosphere / 大气扩散",
+        "hint": "A wider, quieter plume.",
+        "params": {
+          "spread": 2.1,
+          "opacity": 0.3,
+          "speed": 0.25
+        }
+      },
+      {
+        "id": "column",
+        "title": "Dense column / 致密烟柱",
+        "hint": "A taller concentrated stream.",
+        "params": {
+          "spread": 0.55,
+          "height": 5,
+          "opacity": 0.72,
+          "speed": 1.1
+        }
+      }
+    ],
+    "fitZh": "产品片、工业环境和可控烟柱。",
+    "limitZh": "软粒子和解析流场示意，不是 CFD、体积缓存或真实烟气扩散预测。",
+    "limit": "Analytic soft particles, not CFD, volumetric caches or dispersion prediction.",
+    "batch": "rewritten20",
+    "family": "particles",
+    "render_role": "scene-layer",
+    "source_kind": "independent",
+    "keywords": [
+      "烟雾",
+      "烟柱",
+      "烟",
+      "smoke",
+      "plume"
+    ],
+    "resource_dir": "assets/modules/3d-smoke",
+    "guide": "assets/modules/3d-smoke/module-guide.md",
+    "demo": "assets/modules/3d-smoke/demos/index.html",
+    "preview": "assets/modules/3d-smoke/assets/preview.webp",
+    "effect_path": "assets/modules/3d-smoke/demos/effects/particles-plume-field.js"
+  },
+  {
+    "slug": "3d-snow",
+    "effect": "particles-snow-orbit",
+    "impl": "snow-orbit.js",
+    "name": "3D Snow",
+    "zh": "飘雪空间",
+    "category": "particles",
+    "tagline": "Soft flakes drift through the depth of the scene.",
+    "camera": [
+      7,
+      4.5,
+      9
+    ],
+    "target": [
+      0,
+      1.7,
+      0
+    ],
+    "topology": [
+      "density"
+    ],
+    "schema": [
+      {
+        "key": "density",
+        "label": "雪片数量 Density",
+        "min": 0.2,
+        "max": 1.6,
+        "step": 0.05,
+        "default": 1
+      },
+      {
+        "key": "size",
+        "label": "雪片尺寸 Size",
+        "min": 0.025,
+        "max": 0.17,
+        "step": 0.005,
+        "default": 0.065
+      },
+      {
+        "key": "wind",
+        "label": "横向风 Wind",
+        "min": 0,
+        "max": 2.5,
+        "step": 0.05,
+        "default": 0.45
+      },
+      {
+        "key": "fall",
+        "label": "下落速率 Fall",
+        "min": 0.1,
+        "max": 1,
+        "step": 0.02,
+        "default": 0.4
+      },
+      {
+        "key": "opacity",
+        "label": "雪片强度 Opacity",
+        "min": 0.15,
+        "max": 1,
+        "step": 0.01,
+        "default": 0.75
+      },
+      {
+        "key": "speed",
+        "label": "时间速度 Speed",
+        "min": 0,
+        "max": 1.2,
+        "step": 0.02,
+        "default": 0.5
+      }
+    ],
+    "looks": [
+      {
+        "id": "blue",
+        "title": "Blue hour / 蓝调时刻",
+        "hint": "Small softly lit flakes.",
+        "params": {}
+      },
+      {
+        "id": "quiet",
+        "title": "Quiet snowfall / 静雪",
+        "hint": "Larger, slower flakes.",
+        "params": {
+          "size": 0.12,
+          "density": 0.4,
+          "wind": 0.1,
+          "speed": 0.18
+        }
+      },
+      {
+        "id": "crosswind",
+        "title": "Crosswind / 横风",
+        "hint": "A denser slanted field.",
+        "params": {
+          "density": 1.3,
+          "wind": 2.1,
+          "size": 0.045,
+          "speed": 0.8
+        }
+      }
+    ],
+    "fitZh": "冬季空间、景深雪片与天气背景。",
+    "limitZh": "解析漂移与生成的雪片形状，不模拟堆积、融化或流体风场。",
+    "limit": "Analytic drift and generated flake shapes; no accumulation, melting or fluid wind solver.",
+    "batch": "rewritten20",
+    "family": "particles",
+    "render_role": "scene-layer",
+    "source_kind": "independent",
+    "keywords": [
+      "飘雪",
+      "雪花",
+      "雨雪",
+      "天气",
+      "冬季",
+      "snow"
+    ],
+    "resource_dir": "assets/modules/3d-snow",
+    "guide": "assets/modules/3d-snow/module-guide.md",
+    "demo": "assets/modules/3d-snow/demos/index.html",
+    "preview": "assets/modules/3d-snow/assets/preview.webp",
+    "effect_path": "assets/modules/3d-snow/demos/effects/particles-snow-orbit.js"
+  },
+  {
+    "slug": "3d-sparks",
+    "effect": "particles-machining-sparks",
+    "impl": "machining-sparks.js",
+    "name": "3D Sparks",
+    "zh": "工业火花",
+    "category": "particles",
+    "tagline": "Warm fragments follow restrained ballistic arcs.",
+    "camera": [
+      7,
+      4.6,
+      9
+    ],
+    "target": [
+      0,
+      1.6,
+      0
+    ],
+    "topology": [
+      "density"
+    ],
+    "schema": [
+      {
+        "key": "density",
+        "label": "粒子数量 Density",
+        "min": 0.2,
+        "max": 1.8,
+        "step": 0.05,
+        "default": 1
+      },
+      {
+        "key": "height",
+        "label": "抛射高度 Height",
+        "min": 0.6,
+        "max": 4.2,
+        "step": 0.05,
+        "default": 2.5
+      },
+      {
+        "key": "spread",
+        "label": "横向扩散 Spread",
+        "min": 0.25,
+        "max": 2.2,
+        "step": 0.05,
+        "default": 0.8
+      },
+      {
+        "key": "size",
+        "label": "火花尺寸 Size",
+        "min": 0.012,
+        "max": 0.1,
+        "step": 0.002,
+        "default": 0.035
+      },
+      {
+        "key": "color",
+        "label": "火花色 Color",
+        "type": "color",
+        "default": "#ffc477"
+      },
+      {
+        "key": "speed",
+        "label": "时间速度 Speed",
+        "min": 0,
+        "max": 1.8,
+        "step": 0.02,
+        "default": 0.7
+      }
+    ],
+    "looks": [
+      {
+        "id": "copper",
+        "title": "Copper cascade / 铜色火花",
+        "hint": "Tight warm arcs.",
+        "params": {}
+      },
+      {
+        "id": "machining",
+        "title": "Cool machining / 冷色加工",
+        "hint": "Fine blue fragments.",
+        "params": {
+          "color": "#8bd9f1",
+          "height": 1.7,
+          "spread": 1.1,
+          "size": 0.025
+        }
+      },
+      {
+        "id": "embers",
+        "title": "Floating embers / 漂浮余烬",
+        "hint": "Slow, broadly scattered fragments.",
+        "params": {
+          "color": "#ff7950",
+          "speed": 0.15,
+          "height": 3.5,
+          "spread": 1.5
+        }
+      }
+    ],
+    "fitZh": "加工火花、工业能量和克制的余烬效果。",
+    "limitZh": "预设抛物线，不含燃烧、热传导或碰撞求解。",
+    "limit": "Authored ballistic paths; no combustion, thermal transport or collision solver.",
+    "batch": "rewritten20",
+    "family": "particles",
+    "render_role": "scene-layer",
+    "source_kind": "independent",
+    "keywords": [
+      "火花",
+      "余烬",
+      "sparks",
+      "embers"
+    ],
+    "resource_dir": "assets/modules/3d-sparks",
+    "guide": "assets/modules/3d-sparks/module-guide.md",
+    "demo": "assets/modules/3d-sparks/demos/index.html",
+    "preview": "assets/modules/3d-sparks/assets/preview.webp",
+    "effect_path": "assets/modules/3d-sparks/demos/effects/particles-machining-sparks.js"
+  },
+  {
+    "slug": "3d-ultra-water",
+    "effect": "ultra-water",
+    "impl": "ultra-water.js",
+    "name": "Ultra Water",
+    "zh": "逼真海水",
+    "category": "fluid-gas",
+    "family": "fluid-gas",
+    "tagline": "FFT 海浪、岸边碎浪、泡沫、焦散与水下视角，先选水效再制作。",
+    "camera": [
+      1500,
+      9,
+      1500
+    ],
+    "target": [
+      2400,
+      0,
+      2400
+    ],
+    "topology": [],
+    "schema": [
+      {
+        "key": "view",
+        "label": "水效视角",
+        "options": [
+          "Open ocean",
+          "Breakers",
+          "Lagoon",
+          "Golden hour",
+          "Underwater"
+        ],
+        "default": "Open ocean"
+      },
+      {
+        "key": "speed",
+        "label": "播放速度",
+        "group": "海浪",
+        "min": 0,
+        "max": 3,
+        "step": 0.05,
+        "default": 1
+      },
+      {
+        "key": "windSpeed",
+        "label": "风速 m/s",
+        "group": "海浪",
+        "min": 1,
+        "max": 25,
+        "step": 0.1,
+        "default": 9
+      },
+      {
+        "key": "windDirection",
+        "label": "风向 °",
+        "group": "海浪",
+        "min": -180,
+        "max": 180,
+        "step": 1,
+        "default": 20
+      },
+      {
+        "key": "waveScale",
+        "label": "波浪强度",
+        "group": "海浪",
+        "min": 0,
+        "max": 3,
+        "step": 0.01,
+        "default": 1
+      },
+      {
+        "key": "swellScale",
+        "label": "远处涌浪",
+        "group": "海浪",
+        "min": 0,
+        "max": 3,
+        "step": 0.01,
+        "default": 0.7
+      },
+      {
+        "key": "choppiness",
+        "label": "浪峰陡峭度",
+        "group": "海浪",
+        "min": 0,
+        "max": 2,
+        "step": 0.01,
+        "default": 0.85
+      },
+      {
+        "key": "shoreAmplitude",
+        "label": "近岸浪高",
+        "group": "岸边浪花",
+        "min": 0,
+        "max": 1.5,
+        "step": 0.01,
+        "default": 0.55
+      },
+      {
+        "key": "shoreWavelength",
+        "label": "近岸波长",
+        "group": "岸边浪花",
+        "min": 8,
+        "max": 60,
+        "step": 0.5,
+        "default": 30
+      },
+      {
+        "key": "shoreSteepness",
+        "label": "近岸陡峭度",
+        "group": "岸边浪花",
+        "min": 0,
+        "max": 1.5,
+        "step": 0.01,
+        "default": 1
+      },
+      {
+        "key": "sprayAmount",
+        "label": "飞溅强度",
+        "group": "岸边浪花",
+        "min": 0,
+        "max": 3,
+        "step": 0.01,
+        "default": 1
+      },
+      {
+        "key": "clarity",
+        "label": "清澈度",
+        "group": "水体",
+        "min": 0.2,
+        "max": 4,
+        "step": 0.01,
+        "default": 1
+      },
+      {
+        "key": "waterColor",
+        "label": "深水颜色",
+        "group": "水体",
+        "type": "color",
+        "default": "#003f50"
+      },
+      {
+        "key": "roughness",
+        "label": "水面粗糙度",
+        "group": "水体",
+        "min": 0.005,
+        "max": 0.2,
+        "step": 0.001,
+        "default": 0.02
+      },
+      {
+        "key": "refraction",
+        "label": "折射强度",
+        "group": "水体",
+        "min": 0,
+        "max": 0.2,
+        "step": 0.001,
+        "default": 0.06
+      },
+      {
+        "key": "foamScale",
+        "label": "泡沫覆盖",
+        "group": "水体",
+        "min": 0,
+        "max": 6,
+        "step": 0.01,
+        "default": 1.3
+      },
+      {
+        "key": "foamRecovery",
+        "label": "泡沫消退速度",
+        "group": "水体",
+        "min": 0.05,
+        "max": 3,
+        "step": 0.01,
+        "default": 0.7
+      },
+      {
+        "key": "caustics",
+        "label": "海床焦散",
+        "group": "水体",
+        "min": 0,
+        "max": 2,
+        "step": 0.01,
+        "default": 1
+      },
+      {
+        "key": "glint",
+        "label": "波光闪烁",
+        "group": "水体",
+        "min": 0,
+        "max": 1,
+        "step": 0.01,
+        "default": 0.6
+      },
+      {
+        "key": "sunElevation",
+        "label": "太阳高度 °",
+        "group": "光照",
+        "min": -2,
+        "max": 70,
+        "step": 0.1,
+        "default": 14
+      },
+      {
+        "key": "sunAzimuth",
+        "label": "太阳方位 °",
+        "group": "光照",
+        "min": 0,
+        "max": 360,
+        "step": 0.5,
+        "default": 205
+      },
+      {
+        "key": "sunIntensity",
+        "label": "阳光强度",
+        "group": "光照",
+        "min": 0,
+        "max": 20,
+        "step": 0.1,
+        "default": 9
+      },
+      {
+        "key": "cloudCoverage",
+        "label": "云量",
+        "group": "光照",
+        "min": 0,
+        "max": 1,
+        "step": 0.01,
+        "default": 0.38
+      },
+      {
+        "key": "exposure",
+        "label": "画面曝光",
+        "group": "光照",
+        "min": 0.25,
+        "max": 4,
+        "step": 0.01,
+        "default": 1
+      },
+      {
+        "key": "scattering",
+        "label": "水下浑浊度",
+        "group": "水下效果",
+        "min": 0,
+        "max": 0.5,
+        "step": 0.001,
+        "default": 0.03
+      },
+      {
+        "key": "shafts",
+        "label": "水下光束",
+        "group": "水下效果",
+        "min": 0,
+        "max": 4,
+        "step": 0.01,
+        "default": 2
+      },
+      {
+        "key": "shaftRange",
+        "label": "光束距离",
+        "group": "水下效果",
+        "min": 5,
+        "max": 120,
+        "step": 1,
+        "default": 40
+      },
+      {
+        "key": "underwaterExposure",
+        "label": "水下曝光",
+        "group": "水下效果",
+        "min": 0.2,
+        "max": 2,
+        "step": 0.01,
+        "default": 0.55
+      }
+    ],
+    "looks": [
+      {
+        "id": "open-ocean",
+        "title": "深海涌浪",
+        "hint": "开阔海面、远处涌浪与反射高光",
+        "params": {
+          "view": "Open ocean",
+          "speed": 1,
+          "windSpeed": 9,
+          "windDirection": 20,
+          "waveScale": 1,
+          "swellScale": 0.7,
+          "choppiness": 0.85,
+          "shoreAmplitude": 0.55,
+          "shoreWavelength": 30,
+          "shoreSteepness": 1,
+          "sprayAmount": 1,
+          "clarity": 1,
+          "waterColor": "#003f50",
+          "roughness": 0.02,
+          "refraction": 0.06,
+          "foamScale": 1.3,
+          "foamRecovery": 0.7,
+          "caustics": 1,
+          "glint": 0.6,
+          "sunElevation": 14,
+          "sunAzimuth": 205,
+          "sunIntensity": 9,
+          "cloudCoverage": 0.38,
+          "exposure": 1,
+          "scattering": 0.03,
+          "shafts": 2,
+          "shaftRange": 40,
+          "underwaterExposure": 0.55
+        }
+      },
+      {
+        "id": "breakers",
+        "title": "岸边碎浪",
+        "hint": "浅滩破浪、白色泡沫与沙滩冲刷",
+        "params": {
+          "view": "Breakers",
+          "speed": 1,
+          "windSpeed": 10,
+          "windDirection": 20,
+          "waveScale": 1.2,
+          "swellScale": 0.7,
+          "choppiness": 0.85,
+          "shoreAmplitude": 0.55,
+          "shoreWavelength": 30,
+          "shoreSteepness": 1,
+          "sprayAmount": 1,
+          "clarity": 1,
+          "waterColor": "#003f50",
+          "roughness": 0.02,
+          "refraction": 0.06,
+          "foamScale": 1.3,
+          "foamRecovery": 0.7,
+          "caustics": 1,
+          "glint": 0.6,
+          "sunElevation": 22,
+          "sunAzimuth": 205,
+          "sunIntensity": 9,
+          "cloudCoverage": 0.38,
+          "exposure": 1,
+          "scattering": 0.03,
+          "shafts": 2,
+          "shaftRange": 40,
+          "underwaterExposure": 0.55
+        }
+      },
+      {
+        "id": "lagoon",
+        "title": "清澈浅海",
+        "hint": "青绿浅水、可见海床与阳光焦散",
+        "params": {
+          "view": "Lagoon",
+          "speed": 1,
+          "windSpeed": 5,
+          "windDirection": 20,
+          "waveScale": 0.55,
+          "swellScale": 0.7,
+          "choppiness": 0.85,
+          "shoreAmplitude": 0.55,
+          "shoreWavelength": 30,
+          "shoreSteepness": 1,
+          "sprayAmount": 1,
+          "clarity": 2,
+          "waterColor": "#003f50",
+          "roughness": 0.02,
+          "refraction": 0.06,
+          "foamScale": 1.3,
+          "foamRecovery": 0.7,
+          "caustics": 1,
+          "glint": 0.6,
+          "sunElevation": 52,
+          "sunAzimuth": 205,
+          "sunIntensity": 9,
+          "cloudCoverage": 0.38,
+          "exposure": 1,
+          "scattering": 0.03,
+          "shafts": 2,
+          "shaftRange": 40,
+          "underwaterExposure": 0.55
+        }
+      },
+      {
+        "id": "golden-hour",
+        "title": "夕阳海面",
+        "hint": "低角度暖光、闪烁波光与海浪",
+        "params": {
+          "view": "Golden hour",
+          "speed": 1,
+          "windSpeed": 7,
+          "windDirection": 20,
+          "waveScale": 0.8,
+          "swellScale": 0.7,
+          "choppiness": 0.85,
+          "shoreAmplitude": 0.55,
+          "shoreWavelength": 30,
+          "shoreSteepness": 1,
+          "sprayAmount": 1,
+          "clarity": 1,
+          "waterColor": "#003f50",
+          "roughness": 0.02,
+          "refraction": 0.06,
+          "foamScale": 1.3,
+          "foamRecovery": 0.7,
+          "caustics": 1,
+          "glint": 0.6,
+          "sunElevation": 3.5,
+          "sunAzimuth": 205,
+          "sunIntensity": 9,
+          "cloudCoverage": 0.38,
+          "exposure": 1,
+          "scattering": 0.03,
+          "shafts": 2,
+          "shaftRange": 40,
+          "underwaterExposure": 0.55
+        }
+      },
+      {
+        "id": "underwater",
+        "title": "水下视角",
+        "hint": "水下光束、水面折射与悬浮颗粒",
+        "params": {
+          "view": "Underwater",
+          "speed": 1,
+          "windSpeed": 6,
+          "windDirection": 20,
+          "waveScale": 0.65,
+          "swellScale": 0.7,
+          "choppiness": 0.85,
+          "shoreAmplitude": 0.55,
+          "shoreWavelength": 30,
+          "shoreSteepness": 1,
+          "sprayAmount": 1,
+          "clarity": 1.4,
+          "waterColor": "#003f50",
+          "roughness": 0.02,
+          "refraction": 0.06,
+          "foamScale": 1.3,
+          "foamRecovery": 0.7,
+          "caustics": 1,
+          "glint": 0.6,
+          "sunElevation": 48,
+          "sunAzimuth": 205,
+          "sunIntensity": 9,
+          "cloudCoverage": 0.38,
+          "exposure": 1,
+          "scattering": 0.03,
+          "shafts": 2,
+          "shaftRange": 40,
+          "underwaterExposure": 0.55
+        }
+      }
+    ],
+    "fitZh": "逼真海水、写实海洋、浅海、海岸和水下演示。",
+    "limitZh": "独立视口与完整渲染管线，WebGL2 + EXT_color_buffer_float；不是 CFD，碎浪不卷成管状。",
+    "render_role": "isolated-viewport",
+    "source_kind": "user-supplied",
+    "attribution": "Ultra Water / Humpalumps (2026), MIT；用户指定 GitHub 仓库适配",
+    "keywords": [
+      "逼真海水",
+      "逼真的海水",
+      "真实海水",
+      "写实海水",
+      "海水",
+      "海洋",
+      "海浪",
+      "碎浪",
+      "浅海",
+      "焦散",
+      "水下",
+      "ultra water",
+      "realistic ocean",
+      "fft ocean"
+    ],
+    "resource_dir": "assets/modules/3d-ultra-water",
+    "guide": "assets/modules/3d-ultra-water/module-guide.md",
+    "demo": "assets/modules/3d-ultra-water/preview.html",
+    "preview": "assets/modules/3d-ultra-water/assets/preview.png",
+    "effect_path": "assets/modules/3d-ultra-water/demos/effects/ultra-water.js"
+  },
+  {
+    "slug": "3d-virtual-tour",
+    "effect": "motion-virtual-tour",
+    "name": "Quiet Museum",
+    "zh": "三维空间导览",
+    "category": "motion",
+    "sourceId": "batch02-08",
+    "tagline": "A route through an open museum, with one camera owner.",
+    "camera": [
+      9,
+      7,
+      11
+    ],
+    "target": [
+      0,
+      1,
+      0
+    ],
+    "cameraOwner": true,
+    "schema": [
+      {
+        "key": "progress",
+        "label": "路线位置 Progress",
+        "min": 0,
+        "max": 1,
+        "step": 0.001,
+        "default": 0
+      },
+      {
+        "key": "mode",
+        "label": "相机模式 Mode",
+        "options": [
+          "tour",
+          "orbit"
+        ],
+        "default": "tour"
+      },
+      {
+        "key": "speed",
+        "label": "巡游速度 Speed",
+        "min": 0,
+        "max": 0.2,
+        "step": 0.001,
+        "default": 0.018
+      },
+      {
+        "key": "height",
+        "label": "视点高度 Height",
+        "min": 0.7,
+        "max": 2.7,
+        "step": 0.01,
+        "default": 1.55
+      },
+      {
+        "key": "accent",
+        "label": "展品颜色 Accent",
+        "type": "color",
+        "default": "#bca16d"
+      }
+    ],
+    "looks": [
+      {
+        "id": "arrival",
+        "title": "Arrival / 入馆",
+        "hint": "Approach the open hall and its first exhibit.",
+        "params": {
+          "route": 0,
+          "progress": 0
+        }
+      },
+      {
+        "id": "gallery",
+        "title": "Gallery / 展廊",
+        "hint": "Move between open-sided exhibition bays.",
+        "params": {
+          "route": 1,
+          "progress": 0.34
+        }
+      },
+      {
+        "id": "overview",
+        "title": "Overview / 俯览",
+        "hint": "A slower aerial route around the canopy.",
+        "params": {
+          "route": 2,
+          "progress": 0.52,
+          "height": 2.1
+        }
+      }
+    ],
+    "fit": "Editable museum and showroom walkthroughs, route navigation and orbit handoff.",
+    "limit": "Authored obstacle-free routes through a fictional procedural museum; no collision/navigation mesh solver.",
+    "batch": "original13",
+    "family": "motion",
+    "render_role": "scene-layer",
+    "source_kind": "independent",
+    "keywords": [
+      "导览",
+      "漫游",
+      "相机",
+      "展厅",
+      "tour"
+    ],
+    "resource_dir": "assets/modules/3d-virtual-tour",
+    "guide": "assets/modules/3d-virtual-tour/module-guide.md",
+    "demo": "assets/modules/3d-virtual-tour/demos/index.html",
+    "preview": "assets/modules/3d-virtual-tour/assets/preview.webp",
+    "effect_path": "assets/modules/3d-virtual-tour/demos/effects/motion-virtual-tour.js"
+  },
+  {
+    "slug": "3d-webgpu-volume-fire",
+    "effect": "webgpu-volume-fire",
+    "impl": "volume-fire-module.js",
+    "name": "GPU Volumetric Fire",
+    "zh": "GPU 体积火焰",
+    "category": "particles",
+    "family": "particles",
+    "tagline": "基于 three.js 官方 WebGPU 流体求解的体积火焰与烟雾，含 bloom 后期与拖拽注入湍流。",
+    "camera": [
+      14,
+      5.5,
+      4.4
+    ],
+    "target": [
+      0,
+      3.6,
+      0
+    ],
+    "cameraOwner": true,
+    "schema": [
+      {
+        "key": "simSpeed",
+        "label": "模拟速度",
+        "min": 0,
+        "max": 2,
+        "step": 0.01,
+        "default": 1.2
+      },
+      {
+        "key": "turbulence",
+        "label": "湍流强度",
+        "min": 0,
+        "max": 5,
+        "step": 0.05,
+        "default": 3.2
+      },
+      {
+        "key": "fireLifespan",
+        "label": "火焰寿命 秒",
+        "min": 0.5,
+        "max": 10,
+        "step": 0.1,
+        "default": 1.3
+      },
+      {
+        "key": "smokeLifespan",
+        "label": "烟雾寿命 秒",
+        "min": 1,
+        "max": 100,
+        "step": 0.5,
+        "default": 3.5
+      },
+      {
+        "key": "fireStartColor",
+        "label": "火焰中心色",
+        "type": "color",
+        "default": "#ffe68c"
+      },
+      {
+        "key": "fireMidColor",
+        "label": "火焰中段色",
+        "type": "color",
+        "default": "#ff7305"
+      },
+      {
+        "key": "fireEndColor",
+        "label": "火焰边缘色",
+        "type": "color",
+        "default": "#ff0000"
+      },
+      {
+        "key": "fireHue",
+        "label": "色相旋转 度",
+        "min": 0,
+        "max": 360,
+        "step": 1,
+        "default": 0
+      },
+      {
+        "key": "glowSpread",
+        "label": "火光扩散",
+        "min": 1,
+        "max": 5,
+        "step": 0.1,
+        "default": 5
+      },
+      {
+        "key": "saturation",
+        "label": "饱和度",
+        "min": 0,
+        "max": 2,
+        "step": 0.05,
+        "default": 1.1
+      },
+      {
+        "key": "exposure",
+        "label": "曝光",
+        "min": 0.1,
+        "max": 2,
+        "step": 0.05,
+        "default": 2
+      },
+      {
+        "key": "raymarchSteps",
+        "label": "体积步进次数",
+        "min": 4,
+        "max": 42,
+        "step": 1,
+        "default": 16
+      },
+      {
+        "key": "resolution",
+        "label": "体积分辨率",
+        "min": 0.1,
+        "max": 1,
+        "step": 0.05,
+        "default": 1
+      },
+      {
+        "key": "denoise",
+        "label": "降噪",
+        "type": "boolean",
+        "default": true
+      },
+      {
+        "key": "bloom",
+        "label": "辉光",
+        "type": "boolean",
+        "default": true
+      },
+      {
+        "key": "bloomStrength",
+        "label": "辉光强度",
+        "min": 0,
+        "max": 3,
+        "step": 0.01,
+        "default": 0.1
+      },
+      {
+        "key": "emitTemperature",
+        "label": "温度注入速率",
+        "min": 0,
+        "max": 8,
+        "step": 0.1,
+        "default": 5.5
+      },
+      {
+        "key": "emitDensity",
+        "label": "密度注入速率",
+        "min": 0,
+        "max": 20,
+        "step": 0.1,
+        "default": 7
+      },
+      {
+        "key": "buoyancy",
+        "label": "浮力（上升）",
+        "min": 0,
+        "max": 10,
+        "step": 0.1,
+        "default": 3
+      },
+      {
+        "key": "velocityDamping",
+        "label": "速度阻尼",
+        "min": 0,
+        "max": 2,
+        "step": 0.01,
+        "default": 0.25
+      },
+      {
+        "key": "phaseAsymmetry",
+        "label": "相位非对称 g",
+        "min": -0.99,
+        "max": 0.99,
+        "step": 0.01,
+        "default": 0
+      },
+      {
+        "key": "powderStrength",
+        "label": "粉状效应",
+        "min": 0,
+        "max": 1,
+        "step": 0.01,
+        "default": 0.59
+      },
+      {
+        "key": "multiScattering",
+        "label": "多层散射",
+        "min": 0,
+        "max": 1,
+        "step": 0.01,
+        "default": 1
+      },
+      {
+        "key": "shadowAbsorption",
+        "label": "自阴影吸收",
+        "min": 0,
+        "max": 10,
+        "step": 0.1,
+        "default": 2
+      },
+      {
+        "key": "shadowAmbient",
+        "label": "阴影环境光",
+        "min": 0,
+        "max": 1,
+        "step": 0.01,
+        "default": 0.5
+      },
+      {
+        "key": "lightSmoke",
+        "label": "照亮烟雾强度",
+        "min": 0,
+        "max": 2,
+        "step": 0.001,
+        "default": 2
+      },
+      {
+        "key": "keyLightIntensity",
+        "label": "主光强度",
+        "min": 0,
+        "max": 1500,
+        "step": 1,
+        "default": 1000
+      },
+      {
+        "key": "animateEmitter",
+        "label": "发射体自转",
+        "type": "boolean",
+        "default": true
+      }
+    ],
+    "looks": [
+      {
+        "id": "classic",
+        "title": "经典营火（官方默认）",
+        "params": {
+          "simSpeed": 1.2,
+          "turbulence": 3.2,
+          "fireLifespan": 1.3,
+          "smokeLifespan": 3.5,
+          "fireStartColor": "#ffe68c",
+          "fireMidColor": "#ff7305",
+          "fireEndColor": "#ff0000",
+          "fireHue": 0,
+          "exposure": 2,
+          "raymarchSteps": 16,
+          "resolution": 1,
+          "bloom": true,
+          "bloomStrength": 0.1,
+          "glowSpread": 5,
+          "saturation": 1.1
+        }
+      },
+      {
+        "id": "blue-plasma",
+        "title": "蓝色等离子",
+        "params": {
+          "simSpeed": 1.6,
+          "turbulence": 4.2,
+          "fireLifespan": 1.0,
+          "smokeLifespan": 2.2,
+          "fireStartColor": "#e8fbff",
+          "fireMidColor": "#38a6ff",
+          "fireEndColor": "#1a12b8",
+          "fireHue": 0,
+          "exposure": 2.2,
+          "raymarchSteps": 20,
+          "resolution": 0.8,
+          "bloom": true,
+          "bloomStrength": 0.35,
+          "bloomRadius": 0.9,
+          "glowSpread": 4.4,
+          "saturation": 1.35
+        }
+      },
+      {
+        "id": "toxic-green",
+        "title": "毒雾绿焰",
+        "params": {
+          "simSpeed": 1.0,
+          "turbulence": 3.6,
+          "fireLifespan": 1.6,
+          "smokeLifespan": 6,
+          "fireStartColor": "#f2ffb8",
+          "fireMidColor": "#7dff3c",
+          "fireEndColor": "#0b6b1e",
+          "fireHue": 0,
+          "exposure": 2.1,
+          "raymarchSteps": 18,
+          "resolution": 0.85,
+          "bloom": true,
+          "bloomStrength": 0.28,
+          "glowSpread": 4.8,
+          "saturation": 1.25
+        }
+      },
+      {
+        "id": "dense-smoke",
+        "title": "浓烟与烈焰",
+        "params": {
+          "simSpeed": 1.0,
+          "turbulence": 2.4,
+          "fireLifespan": 1.8,
+          "smokeLifespan": 60,
+          "emitDensity": 9,
+          "emitTemperature": 6.4,
+          "exposure": 2,
+          "raymarchSteps": 18,
+          "resolution": 0.8,
+          "bloom": true,
+          "bloomStrength": 0.14,
+          "glowSpread": 4.6,
+          "shadowAbsorption": 3.2,
+          "saturation": 1.0
+        }
+      },
+      {
+        "id": "stylized-cartoon",
+        "title": "卡通分层",
+        "params": {
+          "simSpeed": 1.4,
+          "turbulence": 2.8,
+          "fireLifespan": 1.2,
+          "smokeLifespan": 2.5,
+          "fireStartColor": "#fff8b0",
+          "fireMidColor": "#ff9a2e",
+          "fireEndColor": "#d1240a",
+          "exposure": 1.7,
+          "raymarchSteps": 14,
+          "resolution": 0.7,
+          "denoise": true,
+          "denoiseStrength": 0.85,
+          "bloom": false,
+          "glowSpread": 3.2,
+          "saturation": 1.5,
+          "multiScattering": 0.35,
+          "powderStrength": 0.3
+        }
+      }
+    ],
+    "fitZh": "GPU 火焰、体积火焰、体积烟、流体火焰、真实火焰、燃烧、营火、等离子、卡通火焰、WebGPU 火焰、火焰烟雾。",
+    "limitZh": "必须 WebGPU 与 localhost/https 安全上下文；不支持 WebGL 2 或 file:// 协议。默认网格 100×100×200（约 200 万体素），低端设备需降 raymarchSteps/resolution。",
+    "limit": "Requires WebGPU and a secure context (localhost/https); no WebGL 2 fallback. Default grid is 100×100×200 (~2M voxels); lower raymarchSteps/resolution on low-end devices.",
+    "source_kind": "independent",
+    "attribution": "Ported from the three.js official webgpu_volume_fire example (mrdoob/three.js, MIT). Offline vendor bundle from the same dev snapshot (REVISION='188dev').",
+    "render_role": "isolated-viewport",
+    "topology": [
+      "webgpu-compute-fluid",
+      "volume-raymarch",
+      "bloom-post"
+    ],
+    "batch": "webgpu-volume-fire-20261112",
+    "keywords": [
+      "GPU 火焰",
+      "体积火焰",
+      "体积烟",
+      "流体火焰",
+      "真实火焰",
+      "燃烧",
+      "营火",
+      "等离子",
+      "蓝色火焰",
+      "毒绿火焰",
+      "浓烟",
+      "卡通火焰",
+      "WebGPU",
+      "火焰烟雾",
+      "fire",
+      "volumetric fire",
+      "smoke",
+      "volume smoke",
+      "fluid fire",
+      "campfire",
+      "plasma",
+      "webgpu fire"
+    ],
+    "resource_dir": "assets/modules/3d-webgpu-volume-fire",
+    "guide": "assets/modules/3d-webgpu-volume-fire/module-guide.md",
+    "demo": "assets/modules/3d-webgpu-volume-fire/demos/index.html",
+    "preview": "assets/modules/3d-webgpu-volume-fire/preview.png",
+    "effect_path": "assets/modules/3d-webgpu-volume-fire/demos/effects/volume-fire-module.js"
+  },
+  {
+    "slug": "3d-wireframe-scan",
+    "effect": "shader-wireframe-scan",
+    "name": "Survey Reveal",
+    "zh": "线框扫描显现",
+    "category": "shaders",
+    "sourceId": "batch02-11",
+    "tagline": "A wire cage leads the visible surface through a moving survey.",
+    "camera": [
+      6.5,
+      3.8,
+      8
+    ],
+    "target": [
+      0,
+      1.4,
+      0
+    ],
+    "schema": [
+      {
+        "key": "progress",
+        "label": "扫描进度 Progress",
+        "min": 0,
+        "max": 1,
+        "step": 0.01,
+        "default": 0.58
+      },
+      {
+        "key": "band",
+        "label": "扫描带宽 Band",
+        "min": 0.03,
+        "max": 0.7,
+        "step": 0.01,
+        "default": 0.28
+      },
+      {
+        "key": "glow",
+        "label": "线框强度 Glow",
+        "min": 0.2,
+        "max": 3,
+        "step": 0.05,
+        "default": 1.35
+      },
+      {
+        "key": "color",
+        "label": "扫描色 Color",
+        "type": "color",
+        "default": "#75d8b0"
+      },
+      {
+        "key": "speed",
+        "label": "扫描速度 Speed",
+        "min": 0,
+        "max": 0.4,
+        "step": 0.005,
+        "default": 0.045
+      },
+      {
+        "key": "spin",
+        "label": "模型旋转 Spin",
+        "min": 0,
+        "max": 0.5,
+        "step": 0.01,
+        "default": 0.08
+      }
+    ],
+    "looks": [
+      {
+        "id": "radial",
+        "title": "Radial / 径向",
+        "hint": "A radial cage surveys the gimbal.",
+        "params": {
+          "variant": 0,
+          "color": "#76dcb8"
+        }
+      },
+      {
+        "id": "vertical",
+        "title": "Vertical / 竖向",
+        "hint": "A plane builds the object from the base.",
+        "params": {
+          "variant": 1,
+          "color": "#b3c5ed",
+          "progress": 0.7
+        }
+      },
+      {
+        "id": "diagonal",
+        "title": "Oblique / 斜向",
+        "hint": "An oblique band traverses topology.",
+        "params": {
+          "variant": 2,
+          "color": "#e4b46f",
+          "progress": 0.58
+        }
+      }
+    ],
+    "fit": "Model entrances, topology inspection and scan/reveal motion.",
+    "limit": "A geometric reveal mask and temporary wire overlay; not CT, tomography or measurement data.",
+    "batch": "original13",
+    "family": "shaders",
+    "render_role": "scene-layer",
+    "source_kind": "independent",
+    "keywords": [
+      "线框",
+      "扫描",
+      "显现",
+      "wireframe"
+    ],
+    "resource_dir": "assets/modules/3d-wireframe-scan",
+    "guide": "assets/modules/3d-wireframe-scan/module-guide.md",
+    "demo": "assets/modules/3d-wireframe-scan/demos/index.html",
+    "preview": "assets/modules/3d-wireframe-scan/assets/preview.webp",
+    "effect_path": "assets/modules/3d-wireframe-scan/demos/effects/shader-wireframe-scan.js"
+  },
+  {
+    "slug": "3d-wood-material",
+    "effect": "shader-wood-material",
+    "name": "Grain Atelier",
+    "zh": "程序化木纹材质",
+    "category": "shaders",
+    "sourceId": "batch02-07",
+    "tagline": "Grain follows the face, the cut and the turned silhouette.",
+    "camera": [
+      6,
+      3.8,
+      7.5
+    ],
+    "target": [
+      0,
+      1.2,
+      0
+    ],
+    "schema": [
+      {
+        "key": "grain",
+        "label": "纹理频率 Grain",
+        "min": 3,
+        "max": 18,
+        "step": 0.2,
+        "default": 9
+      },
+      {
+        "key": "knot",
+        "label": "节疤扰动 Knot",
+        "min": 0,
+        "max": 1,
+        "step": 0.01,
+        "default": 0.5
+      },
+      {
+        "key": "roughness",
+        "label": "粗糙度 Roughness",
+        "min": 0.15,
+        "max": 1,
+        "step": 0.01,
+        "default": 0.46
+      },
+      {
+        "key": "finish",
+        "label": "涂层 Finish",
+        "min": 0,
+        "max": 1,
+        "step": 0.01,
+        "default": 0.45
+      },
+      {
+        "key": "color",
+        "label": "木材底色 Color",
+        "type": "color",
+        "default": "#bd8d57"
+      },
+      {
+        "key": "spin",
+        "label": "旋转速度 Spin",
+        "min": 0,
+        "max": 0.6,
+        "step": 0.01,
+        "default": 0.09
+      }
+    ],
+    "looks": [
+      {
+        "id": "oak",
+        "title": "Oak Vessel / 橡木",
+        "hint": "A turned vessel with readable end grain.",
+        "params": {
+          "variant": 0,
+          "color": "#ba8f5a",
+          "grain": 9,
+          "knot": 0.25
+        }
+      },
+      {
+        "id": "walnut",
+        "title": "Walnut Blocks / 胡桃木",
+        "hint": "Cross-cut blocks in a compact composition.",
+        "params": {
+          "variant": 1,
+          "color": "#79513a",
+          "grain": 12,
+          "knot": 0.65
+        }
+      },
+      {
+        "id": "cedar",
+        "title": "Cedar Arc / 雪松",
+        "hint": "A rising bent-laminate arc.",
+        "params": {
+          "variant": 2,
+          "color": "#bf7753",
+          "grain": 7,
+          "knot": 0.4
+        }
+      }
+    ],
+    "fit": "Wood finishes, material inspection and procedural product forms.",
+    "limit": "Generated appearance maps; not species identification or measured wood optics.",
+    "batch": "original13",
+    "family": "materials",
+    "render_role": "scene-layer",
+    "source_kind": "independent",
+    "keywords": [
+      "木纹",
+      "木头",
+      "材质",
+      "wood"
+    ],
+    "resource_dir": "assets/modules/3d-wood-material",
+    "guide": "assets/modules/3d-wood-material/module-guide.md",
+    "demo": "assets/modules/3d-wood-material/demos/index.html",
+    "preview": "assets/modules/3d-wood-material/assets/preview.webp",
+    "effect_path": "assets/modules/3d-wood-material/demos/effects/shader-wood-material.js"
+  }
+]

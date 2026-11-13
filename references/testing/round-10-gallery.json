@@ -1,0 +1,11 @@
+{
+  "glass": [
+    "3d-glass"
+  ],
+  "spout": [
+    "3d-drain-spout"
+  ],
+  "materials": "6",
+  "independent": "33",
+  "all": "34"
+}

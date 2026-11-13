@@ -1,0 +1,24 @@
+{
+  "round": 1,
+  "title": "本机安装与跨目录调用基线",
+  "completed_at_utc": "2026-10-23T16:01:55.945067+00:00",
+  "client_date": "2026-10-24",
+  "observations": [
+    "安装副本857个文件与源包一致；仅一个技能入口。",
+    "从独立工作目录调用安装副本的检索和模块详情成功。"
+  ],
+  "changes": [],
+  "checks": {
+    "format": true,
+    "cross_cwd": true,
+    "modules": 34,
+    "single_entry": true
+  },
+  "evidence": [
+    "installation.json",
+    "search-baseline.json"
+  ],
+  "passed": true,
+  "installed_state_sha256": "01ccc2cb1780d06fd39ac20981a18dfbeb87f8a00295a93ac07b257c41b382a3",
+  "installed_files": 857
+}

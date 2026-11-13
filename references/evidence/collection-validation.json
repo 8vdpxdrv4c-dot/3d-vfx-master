@@ -1,0 +1,10 @@
+{
+  "skills": 34,
+  "looks": 103,
+  "original_33_previous_checks_passed": 33,
+  "original_33_authored_files_unchanged": 634,
+  "additional_skill_checks": "skills/3d-drain-spout/validation-report.json",
+  "additional_skill_passed": true,
+  "ui": "skills/3d-drain-spout/ui-validation.json",
+  "published": false
+}

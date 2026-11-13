@@ -1,0 +1,4009 @@
+{
+  "date": "2026-10-24",
+  "viewport": [
+    600,
+    450
+  ],
+  "total": 34,
+  "passed": 34,
+  "rows": [
+    {
+      "slug": "3d-smoke",
+      "looks": [
+        {
+          "id": "stack",
+          "hash": 2942675089,
+          "brightPixels": 22983
+        },
+        {
+          "id": "ambient",
+          "hash": 266715115,
+          "brightPixels": 16757
+        },
+        {
+          "id": "column",
+          "hash": 3338591985,
+          "brightPixels": 25075
+        }
+      ],
+      "controls": [
+        {
+          "key": "density",
+          "visibleChange": true,
+          "a": 835157968,
+          "b": 2442957716
+        },
+        {
+          "key": "spread",
+          "visibleChange": true,
+          "a": 1878280394,
+          "b": 2574181126
+        }
+      ],
+      "extremes": [
+        {
+          "key": "density",
+          "value": 0.2,
+          "finite": true
+        },
+        {
+          "key": "density",
+          "value": 1.7,
+          "finite": true
+        },
+        {
+          "key": "spread",
+          "value": 0.25,
+          "finite": true
+        },
+        {
+          "key": "spread",
+          "value": 2.5,
+          "finite": true
+        },
+        {
+          "key": "height",
+          "value": 2,
+          "finite": true
+        },
+        {
+          "key": "height",
+          "value": 6,
+          "finite": true
+        },
+        {
+          "key": "opacity",
+          "value": 0.08,
+          "finite": true
+        },
+        {
+          "key": "opacity",
+          "value": 0.9,
+          "finite": true
+        },
+        {
+          "key": "speed",
+          "value": 0,
+          "finite": true
+        },
+        {
+          "key": "speed",
+          "value": 1.8,
+          "finite": true
+        }
+      ],
+      "cycles": [
+        {
+          "geometries": 0,
+          "textures": 1,
+          "children": 4,
+          "hostPreserved": true,
+          "cameraRestored": true
+        },
+        {
+          "geometries": 0,
+          "textures": 1,
+          "children": 4,
+          "hostPreserved": true,
+          "cameraRestored": true
+        },
+        {
+          "geometries": 0,
+          "textures": 1,
+          "children": 4,
+          "hostPreserved": true,
+          "cameraRestored": true
+        }
+      ],
+      "errors": [],
+      "noGrowth": true,
+      "lowPower": true,
+      "lowPowerStats": {
+        "instances": 104
+      },
+      "pass": true
+    },
+    {
+      "slug": "3d-sparks",
+      "looks": [
+        {
+          "id": "copper",
+          "hash": 598734056,
+          "brightPixels": 33610
+        },
+        {
+          "id": "machining",
+          "hash": 122058383,
+          "brightPixels": 31820
+        },
+        {
+          "id": "embers",
+          "hash": 2199870180,
+          "brightPixels": 37282
+        }
+      ],
+      "controls": [
+        {
+          "key": "density",
+          "visibleChange": true,
+          "a": 843398448,
+          "b": 2770777212
+        },
+        {
+          "key": "height",
+          "visibleChange": true,
+          "a": 2813142680,
+          "b": 3432192729
+        }
+      ],
+      "extremes": [
+        {
+          "key": "density",
+          "value": 0.2,
+          "finite": true
+        },
+        {
+          "key": "density",
+          "value": 1.8,
+          "finite": true
+        },
+        {
+          "key": "height",
+          "value": 0.6,
+          "finite": true
+        },
+        {
+          "key": "height",
+          "value": 4.2,
+          "finite": true
+        },
+        {
+          "key": "spread",
+          "value": 0.25,
+          "finite": true
+        },
+        {
+          "key": "spread",
+          "value": 2.2,
+          "finite": true
+        },
+        {
+          "key": "size",
+          "value": 0.012,
+          "finite": true
+        },
+        {
+          "key": "size",
+          "value": 0.1,
+          "finite": true
+        },
+        {
+          "key": "speed",
+          "value": 0,
+          "finite": true
+        },
+        {
+          "key": "speed",
+          "value": 1.8,
+          "finite": true
+        }
+      ],
+      "cycles": [
+        {
+          "geometries": 0,
+          "textures": 1,
+          "children": 4,
+          "hostPreserved": true,
+          "cameraRestored": true
+        },
+        {
+          "geometries": 0,
+          "textures": 1,
+          "children": 4,
+          "hostPreserved": true,
+          "cameraRestored": true
+        },
+        {
+          "geometries": 0,
+          "textures": 1,
+          "children": 4,
+          "hostPreserved": true,
+          "cameraRestored": true
+        }
+      ],
+      "errors": [],
+      "noGrowth": true,
+      "lowPower": true,
+      "lowPowerStats": {
+        "particles": 286
+      },
+      "pass": true
+    },
+    {
+      "slug": "3d-hologram",
+      "looks": [
+        {
+          "id": "cyan",
+          "hash": 3493947106,
+          "brightPixels": 38437
+        },
+        {
+          "id": "amber",
+          "hash": 1232217862,
+          "brightPixels": 36797
+        },
+        {
+          "id": "violet",
+          "hash": 3265929525,
+          "brightPixels": 37796
+        }
+      ],
+      "controls": [
+        {
+          "key": "opacity",
+          "visibleChange": true,
+          "a": 672299647,
+          "b": 3243943986
+        },
+        {
+          "key": "lines",
+          "visibleChange": true,
+          "a": 3558810617,
+          "b": 4093361757
+        }
+      ],
+      "extremes": [
+        {
+          "key": "opacity",
+          "value": 0.1,
+          "finite": true
+        },
+        {
+          "key": "opacity",
+          "value": 0.9,
+          "finite": true
+        },
+        {
+          "key": "lines",
+          "value": 8,
+          "finite": true
+        },
+        {
+          "key": "lines",
+          "value": 100,
+          "finite": true
+        },
+        {
+          "key": "glow",
+          "value": 0.3,
+          "finite": true
+        },
+        {
+          "key": "glow",
+          "value": 3,
+          "finite": true
+        },
+        {
+          "key": "scale",
+          "value": 0.6,
+          "finite": true
+        },
+        {
+          "key": "scale",
+          "value": 1.4,
+          "finite": true
+        },
+        {
+          "key": "speed",
+          "value": 0,
+          "finite": true
+        },
+        {
+          "key": "speed",
+          "value": 1,
+          "finite": true
+        }
+      ],
+      "cycles": [
+        {
+          "geometries": 0,
+          "textures": 1,
+          "children": 4,
+          "hostPreserved": true,
+          "cameraRestored": true
+        },
+        {
+          "geometries": 0,
+          "textures": 1,
+          "children": 4,
+          "hostPreserved": true,
+          "cameraRestored": true
+        },
+        {
+          "geometries": 0,
+          "textures": 1,
+          "children": 4,
+          "hostPreserved": true,
+          "cameraRestored": true
+        }
+      ],
+      "errors": [],
+      "noGrowth": true,
+      "lowPower": true,
+      "lowPowerStats": {},
+      "pass": true
+    },
+    {
+      "slug": "3d-lava",
+      "looks": [
+        {
+          "id": "ridges",
+          "hash": 3516493456,
+          "brightPixels": 7480
+        },
+        {
+          "id": "crust",
+          "hash": 1725098018,
+          "brightPixels": 6326
+        },
+        {
+          "id": "active",
+          "hash": 1787642743,
+          "brightPixels": 8153
+        }
+      ],
+      "controls": [
+        {
+          "key": "amplitude",
+          "visibleChange": true,
+          "a": 3407725503,
+          "b": 2634046642
+        },
+        {
+          "key": "frequency",
+          "visibleChange": true,
+          "a": 716060270,
+          "b": 213451776
+        }
+      ],
+      "extremes": [
+        {
+          "key": "amplitude",
+          "value": 0.05,
+          "finite": true
+        },
+        {
+          "key": "amplitude",
+          "value": 0.65,
+          "finite": true
+        },
+        {
+          "key": "frequency",
+          "value": 0.4,
+          "finite": true
+        },
+        {
+          "key": "frequency",
+          "value": 1.8,
+          "finite": true
+        },
+        {
+          "key": "heat",
+          "value": 0.3,
+          "finite": true
+        },
+        {
+          "key": "heat",
+          "value": 2.5,
+          "finite": true
+        },
+        {
+          "key": "embers",
+          "value": 0,
+          "finite": true
+        },
+        {
+          "key": "embers",
+          "value": 130,
+          "finite": true
+        },
+        {
+          "key": "speed",
+          "value": 0,
+          "finite": true
+        },
+        {
+          "key": "speed",
+          "value": 1,
+          "finite": true
+        }
+      ],
+      "cycles": [
+        {
+          "geometries": 0,
+          "textures": 1,
+          "children": 4,
+          "hostPreserved": true,
+          "cameraRestored": true
+        },
+        {
+          "geometries": 0,
+          "textures": 1,
+          "children": 4,
+          "hostPreserved": true,
+          "cameraRestored": true
+        },
+        {
+          "geometries": 0,
+          "textures": 1,
+          "children": 4,
+          "hostPreserved": true,
+          "cameraRestored": true
+        }
+      ],
+      "errors": [],
+      "noGrowth": true,
+      "lowPower": true,
+      "lowPowerStats": {},
+      "pass": true
+    },
+    {
+      "slug": "3d-aurora",
+      "looks": [
+        {
+          "id": "emerald",
+          "hash": 3887568360,
+          "brightPixels": 27556
+        },
+        {
+          "id": "rose",
+          "hash": 2415482880,
+          "brightPixels": 33180
+        },
+        {
+          "id": "arctic",
+          "hash": 759351380,
+          "brightPixels": 33959
+        }
+      ],
+      "controls": [
+        {
+          "key": "height",
+          "visibleChange": true,
+          "a": 4115274066,
+          "b": 3375548223
+        },
+        {
+          "key": "wave",
+          "visibleChange": true,
+          "a": 2042926724,
+          "b": 1102557898
+        }
+      ],
+      "extremes": [
+        {
+          "key": "height",
+          "value": 1,
+          "finite": true
+        },
+        {
+          "key": "height",
+          "value": 4.5,
+          "finite": true
+        },
+        {
+          "key": "wave",
+          "value": 0.1,
+          "finite": true
+        },
+        {
+          "key": "wave",
+          "value": 2,
+          "finite": true
+        },
+        {
+          "key": "opacity",
+          "value": 0.1,
+          "finite": true
+        },
+        {
+          "key": "opacity",
+          "value": 1,
+          "finite": true
+        },
+        {
+          "key": "speed",
+          "value": 0,
+          "finite": true
+        },
+        {
+          "key": "speed",
+          "value": 1,
+          "finite": true
+        }
+      ],
+      "cycles": [
+        {
+          "geometries": 0,
+          "textures": 1,
+          "children": 4,
+          "hostPreserved": true,
+          "cameraRestored": true
+        },
+        {
+          "geometries": 0,
+          "textures": 1,
+          "children": 4,
+          "hostPreserved": true,
+          "cameraRestored": true
+        },
+        {
+          "geometries": 0,
+          "textures": 1,
+          "children": 4,
+          "hostPreserved": true,
+          "cameraRestored": true
+        }
+      ],
+      "errors": [],
+      "noGrowth": true,
+      "lowPower": true,
+      "lowPowerStats": {},
+      "pass": true
+    },
+    {
+      "slug": "3d-plasma",
+      "looks": [
+        {
+          "id": "hot",
+          "hash": 2968829091,
+          "brightPixels": 37660
+        },
+        {
+          "id": "quiet",
+          "hash": 2713618576,
+          "brightPixels": 35625
+        },
+        {
+          "id": "dense",
+          "hash": 2106083365,
+          "brightPixels": 39015
+        }
+      ],
+      "controls": [
+        {
+          "key": "width",
+          "visibleChange": true,
+          "a": 3119741444,
+          "b": 3889084652
+        },
+        {
+          "key": "glow",
+          "visibleChange": true,
+          "a": 3681052461,
+          "b": 4249400367
+        }
+      ],
+      "extremes": [
+        {
+          "key": "width",
+          "value": 0.35,
+          "finite": true
+        },
+        {
+          "key": "width",
+          "value": 1.6,
+          "finite": true
+        },
+        {
+          "key": "glow",
+          "value": 0.25,
+          "finite": true
+        },
+        {
+          "key": "glow",
+          "value": 2.8,
+          "finite": true
+        },
+        {
+          "key": "opacity",
+          "value": 0.1,
+          "finite": true
+        },
+        {
+          "key": "opacity",
+          "value": 0.9,
+          "finite": true
+        },
+        {
+          "key": "flow",
+          "value": 0.2,
+          "finite": true
+        },
+        {
+          "key": "flow",
+          "value": 2,
+          "finite": true
+        },
+        {
+          "key": "speed",
+          "value": 0,
+          "finite": true
+        },
+        {
+          "key": "speed",
+          "value": 1.4,
+          "finite": true
+        }
+      ],
+      "cycles": [
+        {
+          "geometries": 0,
+          "textures": 1,
+          "children": 4,
+          "hostPreserved": true,
+          "cameraRestored": true
+        },
+        {
+          "geometries": 0,
+          "textures": 1,
+          "children": 4,
+          "hostPreserved": true,
+          "cameraRestored": true
+        },
+        {
+          "geometries": 0,
+          "textures": 1,
+          "children": 4,
+          "hostPreserved": true,
+          "cameraRestored": true
+        }
+      ],
+      "errors": [],
+      "noGrowth": true,
+      "lowPower": true,
+      "lowPowerStats": {},
+      "pass": true
+    },
+    {
+      "slug": "3d-rain",
+      "looks": [
+        {
+          "id": "night",
+          "hash": 2758327209,
+          "brightPixels": 36998
+        },
+        {
+          "id": "driving",
+          "hash": 737464615,
+          "brightPixels": 42899
+        },
+        {
+          "id": "drizzle",
+          "hash": 1269469162,
+          "brightPixels": 31011
+        }
+      ],
+      "controls": [
+        {
+          "key": "density",
+          "visibleChange": true,
+          "a": 2758984966,
+          "b": 25856677
+        },
+        {
+          "key": "wind",
+          "visibleChange": true,
+          "a": 1601639987,
+          "b": 4278155271
+        }
+      ],
+      "extremes": [
+        {
+          "key": "density",
+          "value": 0.2,
+          "finite": true
+        },
+        {
+          "key": "density",
+          "value": 1.6,
+          "finite": true
+        },
+        {
+          "key": "wind",
+          "value": -1.2,
+          "finite": true
+        },
+        {
+          "key": "wind",
+          "value": 1.2,
+          "finite": true
+        },
+        {
+          "key": "length",
+          "value": 0.12,
+          "finite": true
+        },
+        {
+          "key": "length",
+          "value": 0.75,
+          "finite": true
+        },
+        {
+          "key": "width",
+          "value": 0.006,
+          "finite": true
+        },
+        {
+          "key": "width",
+          "value": 0.045,
+          "finite": true
+        },
+        {
+          "key": "opacity",
+          "value": 0.15,
+          "finite": true
+        },
+        {
+          "key": "opacity",
+          "value": 0.9,
+          "finite": true
+        },
+        {
+          "key": "speed",
+          "value": 0,
+          "finite": true
+        },
+        {
+          "key": "speed",
+          "value": 1.4,
+          "finite": true
+        }
+      ],
+      "cycles": [
+        {
+          "geometries": 0,
+          "textures": 1,
+          "children": 4,
+          "hostPreserved": true,
+          "cameraRestored": true
+        },
+        {
+          "geometries": 0,
+          "textures": 1,
+          "children": 4,
+          "hostPreserved": true,
+          "cameraRestored": true
+        },
+        {
+          "geometries": 0,
+          "textures": 1,
+          "children": 4,
+          "hostPreserved": true,
+          "cameraRestored": true
+        }
+      ],
+      "errors": [],
+      "noGrowth": true,
+      "lowPower": true,
+      "lowPowerStats": {
+        "instances": 275
+      },
+      "pass": true
+    },
+    {
+      "slug": "3d-snow",
+      "looks": [
+        {
+          "id": "blue",
+          "hash": 2126509999,
+          "brightPixels": 76312
+        },
+        {
+          "id": "quiet",
+          "hash": 1118593290,
+          "brightPixels": 86552
+        },
+        {
+          "id": "crosswind",
+          "hash": 509909723,
+          "brightPixels": 60103
+        }
+      ],
+      "controls": [
+        {
+          "key": "density",
+          "visibleChange": true,
+          "a": 1060646478,
+          "b": 3761769706
+        },
+        {
+          "key": "size",
+          "visibleChange": true,
+          "a": 3164555719,
+          "b": 413129912
+        }
+      ],
+      "extremes": [
+        {
+          "key": "density",
+          "value": 0.2,
+          "finite": true
+        },
+        {
+          "key": "density",
+          "value": 1.6,
+          "finite": true
+        },
+        {
+          "key": "size",
+          "value": 0.025,
+          "finite": true
+        },
+        {
+          "key": "size",
+          "value": 0.17,
+          "finite": true
+        },
+        {
+          "key": "wind",
+          "value": 0,
+          "finite": true
+        },
+        {
+          "key": "wind",
+          "value": 2.5,
+          "finite": true
+        },
+        {
+          "key": "fall",
+          "value": 0.1,
+          "finite": true
+        },
+        {
+          "key": "fall",
+          "value": 1,
+          "finite": true
+        },
+        {
+          "key": "opacity",
+          "value": 0.15,
+          "finite": true
+        },
+        {
+          "key": "opacity",
+          "value": 1,
+          "finite": true
+        },
+        {
+          "key": "speed",
+          "value": 0,
+          "finite": true
+        },
+        {
+          "key": "speed",
+          "value": 1.2,
+          "finite": true
+        }
+      ],
+      "cycles": [
+        {
+          "geometries": 0,
+          "textures": 1,
+          "children": 4,
+          "hostPreserved": true,
+          "cameraRestored": true
+        },
+        {
+          "geometries": 0,
+          "textures": 1,
+          "children": 4,
+          "hostPreserved": true,
+          "cameraRestored": true
+        },
+        {
+          "geometries": 0,
+          "textures": 1,
+          "children": 4,
+          "hostPreserved": true,
+          "cameraRestored": true
+        }
+      ],
+      "errors": [],
+      "noGrowth": true,
+      "lowPower": true,
+      "lowPowerStats": {
+        "particles": 302
+      },
+      "pass": true
+    },
+    {
+      "slug": "3d-planet",
+      "looks": [
+        {
+          "id": "ocean",
+          "hash": 615886777,
+          "brightPixels": 35915
+        },
+        {
+          "id": "terrain",
+          "hash": 2508869263,
+          "brightPixels": 31174
+        },
+        {
+          "id": "climate",
+          "hash": 2661164877,
+          "brightPixels": 43048
+        }
+      ],
+      "controls": [
+        {
+          "key": "sea",
+          "visibleChange": true,
+          "a": 3953761413,
+          "b": 4254300770
+        },
+        {
+          "key": "relief",
+          "visibleChange": true,
+          "a": 2153044971,
+          "b": 4069978996
+        }
+      ],
+      "extremes": [
+        {
+          "key": "sea",
+          "value": -0.4,
+          "finite": true
+        },
+        {
+          "key": "sea",
+          "value": 0.5,
+          "finite": true
+        },
+        {
+          "key": "relief",
+          "value": 0,
+          "finite": true
+        },
+        {
+          "key": "relief",
+          "value": 0.18,
+          "finite": true
+        },
+        {
+          "key": "detail",
+          "value": 1,
+          "finite": true
+        },
+        {
+          "key": "detail",
+          "value": 4,
+          "finite": true
+        },
+        {
+          "key": "sun",
+          "value": -3.14,
+          "finite": true
+        },
+        {
+          "key": "sun",
+          "value": 3.14,
+          "finite": true
+        },
+        {
+          "key": "spin",
+          "value": 0,
+          "finite": true
+        },
+        {
+          "key": "spin",
+          "value": 0.5,
+          "finite": true
+        }
+      ],
+      "cycles": [
+        {
+          "geometries": 0,
+          "textures": 1,
+          "children": 4,
+          "hostPreserved": true,
+          "cameraRestored": true
+        },
+        {
+          "geometries": 0,
+          "textures": 1,
+          "children": 4,
+          "hostPreserved": true,
+          "cameraRestored": true
+        },
+        {
+          "geometries": 0,
+          "textures": 1,
+          "children": 4,
+          "hostPreserved": true,
+          "cameraRestored": true
+        }
+      ],
+      "errors": [],
+      "noGrowth": true,
+      "lowPower": true,
+      "lowPowerStats": {},
+      "pass": true
+    },
+    {
+      "slug": "3d-grass",
+      "looks": [
+        {
+          "id": "spring",
+          "hash": 874896969,
+          "brightPixels": 68040
+        },
+        {
+          "id": "gold",
+          "hash": 3258362183,
+          "brightPixels": 75137
+        },
+        {
+          "id": "moss",
+          "hash": 2012436270,
+          "brightPixels": 62822
+        }
+      ],
+      "controls": [
+        {
+          "key": "density",
+          "visibleChange": true,
+          "a": 104459363,
+          "b": 2017866130
+        },
+        {
+          "key": "height",
+          "visibleChange": true,
+          "a": 4205169601,
+          "b": 3379779470
+        }
+      ],
+      "extremes": [
+        {
+          "key": "density",
+          "value": 0.25,
+          "finite": true
+        },
+        {
+          "key": "density",
+          "value": 1.5,
+          "finite": true
+        },
+        {
+          "key": "height",
+          "value": 0.3,
+          "finite": true
+        },
+        {
+          "key": "height",
+          "value": 1.4,
+          "finite": true
+        },
+        {
+          "key": "wind",
+          "value": 0,
+          "finite": true
+        },
+        {
+          "key": "wind",
+          "value": 1.3,
+          "finite": true
+        },
+        {
+          "key": "spread",
+          "value": 3,
+          "finite": true
+        },
+        {
+          "key": "spread",
+          "value": 6,
+          "finite": true
+        },
+        {
+          "key": "speed",
+          "value": 0,
+          "finite": true
+        },
+        {
+          "key": "speed",
+          "value": 1.2,
+          "finite": true
+        }
+      ],
+      "cycles": [
+        {
+          "geometries": 0,
+          "textures": 1,
+          "children": 4,
+          "hostPreserved": true,
+          "cameraRestored": true
+        },
+        {
+          "geometries": 0,
+          "textures": 1,
+          "children": 4,
+          "hostPreserved": true,
+          "cameraRestored": true
+        },
+        {
+          "geometries": 0,
+          "textures": 1,
+          "children": 4,
+          "hostPreserved": true,
+          "cameraRestored": true
+        }
+      ],
+      "errors": [],
+      "noGrowth": true,
+      "lowPower": true,
+      "lowPowerStats": {
+        "instances": 1210
+      },
+      "pass": true
+    },
+    {
+      "slug": "3d-bloom",
+      "looks": [
+        {
+          "id": "cyan",
+          "hash": 739474278,
+          "brightPixels": 52715
+        },
+        {
+          "id": "amber",
+          "hash": 682694619,
+          "brightPixels": 50075
+        },
+        {
+          "id": "violet",
+          "hash": 2031502608,
+          "brightPixels": 56446
+        }
+      ],
+      "controls": [
+        {
+          "key": "strength",
+          "visibleChange": true,
+          "a": 3908095095,
+          "b": 2493330286
+        },
+        {
+          "key": "radius",
+          "visibleChange": true,
+          "a": 1381790642,
+          "b": 1485083906
+        }
+      ],
+      "extremes": [
+        {
+          "key": "strength",
+          "value": 0,
+          "finite": true
+        },
+        {
+          "key": "strength",
+          "value": 2,
+          "finite": true
+        },
+        {
+          "key": "radius",
+          "value": 0.2,
+          "finite": true
+        },
+        {
+          "key": "radius",
+          "value": 2.5,
+          "finite": true
+        },
+        {
+          "key": "threshold",
+          "value": 0.2,
+          "finite": true
+        },
+        {
+          "key": "threshold",
+          "value": 2,
+          "finite": true
+        },
+        {
+          "key": "exposure",
+          "value": 0.5,
+          "finite": true
+        },
+        {
+          "key": "exposure",
+          "value": 1.6,
+          "finite": true
+        }
+      ],
+      "cycles": [
+        {
+          "geometries": 0,
+          "textures": 1,
+          "children": 4,
+          "hostPreserved": true,
+          "cameraRestored": true
+        },
+        {
+          "geometries": 0,
+          "textures": 1,
+          "children": 4,
+          "hostPreserved": true,
+          "cameraRestored": true
+        },
+        {
+          "geometries": 0,
+          "textures": 1,
+          "children": 4,
+          "hostPreserved": true,
+          "cameraRestored": true
+        }
+      ],
+      "errors": [],
+      "noGrowth": true,
+      "lowPower": true,
+      "lowPowerStats": {
+        "mode": "glow",
+        "quality": "low",
+        "blurRatio": 0.22,
+        "blurIterations": 1,
+        "focusSamples": 8,
+        "renderWidth": 600,
+        "renderHeight": 450
+      },
+      "qualityModes": [
+        {
+          "quality": "low",
+          "visible": true,
+          "stats": {
+            "mode": "glow",
+            "quality": "low",
+            "blurRatio": 0.22,
+            "blurIterations": 1,
+            "focusSamples": 8,
+            "renderWidth": 600,
+            "renderHeight": 450
+          }
+        },
+        {
+          "quality": "mid",
+          "visible": true,
+          "stats": {
+            "mode": "glow",
+            "quality": "mid",
+            "blurRatio": 0.35,
+            "blurIterations": 1,
+            "focusSamples": 12,
+            "renderWidth": 600,
+            "renderHeight": 450
+          }
+        },
+        {
+          "quality": "high",
+          "visible": true,
+          "stats": {
+            "mode": "glow",
+            "quality": "high",
+            "blurRatio": 0.5,
+            "blurIterations": 2,
+            "focusSamples": 20,
+            "renderWidth": 600,
+            "renderHeight": 450
+          }
+        },
+        {
+          "quality": "cinematic",
+          "visible": true,
+          "stats": {
+            "mode": "glow",
+            "quality": "cinematic",
+            "blurRatio": 0.7,
+            "blurIterations": 3,
+            "focusSamples": 30,
+            "renderWidth": 600,
+            "renderHeight": 450
+          }
+        }
+      ],
+      "pass": true
+    },
+    {
+      "slug": "3d-depth-of-field",
+      "looks": [
+        {
+          "id": "middle",
+          "hash": 3075087678,
+          "brightPixels": 90009
+        },
+        {
+          "id": "near",
+          "hash": 3154578870,
+          "brightPixels": 88279
+        },
+        {
+          "id": "deep",
+          "hash": 3562427759,
+          "brightPixels": 88426
+        }
+      ],
+      "controls": [
+        {
+          "key": "focus",
+          "visibleChange": true,
+          "a": 1473744082,
+          "b": 366036985
+        },
+        {
+          "key": "aperture",
+          "visibleChange": true,
+          "a": 4258481913,
+          "b": 2851859051
+        }
+      ],
+      "extremes": [
+        {
+          "key": "focus",
+          "value": 5,
+          "finite": true
+        },
+        {
+          "key": "focus",
+          "value": 19,
+          "finite": true
+        },
+        {
+          "key": "aperture",
+          "value": 0.00003,
+          "finite": true
+        },
+        {
+          "key": "aperture",
+          "value": 0.0018,
+          "finite": true
+        },
+        {
+          "key": "blur",
+          "value": 0.003,
+          "finite": true
+        },
+        {
+          "key": "blur",
+          "value": 0.07,
+          "finite": true
+        }
+      ],
+      "cycles": [
+        {
+          "geometries": 0,
+          "textures": 1,
+          "children": 4,
+          "hostPreserved": true,
+          "cameraRestored": true
+        },
+        {
+          "geometries": 0,
+          "textures": 1,
+          "children": 4,
+          "hostPreserved": true,
+          "cameraRestored": true
+        },
+        {
+          "geometries": 0,
+          "textures": 1,
+          "children": 4,
+          "hostPreserved": true,
+          "cameraRestored": true
+        }
+      ],
+      "errors": [],
+      "noGrowth": true,
+      "lowPower": true,
+      "lowPowerStats": {
+        "mode": "focus",
+        "quality": "low",
+        "blurRatio": 0.22,
+        "blurIterations": 1,
+        "focusSamples": 8,
+        "renderWidth": 600,
+        "renderHeight": 450
+      },
+      "qualityModes": [
+        {
+          "quality": "low",
+          "visible": true,
+          "stats": {
+            "mode": "focus",
+            "quality": "low",
+            "blurRatio": 0.22,
+            "blurIterations": 1,
+            "focusSamples": 8,
+            "renderWidth": 600,
+            "renderHeight": 450
+          }
+        },
+        {
+          "quality": "mid",
+          "visible": true,
+          "stats": {
+            "mode": "focus",
+            "quality": "mid",
+            "blurRatio": 0.35,
+            "blurIterations": 1,
+            "focusSamples": 12,
+            "renderWidth": 600,
+            "renderHeight": 450
+          }
+        },
+        {
+          "quality": "high",
+          "visible": true,
+          "stats": {
+            "mode": "focus",
+            "quality": "high",
+            "blurRatio": 0.5,
+            "blurIterations": 2,
+            "focusSamples": 20,
+            "renderWidth": 600,
+            "renderHeight": 450
+          }
+        },
+        {
+          "quality": "cinematic",
+          "visible": true,
+          "stats": {
+            "mode": "focus",
+            "quality": "cinematic",
+            "blurRatio": 0.7,
+            "blurIterations": 3,
+            "focusSamples": 30,
+            "renderWidth": 600,
+            "renderHeight": 450
+          }
+        }
+      ],
+      "pass": true
+    },
+    {
+      "slug": "3d-glass",
+      "looks": [
+        {
+          "id": "clear",
+          "hash": 1659510660,
+          "brightPixels": 48868
+        },
+        {
+          "id": "frosted",
+          "hash": 2164656879,
+          "brightPixels": 38599
+        },
+        {
+          "id": "amber",
+          "hash": 4169583184,
+          "brightPixels": 36519
+        }
+      ],
+      "controls": [
+        {
+          "key": "roughness",
+          "visibleChange": true,
+          "a": 1775889486,
+          "b": 3851717871
+        },
+        {
+          "key": "thickness",
+          "visibleChange": true,
+          "a": 2956085781,
+          "b": 2567624390
+        }
+      ],
+      "extremes": [
+        {
+          "key": "roughness",
+          "value": 0.02,
+          "finite": true
+        },
+        {
+          "key": "roughness",
+          "value": 0.65,
+          "finite": true
+        },
+        {
+          "key": "thickness",
+          "value": 0.1,
+          "finite": true
+        },
+        {
+          "key": "thickness",
+          "value": 3,
+          "finite": true
+        },
+        {
+          "key": "ior",
+          "value": 1.05,
+          "finite": true
+        },
+        {
+          "key": "ior",
+          "value": 2,
+          "finite": true
+        },
+        {
+          "key": "transmission",
+          "value": 0.2,
+          "finite": true
+        },
+        {
+          "key": "transmission",
+          "value": 1,
+          "finite": true
+        },
+        {
+          "key": "spin",
+          "value": 0,
+          "finite": true
+        },
+        {
+          "key": "spin",
+          "value": 0.5,
+          "finite": true
+        }
+      ],
+      "cycles": [
+        {
+          "geometries": 0,
+          "textures": 2,
+          "children": 4,
+          "hostPreserved": true,
+          "cameraRestored": true
+        },
+        {
+          "geometries": 0,
+          "textures": 2,
+          "children": 4,
+          "hostPreserved": true,
+          "cameraRestored": true
+        },
+        {
+          "geometries": 0,
+          "textures": 2,
+          "children": 4,
+          "hostPreserved": true,
+          "cameraRestored": true
+        }
+      ],
+      "errors": [],
+      "noGrowth": true,
+      "lowPower": true,
+      "lowPowerStats": {},
+      "pass": true
+    },
+    {
+      "slug": "3d-iridescent-bubbles",
+      "looks": [
+        {
+          "id": "pearl",
+          "hash": 955306900,
+          "brightPixels": 59475
+        },
+        {
+          "id": "gold",
+          "hash": 3500993827,
+          "brightPixels": 58952
+        },
+        {
+          "id": "cold",
+          "hash": 1907743172,
+          "brightPixels": 53674
+        }
+      ],
+      "controls": [
+        {
+          "key": "density",
+          "visibleChange": true,
+          "a": 2041022715,
+          "b": 1785803757
+        },
+        {
+          "key": "film",
+          "visibleChange": true,
+          "a": 729617814,
+          "b": 3208026985
+        }
+      ],
+      "extremes": [
+        {
+          "key": "density",
+          "value": 0.3,
+          "finite": true
+        },
+        {
+          "key": "density",
+          "value": 1.5,
+          "finite": true
+        },
+        {
+          "key": "film",
+          "value": 180,
+          "finite": true
+        },
+        {
+          "key": "film",
+          "value": 850,
+          "finite": true
+        },
+        {
+          "key": "roughness",
+          "value": 0.02,
+          "finite": true
+        },
+        {
+          "key": "roughness",
+          "value": 0.35,
+          "finite": true
+        },
+        {
+          "key": "drift",
+          "value": 0,
+          "finite": true
+        },
+        {
+          "key": "drift",
+          "value": 0.7,
+          "finite": true
+        },
+        {
+          "key": "speed",
+          "value": 0,
+          "finite": true
+        },
+        {
+          "key": "speed",
+          "value": 1,
+          "finite": true
+        }
+      ],
+      "cycles": [
+        {
+          "geometries": 0,
+          "textures": 2,
+          "children": 4,
+          "hostPreserved": true,
+          "cameraRestored": true
+        },
+        {
+          "geometries": 0,
+          "textures": 2,
+          "children": 4,
+          "hostPreserved": true,
+          "cameraRestored": true
+        },
+        {
+          "geometries": 0,
+          "textures": 2,
+          "children": 4,
+          "hostPreserved": true,
+          "cameraRestored": true
+        }
+      ],
+      "errors": [],
+      "noGrowth": true,
+      "lowPower": true,
+      "lowPowerStats": {},
+      "pass": true
+    },
+    {
+      "slug": "3d-pipe-flow",
+      "looks": [
+        {
+          "id": "cool",
+          "hash": 3422661302,
+          "brightPixels": 51749
+        },
+        {
+          "id": "energy",
+          "hash": 4067216269,
+          "brightPixels": 51748
+        },
+        {
+          "id": "circulate",
+          "hash": 4159162111,
+          "brightPixels": 55856
+        }
+      ],
+      "controls": [
+        {
+          "key": "density",
+          "visibleChange": true,
+          "a": 2633785416,
+          "b": 373374383
+        },
+        {
+          "key": "radius",
+          "visibleChange": true,
+          "a": 748902509,
+          "b": 3166341139
+        }
+      ],
+      "extremes": [
+        {
+          "key": "density",
+          "value": 0.2,
+          "finite": true
+        },
+        {
+          "key": "density",
+          "value": 1.5,
+          "finite": true
+        },
+        {
+          "key": "radius",
+          "value": 0.08,
+          "finite": true
+        },
+        {
+          "key": "radius",
+          "value": 0.33,
+          "finite": true
+        },
+        {
+          "key": "spacing",
+          "value": 0.5,
+          "finite": true
+        },
+        {
+          "key": "spacing",
+          "value": 2,
+          "finite": true
+        },
+        {
+          "key": "opacity",
+          "value": 0.1,
+          "finite": true
+        },
+        {
+          "key": "opacity",
+          "value": 0.65,
+          "finite": true
+        },
+        {
+          "key": "speed",
+          "value": 0,
+          "finite": true
+        },
+        {
+          "key": "speed",
+          "value": 1.2,
+          "finite": true
+        }
+      ],
+      "cycles": [
+        {
+          "geometries": 0,
+          "textures": 2,
+          "children": 4,
+          "hostPreserved": true,
+          "cameraRestored": true
+        },
+        {
+          "geometries": 0,
+          "textures": 2,
+          "children": 4,
+          "hostPreserved": true,
+          "cameraRestored": true
+        },
+        {
+          "geometries": 0,
+          "textures": 2,
+          "children": 4,
+          "hostPreserved": true,
+          "cameraRestored": true
+        }
+      ],
+      "errors": [],
+      "noGrowth": true,
+      "lowPower": true,
+      "lowPowerStats": {},
+      "pass": true
+    },
+    {
+      "slug": "3d-data-trails",
+      "looks": [
+        {
+          "id": "blue",
+          "hash": 1307951743,
+          "brightPixels": 46461
+        },
+        {
+          "id": "fast",
+          "hash": 2288159119,
+          "brightPixels": 44640
+        },
+        {
+          "id": "high",
+          "hash": 3746518961,
+          "brightPixels": 46578
+        }
+      ],
+      "controls": [
+        {
+          "key": "density",
+          "visibleChange": true,
+          "a": 840382461,
+          "b": 4232087267
+        },
+        {
+          "key": "height",
+          "visibleChange": true,
+          "a": 1366913067,
+          "b": 2351802681
+        }
+      ],
+      "extremes": [
+        {
+          "key": "density",
+          "value": 0.3,
+          "finite": true
+        },
+        {
+          "key": "density",
+          "value": 1.5,
+          "finite": true
+        },
+        {
+          "key": "height",
+          "value": 0.3,
+          "finite": true
+        },
+        {
+          "key": "height",
+          "value": 3,
+          "finite": true
+        },
+        {
+          "key": "opacity",
+          "value": 0.1,
+          "finite": true
+        },
+        {
+          "key": "opacity",
+          "value": 0.9,
+          "finite": true
+        },
+        {
+          "key": "size",
+          "value": 0.02,
+          "finite": true
+        },
+        {
+          "key": "size",
+          "value": 0.13,
+          "finite": true
+        },
+        {
+          "key": "speed",
+          "value": 0,
+          "finite": true
+        },
+        {
+          "key": "speed",
+          "value": 1.5,
+          "finite": true
+        }
+      ],
+      "cycles": [
+        {
+          "geometries": 0,
+          "textures": 2,
+          "children": 4,
+          "hostPreserved": true,
+          "cameraRestored": true
+        },
+        {
+          "geometries": 0,
+          "textures": 2,
+          "children": 4,
+          "hostPreserved": true,
+          "cameraRestored": true
+        },
+        {
+          "geometries": 0,
+          "textures": 2,
+          "children": 4,
+          "hostPreserved": true,
+          "cameraRestored": true
+        }
+      ],
+      "errors": [],
+      "noGrowth": true,
+      "lowPower": true,
+      "lowPowerStats": {},
+      "pass": true
+    },
+    {
+      "slug": "3d-slice-reveal",
+      "looks": [
+        {
+          "id": "cyan",
+          "hash": 3078538652,
+          "brightPixels": 51448
+        },
+        {
+          "id": "static",
+          "hash": 1723725751,
+          "brightPixels": 50527
+        },
+        {
+          "id": "amber",
+          "hash": 2783784483,
+          "brightPixels": 51201
+        }
+      ],
+      "controls": [
+        {
+          "key": "progress",
+          "visibleChange": true,
+          "a": 574305967,
+          "b": 1768287779
+        },
+        {
+          "key": "tilt",
+          "visibleChange": true,
+          "a": 3018261684,
+          "b": 676618053
+        }
+      ],
+      "extremes": [
+        {
+          "key": "progress",
+          "value": 0,
+          "finite": true
+        },
+        {
+          "key": "progress",
+          "value": 1,
+          "finite": true
+        },
+        {
+          "key": "tilt",
+          "value": -0.7,
+          "finite": true
+        },
+        {
+          "key": "tilt",
+          "value": 0.7,
+          "finite": true
+        },
+        {
+          "key": "speed",
+          "value": 0,
+          "finite": true
+        },
+        {
+          "key": "speed",
+          "value": 0.7,
+          "finite": true
+        }
+      ],
+      "cycles": [
+        {
+          "geometries": 0,
+          "textures": 2,
+          "children": 4,
+          "hostPreserved": true,
+          "cameraRestored": true
+        },
+        {
+          "geometries": 0,
+          "textures": 2,
+          "children": 4,
+          "hostPreserved": true,
+          "cameraRestored": true
+        },
+        {
+          "geometries": 0,
+          "textures": 2,
+          "children": 4,
+          "hostPreserved": true,
+          "cameraRestored": true
+        }
+      ],
+      "errors": [],
+      "noGrowth": true,
+      "lowPower": true,
+      "lowPowerStats": {},
+      "pass": true
+    },
+    {
+      "slug": "3d-ocean",
+      "looks": [
+        {
+          "id": "teal",
+          "hash": 2898494474,
+          "brightPixels": 28864
+        },
+        {
+          "id": "still",
+          "hash": 727562496,
+          "brightPixels": 18407
+        },
+        {
+          "id": "copper",
+          "hash": 3837011081,
+          "brightPixels": 85845
+        }
+      ],
+      "controls": [
+        {
+          "key": "distortion",
+          "visibleChange": true,
+          "a": 1662777957,
+          "b": 464805002
+        },
+        {
+          "key": "roughness",
+          "visibleChange": true,
+          "a": 1868586654,
+          "b": 2976940023
+        }
+      ],
+      "extremes": [
+        {
+          "key": "distortion",
+          "value": 0.15,
+          "finite": true
+        },
+        {
+          "key": "distortion",
+          "value": 3,
+          "finite": true
+        },
+        {
+          "key": "roughness",
+          "value": 0.08,
+          "finite": true
+        },
+        {
+          "key": "roughness",
+          "value": 0.8,
+          "finite": true
+        },
+        {
+          "key": "frequency",
+          "value": 0.5,
+          "finite": true
+        },
+        {
+          "key": "frequency",
+          "value": 2.8,
+          "finite": true
+        },
+        {
+          "key": "sun",
+          "value": -3.1,
+          "finite": true
+        },
+        {
+          "key": "sun",
+          "value": 3.1,
+          "finite": true
+        },
+        {
+          "key": "speed",
+          "value": 0,
+          "finite": true
+        },
+        {
+          "key": "speed",
+          "value": 1,
+          "finite": true
+        }
+      ],
+      "cycles": [
+        {
+          "geometries": 0,
+          "textures": 2,
+          "children": 4,
+          "hostPreserved": true,
+          "cameraRestored": true
+        },
+        {
+          "geometries": 0,
+          "textures": 2,
+          "children": 4,
+          "hostPreserved": true,
+          "cameraRestored": true
+        },
+        {
+          "geometries": 0,
+          "textures": 2,
+          "children": 4,
+          "hostPreserved": true,
+          "cameraRestored": true
+        }
+      ],
+      "errors": [],
+      "noGrowth": true,
+      "lowPower": true,
+      "lowPowerStats": {
+        "reflectionWidth": 256,
+        "reflectionHeight": 256,
+        "waterVertices": 1521
+      },
+      "pass": true
+    },
+    {
+      "slug": "3d-light-shafts",
+      "looks": [
+        {
+          "id": "cold",
+          "hash": 79156553,
+          "brightPixels": 68096
+        },
+        {
+          "id": "theatre",
+          "hash": 2590176811,
+          "brightPixels": 66836
+        },
+        {
+          "id": "soft",
+          "hash": 2746975869,
+          "brightPixels": 76225
+        }
+      ],
+      "controls": [
+        {
+          "key": "angle",
+          "visibleChange": true,
+          "a": 173263029,
+          "b": 3535749408
+        },
+        {
+          "key": "spread",
+          "visibleChange": true,
+          "a": 3805940353,
+          "b": 2555490988
+        }
+      ],
+      "extremes": [
+        {
+          "key": "angle",
+          "value": 0.12,
+          "finite": true
+        },
+        {
+          "key": "angle",
+          "value": 0.52,
+          "finite": true
+        },
+        {
+          "key": "spread",
+          "value": 0.8,
+          "finite": true
+        },
+        {
+          "key": "spread",
+          "value": 3,
+          "finite": true
+        },
+        {
+          "key": "opacity",
+          "value": 0.08,
+          "finite": true
+        },
+        {
+          "key": "opacity",
+          "value": 0.75,
+          "finite": true
+        },
+        {
+          "key": "intensity",
+          "value": 8,
+          "finite": true
+        },
+        {
+          "key": "intensity",
+          "value": 65,
+          "finite": true
+        },
+        {
+          "key": "speed",
+          "value": 0,
+          "finite": true
+        },
+        {
+          "key": "speed",
+          "value": 0.7,
+          "finite": true
+        }
+      ],
+      "cycles": [
+        {
+          "geometries": 0,
+          "textures": 2,
+          "children": 4,
+          "hostPreserved": true,
+          "cameraRestored": true
+        },
+        {
+          "geometries": 0,
+          "textures": 2,
+          "children": 4,
+          "hostPreserved": true,
+          "cameraRestored": true
+        },
+        {
+          "geometries": 0,
+          "textures": 2,
+          "children": 4,
+          "hostPreserved": true,
+          "cameraRestored": true
+        }
+      ],
+      "errors": [],
+      "noGrowth": true,
+      "lowPower": true,
+      "lowPowerStats": {},
+      "pass": true
+    },
+    {
+      "slug": "3d-galaxy",
+      "looks": [
+        {
+          "id": "spiral",
+          "hash": 2111729380,
+          "brightPixels": 23913
+        },
+        {
+          "id": "violet",
+          "hash": 1189932114,
+          "brightPixels": 35554
+        },
+        {
+          "id": "barred",
+          "hash": 1665679998,
+          "brightPixels": 11578
+        }
+      ],
+      "controls": [
+        {
+          "key": "density",
+          "visibleChange": true,
+          "a": 1802902582,
+          "b": 2248039873
+        },
+        {
+          "key": "arms",
+          "visibleChange": true,
+          "a": 2910632077,
+          "b": 239369593
+        }
+      ],
+      "extremes": [
+        {
+          "key": "density",
+          "value": 0.25,
+          "finite": true
+        },
+        {
+          "key": "density",
+          "value": 1.6,
+          "finite": true
+        },
+        {
+          "key": "arms",
+          "value": 2,
+          "finite": true
+        },
+        {
+          "key": "arms",
+          "value": 8,
+          "finite": true
+        },
+        {
+          "key": "twist",
+          "value": 0.2,
+          "finite": true
+        },
+        {
+          "key": "twist",
+          "value": 1.8,
+          "finite": true
+        },
+        {
+          "key": "thickness",
+          "value": 0.03,
+          "finite": true
+        },
+        {
+          "key": "thickness",
+          "value": 0.6,
+          "finite": true
+        },
+        {
+          "key": "spin",
+          "value": 0,
+          "finite": true
+        },
+        {
+          "key": "spin",
+          "value": 0.4,
+          "finite": true
+        }
+      ],
+      "cycles": [
+        {
+          "geometries": 0,
+          "textures": 2,
+          "children": 4,
+          "hostPreserved": true,
+          "cameraRestored": true
+        },
+        {
+          "geometries": 0,
+          "textures": 2,
+          "children": 4,
+          "hostPreserved": true,
+          "cameraRestored": true
+        },
+        {
+          "geometries": 0,
+          "textures": 2,
+          "children": 4,
+          "hostPreserved": true,
+          "cameraRestored": true
+        }
+      ],
+      "errors": [],
+      "noGrowth": true,
+      "lowPower": true,
+      "lowPowerStats": {
+        "particles": 2090
+      },
+      "pass": true
+    },
+    {
+      "slug": "3d-architecture-growth",
+      "looks": [
+        {
+          "id": "courtyard",
+          "hash": 2905446058,
+          "brightPixels": 77049
+        },
+        {
+          "id": "terraces",
+          "hash": 1273565137,
+          "brightPixels": 71154
+        },
+        {
+          "id": "atrium",
+          "hash": 3618531658,
+          "brightPixels": 75127
+        }
+      ],
+      "controls": [
+        {
+          "key": "progress",
+          "visibleChange": true,
+          "a": 938734153,
+          "b": 1644783143
+        },
+        {
+          "key": "lift",
+          "visibleChange": true,
+          "a": 2369563497,
+          "b": 286209762
+        }
+      ],
+      "extremes": [
+        {
+          "key": "progress",
+          "value": 0,
+          "finite": true
+        },
+        {
+          "key": "progress",
+          "value": 1,
+          "finite": true
+        },
+        {
+          "key": "lift",
+          "value": 0,
+          "finite": true
+        },
+        {
+          "key": "lift",
+          "value": 5,
+          "finite": true
+        },
+        {
+          "key": "stagger",
+          "value": 0.05,
+          "finite": true
+        },
+        {
+          "key": "stagger",
+          "value": 0.8,
+          "finite": true
+        },
+        {
+          "key": "speed",
+          "value": 0,
+          "finite": true
+        },
+        {
+          "key": "speed",
+          "value": 1,
+          "finite": true
+        }
+      ],
+      "cycles": [
+        {
+          "geometries": 0,
+          "textures": 2,
+          "children": 4,
+          "hostPreserved": true,
+          "cameraRestored": true
+        },
+        {
+          "geometries": 0,
+          "textures": 2,
+          "children": 4,
+          "hostPreserved": true,
+          "cameraRestored": true
+        },
+        {
+          "geometries": 0,
+          "textures": 2,
+          "children": 4,
+          "hostPreserved": true,
+          "cameraRestored": true
+        }
+      ],
+      "errors": [],
+      "noGrowth": true,
+      "lowPower": true,
+      "lowPowerStats": {},
+      "pass": true
+    },
+    {
+      "slug": "3d-falling-leaves",
+      "looks": [
+        {
+          "id": "amber",
+          "hash": 805354122,
+          "brightPixels": 123228
+        },
+        {
+          "id": "olive",
+          "hash": 1240686054,
+          "brightPixels": 119280
+        },
+        {
+          "id": "crimson",
+          "hash": 1601139622,
+          "brightPixels": 126059
+        }
+      ],
+      "controls": [
+        {
+          "key": "density",
+          "visibleChange": true,
+          "a": 1494619386,
+          "b": 102034937
+        },
+        {
+          "key": "wind",
+          "visibleChange": true,
+          "a": 3025278180,
+          "b": 1563617302
+        }
+      ],
+      "extremes": [
+        {
+          "key": "density",
+          "value": 0.2,
+          "finite": true
+        },
+        {
+          "key": "density",
+          "value": 1.5,
+          "finite": true
+        },
+        {
+          "key": "wind",
+          "value": 0,
+          "finite": true
+        },
+        {
+          "key": "wind",
+          "value": 2.5,
+          "finite": true
+        },
+        {
+          "key": "fall",
+          "value": 0.1,
+          "finite": true
+        },
+        {
+          "key": "fall",
+          "value": 2,
+          "finite": true
+        },
+        {
+          "key": "tumble",
+          "value": 0,
+          "finite": true
+        },
+        {
+          "key": "tumble",
+          "value": 2,
+          "finite": true
+        },
+        {
+          "key": "speed",
+          "value": 0,
+          "finite": true
+        },
+        {
+          "key": "speed",
+          "value": 1.5,
+          "finite": true
+        }
+      ],
+      "cycles": [
+        {
+          "geometries": 0,
+          "textures": 2,
+          "children": 4,
+          "hostPreserved": true,
+          "cameraRestored": true
+        },
+        {
+          "geometries": 0,
+          "textures": 2,
+          "children": 4,
+          "hostPreserved": true,
+          "cameraRestored": true
+        },
+        {
+          "geometries": 0,
+          "textures": 2,
+          "children": 4,
+          "hostPreserved": true,
+          "cameraRestored": true
+        }
+      ],
+      "errors": [],
+      "noGrowth": true,
+      "lowPower": true,
+      "lowPowerStats": {},
+      "pass": true
+    },
+    {
+      "slug": "3d-four-seasons",
+      "looks": [
+        {
+          "id": "spring",
+          "hash": 628062605,
+          "brightPixels": 58614
+        },
+        {
+          "id": "summer",
+          "hash": 2856903126,
+          "brightPixels": 57242
+        },
+        {
+          "id": "autumn",
+          "hash": 1042566206,
+          "brightPixels": 57794
+        },
+        {
+          "id": "winter",
+          "hash": 1127672251,
+          "brightPixels": 53123
+        }
+      ],
+      "controls": [
+        {
+          "key": "season",
+          "visibleChange": true,
+          "a": 3688094020,
+          "b": 2013160942
+        },
+        {
+          "key": "sun",
+          "visibleChange": true,
+          "a": 1680876448,
+          "b": 4260700717
+        }
+      ],
+      "extremes": [
+        {
+          "key": "season",
+          "value": 0,
+          "finite": true
+        },
+        {
+          "key": "season",
+          "value": 3,
+          "finite": true
+        },
+        {
+          "key": "sun",
+          "value": 0,
+          "finite": true
+        },
+        {
+          "key": "sun",
+          "value": 2,
+          "finite": true
+        },
+        {
+          "key": "wind",
+          "value": 0,
+          "finite": true
+        },
+        {
+          "key": "wind",
+          "value": 1.5,
+          "finite": true
+        },
+        {
+          "key": "snow",
+          "value": 0,
+          "finite": true
+        },
+        {
+          "key": "snow",
+          "value": 1,
+          "finite": true
+        },
+        {
+          "key": "density",
+          "value": 0.3,
+          "finite": true
+        },
+        {
+          "key": "density",
+          "value": 1.4,
+          "finite": true
+        }
+      ],
+      "cycles": [
+        {
+          "geometries": 0,
+          "textures": 2,
+          "children": 4,
+          "hostPreserved": true,
+          "cameraRestored": true
+        },
+        {
+          "geometries": 0,
+          "textures": 2,
+          "children": 4,
+          "hostPreserved": true,
+          "cameraRestored": true
+        },
+        {
+          "geometries": 0,
+          "textures": 2,
+          "children": 4,
+          "hostPreserved": true,
+          "cameraRestored": true
+        }
+      ],
+      "errors": [],
+      "noGrowth": true,
+      "lowPower": true,
+      "lowPowerStats": {},
+      "pass": true
+    },
+    {
+      "slug": "3d-cloth-material",
+      "looks": [
+        {
+          "id": "linen",
+          "hash": 467219954,
+          "brightPixels": 95037
+        },
+        {
+          "id": "satin",
+          "hash": 1334726844,
+          "brightPixels": 74375
+        },
+        {
+          "id": "canvas",
+          "hash": 2156796441,
+          "brightPixels": 64321
+        }
+      ],
+      "controls": [
+        {
+          "key": "fold",
+          "visibleChange": true,
+          "a": 3514506769,
+          "b": 931789923
+        },
+        {
+          "key": "weave",
+          "visibleChange": true,
+          "a": 1493267429,
+          "b": 3865934915
+        }
+      ],
+      "extremes": [
+        {
+          "key": "fold",
+          "value": 0,
+          "finite": true
+        },
+        {
+          "key": "fold",
+          "value": 1.2,
+          "finite": true
+        },
+        {
+          "key": "weave",
+          "value": 0.4,
+          "finite": true
+        },
+        {
+          "key": "weave",
+          "value": 2.4,
+          "finite": true
+        },
+        {
+          "key": "sheen",
+          "value": 0,
+          "finite": true
+        },
+        {
+          "key": "sheen",
+          "value": 1,
+          "finite": true
+        },
+        {
+          "key": "roughness",
+          "value": 0.15,
+          "finite": true
+        },
+        {
+          "key": "roughness",
+          "value": 1,
+          "finite": true
+        },
+        {
+          "key": "speed",
+          "value": 0,
+          "finite": true
+        },
+        {
+          "key": "speed",
+          "value": 1.5,
+          "finite": true
+        }
+      ],
+      "cycles": [
+        {
+          "geometries": 0,
+          "textures": 2,
+          "children": 4,
+          "hostPreserved": true,
+          "cameraRestored": true
+        },
+        {
+          "geometries": 0,
+          "textures": 2,
+          "children": 4,
+          "hostPreserved": true,
+          "cameraRestored": true
+        },
+        {
+          "geometries": 0,
+          "textures": 2,
+          "children": 4,
+          "hostPreserved": true,
+          "cameraRestored": true
+        }
+      ],
+      "errors": [],
+      "noGrowth": true,
+      "lowPower": true,
+      "lowPowerStats": {},
+      "pass": true
+    },
+    {
+      "slug": "3d-metal-material",
+      "looks": [
+        {
+          "id": "brass",
+          "hash": 3004781168,
+          "brightPixels": 41869
+        },
+        {
+          "id": "titanium",
+          "hash": 408068750,
+          "brightPixels": 36035
+        },
+        {
+          "id": "copper",
+          "hash": 3585651226,
+          "brightPixels": 35860
+        }
+      ],
+      "controls": [
+        {
+          "key": "roughness",
+          "visibleChange": true,
+          "a": 1002928381,
+          "b": 1674243236
+        },
+        {
+          "key": "brush",
+          "visibleChange": true,
+          "a": 864634910,
+          "b": 1938329308
+        }
+      ],
+      "extremes": [
+        {
+          "key": "roughness",
+          "value": 0.07,
+          "finite": true
+        },
+        {
+          "key": "roughness",
+          "value": 0.9,
+          "finite": true
+        },
+        {
+          "key": "brush",
+          "value": 0,
+          "finite": true
+        },
+        {
+          "key": "brush",
+          "value": 1,
+          "finite": true
+        },
+        {
+          "key": "patina",
+          "value": 0,
+          "finite": true
+        },
+        {
+          "key": "patina",
+          "value": 1,
+          "finite": true
+        },
+        {
+          "key": "spin",
+          "value": 0,
+          "finite": true
+        },
+        {
+          "key": "spin",
+          "value": 1,
+          "finite": true
+        }
+      ],
+      "cycles": [
+        {
+          "geometries": 0,
+          "textures": 2,
+          "children": 4,
+          "hostPreserved": true,
+          "cameraRestored": true
+        },
+        {
+          "geometries": 0,
+          "textures": 2,
+          "children": 4,
+          "hostPreserved": true,
+          "cameraRestored": true
+        },
+        {
+          "geometries": 0,
+          "textures": 2,
+          "children": 4,
+          "hostPreserved": true,
+          "cameraRestored": true
+        }
+      ],
+      "errors": [],
+      "noGrowth": true,
+      "lowPower": true,
+      "lowPowerStats": {},
+      "pass": true
+    },
+    {
+      "slug": "3d-paper-material",
+      "looks": [
+        {
+          "id": "ivory",
+          "hash": 3086910995,
+          "brightPixels": 87250
+        },
+        {
+          "id": "kraft",
+          "hash": 2490590269,
+          "brightPixels": 76302
+        },
+        {
+          "id": "indigo",
+          "hash": 778374158,
+          "brightPixels": 84239
+        }
+      ],
+      "controls": [
+        {
+          "key": "fiber",
+          "visibleChange": true,
+          "a": 3943459444,
+          "b": 2513458258
+        },
+        {
+          "key": "curl",
+          "visibleChange": true,
+          "a": 1543151564,
+          "b": 3966907142
+        }
+      ],
+      "extremes": [
+        {
+          "key": "fiber",
+          "value": 0,
+          "finite": true
+        },
+        {
+          "key": "fiber",
+          "value": 1,
+          "finite": true
+        },
+        {
+          "key": "curl",
+          "value": 0,
+          "finite": true
+        },
+        {
+          "key": "curl",
+          "value": 1.5,
+          "finite": true
+        },
+        {
+          "key": "thickness",
+          "value": 0.002,
+          "finite": true
+        },
+        {
+          "key": "thickness",
+          "value": 0.06,
+          "finite": true
+        },
+        {
+          "key": "roughness",
+          "value": 0.25,
+          "finite": true
+        },
+        {
+          "key": "roughness",
+          "value": 1,
+          "finite": true
+        },
+        {
+          "key": "speed",
+          "value": 0,
+          "finite": true
+        },
+        {
+          "key": "speed",
+          "value": 1,
+          "finite": true
+        }
+      ],
+      "cycles": [
+        {
+          "geometries": 0,
+          "textures": 2,
+          "children": 4,
+          "hostPreserved": true,
+          "cameraRestored": true
+        },
+        {
+          "geometries": 0,
+          "textures": 2,
+          "children": 4,
+          "hostPreserved": true,
+          "cameraRestored": true
+        },
+        {
+          "geometries": 0,
+          "textures": 2,
+          "children": 4,
+          "hostPreserved": true,
+          "cameraRestored": true
+        }
+      ],
+      "errors": [],
+      "noGrowth": true,
+      "lowPower": true,
+      "lowPowerStats": {},
+      "pass": true
+    },
+    {
+      "slug": "3d-wood-material",
+      "looks": [
+        {
+          "id": "oak",
+          "hash": 4044485295,
+          "brightPixels": 46841
+        },
+        {
+          "id": "walnut",
+          "hash": 1195944720,
+          "brightPixels": 42395
+        },
+        {
+          "id": "cedar",
+          "hash": 350669707,
+          "brightPixels": 56821
+        }
+      ],
+      "controls": [
+        {
+          "key": "grain",
+          "visibleChange": true,
+          "a": 1530958896,
+          "b": 3366844495
+        },
+        {
+          "key": "knot",
+          "visibleChange": true,
+          "a": 892325434,
+          "b": 2591423953
+        }
+      ],
+      "extremes": [
+        {
+          "key": "grain",
+          "value": 3,
+          "finite": true
+        },
+        {
+          "key": "grain",
+          "value": 18,
+          "finite": true
+        },
+        {
+          "key": "knot",
+          "value": 0,
+          "finite": true
+        },
+        {
+          "key": "knot",
+          "value": 1,
+          "finite": true
+        },
+        {
+          "key": "roughness",
+          "value": 0.15,
+          "finite": true
+        },
+        {
+          "key": "roughness",
+          "value": 1,
+          "finite": true
+        },
+        {
+          "key": "finish",
+          "value": 0,
+          "finite": true
+        },
+        {
+          "key": "finish",
+          "value": 1,
+          "finite": true
+        },
+        {
+          "key": "spin",
+          "value": 0,
+          "finite": true
+        },
+        {
+          "key": "spin",
+          "value": 0.6,
+          "finite": true
+        }
+      ],
+      "cycles": [
+        {
+          "geometries": 0,
+          "textures": 2,
+          "children": 4,
+          "hostPreserved": true,
+          "cameraRestored": true
+        },
+        {
+          "geometries": 0,
+          "textures": 2,
+          "children": 4,
+          "hostPreserved": true,
+          "cameraRestored": true
+        },
+        {
+          "geometries": 0,
+          "textures": 2,
+          "children": 4,
+          "hostPreserved": true,
+          "cameraRestored": true
+        }
+      ],
+      "errors": [],
+      "noGrowth": true,
+      "lowPower": true,
+      "lowPowerStats": {},
+      "pass": true
+    },
+    {
+      "slug": "3d-virtual-tour",
+      "looks": [
+        {
+          "id": "arrival",
+          "hash": 3074797288,
+          "brightPixels": 143272
+        },
+        {
+          "id": "gallery",
+          "hash": 1924812900,
+          "brightPixels": 123973
+        },
+        {
+          "id": "overview",
+          "hash": 545616955,
+          "brightPixels": 202219
+        }
+      ],
+      "controls": [
+        {
+          "key": "progress",
+          "visibleChange": true,
+          "a": 214250712,
+          "b": 2117060891
+        },
+        {
+          "key": "height",
+          "visibleChange": true,
+          "a": 4200159329,
+          "b": 1728773171
+        }
+      ],
+      "extremes": [
+        {
+          "key": "progress",
+          "value": 0,
+          "finite": true
+        },
+        {
+          "key": "progress",
+          "value": 1,
+          "finite": true
+        },
+        {
+          "key": "speed",
+          "value": 0,
+          "finite": true
+        },
+        {
+          "key": "speed",
+          "value": 0.2,
+          "finite": true
+        },
+        {
+          "key": "height",
+          "value": 0.7,
+          "finite": true
+        },
+        {
+          "key": "height",
+          "value": 2.7,
+          "finite": true
+        }
+      ],
+      "cycles": [
+        {
+          "geometries": 0,
+          "textures": 2,
+          "children": 4,
+          "hostPreserved": true,
+          "cameraRestored": true
+        },
+        {
+          "geometries": 0,
+          "textures": 2,
+          "children": 4,
+          "hostPreserved": true,
+          "cameraRestored": true
+        },
+        {
+          "geometries": 0,
+          "textures": 2,
+          "children": 4,
+          "hostPreserved": true,
+          "cameraRestored": true
+        }
+      ],
+      "errors": [],
+      "noGrowth": true,
+      "lowPower": true,
+      "lowPowerStats": {},
+      "pass": true
+    },
+    {
+      "slug": "3d-lightning-energy",
+      "looks": [
+        {
+          "id": "bridge",
+          "hash": 1255372946,
+          "brightPixels": 51417
+        },
+        {
+          "id": "coil",
+          "hash": 480927993,
+          "brightPixels": 53255
+        },
+        {
+          "id": "array",
+          "hash": 3755058775,
+          "brightPixels": 51916
+        }
+      ],
+      "controls": [
+        {
+          "key": "energy",
+          "visibleChange": true,
+          "a": 3482976535,
+          "b": 558087074
+        },
+        {
+          "key": "branches",
+          "visibleChange": true,
+          "a": 1786501053,
+          "b": 3924767098
+        }
+      ],
+      "extremes": [
+        {
+          "key": "energy",
+          "value": 0.2,
+          "finite": true
+        },
+        {
+          "key": "energy",
+          "value": 3,
+          "finite": true
+        },
+        {
+          "key": "branches",
+          "value": 2,
+          "finite": true
+        },
+        {
+          "key": "branches",
+          "value": 16,
+          "finite": true
+        },
+        {
+          "key": "reach",
+          "value": 0.3,
+          "finite": true
+        },
+        {
+          "key": "reach",
+          "value": 2,
+          "finite": true
+        },
+        {
+          "key": "width",
+          "value": 0.015,
+          "finite": true
+        },
+        {
+          "key": "width",
+          "value": 0.12,
+          "finite": true
+        },
+        {
+          "key": "speed",
+          "value": 0,
+          "finite": true
+        },
+        {
+          "key": "speed",
+          "value": 1.5,
+          "finite": true
+        }
+      ],
+      "cycles": [
+        {
+          "geometries": 0,
+          "textures": 2,
+          "children": 4,
+          "hostPreserved": true,
+          "cameraRestored": true
+        },
+        {
+          "geometries": 0,
+          "textures": 2,
+          "children": 4,
+          "hostPreserved": true,
+          "cameraRestored": true
+        },
+        {
+          "geometries": 0,
+          "textures": 2,
+          "children": 4,
+          "hostPreserved": true,
+          "cameraRestored": true
+        }
+      ],
+      "errors": [],
+      "noGrowth": true,
+      "lowPower": true,
+      "lowPowerStats": {},
+      "pass": true
+    },
+    {
+      "slug": "3d-frost-growth",
+      "looks": [
+        {
+          "id": "dendrite",
+          "hash": 1379399654,
+          "brightPixels": 65619
+        },
+        {
+          "id": "crown",
+          "hash": 1998393780,
+          "brightPixels": 67057
+        },
+        {
+          "id": "fracture",
+          "hash": 2207456918,
+          "brightPixels": 65655
+        }
+      ],
+      "controls": [
+        {
+          "key": "growth",
+          "visibleChange": true,
+          "a": 1495443065,
+          "b": 1408109142
+        },
+        {
+          "key": "density",
+          "visibleChange": true,
+          "a": 1076955334,
+          "b": 52157361
+        }
+      ],
+      "extremes": [
+        {
+          "key": "growth",
+          "value": 0,
+          "finite": true
+        },
+        {
+          "key": "growth",
+          "value": 1,
+          "finite": true
+        },
+        {
+          "key": "density",
+          "value": 0.25,
+          "finite": true
+        },
+        {
+          "key": "density",
+          "value": 1.4,
+          "finite": true
+        },
+        {
+          "key": "height",
+          "value": 0.2,
+          "finite": true
+        },
+        {
+          "key": "height",
+          "value": 2,
+          "finite": true
+        },
+        {
+          "key": "fracture",
+          "value": 0,
+          "finite": true
+        },
+        {
+          "key": "fracture",
+          "value": 1,
+          "finite": true
+        },
+        {
+          "key": "speed",
+          "value": 0,
+          "finite": true
+        },
+        {
+          "key": "speed",
+          "value": 1,
+          "finite": true
+        }
+      ],
+      "cycles": [
+        {
+          "geometries": 0,
+          "textures": 2,
+          "children": 4,
+          "hostPreserved": true,
+          "cameraRestored": true
+        },
+        {
+          "geometries": 0,
+          "textures": 2,
+          "children": 4,
+          "hostPreserved": true,
+          "cameraRestored": true
+        },
+        {
+          "geometries": 0,
+          "textures": 2,
+          "children": 4,
+          "hostPreserved": true,
+          "cameraRestored": true
+        }
+      ],
+      "errors": [],
+      "noGrowth": true,
+      "lowPower": true,
+      "lowPowerStats": {},
+      "pass": true
+    },
+    {
+      "slug": "3d-wireframe-scan",
+      "looks": [
+        {
+          "id": "radial",
+          "hash": 2687467547,
+          "brightPixels": 45590
+        },
+        {
+          "id": "vertical",
+          "hash": 549846371,
+          "brightPixels": 45580
+        },
+        {
+          "id": "diagonal",
+          "hash": 618311419,
+          "brightPixels": 45385
+        }
+      ],
+      "controls": [
+        {
+          "key": "progress",
+          "visibleChange": true,
+          "a": 191597780,
+          "b": 2174538413
+        },
+        {
+          "key": "band",
+          "visibleChange": true,
+          "a": 882809491,
+          "b": 3887091766
+        }
+      ],
+      "extremes": [
+        {
+          "key": "progress",
+          "value": 0,
+          "finite": true
+        },
+        {
+          "key": "progress",
+          "value": 1,
+          "finite": true
+        },
+        {
+          "key": "band",
+          "value": 0.03,
+          "finite": true
+        },
+        {
+          "key": "band",
+          "value": 0.7,
+          "finite": true
+        },
+        {
+          "key": "glow",
+          "value": 0.2,
+          "finite": true
+        },
+        {
+          "key": "glow",
+          "value": 3,
+          "finite": true
+        },
+        {
+          "key": "speed",
+          "value": 0,
+          "finite": true
+        },
+        {
+          "key": "speed",
+          "value": 0.4,
+          "finite": true
+        },
+        {
+          "key": "spin",
+          "value": 0,
+          "finite": true
+        },
+        {
+          "key": "spin",
+          "value": 0.5,
+          "finite": true
+        }
+      ],
+      "cycles": [
+        {
+          "geometries": 0,
+          "textures": 2,
+          "children": 4,
+          "hostPreserved": true,
+          "cameraRestored": true
+        },
+        {
+          "geometries": 0,
+          "textures": 2,
+          "children": 4,
+          "hostPreserved": true,
+          "cameraRestored": true
+        },
+        {
+          "geometries": 0,
+          "textures": 2,
+          "children": 4,
+          "hostPreserved": true,
+          "cameraRestored": true
+        }
+      ],
+      "errors": [],
+      "noGrowth": true,
+      "lowPower": true,
+      "lowPowerStats": {},
+      "pass": true
+    },
+    {
+      "slug": "3d-scroll-scenes",
+      "looks": [
+        {
+          "id": "orbit",
+          "hash": 1192724016,
+          "brightPixels": 44215
+        },
+        {
+          "id": "vertical",
+          "hash": 3336940741,
+          "brightPixels": 59379
+        },
+        {
+          "id": "ribbon",
+          "hash": 773754277,
+          "brightPixels": 78446
+        }
+      ],
+      "controls": [
+        {
+          "key": "progress",
+          "visibleChange": true,
+          "a": 2251134032,
+          "b": 598380680
+        },
+        {
+          "key": "spacing",
+          "visibleChange": true,
+          "a": 3448954611,
+          "b": 965644878
+        }
+      ],
+      "extremes": [
+        {
+          "key": "progress",
+          "value": 0,
+          "finite": true
+        },
+        {
+          "key": "progress",
+          "value": 1,
+          "finite": true
+        },
+        {
+          "key": "spacing",
+          "value": 0.8,
+          "finite": true
+        },
+        {
+          "key": "spacing",
+          "value": 2,
+          "finite": true
+        },
+        {
+          "key": "reveal",
+          "value": 0,
+          "finite": true
+        },
+        {
+          "key": "reveal",
+          "value": 2,
+          "finite": true
+        }
+      ],
+      "cycles": [
+        {
+          "geometries": 0,
+          "textures": 2,
+          "children": 4,
+          "hostPreserved": true,
+          "cameraRestored": true
+        },
+        {
+          "geometries": 0,
+          "textures": 2,
+          "children": 4,
+          "hostPreserved": true,
+          "cameraRestored": true
+        },
+        {
+          "geometries": 0,
+          "textures": 2,
+          "children": 4,
+          "hostPreserved": true,
+          "cameraRestored": true
+        }
+      ],
+      "errors": [],
+      "noGrowth": true,
+      "lowPower": true,
+      "lowPowerStats": {},
+      "pass": true
+    },
+    {
+      "slug": "3d-cinema-stack",
+      "looks": [
+        {
+          "id": "warm",
+          "hash": 549243925,
+          "brightPixels": 39305
+        },
+        {
+          "id": "precision",
+          "hash": 3082307007,
+          "brightPixels": 37983
+        },
+        {
+          "id": "night",
+          "hash": 121935112,
+          "brightPixels": 39100
+        }
+      ],
+      "controls": [
+        {
+          "key": "glow",
+          "visibleChange": true,
+          "a": 2114568273,
+          "b": 3405707470
+        },
+        {
+          "key": "exposure",
+          "visibleChange": true,
+          "a": 2917356659,
+          "b": 563301091
+        }
+      ],
+      "extremes": [
+        {
+          "key": "glow",
+          "value": 0,
+          "finite": true
+        },
+        {
+          "key": "glow",
+          "value": 2,
+          "finite": true
+        },
+        {
+          "key": "exposure",
+          "value": 0.4,
+          "finite": true
+        },
+        {
+          "key": "exposure",
+          "value": 1.8,
+          "finite": true
+        },
+        {
+          "key": "chromatic",
+          "value": 0,
+          "finite": true
+        },
+        {
+          "key": "chromatic",
+          "value": 0.014,
+          "finite": true
+        },
+        {
+          "key": "vignette",
+          "value": 0,
+          "finite": true
+        },
+        {
+          "key": "vignette",
+          "value": 1,
+          "finite": true
+        },
+        {
+          "key": "grain",
+          "value": 0,
+          "finite": true
+        },
+        {
+          "key": "grain",
+          "value": 0.09,
+          "finite": true
+        }
+      ],
+      "cycles": [
+        {
+          "geometries": 0,
+          "textures": 2,
+          "children": 4,
+          "hostPreserved": true,
+          "cameraRestored": true
+        },
+        {
+          "geometries": 0,
+          "textures": 2,
+          "children": 4,
+          "hostPreserved": true,
+          "cameraRestored": true
+        },
+        {
+          "geometries": 0,
+          "textures": 2,
+          "children": 4,
+          "hostPreserved": true,
+          "cameraRestored": true
+        }
+      ],
+      "errors": [],
+      "noGrowth": true,
+      "lowPower": true,
+      "lowPowerStats": {
+        "quality": "low",
+        "blurRatio": 0.22,
+        "blurIterations": 1,
+        "targetWidth": 132,
+        "targetHeight": 99
+      },
+      "qualityModes": [
+        {
+          "quality": "low",
+          "visible": true,
+          "stats": {
+            "quality": "low",
+            "blurRatio": 0.22,
+            "blurIterations": 1,
+            "targetWidth": 132,
+            "targetHeight": 99
+          }
+        },
+        {
+          "quality": "mid",
+          "visible": true,
+          "stats": {
+            "quality": "mid",
+            "blurRatio": 0.35,
+            "blurIterations": 1,
+            "targetWidth": 210,
+            "targetHeight": 158
+          }
+        },
+        {
+          "quality": "high",
+          "visible": true,
+          "stats": {
+            "quality": "high",
+            "blurRatio": 0.5,
+            "blurIterations": 2,
+            "targetWidth": 300,
+            "targetHeight": 225
+          }
+        },
+        {
+          "quality": "cinematic",
+          "visible": true,
+          "stats": {
+            "quality": "cinematic",
+            "blurRatio": 0.7,
+            "blurIterations": 3,
+            "targetWidth": 420,
+            "targetHeight": 315
+          }
+        }
+      ],
+      "pass": true
+    },
+    {
+      "slug": "3d-drain-spout",
+      "looks": [
+        {
+          "id": "channel",
+          "hash": 3175774584,
+          "brightPixels": 263516
+        },
+        {
+          "id": "gentle",
+          "hash": 655005831,
+          "brightPixels": 260105
+        },
+        {
+          "id": "surge",
+          "hash": 1441341842,
+          "brightPixels": 266059
+        }
+      ],
+      "controls": [
+        {
+          "key": "flow",
+          "visibleChange": true,
+          "a": 970194600,
+          "b": 1958615628
+        },
+        {
+          "key": "radius",
+          "visibleChange": true,
+          "a": 1685024188,
+          "b": 3396144209
+        }
+      ],
+      "extremes": [
+        {
+          "key": "flow",
+          "value": 0.65,
+          "finite": true
+        },
+        {
+          "key": "flow",
+          "value": 1.7,
+          "finite": true
+        },
+        {
+          "key": "radius",
+          "value": 0.18,
+          "finite": true
+        },
+        {
+          "key": "radius",
+          "value": 0.45,
+          "finite": true
+        },
+        {
+          "key": "height",
+          "value": 1.3,
+          "finite": true
+        },
+        {
+          "key": "height",
+          "value": 2.6,
+          "finite": true
+        },
+        {
+          "key": "ripple",
+          "value": 0.005,
+          "finite": true
+        },
+        {
+          "key": "ripple",
+          "value": 0.05,
+          "finite": true
+        },
+        {
+          "key": "exposure",
+          "value": 0.7,
+          "finite": true
+        },
+        {
+          "key": "exposure",
+          "value": 2.3,
+          "finite": true
+        },
+        {
+          "key": "speed",
+          "value": 0,
+          "finite": true
+        },
+        {
+          "key": "speed",
+          "value": 1.8,
+          "finite": true
+        }
+      ],
+      "cycles": [
+        {
+          "geometries": 0,
+          "textures": 2,
+          "children": 4,
+          "hostPreserved": true,
+          "cameraRestored": true
+        },
+        {
+          "geometries": 0,
+          "textures": 2,
+          "children": 4,
+          "hostPreserved": true,
+          "cameraRestored": true
+        },
+        {
+          "geometries": 0,
+          "textures": 2,
+          "children": 4,
+          "hostPreserved": true,
+          "cameraRestored": true
+        }
+      ],
+      "errors": [],
+      "noGrowth": true,
+      "lowPower": true,
+      "lowPowerStats": {
+        "time": 0,
+        "quality": "low",
+        "raySteps": 16,
+        "view": [
+          0.2,
+          0.8,
+          1
+        ],
+        "impactX": 2,
+        "renderSize": [
+          600,
+          450
+        ],
+        "representation": "fullscreen analytic distance field"
+      },
+      "pass": true
+    }
+  ]
+}

@@ -1,0 +1,25 @@
+{
+  "round": 2,
+  "title": "具体需求检索与网页/命令行一致性",
+  "completed_at_utc": "2026-10-23T16:04:44.493019+00:00",
+  "client_date": "2026-10-24",
+  "observations": [
+    "基线中“玻璃材质”误列出四种其他材质，“金属材质”误列出三种其他材质。"
+  ],
+  "changes": [
+    "具体效果词优先于“材质/效果”等泛词；英文查询回退使用完整词组约束。",
+    "网页与命令行采用对等规则，统一材质分类筛选。"
+  ],
+  "checks": {
+    "queries": 22,
+    "python_js_result_parity": true,
+    "specific_material_false_matches_removed": true
+  },
+  "evidence": [
+    "search-baseline.json",
+    "round-02-search-cases.json"
+  ],
+  "passed": true,
+  "installed_state_sha256": "588a01d37c0678ef58ca74d94abe3ba50b675a806e4142c3782008df31a79f41",
+  "installed_files": 860
+}

@@ -1,0 +1,25 @@
+{
+  "round": 4,
+  "title": "失败路径与导出目录完整性",
+  "completed_at_utc": "2026-10-23T16:08:20.055417+00:00",
+  "client_date": "2026-10-24",
+  "observations": [
+    "定制导出之前在复制后解析 metadata，损坏 metadata 可能留下不完整目标目录。",
+    "未知分类返回空列表，拼错模块名没有候选提示。"
+  ],
+  "changes": [
+    "将元数据和源路径校验前置，使用受限临时目录构建后发布，复制中断清理自建临时目录。",
+    "拒绝目录越界与符号链接，补充分类选项和拼写候选。"
+  ],
+  "checks": {
+    "failure_cases_and_unicode_export": 8,
+    "interrupted_export_cleanup": true,
+    "existing_contents_preserved": true
+  },
+  "evidence": [
+    "round-04-failures.json"
+  ],
+  "passed": true,
+  "installed_state_sha256": "a16963d08f3c4dd7e67a1b58c8fadcedaefced6907c41458ae39e8487aa2a085",
+  "installed_files": 862
+}

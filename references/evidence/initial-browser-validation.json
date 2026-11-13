@@ -1,0 +1,50 @@
+{
+  "title": "3D可视化特效大师",
+  "count": 34,
+  "filters": {
+    "materials": 6,
+    "independent": 33,
+    "user-supplied": 1,
+    "all": 34
+  },
+  "search": "水体与流动 / Spout — @P_Malin\n排水管喷水\nDrain Spout\n\nA curved water jet leaves a metal pipe and meets a rippling drainage channel.\n\n打开 Demo →\n模块说明\n3 PRESETS · 6 CONTROLS · FULLSCREEN",
+  "mobile": {
+    "viewport": [
+      390,
+      844
+    ],
+    "title": "3D可视化特效大师",
+    "count": 34,
+    "cards": 34,
+    "noHorizontalOverflow": true,
+    "unifiedEntry": "统一技能入口 SKILL.md →",
+    "pass": true
+  },
+  "modules": [
+    {
+      "slug": "3d-smoke",
+      "draws": 4,
+      "looks": 3,
+      "moduleGuide": "../module-guide.md",
+      "status": "Ready / 就绪",
+      "title": "3D Smoke · 3D可视化特效大师"
+    },
+    {
+      "slug": "3d-bloom",
+      "draws": 4,
+      "looks": 3,
+      "moduleGuide": "../module-guide.md",
+      "status": "Ready / 就绪",
+      "title": "3D Bloom · 3D可视化特效大师"
+    },
+    {
+      "slug": "3d-drain-spout",
+      "draws": 3,
+      "looks": 3,
+      "moduleGuide": "../module-guide.md",
+      "status": "Ready / 就绪",
+      "title": "排水管喷水 · 3D可视化特效大师"
+    }
+  ],
+  "pass": true
+}

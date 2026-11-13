@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="zh-CN">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>烧焦溶解 · 独立效果演示</title>
+<link rel="icon" href="data:,">
+<style>
+body{margin:0;background:#10151d;color:#eee;font:16px system-ui}canvas{display:block;width:100%;height:100vh}
+aside{box-sizing:border-box;width:calc(100vw - 48px);position:absolute;left:24px;top:24px;max-width:340px;max-height:calc(100vh - 90px);overflow:auto;padding:20px;background:#17202be6;border:1px solid #ffffff25;border-radius:12px}
+h1{margin:0 0 12px;font-size:21px}p{font-size:14px;color:#bdc9d4}label{display:block;margin:12px 0}select{padding:6px}input{width:170px;vertical-align:middle}button{padding:7px 14px;margin-right:8px;cursor:pointer}
+</style>
+<script type="importmap">{"imports":{"three":"./vendor/three.module.js"}}</script>
+<aside><h1>大火烧焦溶解</h1><p>左侧对象可调节烧焦与溶解；右侧使用独立实例，保持完整。可拖动进度反复查看。</p>
+<label>溶解进度 <input id="progress" type="range" min="0" max="1.1" step="0.001" value="0"><output id="value">0%</output></label>
+<label>预设 <select id="look"></select></label><div id="controls"></div><button id="play">播放</button><button id="reset">重置</button></aside>
+<script type="module">
+import * as THREE from 'three';
+import { meta } from './meta.js';
+import { createBurnDissolveEffect } from './effects/burn-dissolve.js';
+const renderer=new THREE.WebGLRenderer({antialias:true});
+renderer.setPixelRatio(Math.min(devicePixelRatio,1.5));
+renderer.setSize(innerWidth,innerHeight); document.body.appendChild(renderer.domElement);
+const scene=new THREE.Scene(); scene.background=new THREE.Color(0x10151d);
+const camera=new THREE.PerspectiveCamera(42,innerWidth/innerHeight,0.1,300);
+camera.position.set(32,23,52); camera.lookAt(0,10,0);
+scene.add(new THREE.HemisphereLight(0xc4dcff,0x473326,2));
+const light=new THREE.DirectionalLight(0xffe5c4,3); light.position.set(10,30,20); scene.add(light);
+const burn=createBurnDissolveEffect({origin:new THREE.Vector3(-10,0,0),scale:0.7});
+const other=createBurnDissolveEffect({origin:new THREE.Vector3(11,0,0),scale:0.7});
+const geometry=new THREE.BoxGeometry(13,16,13,12,12,12);
+const left=new THREE.Mesh(geometry,burn.patchMaterial(new THREE.MeshStandardMaterial({color:0xe4cda7,roughness:0.7})));
+left.position.set(-10,8,0); scene.add(left);
+const right=new THREE.Mesh(geometry,other.patchMaterial(new THREE.MeshPhysicalMaterial({color:0x98b7cc,roughness:0.4})));
+right.position.set(11,8,0); scene.add(right);
+const ash=burn.createAsh(1800,{samplePosition:()=>{
+  const p=new THREE.Vector3(Math.random()*13-6.5,Math.random()*16,Math.random()*13-6.5);
+  const face=Math.floor(Math.random()*6);
+  if(face<2)p.x=(face===0?-1:1)*6.5;else if(face<4)p.y=face===2?0:16;else p.z=(face===4?-1:1)*6.5;
+  p.x-=10; return p;
+}}); scene.add(ash);
+const progress=document.querySelector('#progress'), value=document.querySelector('#value'), play=document.querySelector('#play');
+let playing=false, last=0;
+const params=Object.fromEntries(meta.schema.map(s=>[s.key,s.default]));
+const fields=new Map(); const look=document.querySelector('#look');
+for(const item of meta.looks){const option=document.createElement('option');option.value=item.id;option.textContent=item.title;look.append(option);}
+for(const s of meta.schema.filter(s=>s.key!=='progress')){
+  const label=document.createElement('label');label.textContent=s.label+' ';
+  const input=document.createElement('input');input.type=s.type==='color'?'color':'range';
+  if(s.min!==undefined){input.min=s.min;input.max=s.max;input.step=s.step;}
+  input.oninput=()=>{params[s.key]=s.type==='color'?input.value:Number(input.value);};
+  label.append(input);document.querySelector('#controls').append(label);fields.set(s.key,input);
+}
+function selectLook(){Object.assign(params,meta.looks.find(l=>l.id===look.value).params);progress.value=params.progress;for(const [key,input] of fields)input.value=params[key];}
+look.onchange=selectLook;selectLook();
+play.onclick=()=>{playing=!playing;play.textContent=playing?'暂停':'播放';};
+document.querySelector('#reset').onclick=()=>{playing=false;play.textContent='播放';selectLook();progress.value=0;burn.reset();};
+progress.oninput=()=>{playing=false;play.textContent='播放';};
+renderer.setAnimationLoop(ms=>{
+  const dt=Math.min((ms-last)/1000,0.05);last=ms;
+  if(playing){progress.value=Math.min(1.1,Number(progress.value)+dt*0.09);if(Number(progress.value)>=1.1){playing=false;play.textContent='播放';}}
+  const u=burn.uniforms;
+  u.hyBurnEdgeWidth.value=params.edgeWidth;u.hyBurnCharWidth.value=params.charWidth;u.hyBurnCharStrength.value=params.charStrength;
+  u.uEdgeCol.value.set(params.color).multiplyScalar(4);
+  const p=Number(progress.value);value.textContent=Math.round(p/1.1*100)+'%';
+  burn.update(ms/1000,{progress:p,ashIntensity:p>0?params.ashIntensity:0,pixelRatio:renderer.getPixelRatio()*innerHeight/900});
+  other.update(ms/1000);renderer.render(scene,camera);
+});
+document.addEventListener('visibilitychange',()=>{if(document.hidden){playing=false;play.textContent='播放';}});
+addEventListener('resize',()=>{camera.aspect=innerWidth/innerHeight;camera.updateProjectionMatrix();renderer.setSize(innerWidth,innerHeight);});
+window.__burnDemo={burn,other,left,right,ash,renderer,scene,camera};
+addEventListener('pagehide',()=>{renderer.setAnimationLoop(null);burn.dispose();other.dispose();geometry.dispose();left.material.dispose();right.material.dispose();renderer.dispose();},{once:true});
+</script>
+
+<link rel="stylesheet" href="../../../shared/demo-chrome.css">
+<script type="module" src="../../../shared/demo-chrome.js"></script>
+</html>

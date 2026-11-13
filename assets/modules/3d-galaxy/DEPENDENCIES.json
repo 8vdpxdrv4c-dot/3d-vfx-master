@@ -1,0 +1,54 @@
+[
+  {
+    "package": "three",
+    "version": "0.160.0",
+    "license_declared": "MIT",
+    "registry_metadata_url": "https://registry.npmjs.org/three/0.160.0",
+    "tarball_url": "https://registry.npmjs.org/three/-/three-0.160.0.tgz",
+    "integrity": "sha512-DLU8lc0zNIPkM7rH5/e1Ks1Z8tWCGRq6g8mPowdDJpw1CFBJMU7UoJjC6PefXW7z//SSl0b2+GCw14LB+uDhng==",
+    "verified": true,
+    "files": [
+      {
+        "source": "build/three.module.js",
+        "path": "three.module.js",
+        "bytes": 1272972,
+        "sha256": "76dea8151bc9352aef3528b4262e249b2604f62543828328db978d060d61a495"
+      },
+      {
+        "source": "examples/jsm/controls/OrbitControls.js",
+        "path": "addons/controls/OrbitControls.js",
+        "bytes": 29868,
+        "sha256": "5a44a9e86a2a0fb11933eed69bc2cd33c76a496854c1aed6ed776efa87d7b064"
+      },
+      {
+        "source": "LICENSE",
+        "path": "THREE-MIT.txt",
+        "bytes": 1081,
+        "sha256": "852e0e8699169bf9f6fdc6bda3e682d078dcbc738b5d33e74df594721bff271d"
+      }
+    ]
+  },
+  {
+    "package": "lil-gui",
+    "version": "0.19.2",
+    "license_declared": "MIT",
+    "registry_metadata_url": "https://registry.npmjs.org/lil-gui/0.19.2",
+    "tarball_url": "https://registry.npmjs.org/lil-gui/-/lil-gui-0.19.2.tgz",
+    "integrity": "sha512-nU8j4ND702ouGfQZoaTN4dfXxacvGOAVK0DtmZBVcUYUAeYQXLQAjAN50igMHiba3T5jZyKEjXZU+Ntm1Qs6ZQ==",
+    "verified": true,
+    "files": [
+      {
+        "source": "dist/lil-gui.esm.js",
+        "path": "lil-gui.esm.js",
+        "bytes": 59438,
+        "sha256": "ff934a599715bfb72534dda8aea206bf23630b56a49e1aa0d9ad0ab5dfeab985"
+      },
+      {
+        "source": "LICENSE.md",
+        "path": "LIL-GUI-MIT.txt",
+        "bytes": 1077,
+        "sha256": "8cf4a9691239b14c715613ed8e41580d18ee433c862e263058393b35be6c8e53"
+      }
+    ]
+  }
+]

@@ -1,0 +1,103 @@
+{
+  "errors": [],
+  "results": [
+    {
+      "id": "open-ocean",
+      "params": {
+        "view": "Open ocean",
+        "windSpeed": 9,
+        "waveScale": 1,
+        "clarity": 1,
+        "speed": 1
+      },
+      "draws": 17,
+      "programs": 26,
+      "webgl2": true,
+      "floatColor": true
+    },
+    {
+      "id": "breakers",
+      "params": {
+        "view": "Breakers",
+        "windSpeed": 10,
+        "waveScale": 1.2,
+        "clarity": 1,
+        "speed": 1
+      },
+      "draws": 17,
+      "programs": 33,
+      "webgl2": true,
+      "floatColor": true
+    },
+    {
+      "id": "lagoon",
+      "params": {
+        "view": "Lagoon",
+        "windSpeed": 5,
+        "waveScale": 0.55,
+        "clarity": 2,
+        "speed": 1
+      },
+      "draws": 17,
+      "programs": 33,
+      "webgl2": true,
+      "floatColor": true
+    },
+    {
+      "id": "golden-hour",
+      "params": {
+        "view": "Golden hour",
+        "windSpeed": 7,
+        "waveScale": 0.8,
+        "clarity": 1,
+        "speed": 1
+      },
+      "draws": 17,
+      "programs": 33,
+      "webgl2": true,
+      "floatColor": true
+    },
+    {
+      "id": "underwater",
+      "params": {
+        "view": "Underwater",
+        "windSpeed": 6,
+        "waveScale": 0.65,
+        "clarity": 1.4,
+        "speed": 1
+      },
+      "draws": 15,
+      "programs": 35,
+      "webgl2": true,
+      "floatColor": true
+    }
+  ],
+  "pause": {
+    "before": 6.844200000002176,
+    "after": 6.844200000002176,
+    "label": "继续"
+  },
+  "reset": true,
+  "mobile": {
+    "resolution": 0.6,
+    "bloom": 0,
+    "paused": true,
+    "fits": true
+  },
+  "adapterInitial": {
+    "params": {
+      "view": "Lagoon",
+      "windSpeed": 4,
+      "waveScale": 0.5,
+      "clarity": 2,
+      "speed": 0
+    },
+    "selected": "lagoon"
+  },
+  "lifecycle": {
+    "framesRemaining": 0,
+    "render": false
+  },
+  "browser": "156.0.8078.73",
+  "note": "Local Chrome smoke test; performance is not a cross-device guarantee. Initial skill integrity check found an existing SKILL.md mismatch before this update; other existing files passed."
+}

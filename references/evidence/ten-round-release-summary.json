@@ -1,0 +1,24 @@
+{
+  "pass": true,
+  "rounds": 10,
+  "date": "2026-10-24",
+  "registered_skills": 1,
+  "modules": 34,
+  "presets": 103,
+  "compositions": 2,
+  "webgl_modules_passed": 34,
+  "mobile_pages_passed": 36,
+  "tested_runtime_sha256": "4c6c1a7add738444f3c2f0348fee4ee5f6b01dd88f47207852f0b5f9419c9662",
+  "published": false,
+  "limits": [
+    "Mobile checks use 390x844 browser iframes; no physical phone GPU benchmark.",
+    "Reduced-motion listener branch was tested with a synthetic event on the same MediaQueryList, not an OS preference change.",
+    "Spout user-supplied shader attribution and unspecified input license remain unchanged.",
+    "Round state hashes are checkpoints; the final manifest separately records delivered bytes."
+  ],
+  "bundled_browser_check_paths_verified": {
+    "representative_webgl_modules": 2,
+    "mobile_pages": 36,
+    "evidence": "round-10-portable-checks.json"
+  }
+}
